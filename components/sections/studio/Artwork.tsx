@@ -36,7 +36,7 @@ export default function Artwork() {
               <div className="absolute bottom-8 -right-18 flex flex-col gap-[14px]">
                 <span className="w-[10px] h-[10px] bg-[#5d5d5d]" />
                 <span className="w-[10px] h-[10px] bg-[#5d5d5d]" />
-               <span className="absolute left-5 bottom-3 w-[10px] h-[10px] bg-[#5d5d5d]" />
+                <span className="absolute left-5 bottom-3 w-[10px] h-[10px] bg-[#5d5d5d]" />
               </div>
             </div>
           </div>
@@ -69,10 +69,11 @@ export default function Artwork() {
   duration-700
 ease-out
  hover:bg-[#131313]
+ cursor-pointer
 
   ${
-  active === index
-    ? `
+    active === index
+      ? `
       bg-[linear-gradient(to_top,rgba(255,255,255,0.14),rgba(255,255,255,0.05)_45%,transparent)]
 
       shadow-[inset_0_0_50px_rgba(255,255,255,0.03)]
@@ -81,8 +82,8 @@ ease-out
       after:inset-0
       after:bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.08),transparent_70%)]
     `
-    : ""
-}
+      : ""
+  }
 `}
                   >
                     <div
