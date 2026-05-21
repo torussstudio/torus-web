@@ -86,7 +86,7 @@ export default function Navbar() {
                       items-center
                       gap-1.5
                       whitespace-nowrap
-                      font-rethink
+                      font-think
                       text-[14px]
                       lg:text-[15px]
                       xl:text-[16px]
