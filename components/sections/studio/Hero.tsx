@@ -141,7 +141,7 @@ export default function StudioHero() {
         group
         flex
         items-center
-        justify-between
+        justify-start
         border-b
         border-[#1d1d1d]
         pt-[18px]
@@ -154,14 +154,14 @@ export default function StudioHero() {
       <div className="flex  items-center gap-[170px]">
         <span
           className="
-            text-[34px]
+            text-[28px]
             leading-none
             font-light
             text-[#1d1d1d]
             transition-transform
             duration-300
             group-hover:translate-x-[4px]
-            pl-[40px]
+            pl-[50px]
           "
         >
           →
@@ -174,8 +174,8 @@ export default function StudioHero() {
             font-think
             uppercase
             tracking-[0.12em]
-            text-[#80AD76]
-            
+            text-[#80AD76] translate-x-[35px]
+           
           "
         >
           {link.number}
@@ -191,7 +191,7 @@ export default function StudioHero() {
           uppercase
           tracking-[0.08em]
           text-[#80AD76]
-          mr-[30px]
+          ml-[55px]
         "
       >
         {link.label}
