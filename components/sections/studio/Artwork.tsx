@@ -41,7 +41,7 @@ export default function Artwork() {
               <img
                 src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
                 alt=""
-                className="w-[520px] h-[461px] ml-[50px] object-cover"
+                className="w-[520px] h-[456px] ml-[50px] object-cover"
               />
 
               {/* PIXELS */}

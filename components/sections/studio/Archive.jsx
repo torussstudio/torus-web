@@ -17,7 +17,7 @@ const works = [
     year: "2025",
     country: "INDIA",
     title: "THE INVISIBLE MUSEUM",
-    image: "/archive-2.jpg",
+    image: "/Trust-hero.jpg",
     desc: "Reimagining heritage discovery through public interaction and spatial storytelling.",
     tags: ["Spatial Experience", "Cultural Initiative"],
     shape: "square",
