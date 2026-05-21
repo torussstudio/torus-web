@@ -174,8 +174,8 @@ export default function StudioHero() {
             font-think
             uppercase
             tracking-[0.12em]
-            text-[#80AD76] translate-x-[35px]
-           
+            text-[#80AD76] translate-x-[-15px]
+          
           "
         >
           {link.number}
@@ -191,7 +191,7 @@ export default function StudioHero() {
           uppercase
           tracking-[0.08em]
           text-[#80AD76]
-          ml-[55px]
+          mr-[25px]
         "
       >
         {link.label}
