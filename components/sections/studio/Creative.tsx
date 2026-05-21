@@ -55,14 +55,14 @@ export default function CreativeGrid() {
 
   return (
     <section className="w-screen min-h-screen bg-[#e7e5e1] px-[72px] py-[40px]">
-      <div className="w-full min-h-[calc(100vh-80px)] border border-black/20 grid grid-cols-3">
+      <div className="w-full min-h-[calc(100vh-80px)] border border-black/40 grid grid-cols-3">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="border-r border-black/20 last:border-r-0 flex flex-col"
+            className="border-r border-black/40 last:border-r-0 flex flex-col"
           >
             {/* TOP HEADER */}
-            <div className="border-b border-black/20 px-6 py-4 flex items-center justify-between">
+            <div className="border-b border-black/40 px-6 py-4 flex items-center justify-between">
               <h2 className="text-[22px] md:text-[28px] font-display tracking-[-0.03em] text-[#1d1d1d]">
                 {card.title}
               </h2>
@@ -76,8 +76,8 @@ export default function CreativeGrid() {
             </div>
 
             {/* DESCRIPTION */}
-            <div className="grid grid-cols-[82px_1fr] border-b border-black/20 min-h-[96px]">
-              <div className="border-r border-black/20 flex items-center justify-center">
+            <div className="grid grid-cols-[82px_1fr] border-b border-black/40 min-h-[96px]">
+              <div className="border-r border-black/40 flex items-center justify-center">
                 {card.icon === "●" && (
                   <div className="w-[23px] h-[23px] rounded-full bg-[#7EA46C]" />
                 )}
@@ -141,10 +141,10 @@ export default function CreativeGrid() {
               </ul>
             </div>
 
-            {/* FOOTER */}
+            
            {/* FOOTER */}
 <div className="mt-10 px-7 pb-7">
-  <div className="border-t border-black/20 pt-6 flex items-end justify-between">
+  <div className="border-t border-black/40 pt-6 flex items-end justify-between">
     <div>
       {card.footerTitle && (
         <h3 className="text-[32px] font-think tracking-[-0.06em] text-black/90 leading-none">

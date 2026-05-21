@@ -3,6 +3,7 @@ import Footer from "@/components/common/Footer";
 import StudioHero from "@/components/sections/studio/Hero";
 import Artwork from "@/components/sections/studio/Artwork";
 import CreativeGrid from "@/components/sections/studio/Creative";
+import ArchiveSection from "@/components/sections/studio/Archive"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <StudioHero />
       <Artwork />
       <CreativeGrid />
+      <ArchiveSection />
       <Footer />
     </main>
   );

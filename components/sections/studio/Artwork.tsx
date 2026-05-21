@@ -21,8 +21,20 @@ export default function Artwork() {
         <div className="pl-[110px] flex">
           {/* IMAGE SIDE */}
           <div>
-            <p className="text-[12px] font-think tracking-[0.32em] ml-[50px] uppercase text-[#5b5b5b] mb-5">
-              — artworks & prints
+            <p
+              className="
+    text-[15px]
+    font-think
+    tracking-[0.32em]
+    ml-[50px]
+    uppercase
+    text-[#5b5b5b]
+    mb-5
+    transition-all
+    duration-300
+  "
+            >
+              — {menu[active]}
             </p>
 
             <div className="relative">
