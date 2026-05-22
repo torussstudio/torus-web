@@ -308,7 +308,7 @@ export default function Footer() {
             {/* IMAGE */}
             <div className="relative h-[420px] border-r border-black/40 max-md:h-[260px] max-md:border-r-0 max-md:border-b max-md:border-black/40">
               <Image
-                src="/Trust-hero.jpg"
+                src="/trust-hero.jpg"
                 alt="Footer"
                 fill
                 className="object-cover grayscale"
