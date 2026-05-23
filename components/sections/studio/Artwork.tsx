@@ -1,15 +1,10 @@
 "use client";
 
+import { menu } from "@/lib/constants";
 import { useState } from "react";
 
 export default function Artwork() {
-  const menu = [
-    "ARTWORKS & PRINTS",
-    "EDITIONS",
-    "IDENTITY SYSTEMS",
-    "WORKS & STUDIOS",
-    "OBJECTS",
-  ];
+
 
   const [active, setActive] = useState(0);
 

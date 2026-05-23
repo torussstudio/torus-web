@@ -6,7 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string): string {
-  return new Date(date).toLocaleDateString("en-US", {
+  const parsed = new Date(date);
+
+  if (isNaN(parsed.getTime())) {
+    return "Invalid date";
+  }
+
+  return parsed.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -14,5 +20,11 @@ export function formatDate(date: string): string {
 }
 
 export function slugify(text: string): string {
-  return text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
 }

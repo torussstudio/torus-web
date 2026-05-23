@@ -1,5 +1,6 @@
 "use client";
 
+import { SOCIAL_LINKS } from "@/lib/constants";
 import Image from "next/image";
 import {
   FaInstagram,
@@ -232,15 +233,24 @@ export default function StudioHero() {
                 pb-2
               "
             >
-              {socials.map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-black/35 hover:text-black transition-colors"
-                >
-                  <Icon className="text-[22px]" />
-                </a>
-              ))}
+              {SOCIAL_LINKS.map(
+  ({ icon: Icon, href, label }) => (
+    <a
+      key={label}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="
+        text-black/35
+        hover:text-black
+        transition-colors
+      "
+    >
+      <Icon className="text-[22px]" />
+    </a>
+  )
+)}
             </div>
 
           </div>

@@ -1,31 +1,7 @@
+import { values } from "@/lib/constants";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 
-const values = [
-  {
-    no: "01",
-    title: "CLARITY",
-    sub: "OVER NOISE",
-    green: false,
-  },
-  {
-    no: "02",
-    title: "CURIOSITY",
-    sub: "OVER ASSUMPTION",
-    green: true,
-  },
-  {
-    no: "03",
-    title: "PROCESS",
-    sub: "OVER POSTURING",
-    green: false,
-  },
-  {
-    no: "04",
-    title: "GOOD",
-    sub: "CONVERSATIONS",
-    green: false,
-  },
-];
+
 
 export default function UXPage() {
   return (

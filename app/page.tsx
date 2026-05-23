@@ -6,9 +6,14 @@ import CreativeGrid from "@/components/sections/studio/Creative";
 import ArchiveSection from "@/components/sections/studio/Archive";
 import AreasOfPractice from "@/components/sections/studio/Areas";
 import UXPage from "@/components/sections/studio/StudioNote";
+import PreloaderWrapper from "@/components/common/PreloaderWrapper";
 
 export default function Home() {
   return (
+    <>
+
+          <PreloaderWrapper />
+
     <main className="bg-[#e8e5df] min-h-screen">
       <Navbar />
       <StudioHero />
@@ -19,5 +24,6 @@ export default function Home() {
       <UXPage/>
       <Footer />
     </main>
+    </>
   );
 }

@@ -1,16 +1,33 @@
-import { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+// hooks/useScrollTrigger.ts
+
+import {
+  DependencyList,
+  RefObject,
+  useLayoutEffect,
+  useRef,
+} from "react";
+
+import {
+  gsap,
+  ScrollTrigger,
+} from "@/lib/gsap";
+
+type Scope = RefObject<HTMLElement | null>;
 
 export function useScrollTrigger(
-  callback: (ST: typeof ScrollTrigger) => void,
-  deps: React.DependencyList = []
+  callback: (
+    gsap: typeof import("gsap").gsap,
+    ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger
+  ) => void,
+  scope?: Scope,
+  deps: DependencyList = []
 ) {
   const ctx = useRef<gsap.Context | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     ctx.current = gsap.context(() => {
-      callback(ScrollTrigger);
-    });
+      callback(gsap, ScrollTrigger);
+    }, scope);
 
     return () => {
       ctx.current?.revert();

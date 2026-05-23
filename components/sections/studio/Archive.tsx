@@ -1,28 +1,10 @@
 "use client";
 
+import { works } from "@/lib/constants";
 import Image from "next/image";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 
-const works = [
-  {
-    year: "2026",
-    country: "SPAIN",
-    title: "THE SPANISH ALCHEMIST",
-    image: "/trust-hero.jpg",
-    desc: "Building a skincare brand rooted in freshness, performance, and cultural identity.",
-    tags: ["Brand Identity", "Packaging", "Digital"],
-    shape: "circle",
-  },
-  {
-    year: "2025",
-    country: "INDIA",
-    title: "THE INVISIBLE MUSEUM",
-    image: "/trust-hero.jpg",
-    desc: "Reimagining heritage discovery through public interaction and spatial storytelling.",
-    tags: ["Spatial Experience", "Cultural Initiative"],
-    shape: "square",
-  },
-];
+
 
 export default function ArchiveSection() {
   return (

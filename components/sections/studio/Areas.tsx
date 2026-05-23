@@ -1,85 +1,10 @@
 "use client";
 
+import { practices } from "@/lib/constants";
 import { useState } from "react";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 
-const practices = [
-  {
-    number: "01",
-    title: "STRATEGY &\nIDENTITY SYSTEMS",
-    desc: "Building brands with clarity, character, and long-term coherence.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "02",
-    title: "DIGITAL\nEXPERIENCES",
-    desc: "From websites to product interfaces, we create digital experiences that balance usability, storytelling, and visual clarity.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "03",
-    title: "COMMUNICA-\nTION&CONTENT",
-    desc: "Creating systems of expression across campaigns, content, and ongoing brand communication.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "04",
-    title: "CREATIVE\nDIRECTION",
-    desc: "Developing visual systems and narratives that guide products, campaigns, and evolving cultural identities.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    items: [
-      "Campaign Direction",
-      "Art Direction",
-      "Brand Systems",
-      "Visual Storytelling",
-      "Motion Direction",
-    ],
-  },
-
-  {
-    number: "05",
-    title: "OBJECTS &\nINSTALLATIONS",
-    desc: "Exploring physical experiences through objects, environments, and tactile systems.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    items: [
-      "Spatial Design",
-      "Installation Concepts",
-      "Material Systems",
-      "Interactive Objects",
-      "Exhibition Design",
-    ],
-  },
-];
 
 export default function AreasOfPractice() {
   const [active, setActive] = useState(1);
