@@ -1,7 +1,7 @@
 // STUDIO FULL PAGE 
 
 
-// navbar
+
 
 
 import { NavLink } from "@/types";
