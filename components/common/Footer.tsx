@@ -127,14 +127,23 @@ export default function Footer() {
             >
               <h2
                 className={cn(
+<<<<<<< HEAD
                   "text-[70px]",
+=======
+                  "text-[60px]",
+>>>>>>> e8980072045222c0631ecb78eb8f0744d757f11f
                   "leading-[0.92]",
                   "tracking-[-0.03em]",
                   "uppercase",
                   "text-[#111]",
                   "font-display",
+<<<<<<< HEAD
                   "md:text-[58px]",
                   "max-md:text-[46px]",
+=======
+                  "md:text-[48px]",
+                  "max-md:text-[36px]",
+>>>>>>> e8980072045222c0631ecb78eb8f0744d757f11f
                   "max-md:leading-[1]"
                 )}
               >
@@ -144,7 +153,11 @@ export default function Footer() {
               <p
                 className={cn(
                   "mt-[34px]",
+<<<<<<< HEAD
                   "max-w-[460px]",
+=======
+                  "max-w-[520px]",
+>>>>>>> e8980072045222c0631ecb78eb8f0744d757f11f
                   "text-[17px]",
                   "leading-[1.25]",
                   "text-black/60",
