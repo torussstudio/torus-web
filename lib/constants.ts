@@ -85,8 +85,7 @@ export const SOCIAL_LINKS = [
       title: "CREATIVE",
       icon: "●",
       desc: "Building brands, systems, and digital experiences with clarity, depth, and character.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+      image:"/images/creative.avif",
       items: [
         "Brand Strategy & Systems",
         "Digital Experiences",
@@ -101,8 +100,7 @@ export const SOCIAL_LINKS = [
       title: "EDITIONS",
       icon: "▲",
       desc: "An evolving collection of artworks, objects, merchandise, and experimental explorations.",
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+      image:"/images/editions.avif",
       items: [
         "Artworks & Creative Explorations",
         "Merchandise",
@@ -117,8 +115,7 @@ export const SOCIAL_LINKS = [
       title: "COHORT",
       icon: "■",
       desc: "Creating spaces for learning, dialogue, collaboration, and collective creative growth.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+      image:"/images/cohart.avif",
       items: [
         "Workshops",
         "Exhibitions",
@@ -161,8 +158,7 @@ export const SOCIAL_LINKS = [
     number: "01",
     title: "STRATEGY &\nIDENTITY SYSTEMS",
     desc: "Building brands with clarity, character, and long-term coherence.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    image:"/images/communication.avif",
     items: [
       "UI/UX Design",
       "Website Design & Development",
@@ -176,8 +172,7 @@ export const SOCIAL_LINKS = [
     number: "02",
     title: "DIGITAL\nEXPERIENCES",
     desc: "From websites to product interfaces, we create digital experiences that balance usability, storytelling, and visual clarity.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    image:"/images/creativedirection.avif ",
     items: [
       "UI/UX Design",
       "Website Design & Development",
@@ -191,9 +186,8 @@ export const SOCIAL_LINKS = [
     number: "03",
     title: "COMMUNICA-\nTION&CONTENT",
     desc: "Creating systems of expression across campaigns, content, and ongoing brand communication.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    items: [
+    image:"/images/objects.avif",
+        items: [
       "UI/UX Design",
       "Website Design & Development",
       "Interaction Design",
@@ -206,9 +200,8 @@ export const SOCIAL_LINKS = [
     number: "04",
     title: "CREATIVE\nDIRECTION",
     desc: "Developing visual systems and narratives that guide products, campaigns, and evolving cultural identities.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    items: [
+    image:"/images/strategy.avif",
+        items: [
       "Campaign Direction",
       "Art Direction",
       "Brand Systems",
@@ -221,8 +214,7 @@ export const SOCIAL_LINKS = [
     number: "05",
     title: "OBJECTS &\nINSTALLATIONS",
     desc: "Exploring physical experiences through objects, environments, and tactile systems.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    image:"/images/digital.avif",
     items: [
       "Spatial Design",
       "Installation Concepts",

@@ -63,7 +63,7 @@ export default function Artwork() {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
+                 src="/images/artwork1.avif"
                 alt="image"
                 className="w-[520px] h-[456px] ml-[50px] object-cover"
               />

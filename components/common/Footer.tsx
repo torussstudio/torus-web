@@ -107,7 +107,7 @@ export default function Footer() {
               )}
             >
               <Image
-                src="/trust-hero.jpg"
+                src="/images/footer.avif"
                 alt="Footer"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

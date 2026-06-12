@@ -287,7 +287,7 @@ export default function StudioHero() {
             "
           >
             <Image
-              src="/trust-hero.jpg"
+              src="/images/heroimage.avif"
               alt="Studio Hero"
               fill
               priority

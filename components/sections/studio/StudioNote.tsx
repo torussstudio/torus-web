@@ -14,8 +14,8 @@ export default function UXPage() {
         {/* ================= TOP LEFT IMAGE ================= */}
         <div className="col-span-12 lg:col-span-6 h-[680px] border-r border-[#b8b8b3] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1974&auto=format&fit=crop"
-            alt=""
+            src="/images/studio.avif"
+            alt="studio"
             className="w-full h-full object-cover grayscale"
           />
         </div>
@@ -341,7 +341,7 @@ export default function UXPage() {
 
         <div className="col-span-12 lg:col-span-3 min-h-[280px] lg:min-h-[250px] border-t border-[#b8b8b3] overflow-hidden relative">
           <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1971&auto=format&fit=crop"
+            src="/images/curiosity.avif"
             alt=""
             className="w-full h-full object-cover"
           />

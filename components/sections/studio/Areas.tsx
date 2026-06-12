@@ -1,23 +1,41 @@
 "use client";
 
 import { practices } from "@/lib/constants";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
-
 
 export default function AreasOfPractice() {
   const [active, setActive] = useState(1);
   const [direction, setDirection] = useState("right");
+  const cardRefs = useRef<HTMLDivElement[]>([]);
 
   const CARD_WIDTH = 340;
 
+  const scrollToCard = (index: number) => {
+    setTimeout(() => {
+      cardRefs.current[index]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    }, 50);
+  };
+
   const nextSlide = () => {
-    setActive((prev) => (prev === practices.length - 1 ? 0 : prev + 1));
+    setActive((prev) => {
+      const next = prev === practices.length - 1 ? 0 : prev + 1;
+      scrollToCard(next);
+      return next;
+    });
   };
 
   const prevSlide = () => {
-    setActive((prev) => (prev === 0 ? practices.length - 1 : prev - 1));
+    setActive((prev) => {
+      const next = prev === 0 ? practices.length - 1 : prev - 1;
+      scrollToCard(next);
+      return next;
+    });
   };
 
   return (
@@ -80,24 +98,24 @@ export default function AreasOfPractice() {
                 <div className="flex items-end gap-[10px] pl-[100px]">
                   <span
                     className="
-      text-[54px]
-      leading-none
-      tracking-[-0.06em]
-      text-[#171717]
-      font-think
-    "
+                      text-[54px]
+                      leading-none
+                      tracking-[-0.06em]
+                      text-[#171717]
+                      font-think
+                    "
                   >
                     {active === -1 ? "00" : `0${active + 1}`}
                   </span>
 
                   <span
                     className="
-      text-[54px]
-      leading-none
-      tracking-[-0.06em]
-      text-black/25
-      font-think
-    "
+                      text-[54px]
+                      leading-none
+                      tracking-[-0.06em]
+                      text-black/25
+                      font-think
+                    "
                   >
                     /05
                   </span>
@@ -143,7 +161,6 @@ export default function AreasOfPractice() {
                         setDirection("left");
                         return prev - 1;
                       }
-
                       return prev + 1;
                     }
 
@@ -219,13 +236,7 @@ export default function AreasOfPractice() {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="
-                              absolute
-                              inset-0
-                              w-full
-                              h-full
-                              object-cover
-                            "
+                            className="absolute inset-0 w-full h-full object-cover"
                           />
 
                           <div className="absolute inset-0 bg-black/60" />
@@ -295,7 +306,6 @@ export default function AreasOfPractice() {
                                       <span className="w-[5px] h-[5px] bg-white block" />
                                       <span className="w-[5px] h-[5px] bg-white block" />
                                     </div>
-
                                     <div className="flex items-center h-[11px]">
                                       <span className="w-[5px] h-[5px] bg-white block" />
                                     </div>
@@ -366,21 +376,11 @@ export default function AreasOfPractice() {
                             bg-[#ebe9e6]
                           "
                         >
-                          <div
-                            className="
-                              w-full
-                              h-[275px]
-                              overflow-hidden
-                            "
-                          >
+                          <div className="w-full h-[275px] overflow-hidden">
                             <img
                               src={item.image}
                               alt={item.title}
-                              className="
-                                w-full
-                                h-full
-                                object-cover
-                              "
+                              className="w-full h-full object-cover"
                             />
                           </div>
 
@@ -469,10 +469,10 @@ export default function AreasOfPractice() {
           ========================= */}
           <div className="xl:hidden">
             {/* HEADER */}
-            <div className="border-b border-black/20 px-5 sm:px-8 md:px-10 pt-10 pb-8">
+            <div className="border-b border-black/20 px-5 sm:px-8 md:px-10 pt-8 pb-6">
               <h2
                 className="
-                  text-[38px]
+                  text-[34px]
                   sm:text-[52px]
                   md:text-[68px]
                   leading-[0.95]
@@ -489,9 +489,9 @@ export default function AreasOfPractice() {
 
               <p
                 className="
-                  mt-8
+                  mt-5
                   max-w-[700px]
-                  text-[14px]
+                  text-[13px]
                   sm:text-[16px]
                   md:text-[18px]
                   leading-[1.4]
@@ -504,11 +504,11 @@ export default function AreasOfPractice() {
                 and collective initiatives.
               </p>
 
-              <div className="mt-10 flex items-center justify-between">
+              <div className="mt-6 flex items-center justify-between">
                 <div className="flex items-end gap-[8px]">
                   <span
                     className="
-                      text-[42px]
+                      text-[36px]
                       sm:text-[54px]
                       leading-none
                       tracking-[-0.06em]
@@ -521,7 +521,7 @@ export default function AreasOfPractice() {
 
                   <span
                     className="
-                      text-[42px]
+                      text-[36px]
                       sm:text-[54px]
                       leading-none
                       tracking-[-0.06em]
@@ -533,12 +533,12 @@ export default function AreasOfPractice() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <button
                     onClick={prevSlide}
                     className="
-                      w-[52px]
-                      h-[52px]
+                      w-[44px]
+                      h-[44px]
                       sm:w-[66px]
                       sm:h-[66px]
                       border
@@ -546,7 +546,7 @@ export default function AreasOfPractice() {
                       flex
                       items-center
                       justify-center
-                      text-[26px]
+                      text-[22px]
                       sm:text-[34px]
                       text-[#171717]
                     "
@@ -557,8 +557,8 @@ export default function AreasOfPractice() {
                   <button
                     onClick={nextSlide}
                     className="
-                      w-[52px]
-                      h-[52px]
+                      w-[44px]
+                      h-[44px]
                       sm:w-[66px]
                       sm:h-[66px]
                       border
@@ -566,7 +566,7 @@ export default function AreasOfPractice() {
                       flex
                       items-center
                       justify-center
-                      text-[26px]
+                      text-[22px]
                       sm:text-[34px]
                       text-[#171717]
                     "
@@ -578,16 +578,22 @@ export default function AreasOfPractice() {
             </div>
 
             {/* MOBILE CARDS */}
-            <div className="px-4 sm:px-6 md:px-8 py-6">
+            <div className="px-4 sm:px-6 md:px-8 py-5">
               <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-5 w-max">
+                <div className="flex gap-4 w-max">
                   {practices.map((item, index) => {
                     const isActive = active === index;
 
                     return (
                       <div
                         key={index}
-                        onClick={() => setActive(index)}
+                        ref={(el) => {
+                          if (el) cardRefs.current[index] = el;
+                        }}
+                        onClick={() => {
+                          setActive(index);
+                          scrollToCard(index);
+                        }}
                         className={`
                           relative
                           overflow-hidden
@@ -599,12 +605,12 @@ export default function AreasOfPractice() {
                           ${
                             isActive
                               ? "w-[88vw] sm:w-[620px] md:w-[720px]"
-                              : "w-[74vw] sm:w-[360px] md:w-[420px]"
+                              : "w-[60vw] sm:w-[300px] md:w-[360px]"
                           }
                         `}
                       >
                         {isActive ? (
-                          <div className="relative min-h-[760px] sm:min-h-[820px]">
+                          <div className="relative min-h-[480px] sm:min-h-[620px]">
                             <img
                               src={item.image}
                               alt={item.title}
@@ -617,21 +623,21 @@ export default function AreasOfPractice() {
                               className="
                                 relative
                                 z-20
-                                px-6
+                                px-5
                                 sm:px-8
                                 md:px-10
-                                pt-6
-                                pb-8
+                                pt-5
+                                pb-5
                                 flex
                                 flex-col
-                                min-h-[760px]
-                                sm:min-h-[820px]
+                                min-h-[480px]
+                                sm:min-h-[620px]
                               "
                             >
                               <span
                                 className="
-                                  text-[18px]
-                                  sm:text-[20px]
+                                  text-[14px]
+                                  sm:text-[18px]
                                   tracking-[0.18em]
                                   uppercase
                                   text-[#85A56F]
@@ -643,11 +649,11 @@ export default function AreasOfPractice() {
 
                               <h3
                                 className="
-                                  mt-5
+                                  mt-3
                                   whitespace-pre-line
-                                  text-[42px]
-                                  sm:text-[58px]
-                                  md:text-[72px]
+                                  text-[32px]
+                                  sm:text-[46px]
+                                  md:text-[58px]
                                   leading-[0.92]
                                   tracking-[-0.05em]
                                   uppercase
@@ -658,14 +664,14 @@ export default function AreasOfPractice() {
                                 {item.title}
                               </h3>
 
-                              <div className="mt-8 h-px w-full bg-white/45" />
+                              <div className="mt-4 h-px w-full bg-white/45" />
 
                               <p
                                 className="
-                                  mt-8
-                                  text-[17px]
-                                  sm:text-[20px]
-                                  md:text-[22px]
+                                  mt-4
+                                  text-[13px]
+                                  sm:text-[16px]
+                                  md:text-[18px]
                                   leading-[1.5]
                                   text-white/90
                                   font-rethink
@@ -674,28 +680,27 @@ export default function AreasOfPractice() {
                                 {item.desc}
                               </p>
 
-                              <div className="mt-10 space-y-7">
+                              <div className="mt-4 space-y-3">
                                 {item.items.map((listItem, i) => (
                                   <div
                                     key={i}
-                                    className="flex items-center gap-4"
+                                    className="flex items-center gap-3"
                                   >
                                     <div className="flex items-center gap-[5px]">
                                       <div className="flex flex-col gap-[5px]">
-                                        <span className="w-[5px] h-[5px] bg-white block" />
-                                        <span className="w-[5px] h-[5px] bg-white block" />
+                                        <span className="w-[4px] h-[4px] bg-white block" />
+                                        <span className="w-[4px] h-[4px] bg-white block" />
                                       </div>
-
-                                      <div className="flex items-center h-[11px]">
-                                        <span className="w-[5px] h-[5px] bg-white block" />
+                                      <div className="flex items-center h-[9px]">
+                                        <span className="w-[4px] h-[4px] bg-white block" />
                                       </div>
                                     </div>
 
                                     <span
                                       className="
-                                        text-[16px]
-                                        sm:text-[18px]
-                                        md:text-[20px]
+                                        text-[13px]
+                                        sm:text-[16px]
+                                        md:text-[18px]
                                         text-white/92
                                         font-rethink
                                       "
@@ -706,28 +711,28 @@ export default function AreasOfPractice() {
                                 ))}
                               </div>
 
-                              <div className="mt-auto pt-10">
+                              <div className="mt-auto pt-5">
                                 <button
                                   className="
                                     group
                                     flex
                                     items-center
-                                    gap-[10px]
+                                    gap-[8px]
                                     text-white
                                   "
                                 >
                                   <HiArrowTurnDownRight
                                     style={{
-                                      fontSize: "20px",
+                                      fontSize: "16px",
                                       strokeWidth: "0.2",
-                                      marginBottom: "8px",
+                                      marginBottom: "6px",
                                     }}
                                   />
 
                                   <span
                                     className="
-                                      text-[15px]
-                                      sm:text-[16px]
+                                      text-[13px]
+                                      sm:text-[15px]
                                       uppercase
                                       tracking-[0.08em]
                                       font-rethink
@@ -743,16 +748,17 @@ export default function AreasOfPractice() {
                           <div
                             className="
                               bg-[#ebe9e6]
-                              px-5
+                              px-4
                               sm:px-6
-                              pt-5
-                              pb-6
-                              min-h-[650px]
+                              pt-4
+                              pb-5
+                              min-h-[420px]
+                              sm:min-h-[520px]
                               flex
                               flex-col
                             "
                           >
-                            <div className="w-full h-[240px] sm:h-[300px] overflow-hidden">
+                            <div className="w-full h-[150px] sm:h-[220px] overflow-hidden">
                               <img
                                 src={item.image}
                                 alt={item.title}
@@ -762,8 +768,9 @@ export default function AreasOfPractice() {
 
                             <span
                               className="
-                                mt-8
-                                text-[18px]
+                                mt-4
+                                text-[13px]
+                                sm:text-[16px]
                                 tracking-[0.18em]
                                 uppercase
                                 text-black/35
@@ -775,10 +782,10 @@ export default function AreasOfPractice() {
 
                             <h3
                               className="
-                                mt-5
+                                mt-3
                                 whitespace-pre-line
-                                text-[34px]
-                                sm:text-[42px]
+                                text-[22px]
+                                sm:text-[32px]
                                 leading-[0.92]
                                 tracking-[-0.05em]
                                 uppercase
@@ -791,9 +798,9 @@ export default function AreasOfPractice() {
 
                             <p
                               className="
-                                mt-6
-                                text-[14px]
-                                sm:text-[15px]
+                                mt-3
+                                text-[12px]
+                                sm:text-[14px]
                                 leading-[1.4]
                                 text-black/40
                                 font-rethink
@@ -802,19 +809,19 @@ export default function AreasOfPractice() {
                               {item.desc}
                             </p>
 
-                            <div className="mt-auto pt-10">
+                            <div className="mt-auto pt-5">
                               <button
                                 className="
                                   group
                                   flex
                                   items-center
-                                  gap-[10px]
+                                  gap-[8px]
                                   text-[#85A56F]/45
                                 "
                               >
                                 <span
                                   className="
-                                    text-[30px]
+                                    text-[24px]
                                     transition-transform
                                     duration-300
                                     group-hover:translate-x-[4px]
@@ -825,11 +832,11 @@ export default function AreasOfPractice() {
 
                                 <span
                                   className="
-                                    text-[15px]
+                                    text-[12px]
+                                    sm:text-[14px]
                                     uppercase
                                     tracking-[0.08em]
                                     font-rethink
-                                    
                                   "
                                 >
                                   VIEW MORE
