@@ -4,28 +4,25 @@ import { menu } from "@/lib/constants";
 import { useState } from "react";
 
 export default function Artwork() {
-
-
   const [active, setActive] = useState(0);
 
   return (
-    <section
+   <section
   className="
-    lg:min-h-screen
-        bg-[#e7e5e1]
+    bg-[#e7e5e1]
 
-        px-[72px]
-        py-[40px]
+    px-[72px]
+    py-[40px]
 
-        max-lg:px-[28px]
-        max-lg:py-[28px]
+    max-lg:px-[28px]
+    max-lg:py-[28px]
 
-        max-md:px-4
-        max-md:py-0
-      "
-    >
+    max-md:px-4
+    max-md:py-0
+  "
+>
       {/* =========================
-          DESKTOP (UNCHANGED)
+          DESKTOP
       ========================= */}
 
       <div
@@ -39,10 +36,25 @@ export default function Artwork() {
           via-[#0b0b0c]
           to-[#121214]
           items-center
+          justify-center
         "
       >
-        {/* INNER CONTENT */}
-        <div className="pl-[110px] flex">
+        {/* INNER CONTENT — max-width wrapper add cheythu, ippo content
+            eppozhum container-inte NADUKKU centered aayirikkum, 1920px-il
+            ellam left-il ottippidichu nilkkathe. justify-between vech
+            image-um menu-um available width anusarich spread aavum. */}
+        <div
+          className="
+            w-full
+            max-w-[1500px]
+            mx-auto
+            flex
+            items-center
+            justify-between
+            px-[40px]
+            xl:px-[60px]
+          "
+        >
           {/* IMAGE SIDE */}
           <div>
             <p
@@ -63,7 +75,7 @@ export default function Artwork() {
 
             <div className="relative">
               <img
-                 src="/images/artwork1.avif"
+                src="/images/artwork1.avif"
                 alt="image"
                 className="w-[520px] h-[456px] ml-[50px] object-cover"
               />
@@ -78,7 +90,7 @@ export default function Artwork() {
           </div>
 
           {/* RIGHT AREA */}
-          <div className="relative w-[820px] h-[500px]">
+          <div className="relative w-[820px] max-w-[45vw] h-[500px]">
             <div className="absolute bottom-0 right-[145px] w-px h-[420px] bg-[#323232] z-30" />
 
             <>
@@ -165,7 +177,7 @@ export default function Artwork() {
       </div>
 
       {/* =========================
-          TABLET + MOBILE
+          TABLET + MOBILE (UNCHANGED)
       ========================= */}
 
       <div

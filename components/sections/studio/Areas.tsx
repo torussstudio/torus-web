@@ -47,425 +47,448 @@ export default function AreasOfPractice() {
           {/* =========================
           DESKTOP
           ========================= */}
-          <div className="hidden xl:grid grid-cols-[560px_1fr] min-h-[760px]">
-            {/* LEFT PANEL */}
+          {/* max-width wrapper add cheythu — 1920px+ screens-il muzhu grid
+              stretch aavathe oru limit-il centered aayi nilkkum */}
+          <div className="hidden xl:block max-w-[1728px] mx-auto">
             <div
               className="
-                border-r
-                border-black/40
-                px-[74px]
-                pt-[58px]
-                pb-[52px]
-                flex
-                flex-col
+                grid
+                grid-cols-[560px_minmax(0,1fr)]
+                min-h-[760px]
               "
             >
-              <div>
-                <h2
-                  className="
-                    text-[50px]
-                    leading-[1]
-                    tracking-[-0.01em]
-                    uppercase
-                    text-[#171717]
-                    font-display
-                    pl-[100px]
-                  "
-                >
-                  AREAS
-                  <br />
-                  OF PRACTICE
-                </h2>
-
-                <p
-                  className="
-                    mt-[42px]
-                    max-w-[420px]
-                    text-[15px]
-                    leading-[1.25]
-                    text-black/75
-                    font-rethink
-                    pl-[100px]
-                  "
-                >
-                  Toruss works across a range of interconnected creative
-                  disciplines, spanning identity, digital, objects,
-                  communication, and collective initiatives.
-                </p>
-              </div>
-
-              <div className="mt-auto">
-                <div className="flex items-end gap-[10px] pl-[100px]">
-                  <span
-                    className="
-                      text-[54px]
-                      leading-none
-                      tracking-[-0.06em]
-                      text-[#171717]
-                      font-think
-                    "
-                  >
-                    {active === -1 ? "00" : `0${active + 1}`}
-                  </span>
-
-                  <span
-                    className="
-                      text-[54px]
-                      leading-none
-                      tracking-[-0.06em]
-                      text-black/25
-                      font-think
-                    "
-                  >
-                    /05
-                  </span>
-                </div>
-
-                <div className="mt-[92px] pl-[100px] flex items-center justify-between">
-                  <button
-                    onClick={prevSlide}
-                    className="
-                      text-[42px]
-                      text-[#171717]
-                      hover:opacity-60
-                      transition-opacity
-                      duration-300
-                    "
-                  >
-                    <HiOutlineArrowLeft />
-                  </button>
-
-                  <button
-                    onClick={nextSlide}
-                    className="
-                      text-[42px]
-                      text-[#171717]
-                      hover:opacity-60
-                      transition-opacity
-                      duration-300
-                    "
-                  >
-                    <HiOutlineArrowRight />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* CAROUSEL */}
-            <div className="relative w-[1020px] overflow-hidden border-b border-black/40">
-              <button
-                onClick={() => {
-                  setActive((prev) => {
-                    if (direction === "right") {
-                      if (prev === practices.length - 1) {
-                        setDirection("left");
-                        return prev - 1;
-                      }
-                      return prev + 1;
-                    }
-
-                    if (prev === 0) {
-                      setDirection("right");
-                      return prev + 1;
-                    }
-
-                    return prev - 1;
-                  });
-                }}
-                className="
-                  absolute
-                  right-[255px]
-                  bottom-[118px]
-                  left-[640px]
-                  w-[80px]
-                  h-[80px]
-                  bg-[#ebe9e6]
-                  border
-                  border-black/20
-                  flex
-                  items-center
-                  justify-center
-                  text-[42px]
-                  text-[#171717]
-                  z-[100]
-                  transition-all
-                  duration-300
-                  hover:translate-x-[4px]
-                "
-              >
-                {direction === "right" ? "→" : "←"}
-              </button>
-
+              {/* LEFT PANEL */}
               <div
                 className="
+                  border-r
+                  border-black/40
+                  px-[74px]
+                  pt-[58px]
+                  pb-[52px]
                   flex
-                  h-full
-                  transition-transform
-                  duration-700
-                  ease-out
+                  flex-col
                 "
-                style={{
-                  transform: `translateX(-${
-                    active <= 1
-                      ? 0
-                      : active >= 3
-                        ? 2 * CARD_WIDTH
-                        : 1 * CARD_WIDTH
-                  }px)`,
-                }}
               >
-                {practices.map((item, index) => {
-                  const isActive = active === index;
+                <div>
+                  <h2
+                    className="
+                      text-[50px]
+                      leading-[1]
+                      tracking-[-0.01em]
+                      uppercase
+                      text-[#171717]
+                      font-display
+                      pl-[100px]
+                    "
+                  >
+                    AREAS
+                    <br />
+                    OF PRACTICE
+                  </h2>
 
-                  return (
-                    <div
-                      key={index}
-                      onClick={() => setActive(index)}
+                  <p
+                    className="
+                      mt-[42px]
+                      max-w-[420px]
+                      text-[15px]
+                      leading-[1.25]
+                      text-black/75
+                      font-rethink
+                      pl-[100px]
+                    "
+                  >
+                    Toruss works across a range of interconnected creative
+                    disciplines, spanning identity, digital, objects,
+                    communication, and collective initiatives.
+                  </p>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="flex items-end gap-[10px] pl-[100px]">
+                    <span
                       className="
-                        relative
-                        w-[340px]
-                        flex-shrink-0
-                        border-r
-                        border-black/20
-                        overflow-visible
-                        cursor-pointer
+                        text-[54px]
+                        leading-none
+                        tracking-[-0.06em]
+                        text-[#171717]
+                        font-think
                       "
                     >
-                      {isActive ? (
-                        <div className="relative h-full">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="absolute inset-0 w-full h-full object-cover"
-                          />
+                      {active === -1 ? "00" : `0${active + 1}`}
+                    </span>
 
-                          <div className="absolute inset-0 bg-black/60" />
+                    <span
+                      className="
+                        text-[54px]
+                        leading-none
+                        tracking-[-0.06em]
+                        text-black/25
+                        font-think
+                      "
+                    >
+                      /05
+                    </span>
+                  </div>
 
-                          <div
-                            className="
-                              relative
-                              z-20
-                              h-full
-                              px-[30px]
-                              pt-[24px]
-                              pb-[28px]
-                              flex
-                              flex-col
-                            "
-                          >
-                            <span
-                              className="
-                                text-[20px]
-                                tracking-[0.18em]
-                                uppercase
-                                text-[#85A56F]
-                                font-think
-                              "
-                            >
-                              — {item.number}
-                            </span>
+                  <div className="mt-[92px] pl-[100px] flex items-center justify-between">
+                    <button
+                      onClick={prevSlide}
+                      className="
+                        text-[42px]
+                        text-[#171717]
+                        hover:opacity-60
+                        transition-opacity
+                        duration-300
+                      "
+                    >
+                      <HiOutlineArrowLeft />
+                    </button>
 
-                            <h3
-                              className="
-                                mt-[18px]
-                                whitespace-pre-line
-                                text-[45px]
-                                leading-[0.92]
-                                tracking-[-0.05em]
-                                uppercase
-                                text-[#85A56F]
-                                font-display
-                              "
-                            >
-                              {item.title}
-                            </h3>
+                    <button
+                      onClick={nextSlide}
+                      className="
+                        text-[42px]
+                        text-[#171717]
+                        hover:opacity-60
+                        transition-opacity
+                        duration-300
+                      "
+                    >
+                      <HiOutlineArrowRight />
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-                            <div className="mt-[28px] h-px w-full bg-white/45" />
+              {/* CAROUSEL COLUMN — min-w-0 CRITICAL aanu: grid item-inte default
+                  "min-width: auto" content-inte natural width (1020px+) edukkum,
+                  minmax(0,1fr) undayittum ath override cheyyilla. min-w-0 vech
+                  aa auto-minimum override cheyyunnu, appo column YETHENKILUM
+                  narrow screen-ilum shrink aavum, overflow/crop varilla. */}
+              <div className="flex justify-center overflow-hidden border-b border-black/40 min-w-0">
+                <div
+                  className="
+                    relative
+                    w-full
+                    max-w-[1020px]
+                    min-w-0
+                    overflow-hidden
+                  "
+                >
+                  <button
+                    onClick={() => {
+                      setActive((prev) => {
+                        if (direction === "right") {
+                          if (prev === practices.length - 1) {
+                            setDirection("left");
+                            return prev - 1;
+                          }
+                          return prev + 1;
+                        }
 
-                            <p
-                              className="
-                                mt-[22px]
-                                text-[20px]
-                                leading-[1.5]
-                                text-white/90
-                                font-rethink
-                                max-w-[380px]
-                              "
-                            >
-                              {item.desc}
-                            </p>
+                        if (prev === 0) {
+                          setDirection("right");
+                          return prev + 1;
+                        }
 
-                            <div className="mt-[30px] space-y-[28px]">
-                              {item.items.map((listItem, i) => (
-                                <div
-                                  key={i}
-                                  className="flex items-center gap-[16px]"
+                        return prev - 1;
+                      });
+                    }}
+                    className="
+                      absolute
+                      left-[62.7%]
+                      bottom-[118px]
+                      w-[80px]
+                      h-[80px]
+                      bg-[#ebe9e6]
+                      border
+                      border-black/20
+                      flex
+                      items-center
+                      justify-center
+                      text-[42px]
+                      text-[#171717]
+                      z-[100]
+                      transition-all
+                      duration-300
+                      hover:translate-x-[4px]
+                    "
+                  >
+                    {direction === "right" ? "→" : "←"}
+                  </button>
+
+                  <div
+                    className="
+                      flex
+                      h-full
+                      transition-transform
+                      duration-700
+                      ease-out
+                    "
+                    style={{
+                      transform: `translateX(-${
+                        active <= 1
+                          ? 0
+                          : active >= 3
+                            ? 2 * CARD_WIDTH
+                            : 1 * CARD_WIDTH
+                      }px)`,
+                    }}
+                  >
+                    {practices.map((item, index) => {
+                      const isActive = active === index;
+
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => setActive(index)}
+                          className="
+                            relative
+                            w-[340px]
+                            flex-shrink-0
+                            border-r
+                            border-black/20
+                            overflow-visible
+                            cursor-pointer
+                          "
+                        >
+                          {isActive ? (
+                            <div className="relative h-full">
+                              <img
+                                src={item.image}
+                                alt={item.title}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
+
+                              <div className="absolute inset-0 bg-black/60" />
+
+                              <div
+                                className="
+                                  relative
+                                  z-20
+                                  h-full
+                                  px-[30px]
+                                  pt-[24px]
+                                  pb-[28px]
+                                  flex
+                                  flex-col
+                                "
+                              >
+                                <span
+                                  className="
+                                    text-[20px]
+                                    tracking-[0.18em]
+                                    uppercase
+                                    text-[#85A56F]
+                                    font-think
+                                  "
                                 >
-                                  <div className="flex items-center gap-[5px]">
-                                    <div className="flex flex-col gap-[5px]">
-                                      <span className="w-[5px] h-[5px] bg-white block" />
-                                      <span className="w-[5px] h-[5px] bg-white block" />
+                                  — {item.number}
+                                </span>
+
+                                <h3
+                                  className="
+                                    mt-[18px]
+                                    whitespace-pre-line
+                                    text-[45px]
+                                    leading-[0.92]
+                                    tracking-[-0.05em]
+                                    uppercase
+                                    text-[#85A56F]
+                                    font-display
+                                  "
+                                >
+                                  {item.title}
+                                </h3>
+
+                                <div className="mt-[28px] h-px w-full bg-white/45" />
+
+                                <p
+                                  className="
+                                    mt-[22px]
+                                    text-[20px]
+                                    leading-[1.5]
+                                    text-white/90
+                                    font-rethink
+                                    max-w-[380px]
+                                  "
+                                >
+                                  {item.desc}
+                                </p>
+
+                                <div className="mt-[30px] space-y-[28px]">
+                                  {item.items.map((listItem, i) => (
+                                    <div
+                                      key={i}
+                                      className="flex items-center gap-[16px]"
+                                    >
+                                      <div className="flex items-center gap-[5px]">
+                                        <div className="flex flex-col gap-[5px]">
+                                          <span className="w-[5px] h-[5px] bg-white block" />
+                                          <span className="w-[5px] h-[5px] bg-white block" />
+                                        </div>
+                                        <div className="flex items-center h-[11px]">
+                                          <span className="w-[5px] h-[5px] bg-white block" />
+                                        </div>
+                                      </div>
+
+                                      <span
+                                        className="
+                                          text-[16px]
+                                          text-white/92
+                                          font-rethink
+                                        "
+                                      >
+                                        {listItem}
+                                      </span>
                                     </div>
-                                    <div className="flex items-center h-[11px]">
-                                      <span className="w-[5px] h-[5px] bg-white block" />
-                                    </div>
-                                  </div>
+                                  ))}
+                                </div>
+
+                                <div className="mt-auto flex items-center">
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActive(-1);
+                                    }}
+                                    className="
+                                      group
+                                      flex
+                                      items-center
+                                      gap-[10px]
+                                      text-white
+                                    "
+                                  >
+                                    <span
+                                      className="
+                                        text-[32px]
+                                        transition-transform
+                                        duration-300
+                                        group-hover:translate-x-[4px]
+                                      "
+                                    >
+                                      ↳
+                                    </span>
+
+                                    <span
+                                      className="
+                                        text-[16px]
+                                        uppercase
+                                        tracking-[0.08em]
+                                        font-rethink
+                                        cursor-pointer
+                                      "
+                                    >
+                                      VIEW LESS
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          ) : (
+                            <div
+                              className="
+                                h-full
+                                px-[28px]
+                                pt-[28px]
+                                pb-[24px]
+                                flex
+                                flex-col
+                                bg-[#ebe9e6]
+                              "
+                            >
+                              <div className="w-full h-[275px] overflow-hidden">
+                                <img
+                                  src={item.image}
+                                  alt={item.title}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+
+                              <span
+                                className="
+                                  mt-[40px]
+                                  text-[20px]
+                                  tracking-[0.18em]
+                                  uppercase
+                                  text-black/35
+                                  font-think
+                                "
+                              >
+                                — {item.number}
+                              </span>
+
+                              <h3
+                                className="
+                                  mt-[18px]
+                                  whitespace-pre-line
+                                  text-[42px]
+                                  leading-[0.92]
+                                  tracking-[-0.05em]
+                                  uppercase
+                                  text-black/18
+                                  font-display
+                                "
+                              >
+                                {item.title}
+                              </h3>
+
+                              <p
+                                className="
+                                  mt-[24px]
+                                  text-[12px]
+                                  leading-[1.15]
+                                  text-black/18
+                                  font-rethink
+                                  max-w-[230px]
+                                "
+                              >
+                                {item.desc}
+                              </p>
+
+                              <div className="mt-auto">
+                                <button
+                                  className="
+                                    group
+                                    flex
+                                    items-center
+                                    gap-[10px]
+                                    text-[#85A56F]/85
+                                  "
+                                >
+                                  <HiArrowTurnDownRight
+                                    style={{
+                                      fontSize: "24px",
+                                      strokeWidth: "0.2",
+                                      marginBottom: "8px",
+                                    }}
+                                  />
 
                                   <span
                                     className="
                                       text-[16px]
-                                      text-white/92
+                                      uppercase
+                                      tracking-[0.08em]
                                       font-rethink
                                     "
                                   >
-                                    {listItem}
+                                    VIEW MORE
                                   </span>
-                                </div>
-                              ))}
+                                </button>
+                              </div>
                             </div>
-
-                            <div className="mt-auto flex items-center">
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActive(-1);
-                                }}
-                                className="
-                                  group
-                                  flex
-                                  items-center
-                                  gap-[10px]
-                                  text-white
-                                "
-                              >
-                                <span
-                                  className="
-                                    text-[32px]
-                                    transition-transform
-                                    duration-300
-                                    group-hover:translate-x-[4px]
-                                  "
-                                >
-                                  ↳
-                                </span>
-
-                                <span
-                                  className="
-                                    text-[16px]
-                                    uppercase
-                                    tracking-[0.08em]
-                                    font-rethink
-                                    cursor-pointer
-                                  "
-                                >
-                                  VIEW LESS
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                          )}
                         </div>
-                      ) : (
-                        <div
-                          className="
-                            h-full
-                            px-[28px]
-                            pt-[28px]
-                            pb-[24px]
-                            flex
-                            flex-col
-                            bg-[#ebe9e6]
-                          "
-                        >
-                          <div className="w-full h-[275px] overflow-hidden">
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-
-                          <span
-                            className="
-                              mt-[40px]
-                              text-[20px]
-                              tracking-[0.18em]
-                              uppercase
-                              text-black/35
-                              font-think
-                            "
-                          >
-                            — {item.number}
-                          </span>
-
-                          <h3
-                            className="
-                              mt-[18px]
-                              whitespace-pre-line
-                              text-[42px]
-                              leading-[0.92]
-                              tracking-[-0.05em]
-                              uppercase
-                              text-black/18
-                              font-display
-                            "
-                          >
-                            {item.title}
-                          </h3>
-
-                          <p
-                            className="
-                              mt-[24px]
-                              text-[12px]
-                              leading-[1.15]
-                              text-black/18
-                              font-rethink
-                              max-w-[230px]
-                            "
-                          >
-                            {item.desc}
-                          </p>
-
-                          <div className="mt-auto">
-                            <button
-                              className="
-                                group
-                                flex
-                                items-center
-                                gap-[10px]
-                                text-[#85A56F]/85
-                              "
-                            >
-                              <HiArrowTurnDownRight
-                                style={{
-                                  fontSize: "24px",
-                                  strokeWidth: "0.2",
-                                  marginBottom: "8px",
-                                }}
-                              />
-
-                              <span
-                                className="
-                                  text-[16px]
-                                  uppercase
-                                  tracking-[0.08em]
-                                  font-rethink
-                                "
-                              >
-                                VIEW MORE
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* =========================
-          TABLET + MOBILE
+          TABLET + MOBILE (UNCHANGED)
           ========================= */}
           <div className="xl:hidden">
             {/* HEADER */}

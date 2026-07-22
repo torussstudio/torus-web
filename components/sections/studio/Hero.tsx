@@ -22,169 +22,191 @@ const socials = [
 
 export default function StudioHero() {
   return (
-    <section className="relative h-auto lg:h-[750px] w-full overflow-hidden bg-[#e7e5e1]">
-      {/* HERO */}
-      <div
-        className="
-          relative
-          grid
-          grid-cols-1
-          lg:grid-cols-[0.78fr_1.22fr]
-          min-h-0
-          lg:min-h-screen
-        "
-      >
-        {/* LEFT */}
+    <section className="relative w-full overflow-hidden bg-[#e7e5e1]">
+      {/* MAX-WIDTH WRAPPER — ithu illathirunnu 1920px+ screens-il content stretch aayi
+          random gaps undakiyathu. Ippo content oru upper limit-il centered aayi nilkkum. */}
+      <div className="relative max-w-[1728px] mx-auto">
+        {/* HERO */}
         <div
           className="
             relative
-            flex
-            flex-col
-            justify-center
-            px-8
-            md:px-16
-            lg:px-20
-            py-10
-            lg:py-16
+            grid
+            grid-cols-1
+            lg:grid-cols-[0.78fr_1.22fr]
+            min-h-0
+            lg:min-h-[750px]
           "
         >
-          {/* Vertical Label — desktop only, untouched */}
+          {/* LEFT */}
           <div
             className="
-              hidden
-              lg:flex
-              absolute
-              left-8
-              top-[20%]
-              -translate-y-1/2
+              relative
+              flex
               flex-col
-              items-center
+              justify-center
+              px-8
+              md:px-16
+              lg:px-20
+              py-10
+              lg:py-16
             "
           >
-            <div className="h-6 w-px bg-black/30 mb-4 ml-[5px] -mt-16" />
-            <span
-              className="
-                font-think
-                text-[16px]
-                uppercase
-                tracking-[0.18em]
-                text-black/50
-                ml-[5px]
-              "
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(360deg)",
-              }}
-            >
-              STUDIO
-            </span>
-          </div>
-
-          <div className="max-w-[980px] mt-0 lg:mt-[-85px]">
-
-            {/* HEADING */}
-            <h1
-              className="
-                font-display
-                origin-left
-                text-[1.65rem]
-                sm:text-[2rem]
-                md:text-[2.7rem]
-                lg:text-[3rem]
-                xl:text-[3.3rem]
-                leading-[0.99]
-                tracking-[0.03em]
-                text-black
-                pl-[15px]
-                sm:pl-[22px]
-                lg:pl-[30px]
-                whitespace-normal
-                lg:whitespace-nowrap
-              "
-            >
-              A MULTIDIMENSIONAL
-              <br />
-              STUDIO SHAPING BRANDS,
-              <br />
-              CULTURE, AND CREATIVE
-              <br />
-              EXPRESSION.
-            </h1>
-
-            {/* TEXT */}
-            <p
-              className="
-                mt-8
-                lg:mt-10
-                max-w-[480px]
-                text-[15px]
-                md:text-[17px]
-                leading-[1.7]
-                font-[400]
-                tracking-[0.01em]
-                text-black/50
-                pl-[15px]
-                sm:pl-[22px]
-                lg:pl-[30px]
-                font-rethink
-              "
-            >
-              Toruss works across branding, identity systems, digital
-              experiences, objects, artistic explorations, and collective
-              initiatives, building ideas that are clear, enduring, and deeply
-              considered.
-            </p>
-
-            {/* LINKS */}
+            {/* Vertical Label — desktop only.
+                Ippo ee left column-nte NADUKKU (justify-center flex) aanu anchor,
+                muzhu grid-nte height %-um alla. Athukond screen size mattiyalum
+                relative position maarilla. */}
             <div
               className="
-                mt-[28px]
-                lg:mt-[38px]
-                flex
-                w-full
-                lg:w-[423px]
+                hidden
+                lg:flex
+                absolute
+                left-8
+                top-1/2
+                -translate-y-[170px]
                 flex-col
-                ml-0
-                lg:ml-[21px]
+                items-center
               "
             >
-              {links.map((link) => (
-                <div
-                  key={link.number}
-                  className="
-                    group
-                    flex
-                    items-center
-                    justify-start
-                    border-b
-                    border-[#1d1d1d]
-                    pt-[14px]
-                    pb-[11px]
-                    lg:pt-[18px]
-                    lg:pb-[13px]
-                    cursor-pointer
-                  "
-                >
-                  {/* LEFT SIDE */}
-                  <div className="flex items-center gap-[90px] sm:gap-[130px] lg:gap-[170px]">
-                    <span
-                      className="
-                        text-[22px]
-                        lg:text-[28px]
-                        leading-none
-                        font-light
-                        text-[#1d1d1d]
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-[4px]
-                        pl-[18px]
-                        sm:pl-[32px]
-                        lg:pl-[50px]
-                      "
-                    >
-                      →
-                    </span>
+              <div className="h-6 w-px bg-black/30 mb-4 ml-[5px]" />
+              <span
+                className="
+                  font-think
+                  text-[16px]
+                  uppercase
+                  tracking-[0.18em]
+                  text-black/50
+                  ml-[5px]
+                "
+                style={{
+                  writingMode: "vertical-rl",
+                  transform: "rotate(360deg)",
+                }}
+              >
+                STUDIO
+              </span>
+            </div>
 
+            <div className="max-w-[980px] mt-0">
+              {/* HEADING */}
+              <h1
+                className="
+                  font-display
+                  origin-left
+                  text-[1.65rem]
+                  sm:text-[2rem]
+                  md:text-[2.7rem]
+                  lg:text-[3rem]
+                  xl:text-[3.3rem]
+                  leading-[0.99]
+                  tracking-[0.03em]
+                  text-black
+                  pl-[15px]
+                  sm:pl-[22px]
+                  lg:pl-[30px]
+                  whitespace-normal
+                  lg:whitespace-nowrap
+                "
+              >
+                A MULTIDIMENSIONAL
+                <br />
+                STUDIO SHAPING BRANDS,
+                <br />
+                CULTURE, AND CREATIVE
+                <br />
+                EXPRESSION.
+              </h1>
+
+              {/* TEXT */}
+              <p
+                className="
+                  mt-8
+                  lg:mt-10
+                  max-w-[480px]
+                  text-[15px]
+                  md:text-[17px]
+                  leading-[1.7]
+                  font-[400]
+                  tracking-[0.01em]
+                  text-black/50
+                  pl-[15px]
+                  sm:pl-[22px]
+                  lg:pl-[30px]
+                  font-rethink
+                "
+              >
+                Toruss works across branding, identity systems, digital
+                experiences, objects, artistic explorations, and collective
+                initiatives, building ideas that are clear, enduring, and deeply
+                considered.
+              </p>
+
+              {/* LINKS */}
+              <div
+                className="
+                  mt-[28px]
+                  lg:mt-[38px]
+                  flex
+                  w-full
+                  lg:w-[423px]
+                  flex-col
+                  ml-0
+                  lg:ml-[21px]
+                "
+              >
+                {links.map((link) => (
+                  <div
+                    key={link.number}
+                    className="
+                      group
+                      flex
+                      items-center
+                      justify-start
+                      border-b
+                      border-[#1d1d1d]
+                      pt-[14px]
+                      pb-[11px]
+                      lg:pt-[18px]
+                      lg:pb-[13px]
+                      cursor-pointer
+                    "
+                  >
+                    {/* LEFT SIDE */}
+                    <div className="flex items-center gap-[90px] sm:gap-[130px] lg:gap-[170px]">
+                      <span
+                        className="
+                          text-[22px]
+                          lg:text-[28px]
+                          leading-none
+                          font-light
+                          text-[#1d1d1d]
+                          transition-transform
+                          duration-300
+                          group-hover:translate-x-[4px]
+                          pl-[18px]
+                          sm:pl-[32px]
+                          lg:pl-[50px]
+                        "
+                      >
+                        →
+                      </span>
+
+                      <span
+                        className="
+                          text-[14px]
+                          lg:text-[18px]
+                          leading-none
+                          font-think
+                          uppercase
+                          tracking-[0.12em]
+                          text-[#80AD76]
+                          translate-x-[-15px]
+                        "
+                      >
+                        {link.number}
+                      </span>
+                    </div>
+
+                    {/* RIGHT SIDE */}
                     <span
                       className="
                         text-[14px]
@@ -192,139 +214,119 @@ export default function StudioHero() {
                         leading-none
                         font-think
                         uppercase
-                        tracking-[0.12em]
+                        tracking-[0.08em]
                         text-[#80AD76]
-                        translate-x-[-15px]
+                        mr-[12px]
+                        lg:mr-[25px]
                       "
                     >
-                      {link.number}
+                      {link.label}
                     </span>
                   </div>
+                ))}
+              </div>
 
-                  {/* RIGHT SIDE */}
-                  <span
+              {/* SOCIALS — mobile & tablet only */}
+              <div
+                className="
+                  flex
+                  lg:hidden
+                  gap-6
+                  mt-8
+                  pl-[4px]
+                  sm:pl-[8px]
+                  pb-2
+                "
+              >
+                {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
                     className="
-                      text-[14px]
-                      lg:text-[18px]
-                      leading-none
-                      font-think
-                      uppercase
-                      tracking-[0.08em]
-                      text-[#80AD76]
-                      mr-[12px]
-                      lg:mr-[25px]
+                      text-black/35
+                      hover:text-black
+                      transition-colors
                     "
                   >
-                    {link.label}
-                  </span>
-                </div>
-              ))}
+                    <Icon className="text-[22px]" />
+                  </a>
+                ))}
+              </div>
             </div>
-
-            {/* SOCIALS — mobile & tablet only */}
-            <div
-              className="
-                flex
-                lg:hidden
-                gap-6
-                mt-8
-                pl-[15px]
-                sm:pl-[22px]
-                pb-2
-              "
-            >
-              {SOCIAL_LINKS.map(
-  ({ icon: Icon, href, label }) => (
-    <a
-      key={label}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="
-        text-black/35
-        hover:text-black
-        transition-colors
-      "
-    >
-      <Icon className="text-[22px]" />
-    </a>
-  )
-)}
-            </div>
-
           </div>
-        </div>
 
-        {/* RIGHT IMAGE — hidden on mobile, visible tablet+, desktop untouched */}
-        <div
-          className="
-            hidden
-            md:flex
-            items-center
-            justify-center
-            py-8
-            pr-8
-            mb-0
-            translate-x-0
-            lg:justify-end
-            lg:py-16
-            lg:pr-20
-            lg:mb-[80px]
-            lg:-translate-x-[10px]
-          "
-        >
+        {/* RIGHT IMAGE — hidden on mobile, visible tablet+.
+            Socials-ne ippo image-nte FLEX SIBLING aakki (absolute alla),
+            so icons eppozhum image-nte purathu oru fixed gap-il nilkkum,
+            image-nu mukalil overlap aavilla. */}
           <div
             className="
-              relative
-              h-[360px]
-              w-[360px]
-              md:h-[400px]
-              md:w-[400px]
-              lg:h-[620px]
-              lg:w-[620px]
-              overflow-hidden
+              hidden
+              md:flex
+              items-center
+              justify-center
+              gap-8
+              py-8
+              pr-8
+              md:pr-16
+              lg:pr-24
+              lg:justify-end
             "
           >
-            <Image
-              src="/images/heroimage.avif"
-              alt="Studio Hero"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover grayscale"
-            />
-          </div>
-        </div>
-
-        {/* SOCIALS — desktop only, completely untouched */}
-        <div
-          className="
-            hidden
-            lg:flex
-            absolute
-            right-10
-            top-150
-            -translate-y-1/2
-            flex-col
-            gap-6
-          "
-        >
-          {socials.map((Icon, index) => (
-            <a
-              key={index}
-              href="#"
+            <div
               className="
-                text-black/35
-                hover:text-black
-                transition-colors
+                relative
+                h-[360px]
+                w-[360px]
+                md:h-[400px]
+                md:w-[400px]
+                lg:h-[560px]
+                lg:w-[560px]
+                xl:h-[620px]
+                xl:w-[620px]
+                overflow-hidden
               "
             >
-              <Icon className="text-[22px]" />
-            </a>
-          ))}
-        </div>
+              <Image
+                src="/images/heroimage.avif"
+                alt="Studio Hero"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover grayscale"
+              />
+            </div>
 
+            {/* SOCIALS — desktop only. Normal flex column now, image-nte
+                valathu vasham oru gap-inte sthana thanne nilkkum. */}
+            <div
+              className="
+                hidden
+                lg:flex
+                flex-col
+                gap-6
+                mt-62
+              "
+            >
+              {socials.map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="
+                    text-black/35
+                    hover:text-black
+                    transition-colors
+                  "
+                >
+                  <Icon className="text-[22px]" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
