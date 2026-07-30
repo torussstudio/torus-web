@@ -11,7 +11,7 @@ export default function StudioClosing() {
           {/* LEFT — intro copy, StudioHero-nte "LEFT" paragraph block-inte
               athe col-start/col-span aayth (col-start-2, col-span-3) */}
           <div className="lg:col-span-3 lg:col-start-1 flex flex-col">
-            <p className="font-rethink text-[14px] sm:text-[17px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[380px] lg:max-w-[340px]">
+            <p className="font-nixie text-[14px] sm:text-[17px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[380px] lg:max-w-[340px]">
               The businesses, spaces, and ideas people remember most are rarely
               the loudest ones.
               <br />
@@ -53,7 +53,7 @@ export default function StudioClosing() {
           <h2
             className="
     lg:col-span-6 lg:col-start-1
-    font-display
+    font-nova
     text-[2.1rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.1rem] xl:text-[3.6rem] 2xl:text-[4rem]
     leading-[1.15]
     tracking-[0.005em]
@@ -71,7 +71,7 @@ export default function StudioClosing() {
 
           {/* Closing CTA copy — aligned under the small image's left edge,
               same paragraph styling family as the rest of the page */}
-          <p className="lg:col-span-4 lg:col-start-8 lg:pl-4 font-rethink text-[14px] sm:text-[16px] leading-[1.75] text-black/55 max-w-[380px] lg:max-w-[300px] xl:max-w-[330px]">
+          <p className="lg:col-span-4 lg:col-start-8 lg:pl-4 font-nixie text-[14px] sm:text-[16px] leading-[1.75] text-black/55 max-w-[380px] lg:max-w-[300px] xl:max-w-[330px]">
             If you care deeply about perception, atmosphere, clarity, culture,
             and meaningful long-term work, we&apos;d love to begin a
             conversation.

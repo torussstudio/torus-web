@@ -22,15 +22,15 @@ export default function UXPage() {
 
         {/* ================= TOP RIGHT CONTENT ================= */}
         <div className="col-span-12 lg:col-span-6 h-[680px] flex flex-col px-8 md:px-12 lg:px-16 pt-12 lg:pt-14">
-          <p className="text-[15px] tracking-[0.38em] uppercase font-think text-[#575757] mb-7">
+          <p className="text-[15px] tracking-[0.38em] uppercase font-nixie text-[#575757] mb-7">
             A NOTE FROM THE STUDIO
           </p>
 
-          <h1 className="max-w-[620px] text-[34px] md:text-[42px] lg:text-[50px] leading-[1.08] tracking-[-0.04em] uppercase font-display text-[#1e1e1e]">
+          <h1 className="max-w-[620px] text-[34px] md:text-[42px] lg:text-[50px] leading-[1.08] tracking-[-0.04em] uppercase font-nova text-[#1e1e1e]">
             ON ATTENTION, CARE, AND THE QUIET INTENT BEHIND EVERYTHING WE MAKE.
           </h1>
 
-          <p className="mt-8 max-w-[430px] text-[13px] font-rethink leading-[1.6] text-[#666666]">
+          <p className="mt-8 max-w-[430px] text-[13px] font-nixie leading-[1.6] text-[#666666]">
             We believe meaningful work comes from paying attention, to people,
             context, systems, and the details that often go unnoticed. We’re
             drawn to ideas that evolve with time, shaped with clarity, care,
@@ -61,7 +61,7 @@ export default function UXPage() {
                   text-[16px]
                   uppercase
                   tracking-[0.08em]
-                  font-rethink
+                  font-nixie
                 "
               >
                 READ OUR STORY
@@ -103,7 +103,7 @@ export default function UXPage() {
                   top-[-28px]
                   text-[120px]
                   leading-none
-                  font-think
+                  font-nixie
                   text-black/[0.03]
                   pointer-events-none
                 "
@@ -114,7 +114,7 @@ export default function UXPage() {
               {/* TOP */}
               <div className="flex items-center justify-between relative z-10">
                 <div className="w-[42px] h-[42px] border border-[#b8b8b3] rounded-full flex items-center justify-center">
-                  <span className="text-[11px] tracking-[0.22em] text-[#666] font-think">
+                  <span className="text-[11px] tracking-[0.22em] text-[#666] font-nixie">
                     {item.no}
                   </span>
                 </div>
@@ -131,7 +131,7 @@ export default function UXPage() {
                     leading-[0.95]
                     tracking-[-0.05em]
                     uppercase
-                    font-display
+                    font-nova
                     ${
                       item.green
                         ? "text-[#8daa7f]"
@@ -149,7 +149,7 @@ export default function UXPage() {
                     tracking-[0.28em]
                     uppercase
                     text-[#8a8a8a]
-                    font-think
+                    font-nixie
                   "
                 >
                   {item.sub}
@@ -171,7 +171,7 @@ export default function UXPage() {
 
             {/* DESKTOP ORIGINAL */}
             <div className="hidden lg:flex min-h-[260px] flex-col justify-between px-10 py-8">
-              <span className="text-[16px] text-right font-think tracking-[0.24em] text-[#3e3e3e]">
+              <span className="text-[16px] text-right font-nixie tracking-[0.24em] text-[#3e3e3e]">
                 — {item.no}
               </span>
 
@@ -216,7 +216,7 @@ export default function UXPage() {
                 bottom-[-10px]
                 text-[120px]
                 leading-none
-                font-think
+                font-nixie
                 text-black/[0.03]
               "
             >
@@ -224,7 +224,7 @@ export default function UXPage() {
             </span>
 
             <div className="flex justify-between items-center">
-              <span className="text-[13px] tracking-[0.24em] text-[#666] font-think">
+              <span className="text-[13px] tracking-[0.24em] text-[#666] font-nixie">
                 — 05
               </span>
 
@@ -239,7 +239,7 @@ export default function UXPage() {
                 tracking-[-0.05em]
                 uppercase
                 text-[#7a7a7a]
-                font-display
+                font-nova
               "
             >
               WORK THAT
@@ -256,7 +256,7 @@ export default function UXPage() {
           <div className="hidden lg:flex min-h-[250px] pl-10 pr-16 py-8 flex-col justify-between">
             <div className="flex justify-center">
               <div className="w-[260px] flex justify-end translate-x-[25px]">
-                <span className="text-[16px] font-think tracking-[0.24em] text-[#3e3e3e]">
+                <span className="text-[16px] font-nixie tracking-[0.24em] text-[#3e3e3e]">
                   — 05
                 </span>
               </div>
@@ -300,7 +300,7 @@ export default function UXPage() {
                 uppercase
                 text-right
                 text-[#5e5e5e]
-                font-display
+                font-nova
                 ml-auto
                 max-w-[500px]
               "
@@ -355,7 +355,7 @@ export default function UXPage() {
                 Final Thought
               </p>
 
-              <h3 className="mt-2 text-[28px] leading-[0.95] uppercase text-white font-display">
+              <h3 className="mt-2 text-[28px] leading-[0.95] uppercase text-white font-nova">
                 BUILT
                 <br />
                 WITH INTENT

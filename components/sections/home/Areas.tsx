@@ -77,7 +77,7 @@ export default function AreasOfPractice() {
                       tracking-[-0.01em]
                       uppercase
                       text-[#171717]
-                      font-display
+                      font-nova
                       pl-[100px]
                     "
                   >
@@ -93,7 +93,7 @@ export default function AreasOfPractice() {
                       text-[15px]
                       leading-[1.25]
                       text-black/75
-                      font-rethink
+                      font-nixie
                       pl-[100px]
                     "
                   >
@@ -111,7 +111,7 @@ export default function AreasOfPractice() {
                         leading-none
                         tracking-[-0.06em]
                         text-[#171717]
-                        font-think
+                        font-nixie
                       "
                     >
                       {active === -1 ? "00" : `0${active + 1}`}
@@ -123,7 +123,7 @@ export default function AreasOfPractice() {
                         leading-none
                         tracking-[-0.06em]
                         text-black/25
-                        font-think
+                        font-nixie
                       "
                     >
                       /05
@@ -280,7 +280,7 @@ export default function AreasOfPractice() {
                                     tracking-[0.18em]
                                     uppercase
                                     text-[#85A56F]
-                                    font-think
+                                    font-nixie
                                   "
                                 >
                                   — {item.number}
@@ -295,7 +295,7 @@ export default function AreasOfPractice() {
                                     tracking-[-0.05em]
                                     uppercase
                                     text-[#85A56F]
-                                    font-display
+                                    font-nova
                                   "
                                 >
                                   {item.title}
@@ -309,7 +309,7 @@ export default function AreasOfPractice() {
                                     text-[20px]
                                     leading-[1.5]
                                     text-white/90
-                                    font-rethink
+                                    font-nixie
                                     max-w-[380px]
                                   "
                                 >
@@ -336,7 +336,7 @@ export default function AreasOfPractice() {
                                         className="
                                           text-[16px]
                                           text-white/92
-                                          font-rethink
+                                          font-nixie
                                         "
                                       >
                                         {listItem}
@@ -375,7 +375,7 @@ export default function AreasOfPractice() {
                                         text-[16px]
                                         uppercase
                                         tracking-[0.08em]
-                                        font-rethink
+                                        font-nixie
                                         cursor-pointer
                                       "
                                     >
@@ -412,7 +412,7 @@ export default function AreasOfPractice() {
                                   tracking-[0.18em]
                                   uppercase
                                   text-black/35
-                                  font-think
+                                  font-nixie
                                 "
                               >
                                 — {item.number}
@@ -427,7 +427,7 @@ export default function AreasOfPractice() {
                                   tracking-[-0.05em]
                                   uppercase
                                   text-black/18
-                                  font-display
+                                  font-nova
                                 "
                               >
                                 {item.title}
@@ -439,7 +439,7 @@ export default function AreasOfPractice() {
                                   text-[12px]
                                   leading-[1.15]
                                   text-black/18
-                                  font-rethink
+                                  font-nixie
                                   max-w-[230px]
                                 "
                               >
@@ -469,7 +469,7 @@ export default function AreasOfPractice() {
                                       text-[16px]
                                       uppercase
                                       tracking-[0.08em]
-                                      font-rethink
+                                      font-nixie
                                     "
                                   >
                                     VIEW MORE
@@ -502,7 +502,7 @@ export default function AreasOfPractice() {
                   tracking-[-0.05em]
                   uppercase
                   text-[#171717]
-                  font-display
+                  font-nova
                 "
               >
                 AREAS
@@ -519,7 +519,7 @@ export default function AreasOfPractice() {
                   md:text-[18px]
                   leading-[1.4]
                   text-black/75
-                  font-rethink
+                  font-nixie
                 "
               >
                 Toruss works across a range of interconnected creative
@@ -536,7 +536,7 @@ export default function AreasOfPractice() {
                       leading-none
                       tracking-[-0.06em]
                       text-[#171717]
-                      font-think
+                      font-nixie
                     "
                   >
                     0{active + 1}
@@ -549,7 +549,7 @@ export default function AreasOfPractice() {
                       leading-none
                       tracking-[-0.06em]
                       text-black/25
-                      font-think
+                      font-nixie
                     "
                   >
                     /05
@@ -664,7 +664,7 @@ export default function AreasOfPractice() {
                                   tracking-[0.18em]
                                   uppercase
                                   text-[#85A56F]
-                                  font-think
+                                  font-nixie
                                 "
                               >
                                 — {item.number}
@@ -681,7 +681,7 @@ export default function AreasOfPractice() {
                                   tracking-[-0.05em]
                                   uppercase
                                   text-[#85A56F]
-                                  font-display
+                                  font-nova
                                 "
                               >
                                 {item.title}
@@ -697,7 +697,7 @@ export default function AreasOfPractice() {
                                   md:text-[18px]
                                   leading-[1.5]
                                   text-white/90
-                                  font-rethink
+                                  font-nixie
                                 "
                               >
                                 {item.desc}
@@ -725,7 +725,7 @@ export default function AreasOfPractice() {
                                         sm:text-[16px]
                                         md:text-[18px]
                                         text-white/92
-                                        font-rethink
+                                        font-nixie
                                       "
                                     >
                                       {listItem}
@@ -758,7 +758,7 @@ export default function AreasOfPractice() {
                                       sm:text-[15px]
                                       uppercase
                                       tracking-[0.08em]
-                                      font-rethink
+                                      font-nixie
                                     "
                                   >
                                     VIEW LESS
@@ -797,7 +797,7 @@ export default function AreasOfPractice() {
                                 tracking-[0.18em]
                                 uppercase
                                 text-black/35
-                                font-think
+                                font-nixie
                               "
                             >
                               — {item.number}
@@ -813,7 +813,7 @@ export default function AreasOfPractice() {
                                 tracking-[-0.05em]
                                 uppercase
                                 text-black/20
-                                font-display
+                                font-nova
                               "
                             >
                               {item.title}
@@ -826,7 +826,7 @@ export default function AreasOfPractice() {
                                 sm:text-[14px]
                                 leading-[1.4]
                                 text-black/40
-                                font-rethink
+                                font-nixie
                               "
                             >
                               {item.desc}
@@ -859,7 +859,7 @@ export default function AreasOfPractice() {
                                     sm:text-[14px]
                                     uppercase
                                     tracking-[0.08em]
-                                    font-rethink
+                                    font-nixie
                                   "
                                 >
                                   VIEW MORE

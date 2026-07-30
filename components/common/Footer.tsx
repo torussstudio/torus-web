@@ -43,7 +43,7 @@ export default function Footer() {
               "tracking-[0.22em]",
               "uppercase",
               "text-black/40",
-              "font-think",
+              "font-nixie",
               "font-normal"
             )}
             style={{
@@ -73,7 +73,7 @@ export default function Footer() {
               "tracking-[0.22em]",
               "uppercase",
               "text-black/40",
-              "font-think",
+              "font-nixie",
               "font-normal"
             )}
           >
@@ -132,7 +132,7 @@ export default function Footer() {
                   "tracking-[-0.03em]",
                   "uppercase",
                   "text-[#111]",
-                  "font-display",
+                  "font-nova",
                   "md:text-[58px]",
                   "max-md:text-[46px]",
                   "max-md:leading-[1]"
@@ -148,7 +148,7 @@ export default function Footer() {
                   "text-[17px]",
                   "leading-[1.25]",
                   "text-black/60",
-                  "font-rethink",
+                  "font-nixie",
                   "max-md:mt-[20px]",
                   "max-md:text-[15px]"
                 )}
@@ -210,7 +210,7 @@ export default function Footer() {
                       "tracking-[0.18em]",
                       "uppercase",
                       "text-black/45",
-                      "font-think",
+                      "font-nixie",
                       "cursor-pointer",
                       "hover:text-black",
                       "transition-colors",
@@ -266,7 +266,7 @@ export default function Footer() {
                     "text-[20px]",
                     "tracking-[0.04em]",
                     "uppercase",
-                    "font-rethink",
+                    "font-nixie",
                     "max-md:text-[16px]"
                   )}
                 >
@@ -308,7 +308,7 @@ export default function Footer() {
               "tracking-[0.16em]",
               "uppercase",
               "text-black/80",
-              "font-think",
+              "font-nixie",
               "max-md:gap-[24px]",
               "max-md:text-[15px]"
             )}
@@ -328,7 +328,7 @@ export default function Footer() {
               "tracking-[0.08em]",
               "uppercase",
               "text-black/10",
-              "font-display",
+              "font-nova",
               "whitespace-nowrap",
               "max-lg:text-[72px]",
               "max-md:text-[48px]",
@@ -362,7 +362,7 @@ export default function Footer() {
               "tracking-[0.12em]",
               "uppercase",
               "text-black/80",
-              "font-think",
+              "font-nixie",
               "max-md:text-[15px]"
             )}
           >
@@ -375,7 +375,7 @@ export default function Footer() {
               "tracking-[0.12em]",
               "uppercase",
               "text-black/80",
-              "font-think",
+              "font-nixie",
               "max-md:text-[15px]"
             )}
           >
@@ -388,7 +388,7 @@ export default function Footer() {
               "tracking-[0.12em]",
               "uppercase",
               "text-black/80",
-              "font-think",
+              "font-nixie",
               "whitespace-nowrap",
               "max-md:text-[15px]",
               "max-md:whitespace-normal"
@@ -417,7 +417,7 @@ export default function Footer() {
             "tracking-[0.16em]",
             "uppercase",
             "text-black/70",
-            "font-think",
+            "font-nixie",
             "max-md:text-[12px]",
             "max-md:tracking-[0.10em]",
             "max-md:text-center"

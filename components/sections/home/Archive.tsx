@@ -33,7 +33,7 @@ export default function ArchiveSection() {
             tracking-[-0.05em]
             uppercase
             text-[#151515]
-            font-display
+            font-nova
 
             max-md:text-[30px]
           "
@@ -47,7 +47,7 @@ export default function ArchiveSection() {
             tracking-[0.26em]
             uppercase
             text-black/40
-            font-think
+            font-nixie
             mt-[4px]
 
             max-md:text-[9px]
@@ -133,7 +133,7 @@ export default function ArchiveSection() {
                   uppercase
                   tracking-[0.18em]
                   text-black/75
-                  font-think
+                  font-nixie
                  
                   max-md:text-[12px]
                 "
@@ -149,7 +149,7 @@ export default function ArchiveSection() {
                   uppercase
                   tracking-[0.18em]
                   text-black/75
-                  font-think
+                  font-nixie
                   
                   max-md:text-[12px]
                 "
@@ -167,7 +167,7 @@ export default function ArchiveSection() {
                 tracking-[-0.04em]
                 uppercase
                 text-[#151515]
-                font-display
+                font-nova
                 max-w-[680px]
                 
                 max-md:text-[30px]
@@ -224,7 +224,7 @@ export default function ArchiveSection() {
                   text-[15px]
                   leading-[1.25]
                   text-black/45
-                  font-rethink
+                  font-nixie
 
                   max-md:text-[14px]
                   max-md:max-w-full
@@ -286,7 +286,7 @@ export default function ArchiveSection() {
                         className="
                           text-[16px]
                           text-black/70
-                          font-rethink
+                          font-nixie
 
                           max-md:text-[14px]
                         "
@@ -329,7 +329,7 @@ export default function ArchiveSection() {
                       text-[13px]
                       uppercase
                       tracking-[0.08em]
-                      font-rethink
+                      font-nixie
                       mr-[30px]
 
                       max-md:mr-0

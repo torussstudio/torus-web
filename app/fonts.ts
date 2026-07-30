@@ -1,19 +1,15 @@
 import localFont from "next/font/local";
+import { Nixie_One } from "next/font/google";
 
-export const raisonne = localFont({
-  src: "./fonts/raisonne-demibold.woff2",
-  variable: "--font-raisonne",
+export const heading = localFont({
+  src: "./fonts/BerlingNovaDisplay-Regular.woff",
+  variable: "--font-heading",
   preload: false,
 });
 
-export const megatoya = localFont({
-  src: "./fonts/BDMegatoya-Regular.woff2",
-  variable: "--font-megatoya",
-   preload: false,
-});
-
-export const monos = localFont({
-  src: "./fonts/Monos-Regular.woff2",
-  variable: "--font-monos",
-   preload: false,
+export const body = Nixie_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-body",
+  preload: false,
 });

@@ -60,7 +60,7 @@ export default function StudioHero() {
           <div className="hidden lg:flex absolute left-0 top-2 flex-col items-center">
             <div className="h-6 w-px bg-black/30 mb-4 ml-[5px]" />
             <span
-              className="font-think  text-[16px] uppercase tracking-[0.18em] text-black/45 ml-[5px]"
+              className="font-nixie  text-[16px] uppercase tracking-[0.18em] text-black/45 ml-[5px]"
               style={{ writingMode: "vertical-rl", transform: "rotate(360deg)" }}
             >
               STUDIO
@@ -71,7 +71,7 @@ export default function StudioHero() {
           <h1
             className="
               col-span-1 lg:col-span-9 lg:col-start-2
-              font-display
+              font-nova
               text-[1.75rem] sm:text-[2.4rem] md:text-[2.9rem] lg:text-[2.6rem] xl:text-[3.1rem] 2xl:text-[3.4rem]
               leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]
               tracking-[0.01em]
@@ -123,7 +123,7 @@ export default function StudioHero() {
           {/* LEFT — intro paragraph + view more (lg-il image-inte height-inu
               opposite aayi nadukku vertically center aavan flex use cheyyunnu) */}
           <div className="lg:col-span-3 lg:col-start-2 flex flex-col justify-center lg:min-h-[420px]">
-            <p className="font-rethink text-[14px] sm:text-[15px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[320px] lg:max-w-[280px]">
+            <p className="font-nixie text-[14px] sm:text-[15px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[320px] lg:max-w-[280px]">
               Toruss exists at the intersection of branding, digital
               experiences, communication systems, art, objects, and cultural
               exploration.
@@ -131,7 +131,7 @@ export default function StudioHero() {
 
             <a
               href="#"
-              className="group mt-8 sm:mt-10 inline-flex items-center gap-2 w-fit font-think text-[13px] uppercase tracking-[0.12em] text-[#80AD76]"
+              className="group mt-8 sm:mt-10 inline-flex items-center gap-2 w-fit font-nixie text-[13px] uppercase tracking-[0.12em] text-[#80AD76]"
             >
               <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                 ↳
@@ -153,7 +153,7 @@ export default function StudioHero() {
               />
             </div>
 
-            <p className="font-rethink italic text-[13px] sm:text-[14px] leading-[1.7] text-black/45 max-w-[85%] sm:max-w-[300px] lg:max-w-[260px] text-right mt-6 sm:mt-8">
+            <p className="font-nixie italic text-[13px] sm:text-[14px] leading-[1.7] text-black/45 max-w-[85%] sm:max-w-[300px] lg:max-w-[260px] text-right mt-6 sm:mt-8">
               We work across disciplines because we rarely experience the
               world in isolated categories ourselves.
             </p>
@@ -173,7 +173,7 @@ export default function StudioHero() {
               >
                 <button
                   onClick={() => setActiveInPage(i)}
-                  className={`font-think text-[16px] sm:text-[18px] cursor-pointer uppercase tracking-[0.1em] transition-colors ${
+                  className={`font-nixie text-[16px] sm:text-[18px] cursor-pointer uppercase tracking-[0.1em] transition-colors ${
                     activeInPage === i ? "text-black" : "text-black/35 hover:text-black/60"
                   }`}
                 >
@@ -181,7 +181,7 @@ export default function StudioHero() {
                 </button>
 
                 <span
-                  className={`font-display text-[16px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.3] text-center sm:text-right transition-colors ${
+                  className={`font-nova text-[16px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.3] text-center sm:text-right transition-colors ${
                     activeInPage === i ? "text-black" : "text-black/30"
                   }`}
                 >
@@ -218,7 +218,7 @@ export default function StudioHero() {
         {/* ============ CLOSING QUOTE + DIAGRAM ============ */}
         <div className="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
           <div className="lg:col-span-5 lg:col-start-7 flex items-center gap-5 sm:gap-6">
-            <p className="font-rethink text-[13px] sm:text-[14px] leading-[1.75] text-black/50 max-w-[220px] sm:max-w-[280px] lg:max-w-[300px]">
+            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-black/50 max-w-[220px] sm:max-w-[280px] lg:max-w-[300px]">
               We are interested in how all of these layers come together to
               shape human experience. Quietly, thoughtfully, and with
               long-term intent.

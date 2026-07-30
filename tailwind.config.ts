@@ -11,9 +11,8 @@ const config: Config = {
     extend: {
    fontFamily: {
   sans: ["Inter", "sans-serif"],
-  mono: ["Monos", "monospace"],
-  raisonne: ["Raisonne", "sans-serif"],
-  megatoya: ["BDMegatoya", "sans-serif"],
+  heading: ["var(--font-heading)", "sans-serif"],
+  body: ["var(--font-body)", "sans-serif"],
 },
 
       colors: {

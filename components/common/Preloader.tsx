@@ -270,7 +270,7 @@ export default function Preloader({ onComplete }: Props) {
               key={i}
               ref={(el) => { letterRefs.current[i] = el; }}
               className="
-                font-think
+                font-nixie
                 select-none
                 leading-none
                 inline-block
@@ -297,7 +297,7 @@ export default function Preloader({ onComplete }: Props) {
           className="flex items-center gap-3 mt-[22px] translate-y-[6px]"
         >
           <div className="w-[22px] h-px bg-white/[0.18]" />
-          <span className="text-white/30 text-[9px] sm:text-[10px] font-display uppercase tracking-[0.42em]">
+          <span className="text-white/30 text-[9px] sm:text-[10px] font-nova uppercase tracking-[0.42em]">
             Creative Development Studio
           </span>
           <div className="w-[22px] h-px bg-white/[0.18]" />

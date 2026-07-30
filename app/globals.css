@@ -2,16 +2,12 @@
  
  @import "tailwindcss";
 
-.font-display {
-  font-family: var(--font-raisonne);
+.font-nova {
+  font-family: var(--font-heading);
 }
 
-.font-rethink {
-  font-family: var(--font-megatoya);
-}
-
-.font-think {
-  font-family: var(--font-monos);
+.font-nixie {
+  font-family: var(--font-body);
 }
 
 :root {

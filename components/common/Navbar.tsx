@@ -62,7 +62,7 @@ export default function Navbar() {
                         tracking-[0.16em]
                         transition-colors
                         duration-200
-                        font-think
+                        font-nixie
                         text-[14px]
                         lg:text-[15px]
                         xl:text-[16px]

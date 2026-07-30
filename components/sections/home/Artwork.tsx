@@ -60,7 +60,7 @@ export default function Artwork() {
             <p
               className="
                 text-[15px]
-                font-think
+                font-nixie
                 tracking-[0.32em]
                 ml-[50px]
                 uppercase
@@ -158,7 +158,7 @@ export default function Artwork() {
                         leading-none
                         transition-colors
                         duration-300
-                        font-display
+                        font-nova
                         ${
                           active === index
                             ? "text-[#7d976e]"
@@ -197,7 +197,7 @@ export default function Artwork() {
           <p
             className="
               text-[11px]
-              font-think
+              font-nixie
               tracking-[0.28em]
               uppercase
               text-[#5b5b5b]
@@ -326,7 +326,7 @@ export default function Artwork() {
                       uppercase
                       tracking-[0.08em]
                       leading-[1.1]
-                      font-display
+                      font-nova
                       transition-colors
                       duration-300
 
@@ -345,7 +345,7 @@ export default function Artwork() {
                 <span
                   className={`
                     text-[12px]
-                    font-think
+                    font-nixie
                     tracking-[0.18em]
                     transition-colors
                     duration-300

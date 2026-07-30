@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { raisonne, megatoya, monos } from "./fonts";
+import { heading, body } from "./fonts";
 import SmoothScroll from "@/components/common/SmoothScroll";
 
 export const metadata: Metadata = {
@@ -18,9 +18,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
-        ${raisonne.variable}
-        ${megatoya.variable}
-        ${monos.variable}
+        ${heading.variable}
+        ${body.variable}
       `}
     >
       <body >

@@ -11,7 +11,7 @@ export default function CultureSection() {
           <h2
             className="
               lg:col-span-6 lg:col-start-2
-              font-display
+              font-nova
               text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[2.8rem] xl:text-[3.2rem] 2xl:text-[3.4rem]
               leading-[1.15] tracking-[0.01em]
               text-[#EDEDED]
@@ -22,7 +22,7 @@ export default function CultureSection() {
             THE STUDIO
           </h2>
 
-             <p className="lg:col-span-3 lg:col-start-6 lg:row-start-2 font-rethink text-[14px] sm:text-[16px] leading-[1.75] text-white/45 max-w-[300px] mt-2 lg:mt-4">
+             <p className="lg:col-span-3 lg:col-start-6 lg:row-start-2 font-nixie text-[14px] sm:text-[16px] leading-[1.75] text-white/45 max-w-[300px] mt-2 lg:mt-4">
             The culture of the studio has evolved slowly through shared
             habits more than formal policies.
           </p>
@@ -47,7 +47,7 @@ export default function CultureSection() {
 
         {/* ============ PARAGRAPH BELOW IMAGES — same column, wider max-width ============ */}
         <div className="mt-6 sm:mt-8 grid grid-cols-1 lg:grid-cols-12">
-          <p className="lg:col-span-7 lg:col-start-6 font-rethink text-[13px] sm:text-[16px] leading-[1.85] text-white/40 max-w-[640px]">
+          <p className="lg:col-span-7 lg:col-start-6 font-nixie text-[13px] sm:text-[16px] leading-[1.85] text-white/40 max-w-[640px]">
             Through films watched together on Saturdays. Through
             conversations about books, architecture, psychology, cinema,
             philosophy, music, and business. Through workshops and creative
@@ -62,10 +62,10 @@ export default function CultureSection() {
 
         {/* ============ "EVEN SMALL THINGS MATTER" — label+para full width, then image1 (tall, left) beside image2+para (stacked, right) ============ */}
         <div className="mt-12 sm:mt-16 lg:mt-20">
-          <p className="font-rethink text-[15px] sm:text-[18px] leading-[1.6] text-[#EDEDED]">
+          <p className="font-nixie text-[15px] sm:text-[18px] leading-[1.6] text-[#EDEDED]">
             Even small things matter to us:
           </p>
-          <p className="mt-4 font-rethink text-[13px] sm:text-[16px] leading-[1.85] text-white/40 max-w-[400px]">
+          <p className="mt-4 font-nixie text-[13px] sm:text-[16px] leading-[1.85] text-white/40 max-w-[400px]">
             how the studio feels, how objects are arranged, how
             respectfully people collaborate, how clearly things are
             communicated, and whether the environment itself
@@ -96,7 +96,7 @@ export default function CultureSection() {
                 />
               </div>
 
-            <p className="font-rethink text-[13px] sm:text-[16px] leading-[1.85] text-white/40">
+            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.85] text-white/40">
                 Over time, certain practices naturally became part of the
                 studio rhythm:<br/> 
                 <br></br> morning meditation sessions, collective screenings, shared meals, quiet working 
@@ -119,7 +119,7 @@ and our thinking clear and intentional.
             />
           </div>
 
-           <p className="lg:col-span-4 lg:col-start-9 lg:self-start font-rethink text-[14px] sm:text-[15px] leading-[1.85] text-white/45 max-w-[280px]">
+           <p className="lg:col-span-4 lg:col-start-9 lg:self-start font-nixie text-[14px] sm:text-[15px] leading-[1.85] text-white/45 max-w-[280px]">
             We don&apos;t see creativity as something that exists separately
             from life. The way we work, observe, rest, learn, speak,
             listen, and collaborate, all slowly shape the work itself.
