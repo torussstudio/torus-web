@@ -268,7 +268,7 @@ export default function StudioHero() {
               md:flex
               items-center
               justify-center
-              gap-8
+              gap-6
               py-8
               pr-8
               md:pr-16

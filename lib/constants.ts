@@ -1,41 +1,28 @@
-// STUDIO FULL PAGE 
-
-
-
-
-
-import { NavLink } from "@/types";
-
-
-export const NAV_LINKS: NavLink[] = [
+import { StoryCards } from '../components/sections/studio/Studiostory';
+export const NAV_LINKS = [
   {
     label: "STUDIO",
-    href: "#studio",
+    href: "/studio",
   },
-
   {
     label: "AREAS OF PRACTICE",
-    href: "#areas-of-practice",
+    href: "/areas-of-practice",
   },
-
   {
     label: "ARCHIVE",
-    href: "#archive",
+    href: "/archive",
   },
-
   {
     label: "CONTACT",
-    href: "#contact",
+    href: "/contact",
   },
-
   {
     label: "BLOG",
-    href: "#blog",
+    href: "/blog",
   },
-
   {
     label: "SHOP",
-    href: "#shop",
+    href: "/shop",
   },
 ];
 
@@ -43,6 +30,7 @@ export const NAV_LINKS: NavLink[] = [
 
 import {
   FaInstagram,
+  FaLinkedin,
   FaPinterest,
   FaTwitter,
 } from "react-icons/fa";
@@ -252,4 +240,133 @@ export const values = [
     sub: "CONVERSATIONS",
     green: false,
   },
+];
+
+
+// STUDIO SECTION
+
+// hero
+
+export const tabs = [
+  { number: "01", lines: ["A BRAND AFFECTS", "PERCEPTION"] },
+  { number: "02", lines: ["A WEBSITE", "AFFECTS TRUST"] },
+  { number: "03", lines: ["A SPACE AFFECTS", "BEHAVIOUR"] },
+  { number: "04", lines: ["A SYSTEM AFFECTS", "CLARITY"] },
+  { number: "05", lines: ["A DETAIL AFFECTS", "CREDIBILITY"] },
+  { number: "06", lines: ["A STORY AFFECTS", "CONNECTION"] },
+];
+
+export const socials = [
+  { Icon: FaLinkedin, href: "#", label: "LinkedIn" },
+  { Icon: FaInstagram, href: "#", label: "Instagram" },
+  { Icon: FaPinterest, href: "#", label: "Pinterest" },
+];
+
+// studiohero
+
+export const cardss = [
+  {
+    title: "Branding gradually led to communication systems.",
+  },
+  {
+    title: "Communication led to digital experiences.",
+  },
+  {
+    title: "Digital experiences led to storytelling.",
+  },
+  {
+    title: "Storytelling led to atmosphere, environments, objects, archives, and collective initiatives. ",
+  },
+];
+
+// studio expression
+
+type Expression = {
+  index: string;
+  name: string;
+  items: string[];
+  description: string;
+  image: string;
+  alt: string;
+};
+
+ export const expressions: Expression[] = [
+  {
+    index: "01",
+    name: "CREATIVE",
+    items: [
+      "Branding & Strategy",
+      "Visual Identity Systems",
+      "Websites & UI/UX",
+      "Communication Design & Storytelling",
+      "Digital Ecosystems",
+      "Long-term Brand Thinking",
+    ],
+    description:
+      "Focused on perception, communication, digital experiences, and systems thinking — shaping how businesses, founders, and institutions are understood, experienced, and remembered over time.",
+    image: "/images/digital.avif",
+    alt: "Toruss designer at work in the studio",
+  },
+  {
+    index: "02",
+    name: "EDITIONS",
+    items: [
+      "Artworks",
+      "Objects",
+      "Prints",
+      "Merchandise",
+      "Spatial Atmosphere",
+      "Creative Experimentation",
+    ],
+    description:
+      "The studio's slower, more exploratory expression — where design drifts into art, materiality, collectibility, and observation.",
+    image: "/images/creative.avif",
+    alt: "Studio space with editions and objects on display",
+  },
+  {
+    index: "03",
+    name: "COHORT",
+    items: [
+      "Workshops",
+      "Exhibitions",
+      "Screenings & Conversations",
+      "Learning Initiatives",
+      "Public Explorations",
+      "Interdisciplinary collaborations",
+    ],
+    description:
+      "The collective and cultural side of the studio — where it opens itself outward, into dialogue, experimentation, and community.",
+    image: "/images/editions.avif",
+    alt: "Group of collaborators gathered around a table",
+  },
+];
+
+// studiowethink
+
+export const bullets = [
+  "A hospitality brand can feel calming before a guest \n even arrives.",
+  "A digital product can feel trustworthy beforea single \a feature is explored.",
+  "A beautifully paced website can quietly create confidence without \n the  user fully realizing why.",
+];
+
+// culturesection
+
+export const cultureGridImages = [
+  { src: "/images/strategy.avif", alt: "Team member working at a desk" },
+  { src: "/images/heroimage.avif", alt: "Silhouette during a collective screening" },
+  { src: "/images/editions.avif", alt: "Team member outdoors on a break" },
+];
+
+// whatwevalue section
+
+export const valuess = [
+  { number: "01", lines: ["CLARITY", "OVER NOISE"] },
+  { number: "02", lines: ["DEPTH OVER", "TREND CYCLES"] },
+  { number: "03", lines: ["SYSTEMS OVER", "SURFACE STYLING"] },
+];
+
+export const futureImages = [
+  { src: "/images/editions.avif", alt: "Team collaborating around a table" },
+  { src: "/images/footer.avif", alt: "Person seated facing a projected screen" },
+  { src: "/images/objects.avif", alt: "Person leaning on a railing outdoors" },
 ];

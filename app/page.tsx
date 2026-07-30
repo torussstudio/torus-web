@@ -1,11 +1,11 @@
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
-import StudioHero from "@/components/sections/studio/Hero";
-import Artwork from "@/components/sections/studio/Artwork";
-import CreativeGrid from "@/components/sections/studio/Creative";
-import ArchiveSection from "@/components/sections/studio/Archive";
-import AreasOfPractice from "@/components/sections/studio/Areas";
-import UXPage from "@/components/sections/studio/StudioNote";
+import StudioHero from "@/components/sections/home/Hero";
+import Artwork from "@/components/sections/home/Artwork";
+import CreativeGrid from "@/components/sections/home/Creative";
+import ArchiveSection from "@/components/sections/home/Archive";
+import AreasOfPractice from "@/components/sections/home/Areas";
+import UXPage from "@/components/sections/home/StudioNote";
 import PreloaderWrapper from "@/components/common/PreloaderWrapper";
 
 export default function Home() {

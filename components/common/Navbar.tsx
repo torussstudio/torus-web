@@ -2,19 +2,21 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
 import { cn } from "@/lib/utils";
-
 import { NAV_LINKS } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
-  const [activeItem, setActiveItem] = useState("STUDIO");
+  const pathname = usePathname();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#e7e5e1]">
       {/* LOGO */}
       <div className="flex items-center justify-center border-b border-black/35 px-4 py-4 sm:py-5 md:py-6">
+       <Link href="/">
         <h1
           className="
             font-serif
@@ -35,6 +37,7 @@ export default function Navbar() {
         >
           TORUSS
         </h1>
+        </Link>
       </div>
 
       {/* DESKTOP */}
@@ -42,13 +45,12 @@ export default function Navbar() {
         <div className="mx-auto w-full max-w-[1800px]">
           <ul className="flex items-center justify-between px-8 py-[16px] lg:px-10 xl:px-14 2xl:px-20">
             {NAV_LINKS.map((item) => {
-              const isActive = activeItem === item.label;
+              const isActive = pathname === item.href;
 
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    onClick={() => setActiveItem(item.label)}
                     className={cn(
                       `
                         relative
@@ -182,19 +184,16 @@ export default function Navbar() {
         >
           <ul className="flex flex-col px-5 pb-6 sm:px-7">
             {NAV_LINKS.map((item, index) => {
-              const isActive = activeItem === item.label;
+              const isActive = pathname === item.href;
 
               return (
                 <li
                   key={item.href}
                   className="border-t border-black/10 first:border-t-0"
                 >
-                  <Link
-                    href={item.href}
-                    onClick={() => {
-                      setActiveItem(item.label);
-                      setMenuOpen(false);
-                    }}
+                 <Link
+  href={item.href}
+  onClick={() => setMenuOpen(false)}
                     className={cn(
                       `
                         flex

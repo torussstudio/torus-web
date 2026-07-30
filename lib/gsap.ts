@@ -5,12 +5,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { CustomEase } from "gsap/CustomEase";
+import { Flip } from 'gsap/Flip';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(
     ScrollTrigger,
     ScrollToPlugin,
-    CustomEase
+    CustomEase,
+    Flip
   );
 
   CustomEase.create(
@@ -29,6 +31,6 @@ ScrollTrigger.defaults({
   start: "top 85%",
 });
 
-export { gsap, ScrollTrigger };
+export { gsap, ScrollTrigger, Flip };
 
 export default gsap;
