@@ -32,9 +32,8 @@ export default function ArchiveSection() {
             leading-none
             tracking-[-0.05em]
             uppercase
-            text-[#151515]
-            font-nova
-
+            text-[#181818]           
+            font-nixie
             max-md:text-[30px]
           "
         >
@@ -43,10 +42,10 @@ export default function ArchiveSection() {
 
         <span
           className="
-            text-[11px]
+            text-[15px]
             tracking-[0.26em]
             uppercase
-            text-black/40
+            text-[#181818]
             font-nixie
             mt-[4px]
 
@@ -65,7 +64,7 @@ export default function ArchiveSection() {
             grid
             grid-cols-[560px_1fr]
             border-b
-            border-black/20
+            border-black/50
             h-[520px]
 
             max-lg:grid-cols-1
@@ -132,7 +131,7 @@ export default function ArchiveSection() {
                   text-[16px]
                   uppercase
                   tracking-[0.18em]
-                  text-black/75
+                  text-[#181818]
                   font-nixie
                  
                   max-md:text-[12px]
@@ -148,7 +147,7 @@ export default function ArchiveSection() {
                   text-[16px]
                   uppercase
                   tracking-[0.18em]
-                  text-black/75
+                  text-[#181818]
                   font-nixie
                   
                   max-md:text-[12px]
@@ -166,7 +165,7 @@ export default function ArchiveSection() {
                 leading-[0.95]
                 tracking-[-0.04em]
                 uppercase
-                text-[#151515]
+                text-[#181818]
                 font-nova
                 max-w-[680px]
                 
@@ -194,7 +193,7 @@ export default function ArchiveSection() {
                     w-[40px]
                     h-[40px]
                     rounded-full
-                    bg-[#84A96E]
+                    bg-[#80c46c]
 
                     max-md:w-[22px]
                     max-md:h-[22px]
@@ -205,7 +204,7 @@ export default function ArchiveSection() {
                   className="
                     w-[40px]
                     h-[40px]
-                    bg-[#84A96E]
+                    bg-[#80c46c]
 
                     max-md:w-[22px]
                     max-md:h-[22px]
@@ -220,10 +219,10 @@ export default function ArchiveSection() {
               {/* DESCRIPTION */}
               <p
                 className="
-                  max-w-[250px]
-                  text-[15px]
+                  max-w-[280px]
+                  text-[16px]
                   leading-[1.25]
-                  text-black/45
+                  text-[#181818]
                   font-nixie
 
                   max-md:text-[14px]
@@ -272,20 +271,20 @@ export default function ArchiveSection() {
                         
                         {/* LEFT 2 */}
                         <div className="flex flex-col gap-[5px]">
-                          <span className="w-[5px] h-[5px] bg-black block" />
-                          <span className="w-[5px] h-[5px] bg-black block" />
+                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
+                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
                         </div>
 
                         {/* RIGHT CENTER */}
                         <div className="flex items-center h-[11px]">
-                          <span className="w-[5px] h-[5px] bg-black block" />
+                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
                         </div>
                       </div>
 
                       <span
                         className="
                           text-[16px]
-                          text-black/70
+                          text-[#181818]
                           font-nixie
 
                           max-md:text-[14px]
@@ -304,7 +303,7 @@ export default function ArchiveSection() {
                     flex
                     items-center
                     gap-[6px]
-                    text-[#84A96E]
+                    text-[#80c46c]
                     mr-[18px]
                     cursor-pointer
 
@@ -326,7 +325,7 @@ export default function ArchiveSection() {
 
                   <span
                     className="
-                      text-[13px]
+                      text-[15px]
                       uppercase
                       tracking-[0.08em]
                       font-nixie

@@ -1,337 +1,3 @@
-// "use client";
-
-// import { SOCIAL_LINKS } from "@/lib/constants";
-// import Image from "next/image";
-// import {
-//   FaInstagram,
-//   FaPinterest,
-//   FaTwitter,
-// } from "react-icons/fa";
-
-// const links = [
-//   { number: "01", label: "CREATIVE" },
-//   { number: "02", label: "EDITIONS" },
-//   { number: "03", label: "COHORT" },
-// ];
-
-// const socials = [
-//   FaInstagram,
-//   FaPinterest,
-//   FaTwitter,
-// ];
-
-// export default function StudioHero() {
-//   return (
-//     <section className="relative w-full overflow-hidden bg-[#e7e5e1]">
-//       {/* MAX-WIDTH WRAPPER — ithu illathirunnu 1920px+ screens-il content stretch aayi
-//           random gaps undakiyathu. Ippo content oru upper limit-il centered aayi nilkkum. */}
-//       <div className="relative max-w-[1728px] mx-auto">
-//         {/* HERO */}
-//         <div
-//           className="
-//             relative
-//             grid
-//             grid-cols-1
-//             lg:grid-cols-[0.78fr_1.22fr]
-//             min-h-0
-//             lg:min-h-[750px]
-//           "
-//         >
-//           {/* LEFT */}
-//           <div
-//             className="
-//               relative
-//               flex
-//               flex-col
-//               justify-center
-//               px-8
-//               md:px-16
-//               lg:px-20
-//               py-10
-//               lg:py-16
-//             "
-//           >
-//             {/* Vertical Label — desktop only.
-//                 Ippo ee left column-nte NADUKKU (justify-center flex) aanu anchor,
-//                 muzhu grid-nte height %-um alla. Athukond screen size mattiyalum
-//                 relative position maarilla. */}
-//             <div
-//               className="
-//                 hidden
-//                 lg:flex
-//                 absolute
-//                 left-8
-//                 top-1/2
-//                 -translate-y-[170px]
-//                 flex-col
-//                 items-center
-//               "
-//             >
-//               <div className="h-6 w-px bg-black/30 mb-4 ml-[5px]" />
-//               <span
-//                 className="
-//                   font-nixie
-//                   text-[16px]
-//                   uppercase
-//                   tracking-[0.18em]
-//                   text-black/50
-//                   ml-[5px]
-//                 "
-//                 style={{
-//                   writingMode: "vertical-rl",
-//                   transform: "rotate(360deg)",
-//                 }}
-//               >
-//                 STUDIO
-//               </span>
-//             </div>
-
-//             <div className="max-w-[980px] mt-0">
-//               {/* HEADING */}
-//               <h1
-//                 className="
-//                   font-nova
-//                   origin-left
-//                   text-[1.65rem]
-//                   sm:text-[2rem]
-//                   md:text-[2.7rem]
-//                   lg:text-[3rem]
-//                   xl:text-[3.3rem]
-//                   leading-[0.99]
-//                   tracking-[0.03em]
-//                   text-black
-//                   pl-[15px]
-//                   sm:pl-[22px]
-//                   lg:pl-[30px]
-//                   whitespace-normal
-//                   lg:whitespace-nowrap
-//                 "
-//               >
-//                 A MULTIDIMENSIONAL
-//                 <br />
-//                 STUDIO SHAPING BRANDS,
-//                 <br />
-//                 CULTURE, AND CREATIVE
-//                 <br />
-//                 EXPRESSION.
-//               </h1>
-
-//               {/* TEXT */}
-//               <p
-//                 className="
-//                   mt-8
-//                   lg:mt-10
-//                   max-w-[480px]
-//                   text-[15px]
-//                   md:text-[17px]
-//                   leading-[1.7]
-//                   font-[400]
-//                   tracking-[0.01em]
-//                   text-black/50
-//                   pl-[15px]
-//                   sm:pl-[22px]
-//                   lg:pl-[30px]
-//                   font-nixie
-//                 "
-//               >
-//                 Toruss works across branding, identity systems, digital
-//                 experiences, objects, artistic explorations, and collective
-//                 initiatives, building ideas that are clear, enduring, and deeply
-//                 considered.
-//               </p>
-
-//               {/* LINKS */}
-//               <div
-//                 className="
-//                   mt-[28px]
-//                   lg:mt-[38px]
-//                   flex
-//                   w-full
-//                   lg:w-[423px]
-//                   flex-col
-//                   ml-0
-//                   lg:ml-[21px]
-//                 "
-//               >
-//                 {links.map((link) => (
-//                   <div
-//                     key={link.number}
-//                     className="
-//                       group
-//                       flex
-//                       items-center
-//                       justify-start
-//                       border-b
-//                       border-[#1d1d1d]
-//                       pt-[14px]
-//                       pb-[11px]
-//                       lg:pt-[18px]
-//                       lg:pb-[13px]
-//                       cursor-pointer
-//                     "
-//                   >
-//                     {/* LEFT SIDE */}
-//                     <div className="flex items-center gap-[90px] sm:gap-[130px] lg:gap-[170px]">
-//                       <span
-//                         className="
-//                           text-[22px]
-//                           lg:text-[28px]
-//                           leading-none
-//                           font-light
-//                           text-[#1d1d1d]
-//                           transition-transform
-//                           duration-300
-//                           group-hover:translate-x-[4px]
-//                           pl-[18px]
-//                           sm:pl-[32px]
-//                           lg:pl-[50px]
-//                         "
-//                       >
-//                         →
-//                       </span>
-
-//                       <span
-//                         className="
-//                           text-[14px]
-//                           lg:text-[18px]
-//                           leading-none
-//                           font-nixie
-//                           uppercase
-//                           tracking-[0.12em]
-//                           text-[#80AD76]
-//                           translate-x-[-15px]
-//                         "
-//                       >
-//                         {link.number}
-//                       </span>
-//                     </div>
-
-//                     {/* RIGHT SIDE */}
-//                     <span
-//                       className="
-//                         text-[14px]
-//                         lg:text-[18px]
-//                         leading-none
-//                         font-nixie
-//                         uppercase
-//                         tracking-[0.08em]
-//                         text-[#80AD76]
-//                         mr-[12px]
-//                         lg:mr-[25px]
-//                       "
-//                     >
-//                       {link.label}
-//                     </span>
-//                   </div>
-//                 ))}
-//               </div>
-
-//               {/* SOCIALS — mobile & tablet only */}
-//               <div
-//                 className="
-//                   flex
-//                   lg:hidden
-//                   gap-6
-//                   mt-8
-//                   pl-[4px]
-//                   sm:pl-[8px]
-//                   pb-2
-//                 "
-//               >
-//                 {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-//                   <a
-//                     key={label}
-//                     href={href}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     aria-label={label}
-//                     className="
-//                       text-black/35
-//                       hover:text-black
-//                       transition-colors
-//                     "
-//                   >
-//                     <Icon className="text-[22px]" />
-//                   </a>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-
-//         {/* RIGHT IMAGE — hidden on mobile, visible tablet+.
-//             Socials-ne ippo image-nte FLEX SIBLING aakki (absolute alla),
-//             so icons eppozhum image-nte purathu oru fixed gap-il nilkkum,
-//             image-nu mukalil overlap aavilla. */}
-//           <div
-//             className="
-//               hidden
-//               md:flex
-//               items-center
-//               justify-center
-//               gap-6
-//               py-8
-//               pr-8
-//               md:pr-16
-//               lg:pr-24
-//               lg:justify-end
-//             "
-//           >
-//             <div
-//               className="
-//                 relative
-//                 h-[360px]
-//                 w-[360px]
-//                 md:h-[400px]
-//                 md:w-[400px]
-//                 lg:h-[560px]
-//                 lg:w-[560px]
-//                 xl:h-[620px]
-//                 xl:w-[620px]
-//                 overflow-hidden
-//               "
-//             >
-//               <Image
-//                 src="/images/heroimage.avif"
-//                 alt="Studio Hero"
-//                 fill
-//                 priority
-//                 sizes="(max-width: 768px) 100vw, 50vw"
-//                 className="object-cover grayscale"
-//               />
-//             </div>
-
-//             {/* SOCIALS — desktop only. Normal flex column now, image-nte
-//                 valathu vasham oru gap-inte sthana thanne nilkkum. */}
-//             <div
-//               className="
-//                 hidden
-//                 lg:flex
-//                 flex-col
-//                 gap-6
-//                 mt-62
-//               "
-//             >
-//               {socials.map((Icon, index) => (
-//                 <a
-//                   key={index}
-//                   href="#"
-//                   className="
-//                     text-black/35
-//                     hover:text-black
-//                     transition-colors
-//                   "
-//                 >
-//                   <Icon className="text-[22px]" />
-//                 </a>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { SOCIAL_LINKS } from "@/lib/constants";
@@ -408,7 +74,7 @@ export default function StudioHero() {
                   text-[16px]
                   uppercase
                   tracking-[0.18em]
-                  text-black/50
+                  text-[#181818]
                   ml-[5px]
                 "
                 style={{
@@ -433,7 +99,7 @@ export default function StudioHero() {
     xl:text-[2.9rem]
     leading-[0.98]
     tracking-[0.01em]
-    text-black
+    text-[#181818]
     pl-[15px]
     sm:pl-[22px]
     lg:pl-[30px]
@@ -456,12 +122,12 @@ export default function StudioHero() {
                   mt-8
                   lg:mt-10
                   max-w-[480px]
-                  text-[15px]
-                  md:text-[17px]
+                  text-[16px]
+                  md:text-[18px]
                   leading-[1.7]
                   font-[400]
                   tracking-[0.01em]
-                  text-black/50
+                  text-[#181818]
                   pl-[15px]
                   sm:pl-[22px]
                   lg:pl-[30px]
@@ -512,7 +178,7 @@ export default function StudioHero() {
                           lg:text-[28px]
                           leading-none
                           font-light
-                          text-[#1d1d1d]
+                          text-[#181818]
                           transition-transform
                           duration-300
                           group-hover:translate-x-[4px]
@@ -532,7 +198,7 @@ export default function StudioHero() {
                           font-nixie
                           uppercase
                           tracking-[0.12em]
-                          text-[#80AD76]
+                          text-[#80c46c]
                           translate-x-[-15px]
                         "
                       >
@@ -544,12 +210,12 @@ export default function StudioHero() {
                     <span
                       className="
                         text-[14px]
-                        lg:text-[18px]
+                        lg:text-[19px]
                         leading-none
                         font-nixie
                         uppercase
                         tracking-[0.08em]
-                        text-[#80AD76]
+                        text-[#80c46c]
                         mr-[12px]
                         lg:mr-[25px]
                       "
@@ -580,7 +246,7 @@ export default function StudioHero() {
                     rel="noopener noreferrer"
                     aria-label={label}
                     className="
-                      text-black/35
+                      text-[#181818]
                       hover:text-black
                       transition-colors
                     "

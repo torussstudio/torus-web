@@ -5,6 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 
 export default function Navbar() {
@@ -15,33 +16,21 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#e7e5e1]">
       {/* LOGO */}
-      <div className="flex items-center justify-center border-b border-black/35 px-4 py-4 sm:py-5 md:py-6">
-       <Link href="/">
-        <h1
-          className="
-            font-serif
-            text-center
-            text-[28px]
-            sm:text-[38px]
-            md:text-[46px]
-            lg:text-[56px]
-            uppercase
-            font-light
-            leading-none
-            tracking-[0.24em]
-            sm:tracking-[0.3em]
-            md:tracking-widest
-            text-[#1f1f1f]
-            select-none
-          "
-        >
-          TORUSS
-        </h1>
-        </Link>
-      </div>
+      <div className="flex items-center justify-center border-b border-black/35 px-4 py-2 sm:py-3 md:py-4">
+  <Link href="/" className="block">
+    <Image
+      src="/images/NewLogo.png"
+      alt="TORUSS Logo"
+      width={260}
+      height={70}
+      priority
+      className="h-auto w-[140px] sm:w-[170px] md:w-[200px] lg:w-[240px] select-none"
+    />
+  </Link>
+</div>
 
       {/* DESKTOP */}
-      <nav className="hidden border-b border-black/35 lg:block">
+      <nav className=" hidden border-b border-black/35 lg:block">
         <div className="mx-auto w-full max-w-[1800px]">
           <ul className="flex items-center justify-between px-8 py-[16px] lg:px-10 xl:px-14 2xl:px-20">
             {NAV_LINKS.map((item) => {
@@ -69,8 +58,8 @@ export default function Navbar() {
                         2xl:text-[17px]
                       `,
                       isActive
-                        ? "text-[#2a2a2a]"
-                        : "text-[#8f8b86] hover:text-[#4a4a4a]"
+                        ? "text-[#707070]"
+                        : "text-[#6b6b6b] hover:text-[black]"
                     )}
                   >
                     <span
@@ -97,7 +86,7 @@ export default function Navbar() {
       </nav>
 
       {/* MOBILE / TABLET */}
-      <div className="border-b border-black/35 bg-[#e7e5e1] lg:hidden">
+      <div className=" border-b border-black/35 bg-[#e7e5e1] lg:hidden">
         {/* TOP BAR */}
         <div className="flex items-center justify-between px-5 py-4 sm:px-7 sm:py-5">
           <button

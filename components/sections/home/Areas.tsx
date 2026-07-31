@@ -39,10 +39,10 @@ export default function AreasOfPractice() {
   };
 
   return (
-    <section className="w-full bg-[#ebe9e6] overflow-hidden border-t border-black/40 pb-[62px]">
+    <section className="w-full bg-[#ebe9e6] overflow-hidden border-t border-black/50 pb-[62px]">
       <div className="pt-[62px]">
         <>
-          <div className="w-full border-t border-black/40" />
+          <div className="w-full border-t border-black/50" />
 
           {/* =========================
           DESKTOP
@@ -61,7 +61,7 @@ export default function AreasOfPractice() {
               <div
                 className="
                   border-r
-                  border-black/40
+                  border-black/50
                   px-[74px]
                   pt-[58px]
                   pb-[52px]
@@ -72,11 +72,11 @@ export default function AreasOfPractice() {
                 <div>
                   <h2
                     className="
-                      text-[50px]
+                      text-[47px]
                       leading-[1]
                       tracking-[-0.01em]
                       uppercase
-                      text-[#171717]
+                      text-[#181818]
                       font-nova
                       pl-[100px]
                     "
@@ -90,9 +90,9 @@ export default function AreasOfPractice() {
                     className="
                       mt-[42px]
                       max-w-[420px]
-                      text-[15px]
+                      text-[16px]
                       leading-[1.25]
-                      text-black/75
+                      text-[#181818]
                       font-nixie
                       pl-[100px]
                     "
@@ -110,7 +110,7 @@ export default function AreasOfPractice() {
                         text-[54px]
                         leading-none
                         tracking-[-0.06em]
-                        text-[#171717]
+                        text-[#181818]
                         font-nixie
                       "
                     >
@@ -122,7 +122,7 @@ export default function AreasOfPractice() {
                         text-[54px]
                         leading-none
                         tracking-[-0.06em]
-                        text-black/25
+                        text-[#181818]
                         font-nixie
                       "
                     >
@@ -135,10 +135,11 @@ export default function AreasOfPractice() {
                       onClick={prevSlide}
                       className="
                         text-[42px]
-                        text-[#171717]
+                        text-[#181818]
                         hover:opacity-60
                         transition-opacity
                         duration-300
+                        cursor-pointer
                       "
                     >
                       <HiOutlineArrowLeft />
@@ -148,10 +149,11 @@ export default function AreasOfPractice() {
                       onClick={nextSlide}
                       className="
                         text-[42px]
-                        text-[#171717]
+                        text-[#181818]
                         hover:opacity-60
                         transition-opacity
                         duration-300
+                        cursor-pointer
                       "
                     >
                       <HiOutlineArrowRight />
@@ -202,12 +204,12 @@ export default function AreasOfPractice() {
                       h-[80px]
                       bg-[#ebe9e6]
                       border
-                      border-black/20
+                      border-black/50
                       flex
                       items-center
                       justify-center
                       text-[42px]
-                      text-[#171717]
+                      text-[#181818]
                       z-[100]
                       transition-all
                       duration-300
@@ -247,7 +249,7 @@ export default function AreasOfPractice() {
                             w-[340px]
                             flex-shrink-0
                             border-r
-                            border-black/20
+                            border-black/50
                             overflow-visible
                             cursor-pointer
                           "
@@ -279,7 +281,7 @@ export default function AreasOfPractice() {
                                     text-[20px]
                                     tracking-[0.18em]
                                     uppercase
-                                    text-[#85A56F]
+                                    text-[#80c46c]
                                     font-nixie
                                   "
                                 >
@@ -294,7 +296,7 @@ export default function AreasOfPractice() {
                                     leading-[0.92]
                                     tracking-[-0.05em]
                                     uppercase
-                                    text-[#85A56F]
+                                    text-[#80c46c]
                                     font-nova
                                   "
                                 >
@@ -411,7 +413,7 @@ export default function AreasOfPractice() {
                                   text-[20px]
                                   tracking-[0.18em]
                                   uppercase
-                                  text-black/35
+                                  text-[#181818]
                                   font-nixie
                                 "
                               >
@@ -426,7 +428,7 @@ export default function AreasOfPractice() {
                                   leading-[0.92]
                                   tracking-[-0.05em]
                                   uppercase
-                                  text-black/18
+                                  text-[#181818]
                                   font-nova
                                 "
                               >
@@ -438,7 +440,7 @@ export default function AreasOfPractice() {
                                   mt-[24px]
                                   text-[12px]
                                   leading-[1.15]
-                                  text-black/18
+                                  text-[#181818]
                                   font-nixie
                                   max-w-[230px]
                                 "
@@ -453,7 +455,7 @@ export default function AreasOfPractice() {
                                     flex
                                     items-center
                                     gap-[10px]
-                                    text-[#85A56F]/85
+                                    text-[#80c46c]
                                   "
                                 >
                                   <HiArrowTurnDownRight

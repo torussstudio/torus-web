@@ -1,16 +1,10 @@
 import { values } from "@/lib/constants";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 
-
-
 export default function UXPage() {
   return (
     <section className="w-full bg-[#f3f3f0] overflow-hidden">
       <div className="grid grid-cols-12 border border-[#b8b8b3]">
-        {/* =========================================================
-        DESKTOP — FULLY UNTOUCHED
-        ========================================================= */}
-
         {/* ================= TOP LEFT IMAGE ================= */}
         <div className="col-span-12 lg:col-span-6 h-[680px] border-r border-[#b8b8b3] overflow-hidden">
           <img
@@ -22,15 +16,15 @@ export default function UXPage() {
 
         {/* ================= TOP RIGHT CONTENT ================= */}
         <div className="col-span-12 lg:col-span-6 h-[680px] flex flex-col px-8 md:px-12 lg:px-16 pt-12 lg:pt-14">
-          <p className="text-[15px] tracking-[0.38em] uppercase font-nixie text-[#575757] mb-7">
+          <p className="text-[16px] tracking-[0.38em] uppercase font-nixie text-[#181818] mb-7">
             A NOTE FROM THE STUDIO
           </p>
 
-          <h1 className="max-w-[620px] text-[34px] md:text-[42px] lg:text-[50px] leading-[1.08] tracking-[-0.04em] uppercase font-nova text-[#1e1e1e]">
+          <h1 className="max-w-[650px] text-[30px] md:text-[38px] lg:text-[45px] leading-[1.08] tracking-[-0.04em] uppercase font-nixie text-[#1e1e1e]">
             ON ATTENTION, CARE, AND THE QUIET INTENT BEHIND EVERYTHING WE MAKE.
           </h1>
 
-          <p className="mt-8 max-w-[430px] text-[13px] font-nixie leading-[1.6] text-[#666666]">
+          <p className="mt-8 max-w-[360px] text-[14px] font-nixie leading-[1.6] text-[#181818]">
             We believe meaningful work comes from paying attention, to people,
             context, systems, and the details that often go unnoticed. We’re
             drawn to ideas that evolve with time, shaped with clarity, care,
@@ -44,7 +38,7 @@ export default function UXPage() {
                 flex
                 items-center
                 gap-[10px]
-                text-[#85A56F]/85
+                text-[#80c46c]
                 cursor-pointer
               "
             >
@@ -131,7 +125,7 @@ export default function UXPage() {
                     leading-[0.95]
                     tracking-[-0.05em]
                     uppercase
-                    font-nova
+                    font-nixie
                     ${
                       item.green
                         ? "text-[#8daa7f]"
@@ -171,7 +165,7 @@ export default function UXPage() {
 
             {/* DESKTOP ORIGINAL */}
             <div className="hidden lg:flex min-h-[260px] flex-col justify-between px-10 py-8">
-              <span className="text-[16px] text-right font-nixie tracking-[0.24em] text-[#3e3e3e]">
+              <span className="text-[16px] text-right font-nixie tracking-[0.24em] text-[#181818]">
                 — {item.no}
               </span>
 
@@ -182,13 +176,13 @@ export default function UXPage() {
                       text-[30px]
                       leading-[1.12]
                       uppercase
-                      font-medium
+                      font-nixie
                       tracking-[-0.03em]
                       text-right
                       ${
                         item.green
-                          ? "text-[#8daa7f]"
-                          : "text-[#7a7a7a]"
+                          ? "text-[#80c46c]"
+                          : "text-[#6b6b6b]"
                       }
                     `}
                   >
@@ -217,14 +211,14 @@ export default function UXPage() {
                 text-[120px]
                 leading-none
                 font-nixie
-                text-black/[0.03]
+                text-[#181818]
               "
             >
               05
             </span>
 
             <div className="flex justify-between items-center">
-              <span className="text-[13px] tracking-[0.24em] text-[#666] font-nixie">
+              <span className="text-[15px] tracking-[0.24em] text-[#181818] font-nixie">
                 — 05
               </span>
 
@@ -238,8 +232,8 @@ export default function UXPage() {
                 leading-[0.95]
                 tracking-[-0.05em]
                 uppercase
-                text-[#7a7a7a]
-                font-nova
+                text-[##181818]
+                font-nixie
               "
             >
               WORK THAT
@@ -248,7 +242,7 @@ export default function UXPage() {
             </h3>
 
             <div className="flex justify-end">
-              <HiArrowTurnDownRight className="text-[24px] text-[#85A56F]/70" />
+              <HiArrowTurnDownRight className="text-[24px] text-[#80c46c]0" />
             </div>
           </div>
 
@@ -256,7 +250,7 @@ export default function UXPage() {
           <div className="hidden lg:flex min-h-[250px] pl-10 pr-16 py-8 flex-col justify-between">
             <div className="flex justify-center">
               <div className="w-[260px] flex justify-end translate-x-[25px]">
-                <span className="text-[16px] font-nixie tracking-[0.24em] text-[#3e3e3e]">
+                <span className="text-[16px] font-nixie tracking-[0.24em] text-[#181818]">
                   — 05
                 </span>
               </div>
@@ -269,10 +263,10 @@ export default function UXPage() {
                     text-[30px]
                     leading-[1.12]
                     uppercase
-                    font-medium
+                    font-nixie
                     tracking-[-0.03em]
                     text-right
-                    text-[#7a7a7a]
+                    text-[#181818]
                   "
                 >
                   WORK THAT
@@ -328,7 +322,7 @@ export default function UXPage() {
 
           {/* DESKTOP */}
           <div className="hidden lg:flex min-h-[250px] items-end justify-end px-10 py-10">
-            <p className="w-[320px] text-right text-[16px] leading-[1.45] text-[#666666]">
+            <p className="w-[360px] text-right text-[16px] font-nixie leading-[1.45] text-[#181818]">
               We tend to work best with people who are invested in what they’re
               building, who care about depth, not just speed.
             </p>

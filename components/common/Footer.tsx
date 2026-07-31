@@ -42,9 +42,9 @@ export default function Footer() {
               "text-[28px]",
               "tracking-[0.22em]",
               "uppercase",
-              "text-black/40",
+              "text-[#181818]",
               "font-nixie",
-              "font-normal"
+              
             )}
             style={{
               writingMode: "vertical-rl",
@@ -131,7 +131,7 @@ export default function Footer() {
                   "leading-[0.92]",
                   "tracking-[-0.03em]",
                   "uppercase",
-                  "text-[#111]",
+                  "text-[#181818]",
                   "font-nova",
                   "md:text-[58px]",
                   "max-md:text-[46px]",
@@ -147,7 +147,7 @@ export default function Footer() {
                   "max-w-[460px]",
                   "text-[17px]",
                   "leading-[1.25]",
-                  "text-black/60",
+                  "text-[#181818]",
                   "font-nixie",
                   "max-md:mt-[20px]",
                   "max-md:text-[15px]"
@@ -174,7 +174,7 @@ export default function Footer() {
               className={cn(
                 "h-[104px]",
                 "border-r",
-                "border-black/40",
+                "border-black/50",
                 "flex",
                 "items-center",
                 "px-[72px]",
@@ -209,10 +209,10 @@ export default function Footer() {
                       "text-[20px]",
                       "tracking-[0.18em]",
                       "uppercase",
-                      "text-black/45",
+                      "text-[#181818]",
                       "font-nixie",
                       "cursor-pointer",
-                      "hover:text-black",
+                      "hover:text-[#6b6b6b]",
                       "transition-colors",
                       "max-md:text-[13px]",
                       "max-md:tracking-[0.12em]"
@@ -243,7 +243,7 @@ export default function Footer() {
                   "hover:gap-4",
                   "transition-all",
                   "duration-300",
-                  "text-[#8BAF72]",
+                  "text-[#80c46c]",
                   "mr-[55px]",
                   "cursor-pointer",
                   "max-md:mr-0"
@@ -307,7 +307,7 @@ export default function Footer() {
               "text-[20px]",
               "tracking-[0.16em]",
               "uppercase",
-              "text-black/80",
+              "text-[#181818]",
               "font-nixie",
               "max-md:gap-[24px]",
               "max-md:text-[15px]"
@@ -315,7 +315,7 @@ export default function Footer() {
           >
             <span>10°46'41.5"N</span>
 
-            <span className="text-black/40">|</span>
+            <span className="text-black/50">|</span>
 
             <span>76°39'22.0"E</span>
           </div>
@@ -327,7 +327,7 @@ export default function Footer() {
               "leading-none",
               "tracking-[0.08em]",
               "uppercase",
-              "text-black/10",
+              "text-[#181818]",
               "font-nova",
               "whitespace-nowrap",
               "max-lg:text-[72px]",
@@ -361,7 +361,7 @@ export default function Footer() {
               "text-[18px]",
               "tracking-[0.12em]",
               "uppercase",
-              "text-black/80",
+              "text-[#181818]",
               "font-nixie",
               "max-md:text-[15px]"
             )}
@@ -374,7 +374,7 @@ export default function Footer() {
               "text-[18px]",
               "tracking-[0.12em]",
               "uppercase",
-              "text-black/80",
+              "text-[#181818] ",
               "font-nixie",
               "max-md:text-[15px]"
             )}
@@ -387,7 +387,7 @@ export default function Footer() {
               "text-[18px]",
               "tracking-[0.12em]",
               "uppercase",
-              "text-black/80",
+              "text-[#181818] ",
               "font-nixie",
               "whitespace-nowrap",
               "max-md:text-[15px]",
@@ -416,7 +416,7 @@ export default function Footer() {
             "text-[20px]",
             "tracking-[0.16em]",
             "uppercase",
-            "text-black/70",
+            "text-[#181818] ",
             "font-nixie",
             "max-md:text-[12px]",
             "max-md:tracking-[0.10em]",

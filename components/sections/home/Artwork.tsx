@@ -7,24 +7,10 @@ export default function Artwork() {
   const [active, setActive] = useState(0);
 
   return (
-   <section
-  className="
-    bg-[#e7e5e1]
-
-    px-[72px]
-    py-[40px]
-
-    max-lg:px-[28px]
-    max-lg:py-[28px]
-
-    max-md:px-4
-    max-md:py-0
-  "
->
+   <section className=" bg-[#e7e5e1] px-[72px] py-[40px] max-lg:px-[28px] max-lg:py-[28px] max-md:px-4 max-md:py-0">
       {/* =========================
           DESKTOP
       ========================= */}
-
       <div
         className="
           hidden
@@ -39,10 +25,6 @@ export default function Artwork() {
           justify-center
         "
       >
-        {/* INNER CONTENT — max-width wrapper add cheythu, ippo content
-            eppozhum container-inte NADUKKU centered aayirikkum, 1920px-il
-            ellam left-il ottippidichu nilkkathe. justify-between vech
-            image-um menu-um available width anusarich spread aavum. */}
         <div
           className="
             w-full
@@ -64,7 +46,7 @@ export default function Artwork() {
                 tracking-[0.32em]
                 ml-[50px]
                 uppercase
-                text-[#5b5b5b]
+                text-white
                 mb-5
                 transition-all
                 duration-300
@@ -161,8 +143,8 @@ export default function Artwork() {
                         font-nova
                         ${
                           active === index
-                            ? "text-[#7d976e]"
-                            : "text-[#3f3f3f] hover:text-[#7d976e]"
+                            ? "text-[#80c46c]"
+                            : "text-[#6b6b6b] hover:text-[#7d976e]"
                         }
                       `}
                     >
