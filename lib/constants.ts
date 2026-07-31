@@ -55,6 +55,18 @@ export const SOCIAL_LINKS = [
   },
 ];
 
+export const socialss = [
+  FaInstagram,
+  FaPinterest,
+  FaTwitter,
+];
+
+export const links = [
+  { number: "01", label: "CREATIVE" },
+  { number: "02", label: "EDITIONS" },
+  { number: "03", label: "COHORT" },
+];
+
 // artwork
 
   export const menu = [

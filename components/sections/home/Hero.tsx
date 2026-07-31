@@ -2,23 +2,11 @@
 
 import { SOCIAL_LINKS } from "@/lib/constants";
 import Image from "next/image";
-import {
-  FaInstagram,
-  FaPinterest,
-  FaTwitter,
-} from "react-icons/fa";
+import { socialss } from "@/lib/constants";
+import {links} from "@/lib/constants"
 
-const links = [
-  { number: "01", label: "CREATIVE" },
-  { number: "02", label: "EDITIONS" },
-  { number: "03", label: "COHORT" },
-];
 
-const socials = [
-  FaInstagram,
-  FaPinterest,
-  FaTwitter,
-];
+
 
 export default function StudioHero() {
   return (
@@ -192,7 +180,7 @@ export default function StudioHero() {
 
                       <span
                         className="
-                          text-[14px]
+                          text-[15px]
                           lg:text-[18px]
                           leading-none
                           font-nixie
@@ -209,7 +197,7 @@ export default function StudioHero() {
                     {/* RIGHT SIDE */}
                     <span
                       className="
-                        text-[14px]
+                        text-[15px]
                         lg:text-[19px]
                         leading-none
                         font-nixie
@@ -311,7 +299,7 @@ export default function StudioHero() {
                 mt-[62px]
               "
             >
-              {socials.map((Icon, index) => (
+              {socialss.map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
