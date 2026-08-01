@@ -17,7 +17,7 @@ export default function WhyIntentionallySmall() {
       text-[1.9rem] sm:text-[2.5rem] md:text-[2.9rem] lg:text-[2.6rem] xl:text-[3.1rem] 2xl:text-[3.4rem]
       leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]
       tracking-[0.01em]
-      text-black
+      text-[#181818]
       max-w-3xl
     "
   >
@@ -33,15 +33,15 @@ export default function WhyIntentionallySmall() {
             {/* Vertical rule — parent-il items-stretch ullathukond
                 ee div automatic aayi text block-nte height edukkum,
                 explicit height set cheyyenda avashyam illa */}
-            <div className="hidden sm:block w-px bg-black/15 shrink-0" />
+            <div className="hidden sm:block w-px bg-black/50 shrink-0" />
 
             <div className="flex flex-col gap-5 sm:gap-6 max-w-[460px]">
-              <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-black/55">
+              <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818]">
                 We&apos;ve intentionally resisted building a large-volume
                 studio structure. Not because growth isn&apos;t important.
                 But because proximity to the work matters deeply to us.
               </p>
-              <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-black/55">
+              <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818]">
                 Smaller teams allow: deeper thinking, stronger coherence,
                 calmer collaboration, and genuine involvement throughout the
                 process. Clients work directly with the people shaping the
@@ -50,7 +50,7 @@ export default function WhyIntentionallySmall() {
                 thoughtful. Decisions to remain intentional. And the work to
                 retain emotional depth.
               </p>
-              <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-black/55">
+              <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818]">
                 We&apos;re less interested in becoming the loudest studio in
                 the room. More interested in building a practice whose work
                 continues to hold meaning years later.

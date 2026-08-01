@@ -42,19 +42,14 @@ export default function WhatWeValue() {
         <h2
           className="
             font-nova
-            text-[1.6rem] sm:text-[2.1rem] md:text-[2.3rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]
-            leading-[1.15] tracking-[0.01em] text-black
+            text-[2rem] sm:text-[2.7rem] md:text-[2.7rem] lg:text-[2.7rem] xl:text-[2.9rem] 2xl:text-[2.9rem]
+            leading-[1.15] tracking-[0.01em] text-[#181818]
             mt-8 sm:mt-10 lg:mt-12
           "
         >
           WHAT WE VALUE
         </h2>
 
-        {/* ============ 01 / 02 / 03 TABS ROW + ARROW — exact hero pattern, left-aligned ============ */}
-        {/* "gap-x-42" / "gap-x-58" Tailwind default scale-il illa — CSS generate
-            aakathe silently ignored aayirunnu. Bracket arbitrary values aakki
-            (same intended pixel value: 42*4px=168px, 58*4px=232px), plus a
-            smoother md step for the left margin instead of a sudden jump at lg. */}
         <div className="mt-14 sm:mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-3 items-start">
           <div
             ref={tabsRowRef}
@@ -68,7 +63,7 @@ export default function WhatWeValue() {
                 <button
                   onClick={() => setActiveIndex(i)}
                   className={`font-nixie text-[16px] sm:text-[20px] cursor-pointer uppercase tracking-[0.1em] transition-colors ${
-                    activeIndex === i ? "text-black" : "text-black/35 hover:text-black/60"
+                    activeIndex === i ? "text-[#181818]" : "text-black hover:text-[#6b6b6b]"
                   }`}
                 >
                   — {value.number}
@@ -76,7 +71,7 @@ export default function WhatWeValue() {
 
                 <span
                   className={`font-nixie text-[13px] sm:text-[16px] uppercase tracking-[0.06em] leading-[1.5] text-center sm:text-left transition-colors ${
-                    activeIndex === i ? "text-black/55" : "text-black/35"
+                    activeIndex === i ? "text-[#181818]" : "text-black hover:text-[#6b6b6b] "
                   }`}
                 >
                   {value.lines[0]}
@@ -89,7 +84,7 @@ export default function WhatWeValue() {
 
           <button
             aria-label="Next"
-            className="cursor-pointer flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center bg-white border border-black/30 text-black/60 hover:bg-black hover:text-white hover:border-black transition-colors self-center sm:self-end lg:self-auto lg:col-span-1 lg:col-start-12 mx-auto sm:mx-0 sm:ml-auto lg:ml-auto"
+            className="cursor-pointer flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center bg-white border border-black/50 text-black hover:bg-black hover:text-white hover:border-black transition-colors self-center sm:self-end lg:self-auto lg:col-span-1 lg:col-start-12 mx-auto sm:mx-0 sm:ml-auto lg:ml-auto"
           >
             <GoArrowRight size={20} />
           </button>
@@ -103,14 +98,9 @@ export default function WhatWeValue() {
           />
         </div>
 
-        {/* ============ QUOTE + ICON, right-aligned, then link below ============ */}
-        {/* "pr-35 / pr-68 / pr-88" and "mr-22" ivayum non-standard scale values
-            aayirunnu, CSS generate aavathe — quote section already right-padding
-            illathe aayirunnu ella screen-ilum. Bracket values aakki, mobile-il
-            chെറiya standard padding vecho overflow varathe. */}
         <div className="mt-10 lg:mt-14 flex flex-col items-end pr-4 sm:pr-[140px] lg:pr-[272px] xl:pr-[352px]">
           <div className="flex items-center gap-4 sm:gap-6">
-            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-black/50 max-w-[200px] sm:max-w-[280px] lg:max-w-[360px] text-right">
+            <p className="font-nixie text-[13px] sm:text-[17px] leading-[1.75] text-[#181818] max-w-[200px] sm:max-w-[280px] lg:max-w-[360px] text-right">
               We value businesses that care deeply about what they are
               building. And people who understand that meaningful creative
               work is rarely rushed into existence.
@@ -135,7 +125,7 @@ export default function WhatWeValue() {
 
           <a
             href="#"
-            className="group mt-6 sm:mt-8 mr-6 sm:mr-[88px] inline-flex items-center gap-2 w-fit font-nixie text-[14px] sm:text-[16px] uppercase tracking-[0.12em] text-[#80AD76]"
+            className="group mt-6 sm:mt-8 mr-6 sm:mr-[88px] inline-flex items-center gap-2 w-fit font-nixie text-[14px] sm:text-[16px] uppercase tracking-[0.12em] text-[#80c46c]"
           >
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
               ↳
@@ -173,7 +163,7 @@ export default function WhatWeValue() {
               sm:col-span-1
               font-nova
               text-[1.9rem] sm:text-[2.2rem] md:text-[2.4rem] lg:text-[2.6rem] xl:text-[2.9rem]
-              leading-[1.15] tracking-[0.01em] text-black
+              leading-[1.15] tracking-[0.01em] text-[#181818]
             "
           >
             THE FUTURE OF
@@ -182,7 +172,7 @@ export default function WhatWeValue() {
           </h2>
 
           <div className="sm:col-start-3 sm:col-span-1 sm:-ml-8 lg:-ml-12 xl:-ml-16">
-            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-black/50">
+            <p className="font-nixie text-[13px] sm:text-[17px] leading-[1.75] text-[#181818]">
               We&apos;re interested in slowly building
               <span className="hidden sm:inline">
                 {" "}
@@ -212,8 +202,8 @@ export default function WhatWeValue() {
             mt-10 sm:mt-12 lg:mt-14
           "
         >
-          <span className="text-[#80AD76]">branding,</span>{" "}
-          <span className="text-black/30">
+          <span className="text-[#80c46c]">branding,</span>{" "}
+          <span className="text-[#6b6b6b]">
             digital systems, culture, education, art, public initiatives,
             storytelling, creative technology, and collective exploration.
           </span>

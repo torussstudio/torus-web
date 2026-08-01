@@ -23,12 +23,12 @@ export default function StudioStory() {
             <div className="mt-8 sm:mt-9 flex  gap-10 sm:gap-22">
               <div className="h-60 w-px shrink-0 bg-white/80" />
               <div className="flex flex-col mt-10 gap-5 max-w-[320px] sm:max-w-[360px]">
-                <p className="font-nixie text-[12.5px] sm:text-[13.5px] leading-[1.7] text-white/55">
+                <p className="font-nixie text-[12.5px] sm:text-[16px] leading-[1.7] text-white/70">
                   Toruss was never built around the idea of becoming the largest
                   studio. It was built around the idea of staying close to the
                   work.
                 </p>
-                <p className="font-nixie text-[12.5px] sm:text-[13.5px] leading-[1.7] text-white/55">
+                <p className="font-nixie text-[12.5px] sm:text-[16px] leading-[1.7] text-white/70">
                   What began as an independent design practice slowly evolved
                   into something more layered over time — through branding
                   projects, digital systems, conversations, artistic
@@ -86,18 +86,18 @@ export default function StudioStory() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 lg:col-start-8 flex flex-col gap-7 pb-1 sm:pb-2">
-            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-white/55">
+          <div className="lg:col-span-5 lg:col-start-8 w-full max-w-[460px] flex flex-col gap-7">
+            <p className="font-nixie text-[16px] sm:text-[16px] leading-[1.75] text-white/70">
               Somewhere along the way, the studio stopped feeling like a service
               provider and started feeling more like a creative practice.
             </p>
-            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-white/55">
+            <p className="font-nixie text-[16px] sm:text-[16px] leading-[1.75] text-white/70">
               Today, Toruss works with businesses, founders, institutions,
               cultural initiatives, and emerging ideas across different parts of
               the world — while continuing to remain deeply rooted in a quieter
               and slower environment in Palakkad, Kerala.
             </p>
-            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-white/55">
+            <p className="font-nixie text-[16px] sm:text-[16px] leading-[1.75] text-white/70">
               We&apos;ve found that meaningful work does not necessarily require
               noise or scale. Only clarity, intent, and enough care to think
               deeply.

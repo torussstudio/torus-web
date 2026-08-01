@@ -60,7 +60,7 @@ export default function StudioHero() {
           <div className="hidden lg:flex absolute left-0 top-2 flex-col items-center">
             <div className="h-6 w-px bg-black/30 mb-4 ml-[5px]" />
             <span
-              className="font-nixie  text-[16px] uppercase tracking-[0.18em] text-black/45 ml-[5px]"
+              className="font-nixie  text-[16px] uppercase tracking-[0.18em] text-[#181818] ml-[5px]"
               style={{ writingMode: "vertical-rl", transform: "rotate(360deg)" }}
             >
               STUDIO
@@ -75,7 +75,7 @@ export default function StudioHero() {
               text-[1.75rem] sm:text-[2.4rem] md:text-[2.9rem] lg:text-[2.6rem] xl:text-[3.1rem] 2xl:text-[3.4rem]
               leading-[1.12] sm:leading-[1.1] lg:leading-[1.08]
               tracking-[0.01em]
-              text-black
+              text-[#181818]
               break-words
             "
           >
@@ -95,7 +95,7 @@ export default function StudioHero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-black/45 hover:text-black transition-colors"
+                className="text-[#6b6b6b] hover:text-[#181818] transition-colors"
               >
                 <Icon className="text-[22px]" />
               </a>
@@ -110,7 +110,7 @@ export default function StudioHero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-black/40 hover:text-black transition-colors"
+                className="text-[#6b6b6b] hover:text-[#181818] transition-colors"
               >
                 <Icon className="text-[20px]" />
               </a>
@@ -122,38 +122,42 @@ export default function StudioHero() {
         <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
           {/* LEFT — intro paragraph + view more (lg-il image-inte height-inu
               opposite aayi nadukku vertically center aavan flex use cheyyunnu) */}
-          <div className="lg:col-span-3 lg:col-start-2 flex flex-col justify-center lg:min-h-[420px]">
-            <p className="font-nixie text-[14px] sm:text-[15px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[320px] lg:max-w-[280px]">
-              Toruss exists at the intersection of branding, digital
-              experiences, communication systems, art, objects, and cultural
-              exploration.
-            </p>
+         <div className="lg:col-span-3 lg:col-start-2 h-[420px] flex flex-col">
+  {/* Centered text */}
+  <div className="flex-1 flex items-center">
+    <p className="font-nixie text-[16px] sm:text-[15px] leading-[1.75] text-[#181818] max-w-[420px] sm:max-w-[320px] lg:max-w-[380px]">
+      Toruss exists at the intersection of branding, digital
+      experiences, communication systems, art, objects, and cultural
+      exploration.
+    </p>
+  </div>
 
-            <a
-              href="#"
-              className="group mt-8 sm:mt-10 inline-flex items-center gap-2 w-fit font-nixie text-[13px] uppercase tracking-[0.12em] text-[#80AD76]"
-            >
-              <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                ↳
-              </span>
-              VIEW MORE
-            </a>
-          </div>
+  {/* Bottom button */}
+  <a
+    href="#"
+    className="group inline-flex items-center gap-2 w-fit font-nixie text-[16px] uppercase tracking-[0.12em] text-[#80c46c]"
+  >
+    <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+      ↳
+    </span>
+    VIEW MORE
+  </a>
+</div>
 
           {/* RIGHT — image + quote stacked below it, right-aligned */}
           <div className="lg:col-span-8 flex flex-col items-end">
-            <div className="relative w-full h-[230px] sm:h-[340px] md:h-[400px] lg:h-[420px] xl:h-[460px] overflow-hidden">
-              <Image
-                src="/images/heroimage.avif"
-                alt="Studio"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                className="object-cover"
-              />
-            </div>
+            <div className="relative w-full h-[215px] sm:h-[320px] md:h-[370px] lg:h-[390px] xl:h-[420px] overflow-hidden">
+  <Image
+    src="/images/heroimage.avif"
+    alt="Studio"
+    fill
+    priority
+    sizes="(max-width: 1024px) 100vw, 66vw"
+    className="object-cover"
+  />
+</div>
 
-            <p className="font-nixie italic text-[13px] sm:text-[14px] leading-[1.7] text-black/45 max-w-[85%] sm:max-w-[300px] lg:max-w-[260px] text-right mt-6 sm:mt-8">
+            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.7] text-[#181818] max-w-[85%] sm:max-w-[300px] lg:max-w-[260px] text-right mt-6 sm:mt-8">
               We work across disciplines because we rarely experience the
               world in isolated categories ourselves.
             </p>
@@ -169,20 +173,20 @@ export default function StudioHero() {
             {visibleTabs.map((tab, i) => (
               <div
                 key={tab.number}
-                className="inline-flex flex-col items-center sm:items-end gap-3 w-fit"
+                className="inline-flex text-[#181818] font-nixie flex-col items-center sm:items-end gap-3 w-fit"
               >
                 <button
                   onClick={() => setActiveInPage(i)}
                   className={`font-nixie text-[16px] sm:text-[18px] cursor-pointer uppercase tracking-[0.1em] transition-colors ${
-                    activeInPage === i ? "text-black" : "text-black/35 hover:text-black/60"
+                    activeInPage === i ? "text-[#181818]" : "text-[#6b6b6b] hover:text-black"
                   }`}
                 >
                   — {tab.number}
                 </button>
 
                 <span
-                  className={`font-nova text-[16px] sm:text-[17px] lg:text-[19px] xl:text-[21px] leading-[1.3] text-center sm:text-right transition-colors ${
-                    activeInPage === i ? "text-black" : "text-black/30"
+                  className={`font-nixie text-[16px] sm:text-[18px] lg:text-[19px] xl:text-[21px] leading-[1.3] text-center sm:text-right transition-colors ${
+                    activeInPage === i ? "text-[#181818]" : "text-[#6b6b6b] hover:text-black"
                   }`}
                 >
                   {tab.lines[0]}
@@ -217,8 +221,8 @@ export default function StudioHero() {
 
         {/* ============ CLOSING QUOTE + DIAGRAM ============ */}
         <div className="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-          <div className="lg:col-span-5 lg:col-start-7 flex items-center gap-5 sm:gap-6">
-            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.75] text-black/50 max-w-[220px] sm:max-w-[280px] lg:max-w-[300px]">
+          <div className="lg:col-span-5 lg:col-start-7 lg:-translate-x-6 flex items-center gap-5 sm:gap-6">
+            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818] max-w-[220px] sm:max-w-[280px] lg:max-w-[380px]">
               We are interested in how all of these layers come together to
               shape human experience. Quietly, thoughtfully, and with
               long-term intent.

@@ -42,7 +42,7 @@ export default function Artwork() {
             <p
               className="
                 text-[15px]
-                font-nixie
+                font-nova
                 tracking-[0.32em]
                 ml-[50px]
                 uppercase
@@ -308,7 +308,7 @@ export default function Artwork() {
                       uppercase
                       tracking-[0.08em]
                       leading-[1.1]
-                      font-nova
+                      font-nixie
                       transition-colors
                       duration-300
 

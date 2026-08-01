@@ -20,7 +20,7 @@ export default function UXPage() {
             A NOTE FROM THE STUDIO
           </p>
 
-          <h1 className="max-w-[650px] text-[30px] md:text-[38px] lg:text-[45px] leading-[1.08] tracking-[-0.04em] uppercase font-nixie text-[#1e1e1e]">
+          <h1 className="max-w-[650px] text-[30px] md:text-[38px] lg:text-[45px] leading-[1.08] tracking-[-0.04em] uppercase font-nova text-[#1e1e1e]">
             ON ATTENTION, CARE, AND THE QUIET INTENT BEHIND EVERYTHING WE MAKE.
           </h1>
 

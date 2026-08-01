@@ -297,7 +297,7 @@ export default function AreasOfPractice() {
                                     tracking-[-0.05em]
                                     uppercase
                                     text-[#80c46c]
-                                    font-nova
+                                    font-nixie
                                   "
                                 >
                                   {item.title}
@@ -429,7 +429,7 @@ export default function AreasOfPractice() {
                                   tracking-[-0.05em]
                                   uppercase
                                   text-[#181818]
-                                  font-nova
+                                  font-nixie
                                 "
                               >
                                 {item.title}
@@ -504,7 +504,7 @@ export default function AreasOfPractice() {
                   tracking-[-0.05em]
                   uppercase
                   text-[#171717]
-                  font-nova
+                  font-nixie
                 "
               >
                 AREAS
@@ -683,7 +683,7 @@ export default function AreasOfPractice() {
                                   tracking-[-0.05em]
                                   uppercase
                                   text-[#85A56F]
-                                  font-nova
+                                  font-nixie
                                 "
                               >
                                 {item.title}
@@ -815,7 +815,7 @@ export default function AreasOfPractice() {
                                 tracking-[-0.05em]
                                 uppercase
                                 text-black/20
-                                font-nova
+                                font-nixie
                               "
                             >
                               {item.title}

@@ -33,12 +33,12 @@ export default function StudioIntro() {
               gap-12 supplies the spacing instead. */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-12 lg:gap-0">
             <div className="flex flex-col gap-8 sm:gap-10 max-w-[380px]">
-              <p className="font-nixie text-[15px] sm:text-[16px] leading-[1.75] text-black/70">
+              <p className="font-nixie text-[15px] sm:text-[17px] leading-[1.75] text-[#181818]">
                 A practice where business thinking and cultural thinking can
                 coexist naturally.
               </p>
 
-              <p className="font-nixie text-[15px] sm:text-[16px] leading-[1.75] text-black/70">
+              <p className="font-nixie text-[15px] sm:text-[17px] leading-[1.75] text-[#181818] ">
                 Over time, we hope Toruss evolves into more than a studio
                 alone, perhaps into a broader ecosystem of: creative
                 practice, education, publishing, archives, objects, cultural
@@ -46,7 +46,7 @@ export default function StudioIntro() {
               </p>
             </div>
 
-            <h2 className="font-nova text-[2.1rem] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[2.8rem] xl:text-[2.8rem] 2xl:text-[3rem] leading-[1.15] tracking-[0.01em] text-[#80AD76]">
+            <h2 className="font-nova text-[2.1rem] sm:text-[2.5rem] md:text-[2.8rem] lg:text-[2.8rem] xl:text-[2.8rem] 2xl:text-[3rem] leading-[1.15] tracking-[0.01em] text-[#80c46c]">
               Quietly global.
               <br />
               Deeply human.
@@ -56,7 +56,7 @@ export default function StudioIntro() {
           </div>
         </div>
 
-        <div className="mt-16 sm:mt-20 lg:mt-24 h-px bg-black/40" />
+        <div className="mt-16 sm:mt-20 lg:mt-24 h-px bg-black/50" />
       </div>
     </section>
   );

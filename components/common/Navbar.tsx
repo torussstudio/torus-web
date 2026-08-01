@@ -59,7 +59,7 @@ export default function Navbar() {
                       `,
                       isActive
                         ? "text-[#707070]"
-                        : "text-[#6b6b6b] hover:text-[black]"
+                        : "text-black hover:text-[#6b6b6b]"
                     )}
                   >
                     <span

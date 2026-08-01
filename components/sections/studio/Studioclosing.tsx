@@ -11,7 +11,7 @@ export default function StudioClosing() {
           {/* LEFT — intro copy, StudioHero-nte "LEFT" paragraph block-inte
               athe col-start/col-span aayth (col-start-2, col-span-3) */}
           <div className="lg:col-span-3 lg:col-start-1 flex flex-col">
-            <p className="font-nixie text-[14px] sm:text-[17px] leading-[1.75] text-black/55 max-w-[420px] sm:max-w-[380px] lg:max-w-[340px]">
+            <p className="font-nixie text-[14px] sm:text-[17px] leading-[1.75] text-[#181818]  max-w-[420px] sm:max-w-[380px] lg:max-w-[340px]">
               The businesses, spaces, and ideas people remember most are rarely
               the loudest ones.
               <br />
@@ -20,9 +20,6 @@ export default function StudioClosing() {
             </p>
           </div>
 
-          {/* RIGHT — staggered image pair. Large image full height, small
-              image narrower + bottom-aligned so it reads as "dropped down"
-              relative to the large one (matches the reference stagger). */}
           <div className="lg:col-span-8 flex flex-col sm:flex-row items-start sm:items-end gap-6 sm:gap-8 lg:gap-10 xl:gap-14">
             <div className="relative w-full sm:flex-[1] h-[320px] sm:h-[420px] md:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden">
               <Image
@@ -48,8 +45,6 @@ export default function StudioClosing() {
 
         {/* ============ BOTTOM: green manifesto lines + closing CTA copy ============ */}
         <div className="mt-14 sm:mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-6 items-start">
-          {/* Manifesto — reuses the #80AD76 accent green from the
-              "VIEW MORE" link in StudioHero, same left indent (col-start-2) */}
           <h2
             className="
     lg:col-span-6 lg:col-start-1
@@ -57,7 +52,7 @@ export default function StudioClosing() {
     text-[2.1rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.1rem] xl:text-[3.6rem] 2xl:text-[4rem]
     leading-[1.15]
     tracking-[0.005em]
-    text-[#80AD76]
+    text-[#80c46c]
   "
           >
             Thoughtfully shaped.
@@ -69,9 +64,7 @@ export default function StudioClosing() {
             Alive.
           </h2>
 
-          {/* Closing CTA copy — aligned under the small image's left edge,
-              same paragraph styling family as the rest of the page */}
-          <p className="lg:col-span-4 lg:col-start-8 lg:pl-4 font-nixie text-[14px] sm:text-[16px] leading-[1.75] text-black/55 max-w-[380px] lg:max-w-[300px] xl:max-w-[330px]">
+          <p className="lg:col-span-4 lg:col-start-8 lg:pl-4 font-nixie text-[14px] sm:text-[17px] leading-[1.75] text-[#181818] max-w-[380px] lg:max-w-[300px] xl:max-w-[330px]">
             If you care deeply about perception, atmosphere, clarity, culture,
             and meaningful long-term work, we&apos;d love to begin a
             conversation.

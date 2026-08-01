@@ -323,7 +323,7 @@ export default function Footer() {
           <h1
             className={cn(
               "mt-[32px]",
-              "text-[100px]",
+              "text-[90px]",
               "leading-none",
               "tracking-[0.08em]",
               "uppercase",

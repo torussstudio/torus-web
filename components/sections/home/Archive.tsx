@@ -4,8 +4,6 @@ import { works } from "@/lib/constants";
 import Image from "next/image";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 
-
-
 export default function ArchiveSection() {
   return (
     <section className="w-full bg-[#ebe9e6] border-t border-black/20 overflow-hidden">
@@ -20,7 +18,6 @@ export default function ArchiveSection() {
           items-center
           justify-between
           px-[72px]
-
           max-md:h-auto
           max-md:px-5
           max-md:py-5
@@ -33,7 +30,7 @@ export default function ArchiveSection() {
             tracking-[-0.05em]
             uppercase
             text-[#181818]           
-            font-nixie
+            font-nova
             max-md:text-[30px]
           "
         >
@@ -133,7 +130,6 @@ export default function ArchiveSection() {
                   tracking-[0.18em]
                   text-[#181818]
                   font-nixie
-                 
                   max-md:text-[12px]
                 "
               >
@@ -166,7 +162,7 @@ export default function ArchiveSection() {
                 tracking-[-0.04em]
                 uppercase
                 text-[#181818]
-                font-nova
+                font-nixie
                 max-w-[680px]
                 
                 max-md:text-[30px]
