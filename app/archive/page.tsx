@@ -1,11 +1,17 @@
-import React from 'react'
+import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
+import Archivehero from "@/components/sections/archive/Archivehero";
+import ProjectNarrative from "@/components/sections/archive/Projectnarrative";
+import ProjectOverview from "@/components/sections/archive/Projectoverview";
 
-function page() {
+export default function ArchivePage() {
   return (
-    <div>
-      
-    </div>
-  )
+    <main>
+        <Navbar/>
+      <Archivehero/>
+      <ProjectOverview />
+      <ProjectNarrative />
+      <Footer/>
+    </main>
+  );
 }
-
-export default page

@@ -33,4 +33,6 @@ ScrollTrigger.defaults({
 
 export { gsap, ScrollTrigger, Flip };
 
+
+
 export default gsap;
