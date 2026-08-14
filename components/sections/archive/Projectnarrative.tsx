@@ -1,33 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { narrative } from "@/lib/constants";
 
 type Narrative = {
-  heading: string; // two-line heading
+  heading: string; 
   body: string;
   eyebrow: string;
-  statement: string; // big pull-quote style line, wraps to 2 lines
+  statement: string; 
   detailImage: string;
   detailImageAlt: string;
   detailCaption: string;
   studioImage: string;
   studioImageAlt: string;
   closingCaption: string;
-};
-
-const narrative: Narrative = {
-  heading: "RETHINKING FRESHNESS IN SKINCARE.",
-  body: "When the project came to us, it was to build a launch-ready brand system around a clear idea of skincare made fresh, in smaller batches. And when we began exploring the project, what stood out was not just the product itself, but the larger contradiction surrounding the skincare industry. The category had become increasingly focused on shelf life, preservation, and mass distribution.",
-  eyebrow: "The challenge was more interesting:",
-  statement: "how to make people believe in the idea of freshly made skincare.",
-  detailImage: "/images/cohart.avif",
-  detailImageAlt: "Person viewing an art installation through glass",
-  detailCaption:
-    "The idea of \"fresh\" is already a familiar word in skincare. It is often used loosely to suggest something natural. But the brand's idea of fresh was connected to the time closest to manufacturing, when the formulation is newly prepared, and the product is closer to its peak performance.",
-  studioImage: "/images/studio.avif",
-  studioImageAlt: "Design team collaborating around a table in a bright studio loft",
-  closingCaption:
-    "So we approached the project not as a conventional skincare identity but as a broader exercise in building a world around freshness, proof, and modern ritual.",
 };
 
 export default function ProjectNarrative({ data = narrative }: { data?: Narrative }) {

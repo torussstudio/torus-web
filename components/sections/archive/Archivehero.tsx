@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { project } from "@/lib/constants";
 
 type Project = {
-  title: string; // two-line title as shown in the sidebar / heading
-  owner: string;
+  title: string;
   location: string;
   period: string;
   projectLead: string;
@@ -15,25 +15,6 @@ type Project = {
   thumbImageAlt: string;
 };
 
-const project: Project = {
-  title: "THE SPANISH ALCHEMIST",
-  owner: "Rahul C",
-  location: "Alicante, Spain",
-  period: "2025 – Present",
-  projectLead: "Hari Sankar",
-  contributors: [
-    "Abhinav",
-    "Archana",
-    "Arun Anand",
-    "Vibish",
-    "Raunak",
-    "Kishor",
-  ],
-  heroImage: "/images/spanish-alchemist-main.jpg",
-  heroImageAlt: "Designer reviewing mood-board photographs and fabric swatches",
-  thumbImage: "/images/spanish-alchemist-thumb.jpg",
-  thumbImageAlt: "Hand holding a stack of polaroid photographs",
-};
 
 export default function ProjectDetail({ data = project }: { data?: Project }) {
   const sidebarLines = data.title.split(" ");
@@ -99,9 +80,6 @@ export default function ProjectDetail({ data = project }: { data?: Project }) {
                       </span>
                     ))}
                   </h1>
-                  <p className="font-nixie text-[15px] sm:text-[16px] text-[#6b6b6b] mt-4">
-                    Owned by : {data.owner}
-                  </p>
                 </div>
 
                 <div className="flex flex-col items-start lg:items-end gap-8 sm:gap-10 text-left lg:text-right">

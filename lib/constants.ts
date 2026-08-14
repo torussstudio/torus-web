@@ -382,3 +382,147 @@ export const futureImages = [
   { src: "/images/footer.avif", alt: "Person seated facing a projected screen" },
   { src: "/images/objects.avif", alt: "Person leaning on a railing outdoors" },
 ];
+
+// ARCHIVE SECTION
+
+// Archive Hero
+
+type Project = {
+  title: string;
+  location: string;
+  period: string;
+  projectLead: string;
+  contributors: string[];
+  heroImage: string;
+  heroImageAlt: string;
+  thumbImage: string;
+  thumbImageAlt: string;
+};
+
+export const project: Project = {
+  title: "THE SPANISH ALCHEMIST",
+  location: "Alicante, Spain",
+  period: "2025 – Present",
+  projectLead: "Hari Sankar",
+  contributors: [
+    "Abhinav",
+    "Archana",
+    "Arun Anand",
+    "Vibish",
+    "Raunak",
+    "Kishor",
+  ],
+  heroImage: "/images/spanish-alchemist-main.jpg",
+  heroImageAlt: "Designer reviewing mood-board photographs and fabric swatches",
+  thumbImage: "/images/spanish-alchemist-thumb.jpg",
+  thumbImageAlt: "Hand holding a stack of polaroid photographs",
+};
+
+// Project Narrative
+
+type Narrative = {
+  heading: string; // two-line heading
+  body: string;
+  eyebrow: string;
+  statement: string; // big pull-quote style line, wraps to 2 lines
+  detailImage: string;
+  detailImageAlt: string;
+  detailCaption: string;
+  studioImage: string;
+  studioImageAlt: string;
+  closingCaption: string;
+};
+
+export const narrative: Narrative = {
+  heading: "RETHINKING FRESHNESS IN SKINCARE.",
+  body: "When the project came to us, it was to build a launch-ready brand system around a clear idea of skincare made fresh, in smaller batches. And when we began exploring the project, what stood out was not just the product itself, but the larger contradiction surrounding the skincare industry. The category had become increasingly focused on shelf life, preservation, and mass distribution.",
+  eyebrow: "The challenge was more interesting:",
+  statement: "how to make people believe in the idea of freshly made skincare.",
+  detailImage: "/images/cohart.avif",
+  detailImageAlt: "Person viewing an art installation through glass",
+  detailCaption:
+    "The idea of \"fresh\" is already a familiar word in skincare. It is often used loosely to suggest something natural. But the brand's idea of fresh was connected to the time closest to manufacturing, when the formulation is newly prepared, and the product is closer to its peak performance.",
+  studioImage: "/images/studio.avif",
+  studioImageAlt: "Design team collaborating around a table in a bright studio loft",
+  closingCaption:
+    "So we approached the project not as a conventional skincare identity but as a broader exercise in building a world around freshness, proof, and modern ritual.",
+};
+
+// Project Overview
+
+type Overview = {
+  statement: string;
+  location: string;
+  period: string;
+  services: string[]; // rendered as a "/"-joined line, wraps naturally
+  image: string;
+  imageAlt: string;
+};
+
+export const overview: Overview = {
+  statement:
+    "TURNING A FRESH SKINCARE IDEA FROM ALICANTE INTO A LAUNCH-READY BRAND, PACKAGING, E-COMMERCE, AND DIGITAL SYSTEM.",
+  location: "Alicante, Spain",
+  period: "2025 – Present",
+  services: [
+    "Naming",
+    "Identity System",
+    "Packaging",
+    "E-Commerce",
+    "Social Media",
+    "Email Marketing",
+  ],
+  image: "/images/skincare-hero.jpg",
+  imageAlt: "Creative working at a desk surrounded by colorful packaging mockups",
+};
+
+// STudio MoodBoard
+
+export const images = [
+  {
+    src: "/images/collage-1.jpg",
+    alt: "Hand writing in a notebook beside coffee",
+    className:
+      "left-[14%] top-0 w-[25%] aspect-[170/128]",
+  },
+  {
+    src: "/images/collage-2.jpg",
+    alt: "Small archival workshop photo",
+    className:
+      "left-[-3%] top-[21%] w-[10.5%] aspect-[71/94]",
+  },
+  {
+    src: "/images/collage-3.jpg",
+    alt: "Team gathered around a window discussing work",
+    className:
+      "left-[21%] top-[24%] w-[18.5%] aspect-[125/222]",
+  },
+  {
+    src: "/images/collage-4.jpg",
+    alt: "Sunlit stack of printed papers",
+    className:
+      "left-[58.5%] top-[9%] w-[22.5%] aspect-[151/210]",
+  },
+  {
+    src: "/images/collage-5.jpg",
+    alt: "Close-up of hands on a keyboard",
+    className:
+      "left-[78%] top-[45%] w-[20%] aspect-[135/110]",
+  },
+  {
+    src: "/images/collage-6.jpg",
+    alt: "Studio workspace with pinned reference boards",
+    className:
+      "left-[-5.7%] top-[58%] w-[55.5%] aspect-[373/275]",
+    mobileAspect: "aspect-[373/275]",
+  },
+];
+
+export const mobileAspects = [
+  "aspect-[170/128]",
+  "aspect-[71/94]",
+  "aspect-[125/222]",
+  "aspect-[151/210]",
+  "aspect-[135/110]",
+  "aspect-[373/275]",
+];
