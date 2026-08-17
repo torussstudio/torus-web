@@ -27,10 +27,6 @@ export default function StudioHero() {
     setActiveInPage(0);
   };
 
-  // Divider-nte right end tabs row-nte real rendered right edge-nu match
-  // aavan, row-nte actual width measure cheyyunnu (row ippo justify-between
-  // vazhi full-width aayathukond, ee gap mostly 0 aayirikkum — pakshേ
-  // wrapping/edge-cases-il correct aayi nilkkan ee measurement nilanirthunnu).
   useLayoutEffect(() => {
     function measure() {
       if (window.innerWidth < 1024) {
@@ -50,9 +46,6 @@ export default function StudioHero() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#EAE7E2]">
-      {/* MAX-WIDTH WRAPPER — screenshot-nte laptop width-inu match aavan
-          ee container use cheyyunnu. 1728px-il freeze aayi, athil kooduthal
-          screen-il centered aayi nilkkum (original file-le pattern thanne). */}
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 sm:py-10 lg:py-16">
         {/* ============ TOP GRID: label + heading + socials ============ */}
         <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-y-8">

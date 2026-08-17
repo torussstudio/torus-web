@@ -5,25 +5,15 @@ import Image from "next/image";
 export default function ProjectQuestionAndNaming() {
   return (
     <>
-      {/* =========================================================
-          SECTION 1 — LIGHT
-          "How do we make freshness feel real?"
-         ========================================================= */}
       <section className="relative w-full overflow-hidden bg-white">
         <div className="relative max-w-[1728px] mx-auto pl-5 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 pr-0">
           <div className="relative lg:flex">
             {/* SIDEBAR — DESKTOP UNCHANGED */}
-            <div
-              className="  hidden  lg:block  lg:w-[200px]  lg:shrink-0  bg-white  border-r  border-black
-              "
-            />
+            <div className="hidden lg:block lg:w-[200px] lg:shrink-0 bg-white border-r border-black" />
 
             {/* CONTENT */}
-            <div
-              className="  flex-1  bg-#E  px-5  sm:px-8md  lg:px-14xl  pt-6  sm:pt-8lg  pb-8  sm:pb-12  lg:pb-16
-              "
-            >
-              <p className="font-nixie  text-[13px] sm:text-[14px] md:text-[15px] leading-[1.7] sm:leading-[1.75] text-[#5c5c5c] w-full max-w-[420px]">
+            <div className="flex-1 bg-#E px-5 sm:px-8md lg:px-14xl pt-6 sm:pt-8lg pb-8 sm:pb-12 lg:pb-16">
+              <p className="font-nixie  text-[13px] sm:text-[16px] md:text-[16px] leading-[1.7] sm:leading-[1.75] text-[#181818] w-full max-w-[420px]">
                 From naming and identity to packaging, e-commerce, social media,
                 email marketing, digital assets, and content direction, the
                 project became a full launch-ready brand system built around one
@@ -36,15 +26,15 @@ export default function ProjectQuestionAndNaming() {
 
                   text-[1.75rem]
                   sm:text-[2.1rem]
-                  md:text-[2.5rem]
+                  md:text-[2.8rem]
 
-                  lg:text-[2.5rem]
+                  lg:text-[2.8rem]
                   xl:text-[2.9rem]
 
                   leading-[1.18]
                   sm:leading-[1.2]
 
-                  text-[#3a3a3a]
+                  text-[#181818]
 
                   mt-7
                   sm:mt-9
@@ -62,10 +52,6 @@ export default function ProjectQuestionAndNaming() {
         </div>
       </section>
 
-      {/* =========================================================
-          SECTION 2 — DARK
-          "Naming the world before designing it."
-         ========================================================= */}
       <section className="relative w-full overflow-hidden bg-[#191919]">
         {/* LEFT WHITE BLOCK — DESKTOP UNCHANGED */}
         <div
@@ -163,7 +149,7 @@ export default function ProjectQuestionAndNaming() {
     sm:left-[16px]
     md:left-[20px]
 
-    lg:h-42
+    lg:h-62
     lg:top-52
     lg:left-15
 
@@ -184,9 +170,9 @@ export default function ProjectQuestionAndNaming() {
 
                       text-[1.45rem]
                       sm:text-[1.7rem]
-                      md:text-[2rem]
+                      md:text-[2.4rem]
 
-                      lg:text-[2.1rem]
+                      lg:text-[2.5rem]
                       xl:text-[2.4rem]
 
                       leading-[1.15]
@@ -250,13 +236,13 @@ export default function ProjectQuestionAndNaming() {
                           font-nixie
 
                           text-[12.5px]
-                          sm:text-[13px]
-                          md:text-[14px]
+                          sm:text-[16px]
+                          md:text-[16px]
 
                           leading-[1.7]
                           sm:leading-[1.75]
 
-                          text-white/60
+                          text-white
                         "
                       >
                         The name &apos;The Spanish Alchemist&apos; was finalized
@@ -274,12 +260,12 @@ export default function ProjectQuestionAndNaming() {
 
                           text-[12.5px]
                           sm:text-[13px]
-                          md:text-[14px]
+                          md:text-[16px]
 
                           leading-[1.7]
                           sm:leading-[1.75]
 
-                          text-white/60
+                          text-white
                         "
                       >
                         It also allowed us to build symbolic references,

@@ -163,7 +163,7 @@ export default function TSABrandMoment() {
 
                       /* TABLET */
                       sm:-top-1
-                      sm:left-12
+                      sm:left-4
                     "
                   >
                     <Image
@@ -224,7 +224,7 @@ export default function TSABrandMoment() {
                     sm:max-w-[320px]
 
                     /* DESKTOP — EXACTLY UNCHANGED */
-                    lg:text-[13px]
+                    lg:text-[14px]
                     lg:ml-24
                     lg:max-w-[320px]
                   "

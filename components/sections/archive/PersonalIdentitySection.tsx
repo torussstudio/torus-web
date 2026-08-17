@@ -67,7 +67,7 @@ export default function PersonalIdentitySection() {
                 md:text-[2.4rem]
 
                 /* DESKTOP — UNCHANGED */
-                lg:text-[2.2rem]
+                lg:text-[2.4rem]
                 xl:text-[2.5rem]
 
                 leading-[1.15]
@@ -93,10 +93,10 @@ export default function PersonalIdentitySection() {
               className="
                 font-nixie
                 text-[13px]
-                sm:text-[14px]
+                sm:text-[16px]
 
                 leading-[1.75]
-                text-[#5c5c5c]
+                text-[#181818]
 
                 max-w-[340px]
 
@@ -155,19 +155,7 @@ export default function PersonalIdentitySection() {
                   sm:w-[300px]
 
                   /* desktop — unchanged */
-                  lg:w-[320px]
-                  xl:w-[340px]
-
-                  h-[360px]
-                  sm:h-[420px]
-                  lg:h-[460px]
-                  xl:h-[500px]
-
-                  shrink-0
-                  overflow-hidden
-                  bg-[#dedcdc]
-                "
-              >
+                  lg:w-[320px] xl:w-[340px] h-[360px] sm:h-[420px] lg:h-[460px] xl:h-[500px] shrink-0 overflow-hidden bg-[#dedcdc]">
                 <Image
                   src="/images/tsa-meeting.jpg"
                   alt="Founder presenting during a working session"
@@ -191,19 +179,7 @@ export default function PersonalIdentitySection() {
                   sm:w-[300px]
 
                   /* desktop — unchanged */
-                  lg:w-[320px]
-                  xl:w-[340px]
-
-                  h-[360px]
-                  sm:h-[420px]
-                  lg:h-[460px]
-                  xl:h-[500px]
-
-                  shrink-0
-                  overflow-hidden
-                  bg-[#dedcdc]
-                "
-              >
+                   lg:w-[320px] xl:w-[340px] h-[360px] sm:h-[420px] lg:h-[460px] xl:h-[500px] shrink-0 overflow-hidden bg-[#dedcdc]">
                 <Image
                   src="/images/tsa-installation.jpg"
                   alt="Person seated watching a video installation"
@@ -214,32 +190,7 @@ export default function PersonalIdentitySection() {
               </div>
 
               {/* IMAGE 3 */}
-              <div
-                className="
-                  relative
-                  w-full
-
-                  /* mobile */
-                  max-w-[420px]
-
-                  /* tablet */
-                  sm:max-w-none
-                  sm:w-[300px]
-
-                  /* desktop — unchanged */
-                  lg:w-[320px]
-                  xl:w-[340px]
-
-                  h-[360px]
-                  sm:h-[420px]
-                  lg:h-[460px]
-                  xl:h-[500px]
-
-                  shrink-0
-                  overflow-hidden
-                  bg-[#dedcdc]
-                "
-              >
+              <div className=" relative w-full max-w-[420px] sm:max-w-none sm:w-[300px] lg:w-[320px] xl:w-[340px] h-[360px] sm:h-[420px] lg:h-[460px] xl:h-[500px] shrink-0 overflow-hidden bg-[#dedcdc]">
                 <Image
                   src="/images/tsa-field.jpg"
                   alt="Person standing in a field looking outward"
@@ -251,28 +202,7 @@ export default function PersonalIdentitySection() {
             </div>
 
             {/* CLOSING PARAGRAPH */}
-            <p
-              className="
-                font-nixie
-                text-[13px]
-                sm:text-[14px]
-                leading-[1.75]
-                text-[#5c5c5c]
-
-                max-w-[360px]
-
-                mt-10
-                sm:mt-12
-                lg:mt-14
-
-                /* mobile centered */
-                mx-auto
-                text-center
-
-                sm:mx-0
-                sm:text-left
-              "
-            >
+            <p className=" font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818] max-w-[360px] mt-10 sm:mt-12 lg:mt-14 mx-auto text-center sm:mx-0 sm:text-left">
               The challenge was to create an identity that could work across
               bottles, boxes, stickers, seals, tissue paper, social posts,
               website pages, printed inserts, and emailers. TSA needed a

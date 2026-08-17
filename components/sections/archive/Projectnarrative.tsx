@@ -30,7 +30,7 @@ export default function ProjectNarrative({ data = narrative }: { data?: Narrativ
 
           {/* ============ CONTENT — light-gray panel ============ */}
           <div className="flex-1 bg-[#EAE9E9] px-6 sm:px-10 lg:px-14 xl:px-16 py-10 sm:py-14 lg:py-16">
-            <h2 className="font-nova text-[1.6rem] sm:text-[2rem] md:text-[2.3rem] lg:text-[2.1rem] xl:text-[2.4rem] leading-[1.15] tracking-[0.01em] text-[#181818] uppercase max-w-[600px]">
+            <h2 className="font-nova text-[1.6rem] sm:text-[2rem] md:text-[2.3rem] lg:text-[2.1rem] xl:text-[2.8rem] leading-[1.15] tracking-[0.01em] text-[#181818] uppercase max-w-[600px]">
               {headingLines.map((line, i) => (
                 <span key={i} className="block">
                   {line}
@@ -38,15 +38,15 @@ export default function ProjectNarrative({ data = narrative }: { data?: Narrativ
               ))}
             </h2>
 
-            <p className="font-nixie text-[14px] sm:text-[15px] leading-[1.75] text-[#5c5c5c] max-w-[420px] mt-8 sm:mt-10">
+            <p className="font-nixie text-[14px] sm:text-[16px] leading-[1.75] text-[#181818] max-w-[420px] mt-8 sm:mt-10">
               {data.body}
             </p>
 
-            <p className="font-nixie text-[14px] sm:text-[15px] text-[#5c5c5c] mt-16 sm:mt-20 lg:mt-24">
+            <p className="font-nixie text-[14px] sm:text-[16px] text-[#181818] mt-16 sm:mt-20 lg:mt-24">
               {data.eyebrow}
             </p>
 
-            <p className="font-nixie text-[1.7rem] sm:text-[2.2rem] md:text-[2.5rem] lg:text-[2.3rem] xl:text-[2.6rem] leading-[1.2] text-[#181818] mt-4 sm:mt-6 max-w-[750px]">
+            <p className="font-nixie text-[1.7rem] sm:text-[2.5rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[2.8rem] leading-[1.2] text-[#181818] mt-4 sm:mt-6 max-w-[750px]">
               {data.statement}
             </p>
 
@@ -61,7 +61,7 @@ export default function ProjectNarrative({ data = narrative }: { data?: Narrativ
                   className="object-cover"
                 />
               </div>
-              <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.7] text-[#5c5c5c] max-w-[320px] sm:pt-2">
+              <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.7] text-[#181818] max-w-[320px] sm:pt-2">
                 {data.detailCaption}
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function ProjectNarrative({ data = narrative }: { data?: Narrativ
             </div>
 
             {/* CLOSING CAPTION — right-aligned, indented from the left */}
-            <p className="font-nixie text-[13px] sm:text-[14px] leading-[1.7] text-[#5c5c5c] max-w-[320px] text-right ml-auto mt-6 sm:mt-8">
+            <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.7] text-[#181818] max-w-[320px] text-right ml-auto mt-6 sm:mt-8">
               {data.closingCaption}
             </p>
           </div>

@@ -27,7 +27,7 @@ export default function ProjectDetail({ data = project }: { data?: Project }) {
           {/* ============ SIDEBAR ============ */}
           <div className="lg:w-[280px] lg:shrink-0 lg:border-r border-black/85 pl-12 pr-6 sm:pl-16 sm:pr-8 lg:pl-14 lg:pr-8 py-8 sm:py-10 flex flex-row lg:flex-col gap-8 lg:gap-0 items-start">
             <div className="flex flex-col shrink-0">
-              <h2 className="font-nova text-[1.4rem] sm:text-[1.6rem] leading-[1.15] tracking-[0.01em] text-[#181818] uppercase">
+              <h2 className="font-nova text-[1.4rem] sm:text-[1.8rem] leading-[1.15] tracking-[0.01em] text-[#181818] uppercase">
                 {sidebarLines.map((line, i) => (
                   <span key={i} className="block">
                     {line}
@@ -48,7 +48,7 @@ export default function ProjectDetail({ data = project }: { data?: Project }) {
               </div>
             </div>
 
-            <div className="font-nixie text-[14px] sm:text-[15px] leading-[1.6] text-[#181818] lg:mt-8 ml-auto lg:ml-0 self-end lg:self-start">
+            <div className="font-nixie text-[14px] sm:text-[16px] leading-[1.6] text-[#181818] lg:mt-8 ml-auto lg:ml-0 self-end lg:self-start">
               <p>{data.location}</p>
               <p>{data.period}</p>
             </div>
@@ -84,7 +84,7 @@ export default function ProjectDetail({ data = project }: { data?: Project }) {
 
                 <div className="flex flex-col items-start lg:items-end gap-8 sm:gap-10 text-left lg:text-right">
                   <div>
-                    <p className="font-nixie text-[12px] sm:text-[13px] uppercase tracking-[0.14em] text-[#9a9a9a] mb-2">
+                    <p className="font-nixie text-[12px] sm:text-[15px] uppercase tracking-[0.14em] text-[#181818] mb-2">
                       Project Lead
                     </p>
                     <p className="font-nixie text-[15px] sm:text-[16px] text-[#181818]">
@@ -93,7 +93,7 @@ export default function ProjectDetail({ data = project }: { data?: Project }) {
                   </div>
 
                   <div>
-                    <p className="font-nixie text-[12px] sm:text-[13px] uppercase tracking-[0.14em] text-[#9a9a9a] mb-2">
+                    <p className="font-nixie text-[12px] sm:text-[15px] uppercase tracking-[0.14em] text-[#181818] mb-2">
                       Studio Contributors
                     </p>
                     <p className="font-nixie text-[15px] sm:text-[16px] text-[#181818] max-w-[280px] lg:ml-auto">
