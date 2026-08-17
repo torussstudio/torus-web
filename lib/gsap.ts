@@ -1,24 +1,51 @@
-// lib/gsap.ts
+// // lib/gsap.ts
 
+// import { gsap } from "gsap";
+
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+// import { CustomEase } from "gsap/CustomEase";
+// import { Flip } from 'gsap/Flip';
+
+// if (typeof window !== "undefined") {
+//   gsap.registerPlugin(
+//     ScrollTrigger,
+//     ScrollToPlugin,
+//     CustomEase,
+//     Flip
+//   );
+
+//   CustomEase.create(
+//     "smoothReveal",
+//     "0.87,0,0.13,1"
+//   );
+// }
+
+// gsap.defaults({
+//   ease: "power2.out",
+//   duration: 0.8,
+// });
+
+// ScrollTrigger.defaults({
+//   toggleActions: "play none none reverse",
+//   start: "top 85%",
+// });
+
+// export { gsap, ScrollTrigger, Flip };
+
+
+
+// export default gsap;
+
+// lib/gsap.ts — core matram, ella pages-ilum venda ondu
 import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { CustomEase } from "gsap/CustomEase";
-import { Flip } from 'gsap/Flip';
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(
-    ScrollTrigger,
-    ScrollToPlugin,
-    CustomEase,
-    Flip
-  );
+  gsap.registerPlugin(ScrollTrigger, CustomEase);
 
-  CustomEase.create(
-    "smoothReveal",
-    "0.87,0,0.13,1"
-  );
+  CustomEase.create("smoothReveal", "0.87,0,0.13,1");
 }
 
 gsap.defaults({
@@ -31,8 +58,7 @@ ScrollTrigger.defaults({
   start: "top 85%",
 });
 
-export { gsap, ScrollTrigger, Flip };
-
-
-
+export { gsap, ScrollTrigger };
 export default gsap;
+
+

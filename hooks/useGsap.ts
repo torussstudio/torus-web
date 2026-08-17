@@ -20,13 +20,16 @@ export function useGsap(
 ) {
   const ctx = useRef<gsap.Context | null>(null);
 
-  useLayoutEffect(() => {
-    ctx.current = gsap.context(() => {
+ useLayoutEffect(() => {
+  ctx.current = gsap.context(() => {
+    // Refresh ScrollTrigger-inte measurements next paint-inu shesham
+    requestAnimationFrame(() => {
       callback(gsap);
-    }, scope);
+    });
+  }, scope);
 
-    return () => {
-      ctx.current?.revert();
-    };
-  }, deps);
+  return () => {
+    ctx.current?.revert();
+  };
+}, deps);
 }
