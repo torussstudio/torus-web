@@ -31,13 +31,9 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import dynamic from "next/dynamic";
 
 import { heading, body } from "./fonts";
-
-const SmoothScroll = dynamic(() => import("@/components/common/SmoothScroll"), {
-  ssr: false,
-});
+import SmoothScrollLoader from "@/components/common/SmoothScrollLoader";
 
 export const metadata: Metadata = {
   title: "Torus",
@@ -52,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
-        <SmoothScroll />
+        <SmoothScrollLoader />
         {children}
       </body>
     </html>
