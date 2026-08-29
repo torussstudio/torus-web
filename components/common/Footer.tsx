@@ -2,12 +2,155 @@
 
 import Image from "next/image";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { cn } from "@/lib/utils";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+
+  const leftVerticalRef = useRef<HTMLSpanElement>(null);
+  const mobileLabelRef = useRef<HTMLSpanElement>(null);
+  const heroImgRef = useRef<HTMLDivElement>(null);
+  const heroTitleRef = useRef<HTMLHeadingElement>(null);
+  const heroDescRef = useRef<HTMLParagraphElement>(null);
+  const socialsRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
+
+  const coordsRef = useRef<HTMLDivElement>(null);
+ const studioTitleRef = useRef<HTMLDivElement>(null);
+  const infoRightRef = useRef<HTMLDivElement>(null);
+
+  const copyrightRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // helper: skip the tween instead of erroring when a target is
+      // null/undefined (e.g. hidden on the current breakpoint)
+      const safeFromTo = (
+        tl: gsap.core.Timeline,
+        target: any,
+        from: gsap.TweenVars,
+        to: gsap.TweenVars,
+        position: number
+      ) => {
+        if (!target || (Array.isArray(target) && target.length === 0)) {
+          return tl;
+        }
+        return tl.fromTo(target, from, to, position);
+      };
+
+      // HERO AREA — scroll triggered
+      const heroTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroImgRef.current,
+          start: "top 85%",
+          once: true,
+        },
+        defaults: { ease: "power3.out" },
+      });
+
+      safeFromTo(
+        heroTl,
+        [leftVerticalRef.current, mobileLabelRef.current],
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 1 },
+        0
+      );
+      safeFromTo(
+        heroTl,
+        heroImgRef.current,
+        { autoAlpha: 0, scale: 1.15, clipPath: "inset(0 0 100% 0)" },
+        { autoAlpha: 1, scale: 1, clipPath: "inset(0 0 0% 0)", duration: 1.8 },
+        0.1
+      );
+      safeFromTo(
+        heroTl,
+        heroTitleRef.current,
+        { autoAlpha: 0, y: 60 },
+        { autoAlpha: 1, y: 0, duration: 1.6 },
+        0.4
+      );
+      safeFromTo(
+        heroTl,
+        heroDescRef.current,
+        { autoAlpha: 0, y: 30 },
+        { autoAlpha: 1, y: 0, duration: 1.2 },
+        0.9
+      );
+      safeFromTo(
+        heroTl,
+        socialsRef.current ? Array.from(socialsRef.current.children) : null,
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12 },
+        1.1
+      );
+      safeFromTo(
+        heroTl,
+        ctaRef.current,
+        { autoAlpha: 0, x: -16 },
+        { autoAlpha: 1, x: 0, duration: 1 },
+        1.3
+      );
+
+      // INFO SECTION — scroll triggered
+      const infoTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: studioTitleRef.current,
+          start: "top 85%",
+          once: true,
+        },
+        defaults: { ease: "power3.out" },
+      });
+
+      safeFromTo(
+        infoTl,
+        coordsRef.current,
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 1 },
+        0
+      );
+      safeFromTo(
+        infoTl,
+        studioTitleRef.current,
+        { autoAlpha: 0, y: 50 },
+        { autoAlpha: 1, y: 0, duration: 1.6 },
+        0.2
+      );
+      safeFromTo(
+        infoTl,
+        infoRightRef.current ? Array.from(infoRightRef.current.children) : null,
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.15 },
+        0.4
+      );
+
+      // COPYRIGHT
+      safeFromTo(
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: copyrightRef.current,
+            start: "top 95%",
+            once: true,
+          },
+        }),
+        copyrightRef.current,
+        { autoAlpha: 0, y: 14 },
+        { autoAlpha: 1, y: 0, duration: 0.9, ease: "power3.out" },
+        0
+      );
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <footer
+      ref={footerRef}
       className={cn(
         "w-full",
         "bg-[#e9e8e6]",
@@ -38,6 +181,7 @@ export default function Footer() {
           )}
         >
           <span
+            ref={leftVerticalRef}
             className={cn(
               "text-[28px]",
               "tracking-[0.22em]",
@@ -68,6 +212,7 @@ export default function Footer() {
           )}
         >
           <span
+            ref={mobileLabelRef}
             className={cn(
               "text-[16px]",
               "tracking-[0.22em]",
@@ -95,6 +240,7 @@ export default function Footer() {
           >
             {/* IMAGE */}
             <div
+              ref={heroImgRef}
               className={cn(
                 "relative",
                 "h-[420px]",
@@ -126,6 +272,7 @@ export default function Footer() {
               )}
             >
               <h2
+                ref={heroTitleRef}
                 className={cn(
                   "text-[70px]",
                   "leading-[0.92]",
@@ -142,6 +289,7 @@ export default function Footer() {
               </h2>
 
               <p
+                ref={heroDescRef}
                 className={cn(
                   "mt-[34px]",
                   "max-w-[460px]",
@@ -188,6 +336,7 @@ export default function Footer() {
               )}
             >
               <div
+                ref={socialsRef}
                 className={cn(
                   "flex",
                   "items-center",
@@ -235,6 +384,7 @@ export default function Footer() {
               )}
             >
               <button
+                ref={ctaRef}
                 className={cn(
                   "group",
                   "flex",
@@ -300,6 +450,7 @@ export default function Footer() {
           )}
         >
           <div
+            ref={coordsRef}
             className={cn(
               "flex",
               "items-center",
@@ -320,28 +471,29 @@ export default function Footer() {
             <span>76°39'22.0"E</span>
           </div>
 
-          <h1
-            className={cn(
-              "mt-[32px]",
-              "text-[90px]",
-              "leading-none",
-              "tracking-[0.08em]",
-              "uppercase",
-              "text-[#181818]",
-              "font-nova",
-              "whitespace-nowrap",
-              "max-lg:text-[72px]",
-              "max-md:text-[48px]",
-              "max-md:mt-[20px]",
-              "max-md:whitespace-normal"
-            )}
-          >
-            TORUSS STUDIO
-          </h1>
+         <div
+  ref={studioTitleRef}
+  className={cn(
+    "relative",
+    "mt-[32px]",
+    "w-full",
+    "max-md:mt-[20px]"
+  )}
+>
+  <Image
+    src="/images/TORUSS STUDIO LOGO PNG.png"
+    alt="Toruss Studio"
+    width={1020}
+    height={150}
+    priority
+    className="h-auto w-full"
+  />
+</div>
         </div>
 
         {/* RIGHT */}
         <div
+          ref={infoRightRef}
           className={cn(
             "px-[90px]",
             "py-[54px]",
@@ -412,6 +564,7 @@ export default function Footer() {
         )}
       >
         <span
+          ref={copyrightRef}
           className={cn(
             "text-[20px]",
             "tracking-[0.16em]",

@@ -8,7 +8,7 @@ import { links } from "@/lib/constants";
 import { useGsap } from "@/hooks/useGsap";
 
 // Heading split into lines here (instead of <br/>) so each line can get
-// its own overflow-hidden mask wrapper for the reveal animation.
+// its own overflow-hidden mask wrapper.
 const HEADING_LINES = [
   "A MULTIDIMENSIONAL",
   "STUDIO SHAPING BRANDS,",
@@ -25,85 +25,87 @@ export default function StudioHero() {
         defaults: { ease: "smoothReveal" },
       });
 
-      // 1. Vertical "STUDIO" label — line draws + text fades
-      tl.from(".hero-label-line", {
-        scaleY: 0,
-        transformOrigin: "top",
-        duration: 0.6,
-      }).from(
-        ".hero-label-text",
-        { opacity: 0, y: 12, duration: 0.6 },
-        "<0.1"
-      );
+      // 1. Heading lines mask-reveal one after another (the "premium" beat).
+      tl.set(".hero-heading-line-inner", { yPercent: 120 })
+        .set(".hero-image-wrap", { clipPath: "inset(100% 0% 0% 0%)" })
+        .set(".hero-image-el", { scale: 1.25 })
+        .set(".hero-paragraph", { y: 30, opacity: 0 })
+        .set(".hero-link-row", { y: 24, opacity: 0 })
+        .set(".hero-link-border", { scaleX: 0 })
+        .set(".hero-social-mobile, .hero-social-desktop", { y: 16, opacity: 0 });
 
-      // 2. Heading — each line masked, slides up from below its own wrapper
-      tl.from(
-        ".hero-heading-line-inner",
-        {
-          yPercent: 115,
-          rotateZ: 3,
-          duration: 1,
-          stagger: 0.08,
-        },
-        "<"
-      );
+      tl.to(".hero-heading-line-inner", {
+        yPercent: 0,
+        duration: 1.1,
+        stagger: 0.12,
+      })
 
-      // 3. Paragraph — simple fade + rise
-      tl.from(
-        ".hero-paragraph",
-        { opacity: 0, y: 24, duration: 0.9 },
-        "-=0.5"
-      );
+        // 2. Image reveals via clip-path wipe while it settles from a slight
+        // zoom — overlaps the tail end of the heading reveal.
+        .to(
+          ".hero-image-wrap",
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.4,
+            ease: "power4.inOut",
+          },
+          "-=0.6"
+        )
+        .to(
+          ".hero-image-el",
+          {
+            scale: 1,
+            duration: 1.8,
+            ease: "power3.out",
+          },
+          "<"
+        )
 
-      // 4. Links list — border draws left-to-right, arrow + label fade in, staggered
-      tl.from(
-        ".hero-link-border",
-        {
-          scaleX: 0,
-          transformOrigin: "left",
-          duration: 0.7,
-          stagger: 0.12,
-        },
-        "-=0.4"
-      ).from(
-        ".hero-link-arrow, .hero-link-number, .hero-link-label",
-        {
-          opacity: 0,
-          x: -12,
-          duration: 0.6,
-          stagger: 0.12,
-        },
-        "<0.1"
-      );
+        // 3. Paragraph fades/slides up.
+        .to(
+          ".hero-paragraph",
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+          },
+          "-=1.1"
+        )
 
-      // 5. Socials (mobile row) — simple fade
-      tl.from(
-        ".hero-social-mobile",
-        { opacity: 0, y: 10, duration: 0.6, stagger: 0.05 },
-        "-=0.5"
-      );
+        // 4. Link rows stagger in, each with its underline drawing in sync.
+        .to(
+          ".hero-link-row",
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.15,
+          },
+          "-=0.5"
+        )
+        .to(
+          ".hero-link-border",
+          {
+            scaleX: 1,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out",
+          },
+          "<"
+        )
 
-      // 6. Image — clip-path reveal + slight scale settle, grayscale stays as-is
-      tl.from(
-        ".hero-image-wrap",
-        {
-          clipPath: "inset(0% 0% 100% 0%)",
-          duration: 1.1,
-          ease: "power4.inOut",
-        },
-        "-=1.1"
-      ).from(
-        ".hero-image-el",
-        { scale: 1.15, duration: 1.3, ease: "power3.out" },
-        "<"
-      );
+        // 5. Socials settle in last, on both mobile and desktop.
+        .to(
+          ".hero-social-mobile, .hero-social-desktop",
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+          },
+          "-=0.3"
+        );
 
-      // 7. Desktop socials column — fade in last
-      tl.from(
-        ".hero-social-desktop",
-        { opacity: 0, y: 10, duration: 0.6, stagger: 0.05 },
-        "-=0.8"
-      );
     },
     sectionRef,
     []
@@ -115,8 +117,9 @@ export default function StudioHero() {
       className="relative w-full overflow-hidden bg-[#e7e5e1]"
     >
       {/* MAX-WIDTH WRAPPER — ithu illathirunnu 1920px+ screens-il content stretch aayi
-          random gaps undakiyathu. Ippo content oru upper limit-il centered aayi nilkkum. */}
-      <div className="relative max-w-[1728px] mx-auto">
+          random gaps undakiyathu. Ippo content oru upper limit-il centered aayi nilkkum.
+          hero-scale-wrap: scroll-linked scale-in/scale-out ith target cheyyunnu. */}
+      <div className="hero-scale-wrap relative max-w-[1728px] mx-auto origin-center">
         {/* HERO */}
         <div
           className="
@@ -131,6 +134,7 @@ export default function StudioHero() {
           {/* LEFT */}
           <div
             className="
+              hero-left-content
               relative
               flex
               flex-col
@@ -142,39 +146,6 @@ export default function StudioHero() {
               lg:py-16
             "
           >
-            {/* Vertical Label — desktop only. */}
-            <div
-              className="
-                hidden
-                lg:flex
-                absolute
-                left-8
-                top-1/2
-                -translate-y-[170px]
-                flex-col
-                items-center
-              "
-            >
-              <div className="hero-label-line h-6 w-px bg-black/30 mb-4 ml-[5px]" />
-              <span
-                className="
-                  hero-label-text
-                  font-nixie
-                  text-[16px]
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#181818]
-                  ml-[5px]
-                "
-                style={{
-                  writingMode: "vertical-rl",
-                  transform: "rotate(360deg)",
-                }}
-              >
-                STUDIO
-              </span>
-            </div>
-
             <div className="max-w-[680px] mt-0">
               {/* HEADING — each line wrapped for mask reveal */}
               <h1
@@ -263,8 +234,7 @@ export default function StudioHero() {
                       cursor-pointer
                     "
                   >
-                    {/* animated border instead of the static border-b */}
-                    <span className="hero-link-border absolute bottom-0 left-0 h-px w-full bg-[#1d1d1d]" />
+                    <span className="hero-link-border absolute bottom-0 left-0 h-px w-full origin-left bg-[#1d1d1d]" />
 
                     {/* LEFT SIDE */}
                     <div className="flex items-center gap-[90px] sm:gap-[130px] lg:gap-[170px]">
@@ -361,6 +331,7 @@ export default function StudioHero() {
           {/* RIGHT IMAGE — hidden on mobile, visible tablet+. */}
           <div
             className="
+              hero-right-content
               hidden
               md:flex
               items-center
