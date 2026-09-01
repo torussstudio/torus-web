@@ -22,16 +22,20 @@ export default function Navbar() {
   // below can push page content down by the exact right amount.
   // ResizeObserver keeps it correct across breakpoints / font loads.
   useEffect(() => {
-    if (!headerRef.current) return;
-    const el = headerRef.current;
+  if (!headerRef.current) return;
+  const el = headerRef.current;
 
-    const update = () => setHeaderHeight(el.offsetHeight);
-    update();
+  const update = () => {
+    const h = el.offsetHeight;
+    setHeaderHeight(h);
+    document.documentElement.style.setProperty("--header-height", `${h}px`);
+  };
+  update();
 
-    const ro = new ResizeObserver(update);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
+  const ro = new ResizeObserver(update);
+  ro.observe(el);
+  return () => ro.disconnect();
+}, []);
 
   // Scroll direction detection - only affects the DESKTOP nav
   useEffect(() => {
@@ -64,7 +68,7 @@ export default function Navbar() {
       {/* FIXED HEADER - logo always visible, nav slides behind it */}
       <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full">
         {/* LOGO */}
-        <div className="relative z-50 flex items-center justify-center border-b border-black/35 bg-[#e7e5e1] px-4 py-4 sm:py-5 md:py-4">
+        <div className="relative z-50 flex items-center justify-center border-b border-black/35 bg-[#f4f4f2] px-4 py-4 sm:py-5 md:py-4">
           <Link href="/" className="block">
             <Image
               src="/images/NewLogo.png"
@@ -72,7 +76,7 @@ export default function Navbar() {
               width={260}
               height={70}
               priority
-              className="h-auto w-[140px] sm:w-[170px] md:w-[200px] lg:w-[240px] select-none"
+              className="h-auto w-[140px] sm:w-[170px] md:w-[200px] lg:w-[150px] select-none"
             />
           </Link>
         </div>
@@ -80,7 +84,7 @@ export default function Navbar() {
         {/* DESKTOP NAV - sits right below logo, hides behind logo on scroll down, shows on scroll up */}
         <nav
           className={cn(
-            "relative z-40 hidden border-b border-black/35 bg-[#e7e5e1] transition-transform duration-300 ease-in-out lg:block",
+            "relative z-40 hidden border-b border-black/35 bg-[#f4f4f2] transition-transform duration-300 ease-in-out lg:block",
             hideNav ? "-translate-y-full" : "translate-y-0"
           )}
         >
@@ -139,7 +143,7 @@ export default function Navbar() {
         </nav>
 
         {/* MOBILE / TABLET - always fixed right below logo, does NOT hide */}
-        <div className="relative z-40 border-b border-black/35 bg-[#e7e5e1] lg:hidden">
+        <div className="relative z-40 border-b border-black/35 bg-[#f4f4f2] lg:hidden">
           {/* TOP BAR */}
           <div className="flex items-center justify-between px-5 py-2 sm:px-7 sm:py-3">
             <button

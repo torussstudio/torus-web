@@ -10,6 +10,14 @@
   font-family: var(--font-body);
 }
 
+.font-recife {
+  font-family: var(--font-recife);
+}
+
+.font-serendipity {
+  font-family: var(--font-serendipity);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,12 +28,6 @@
   --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);

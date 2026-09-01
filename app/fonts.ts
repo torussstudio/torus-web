@@ -15,3 +15,17 @@ export const body = Nixie_One({
   display: "swap",
   preload: true,
 });
+
+export const recife = localFont({
+  src: "./fonts/RecifeDisplay-Light.woff",
+  variable: "--font-recife",
+  display: "swap",
+  preload: true,
+});
+
+export const serendipity = localFont({
+  src: "./fonts/serendipity.woff",
+  variable: "--font-serendipity",
+  display: "swap",
+  preload: true,
+});

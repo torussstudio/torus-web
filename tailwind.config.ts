@@ -9,11 +9,14 @@ const config: Config = {
 
   theme: {
     extend: {
-   fontFamily: {
-  sans: ["Inter", "sans-serif"],
-  heading: ["var(--font-heading)", "sans-serif"],
-  body: ["var(--font-body)", "sans-serif"],
-},
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        recife: ["var(--font-recife)", "sans-serif"],
+        serendipity: ["var(--font-serendipity)", "sans-serif"],
+      },
+
 
       colors: {
         cream: "#e8e5df",

@@ -471,14 +471,17 @@ export default function Footer() {
             <span>76°39'22.0"E</span>
           </div>
 
-         <div
+  <div
   ref={studioTitleRef}
   className={cn(
     "relative",
-    "mt-[32px]",
-    "w-full",
-    "max-md:mt-[20px]"
+    "mt-[56px]",
+    "max-md:mt-[36px]"
   )}
+  style={{
+    width: "min(800px, 90vw)",
+    maxWidth: "none",
+  }}
 >
   <Image
     src="/images/TORUSS STUDIO LOGO PNG.png"

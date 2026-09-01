@@ -428,13 +428,14 @@ type Narrative = {
   detailImage: string;
   detailImageAlt: string;
   detailCaption: string;
+   detailSubCaption: string;
   studioImage: string;
   studioImageAlt: string;
   closingCaption: string;
 };
 
 export const narrative: Narrative = {
-  heading: "RETHINKING FRESHNESS IN SKINCARE.",
+  heading: "Rethinking freshness in skincare.",
   body: "When the project came to us, it was to build a launch-ready brand system around a clear idea of skincare made fresh, in smaller batches. And when we began exploring the project, what stood out was not just the product itself, but the larger contradiction surrounding the skincare industry. The category had become increasingly focused on shelf life, preservation, and mass distribution.",
   eyebrow: "The challenge was more interesting:",
   statement: "how to make people believe in the idea of freshly made skincare.",
@@ -442,7 +443,8 @@ export const narrative: Narrative = {
   detailImageAlt: "Person viewing an art installation through glass",
   detailCaption:
     "The idea of \"fresh\" is already a familiar word in skincare. It is often used loosely to suggest something natural. But the brand's idea of fresh was connected to the time closest to manufacturing, when the formulation is newly prepared, and the product is closer to its peak performance.",
-  studioImage: "/images/studio.avif",
+  detailSubCaption:"The challenge was not just to say \"freshly made skincare\,” but to help customers understand and believe what freshness actually means.",
+    studioImage: "/images/studio.avif",
   studioImageAlt: "Design team collaborating around a table in a bright studio loft",
   closingCaption:
     "So we approached the project not as a conventional skincare identity but as a broader exercise in building a world around freshness, proof, and modern ritual.",
@@ -481,48 +483,61 @@ export const overview: Overview = {
 export const images = [
   {
     src: "/images/collage-1.jpg",
-    alt: "Hand writing in a notebook beside coffee",
-    className:
-      "left-[14%] top-0 w-[25%] aspect-[170/128]",
+    alt: "Hands flipping through printed pages on a desk",
+    className: "left-[20%] top-[0%] w-[26%] h-[9%]",
   },
   {
     src: "/images/collage-2.jpg",
-    alt: "Small archival workshop photo",
-    className:
-      "left-[-3%] top-[21%] w-[10.5%] aspect-[71/94]",
+    alt: "People gathered at a counter",
+    className: "left-[1%] top-[15.33%] w-[10%] h-[6.67%]",
   },
   {
     src: "/images/collage-3.jpg",
-    alt: "Team gathered around a window discussing work",
-    className:
-      "left-[21%] top-[24%] w-[18.5%] aspect-[125/222]",
+    alt: "Stack of papers on a desk lit by sunlight",
+    className: "left-[58%] top-[8%] w-[22%] h-[12.67%]",
   },
   {
     src: "/images/collage-4.jpg",
-    alt: "Sunlit stack of printed papers",
-    className:
-      "left-[58.5%] top-[9%] w-[22.5%] aspect-[151/210]",
+    alt: "Team gathered around a table by a window",
+    className: "left-[27%] top-[18%] w-[19%] h-[15.33%]",
   },
   {
     src: "/images/collage-5.jpg",
-    alt: "Close-up of hands on a keyboard",
-    className:
-      "left-[78%] top-[45%] w-[20%] aspect-[135/110]",
+    alt: "Close-up of hands on a mixing console",
+    className: "left-[73%] top-[32%] w-[20%] h-[7.33%]",
   },
   {
     src: "/images/collage-6.jpg",
-    alt: "Studio workspace with pinned reference boards",
-    className:
-      "left-[-5.7%] top-[58%] w-[55.5%] aspect-[373/275]",
-    mobileAspect: "aspect-[373/275]",
+    alt: "Person mixing at a desk with a coffee mug",
+    className: "left-[11%] top-[39.33%] w-[38%] h-[10%]",
   },
+  {
+    src: "/images/collage-2.jpg",
+    alt: "Two people reviewing prints on a large table",
+    className: "left-[68%] top-[50%] w-[37%] h-[16.67%]",
+  },
+  {
+    src: "/images/collage-5.jpg",
+    alt: "Hands sorting through printed photos",
+    className: "left-[17%] top-[58.67%] w-[16%] h-[10%]",
+  },
+ {
+  src: "/images/creative.avif",
+  alt: "Studio wall pinned with sketches and reference photos beside a scale model",
+  className: "left-[2%] top-[74.67%] w-[95%] h-[25.33%]",
+},
 ];
 
+// Per-image aspect ratio for the mobile single-column stack,
+// derived from the same w/h proportions as the desktop layout above.
 export const mobileAspects = [
-  "aspect-[170/128]",
-  "aspect-[71/94]",
-  "aspect-[125/222]",
-  "aspect-[151/210]",
-  "aspect-[135/110]",
-  "aspect-[373/275]",
+  "aspect-[4/3]",
+  "aspect-[3/4]",
+  "aspect-[4/5]",
+  "aspect-[9/16]",
+  "aspect-[5/4]",
+  "aspect-video",
+  "aspect-square",
+  "aspect-[3/4]",
+  "aspect-[16/10]",
 ];
