@@ -279,7 +279,7 @@ export default function Footer() {
                   "tracking-[-0.03em]",
                   "uppercase",
                   "text-[#181818]",
-                  "font-nova",
+                  "font-recife",
                   "md:text-[58px]",
                   "max-md:text-[46px]",
                   "max-md:leading-[1]"
