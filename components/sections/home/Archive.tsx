@@ -11,111 +11,185 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ArchiveSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const headerTitleRef = useRef<HTMLHeadingElement>(null);
-  const headerTagRef = useRef<HTMLSpanElement>(null);
 
-  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const headerTitleRef = useRef<HTMLHeadingElement>(null);
+  const headerDescRef = useRef<HTMLParagraphElement>(null);
+
+  const rowRefs = useRef<(HTMLElement | null)[]>([]);
   const imageWrapRefs = useRef<(HTMLDivElement | null)[]>([]);
   const metaRefs = useRef<(HTMLDivElement | null)[]>([]);
   const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
-  const shapeRefs = useRef<(HTMLDivElement | null)[]>([]);
   const descRefs = useRef<(HTMLParagraphElement | null)[]>([]);
   const tagsRefs = useRef<(HTMLDivElement | null)[]>([]);
   const ctaRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // header entrance
-      gsap
-        .timeline({ defaults: { ease: "power3.out" } })
+      // =========================================================
+      // HEADER ANIMATION
+      // =========================================================
+
+      const headerTimeline = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+      });
+
+      headerTimeline
         .fromTo(
           headerTitleRef.current,
-          { autoAlpha: 0, y: 30, clipPath: "inset(0 0 100% 0)" },
-          { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 0.9 }
+          {
+            autoAlpha: 0,
+            y: 25,
+            clipPath: "inset(0 0 100% 0)",
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            clipPath: "inset(0 0 0% 0)",
+            duration: 0.8,
+          },
         )
         .fromTo(
-          headerTagRef.current,
-          { autoAlpha: 0, x: 14 },
-          { autoAlpha: 1, x: 0, duration: 0.6 },
-          "-=0.5"
+          headerDescRef.current,
+          {
+            autoAlpha: 0,
+            y: 15,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.6,
+          },
+          "-=0.45",
         );
 
-      // each row scroll-triggered reveal
+      // =========================================================
+      // PROJECT ROW ANIMATIONS
+      // =========================================================
+
       rowRefs.current.forEach((row, index) => {
         if (!row) return;
 
-        const tl = gsap.timeline({
+        const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: row,
-            start: "top 78%",
+            start: "top 82%",
             once: true,
           },
-          defaults: { ease: "power4.out" },
+          defaults: {
+            ease: "power3.out",
+          },
         });
 
-        tl.fromTo(
+        // IMAGE
+        timeline.fromTo(
           imageWrapRefs.current[index],
-          { autoAlpha: 0, scale: 1.15, clipPath: "inset(0 0 100% 0)" },
+          {
+            autoAlpha: 0,
+            scale: 1.08,
+            clipPath: "inset(0 0 100% 0)",
+          },
           {
             autoAlpha: 1,
             scale: 1,
             clipPath: "inset(0 0 0% 0)",
-            duration: 1.2,
-            ease: "power3.out",
+            duration: 1,
           },
-          0
-        )
-          .fromTo(
-            metaRefs.current[index],
-            { autoAlpha: 0, y: 20 },
-            { autoAlpha: 1, y: 0, duration: 0.7 },
-            0.2
-          )
-          .fromTo(
-            titleRefs.current[index],
-            { autoAlpha: 0, y: 40, clipPath: "inset(0 0 100% 0)" },
-            {
-              autoAlpha: 1,
-              y: 0,
-              clipPath: "inset(0 0 0% 0)",
-              duration: 0.9,
-              ease: "power3.out",
-            },
-            0.3
-          )
-          .fromTo(
-            shapeRefs.current[index],
-            { autoAlpha: 0, scale: 0.3, rotate: -30 },
-            { autoAlpha: 1, scale: 1, rotate: 0, duration: 0.7, ease: "back.out(1.7)" },
-            0.45
-          )
-          .fromTo(
-            descRefs.current[index],
-            { autoAlpha: 0, y: 18 },
-            { autoAlpha: 1, y: 0, duration: 0.7 },
-            0.55
-          )
-          .fromTo(
-            tagsRefs.current[index],
-            { autoAlpha: 0, y: 16 },
-            { autoAlpha: 1, y: 0, duration: 0.6 },
-            0.68
-          )
-          .fromTo(
-            ctaRefs.current[index],
-            { autoAlpha: 0, x: -14 },
-            { autoAlpha: 1, x: 0, duration: 0.6 },
-            0.75
-          );
+          0,
+        );
 
-        // subtle parallax on the image while scrolling through
-        const img = imageWrapRefs.current[index];
-        if (img) {
+        // META
+        timeline.fromTo(
+          metaRefs.current[index],
+          {
+            autoAlpha: 0,
+            y: 15,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.6,
+          },
+          0.15,
+        );
+
+        // TITLE
+        timeline.fromTo(
+          titleRefs.current[index],
+          {
+            autoAlpha: 0,
+            y: 25,
+            clipPath: "inset(0 0 100% 0)",
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            clipPath: "inset(0 0 0% 0)",
+            duration: 0.8,
+          },
+          0.25,
+        );
+
+        // DESCRIPTION
+        timeline.fromTo(
+          descRefs.current[index],
+          {
+            autoAlpha: 0,
+            y: 15,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.6,
+          },
+          0.4,
+        );
+
+        // TAGS
+        timeline.fromTo(
+          tagsRefs.current[index],
+          {
+            autoAlpha: 0,
+            y: 15,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.6,
+          },
+          0.5,
+        );
+
+        // CTA
+        timeline.fromTo(
+          ctaRefs.current[index],
+          {
+            autoAlpha: 0,
+            x: -12,
+          },
+          {
+            autoAlpha: 1,
+            x: 0,
+            duration: 0.5,
+          },
+          0.65,
+        );
+
+        // =======================================================
+        // IMAGE PARALLAX
+        // =======================================================
+
+        const image = imageWrapRefs.current[index];
+
+        if (image) {
           gsap.fromTo(
-            img,
-            { yPercent: -4 },
+            image,
             {
-              yPercent: 4,
+              yPercent: -3,
+            },
+            {
+              yPercent: 3,
               ease: "none",
               scrollTrigger: {
                 trigger: row,
@@ -123,9 +197,13 @@ export default function ArchiveSection() {
                 end: "bottom top",
                 scrub: 1,
               },
-            }
+            },
           );
         }
+      });
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
       });
     }, sectionRef);
 
@@ -135,364 +213,486 @@ export default function ArchiveSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#ebe9e6] border-t border-black/20 overflow-hidden"
+      className="
+        w-full
+        bg-[#f7f6f0]
+        text-[#34332f]
+        border-t
+        border-black/30
+        overflow-hidden
+      "
     >
-      {/* HEADER */}
-      <div
-        className="
-          h-[88px]
-          border-b
-          border-black/20
-          flex
-          items-center
-          justify-between
-          px-[72px]
-          max-md:h-auto
-          max-md:px-5
-          max-md:py-5
-        "
-      >
-        <h2
-          ref={headerTitleRef}
-          className="
-            text-[56px]
-            leading-none
-            tracking-[-0.05em]
-            uppercase
-            text-[#181818]           
-            font-recife
-            max-md:text-[30px]
-          "
-        >
-          THE ARCHIVE
-        </h2>
+      {/* =========================================================
+          WHOLE COMPONENT
+      ========================================================= */}
 
-        <span
-          ref={headerTagRef}
-          className="
-            text-[15px]
-            tracking-[0.26em]
-            uppercase
-            text-[#181818]
-            font-nixie
-            mt-[4px]
+      <div className="w-full max-w-[1728px] mx-auto">
+        {/* =======================================================
+            HEADER
+        ======================================================= */}
 
-            max-md:text-[9px]
-          "
-        >
-          SELECTED WORKS
-        </span>
-      </div>
-
-      {/* ROWS */}
-      {works.map((work, index) => (
         <div
-          key={index}
-          ref={(el) => {
-            rowRefs.current[index] = el;
-          }}
           className="
-            grid
-            grid-cols-[560px_1fr]
+            min-h-[120px]
             border-b
-            border-black/50
-            h-[520px]
+            border-black/30
+            px-[88px]
+            flex
+            items-center
+            justify-between
+            gap-10
 
-            max-lg:grid-cols-1
-            max-lg:h-auto
+            max-[1100px]:px-[50px]
+
+            max-md:min-h-[100px]
+            max-md:px-[24px]
+            max-md:py-[24px]
+            max-md:items-start
+            max-md:flex-col
+            max-md:gap-4
           "
         >
-          {/* LEFT IMAGE */}
-          <div
+          <h2
+            ref={headerTitleRef}
             className="
-              border-r
-              border-black/20
-              flex
-              items-start
-              justify-center
-              pt-[38px]
-              pr-[20px]
+              m-0
+              font-trial
+              text-[48px]
+              leading-none
+              tracking-[-0.035em]
+              text-[#35322e]
 
-              max-lg:border-r-0
-              max-lg:border-b
-              max-lg:pb-8
-              max-lg:pt-8
+              max-[1100px]:text-[42px]
+              max-md:text-[28px]
             "
           >
-            <div
+            Selected Archive
+          </h2>
+
+          <p
+            ref={headerDescRef}
+            className="
+              m-0
+              max-w-[370px]
+              font-clash
+              text-[18px]
+              leading-[1.2]
+              text-[#35322e]
+
+              max-[1100px]:max-w-[320px]
+              max-[1100px]:text-[16px]
+
+              max-md:max-w-[340px]
+              max-md:text-[12px]
+            "
+          >
+            A selection of identities, digital experiences, campaigns, cultural
+            initiatives, artworks, and experiments from across the studio.
+          </p>
+        </div>
+
+        {/* =======================================================
+            PROJECT ROWS
+        ======================================================= */}
+
+        <div className="w-full">
+          {works.map((work, index) => (
+            <article
+              key={index}
               ref={(el) => {
-                imageWrapRefs.current[index] = el;
+                rowRefs.current[index] = el;
               }}
               className="
                 relative
-                w-[380px]
-                h-[440px]
-                overflow-hidden
+                grid
+                grid-cols-2
+                min-h-[586px]
+                border-b
+                border-black/30
 
-                max-md:w-[88vw]
-                max-md:h-[420px]
+                max-[1100px]:min-h-[500px]
+
+                max-md:grid-cols-1
+                max-md:min-h-0
               "
             >
-              <Image
-                src={work.image}
-                alt={work.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+              {/* =================================================
+                  CENTER DIVIDER
+                  =================================================
+
+                  This is intentionally absolute so the line is
+                  independent from either column's content.
+              ================================================= */}
+
+              <div
+                aria-hidden="true"
+                className="
+                  absolute
+                  top-0
+                  bottom-0
+                  left-1/2
+                  w-px
+                  -translate-x-1/2
+                  bg-black/30
+                  pointer-events-none
+                  z-10
+
+                  max-md:hidden
+                "
               />
-            </div>
-          </div>
 
-          {/* RIGHT CONTENT */}
-          <div
-            className="
-              relative
-              px-[28px]
-              pt-[28px]
-              pb-[22px]
-              flex
-              flex-col
+              {/* =================================================
+                  LEFT IMAGE COLUMN
+              ================================================= */}
 
-              max-md:px-5
-              max-md:pt-6
-              max-md:pb-6
-            "
-          >
-            {/* TOP META */}
-            <div
-              ref={(el) => {
-                metaRefs.current[index] = el;
-              }}
-              className="flex items-center gap-[18px]"
-            >
-              <span
-                className="
-                  text-[16px]
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#181818]
-                  font-nixie
-                  max-md:text-[12px]
-                "
-              >
-                {work.year}
-              </span>
-
-              <div className="w-[5px] h-[5px] bg-black" />
-
-              <span
-                className="
-                  text-[16px]
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#181818]
-                  font-nixie
-                  
-                  max-md:text-[12px]
-                "
-              >
-                {work.country}
-              </span>
-            </div>
-
-            {/* TITLE */}
-            <h3
-              ref={(el) => {
-                titleRefs.current[index] = el;
-              }}
-              className="
-                mt-[18px]
-                text-[44px]
-                leading-[0.95]
-                tracking-[-0.04em]
-                uppercase
-                text-[#181818]
-                font-nixie
-                max-w-[680px]
-                
-                max-md:text-[30px]
-                max-md:leading-[0.95]
-              "
-            >
-              {work.title}
-            </h3>
-
-            {/* SHAPE */}
-            <div
-              ref={(el) => {
-                shapeRefs.current[index] = el;
-              }}
-              className="
-                absolute
-                top-[65px]
-                right-[80px]
-
-                max-md:top-[24px]
-                max-md:right-[20px]
-              "
-            >
-              {work.shape === "circle" ? (
-                <div
-                  className="
-                    w-[40px]
-                    h-[40px]
-                    rounded-full
-                    bg-[#80c46c]
-
-                    max-md:w-[22px]
-                    max-md:h-[22px]
-                  "
-                />
-              ) : (
-                <div
-                  className="
-                    w-[40px]
-                    h-[40px]
-                    bg-[#80c46c]
-
-                    max-md:w-[22px]
-                    max-md:h-[22px]
-                  "
-                />
-              )}
-            </div>
-
-            {/* BOTTOM AREA */}
-            <div className="mt-auto max-lg:mt-10">
-              {/* DESCRIPTION */}
-              <p
-                ref={(el) => {
-                  descRefs.current[index] = el;
-                }}
-                className="
-                  max-w-[280px]
-                  text-[16px]
-                  leading-[1.25]
-                  text-[#181818]
-                  font-nixie
-
-                  max-md:text-[14px]
-                  max-md:max-w-full
-                  
-                "
-              >
-                {work.desc}
-              </p>
-
-              {/* FOOT */}
               <div
                 className="
-                  mt-[26px]
                   flex
                   items-center
-                  justify-between
 
-                  max-md:flex-col
-                  max-md:items-start
-                  max-md:gap-7
-                  
+                  pl-[142px]
+                  pr-[72px]
+                  py-[61px]
+
+                  max-[1500px]:pl-[90px]
+                  max-[1500px]:pr-[55px]
+
+                  max-[1100px]:pl-[55px]
+                  max-[1100px]:pr-[40px]
+                  max-[1100px]:py-[45px]
+
+                  max-md:
+                    border-b
+                    px-[24px]
+                    py-[28px]
+                    justify-center
                 "
               >
-                {/* TAGS */}
                 <div
                   ref={(el) => {
-                    tagsRefs.current[index] = el;
+                    imageWrapRefs.current[index] = el;
                   }}
                   className="
-                    flex
-                    items-center
-                    gap-[24px]
+                    relative
+                    w-full
+                    max-w-[646px]
+                    aspect-[646/459]
+                    overflow-hidden
+                    shrink-0
 
-                    max-md:flex-wrap
-                    max-md:gap-[16px]
+                    max-[1500px]:max-w-[560px]
+
+                    max-[1100px]:max-w-[500px]
+
+                    max-md:
+                      max-w-[420px]
+                      aspect-[646/459]
                   "
                 >
-                  {work.tags.map((tag, i) => (
-                    <div
-                      key={i}
+                  <Image
+                    src={work.image}
+                    alt={work.title}
+                    fill
+                    priority={index === 0}
+                    sizes="
+                      (max-width: 768px) 90vw,
+                      (max-width: 1100px) 55vw,
+                      (max-width: 1500px) 42vw,
+                      646px
+                    "
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* =================================================
+                  RIGHT CONTENT COLUMN
+              ================================================= */}
+
+              <div
+                className="
+                  px-[70px]
+                  py-[67px]
+                  flex
+                  flex-col
+                  justify-between
+
+                  max-[1500px]:px-[55px]
+                  max-[1500px]:py-[55px]
+
+                  max-[1100px]:px-[40px]
+                  max-[1100px]:py-[45px]
+
+                  max-md:
+                    px-[24px]
+                    py-[35px]
+                    min-h-[400px]
+                "
+              >
+                {/* =================================================
+                    TOP CONTENT
+                ================================================= */}
+
+                <div>
+                  {/* META */}
+
+                  <div
+                    ref={(el) => {
+                      metaRefs.current[index] = el;
+                    }}
+                    className="
+                      flex
+                      items-center
+                      gap-[18px]
+                      font-clash
+                      text-[20px]
+                      uppercase
+                      tracking-[0.04em]
+                      text-[#35322e]
+
+                      max-[1100px]:text-[17px]
+                      max-md:text-[15px]
+                    "
+                  >
+                    <span>{work.year}</span>
+
+                    <span
                       className="
-                        flex
-                        items-center
-                        gap-[8px]
+                        w-[7px]
+                        h-[7px]
+                        bg-[#34332f]
+                        shrink-0
                       "
-                    >
-                      <div className="flex items-center gap-[5px]">
-                        {/* LEFT 2 */}
-                        <div className="flex flex-col gap-[5px]">
-                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
-                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
-                        </div>
+                    />
 
-                        {/* RIGHT CENTER */}
-                        <div className="flex items-center h-[11px]">
-                          <span className="w-[5px] h-[5px] bg-[#181818] block" />
-                        </div>
-                      </div>
+                    <span>{work.country}</span>
+                  </div>
 
+                  {/* TITLE */}
+
+                  <h3
+                    ref={(el) => {
+                      titleRefs.current[index] = el;
+                    }}
+                    className="
+                      m-0
+                      mt-[42px]
+                      max-w-[720px]
+                      font-clash
+                      text-[52px]
+                      leading-[0.98]
+                      tracking-[-0.045em]
+                      text-[#34322e]
+
+                      max-[1500px]:text-[44px]
+
+                      max-[1100px]:
+                        mt-[30px]
+                        text-[36px]
+
+                      max-md:
+                        mt-[24px]
+                        text-[30px]
+                    "
+                  >
+                    {work.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+
+                  <p
+                    ref={(el) => {
+                      descRefs.current[index] = el;
+                    }}
+                    className="
+                      m-0
+                      mt-[34px]
+                      max-w-[300px]
+                      font-clash
+                      text-[20px]
+                      leading-[1.35]
+                      text-[#38362e]
+
+                      max-[1500px]:
+                        mt-[28px]
+                        max-w-[430px]
+                        text-[14px]
+
+                      max-[1100px]:
+                        mt-[24px]
+                        max-w-[380px]
+                        text-[13px]
+
+                      max-md:
+                        mt-[20px]
+                        max-w-[400px]
+                        text-[12px]
+                    "
+                  >
+                    {work.desc}
+                  </p>
+                </div>
+
+                {/* =================================================
+                    BOTTOM CONTENT
+                ================================================= */}
+
+                <div className="mt-[40px]">
+                  {/* TAGS */}
+
+                  <div
+                    ref={(el) => {
+                      tagsRefs.current[index] = el;
+                    }}
+                    className="
+                      flex
+                      flex-wrap
+                      gap-x-[10px]
+                      gap-y-[4px]
+                      max-w-[760px]
+                    "
+                  >
+                    {work.tags.map((tag, tagIndex) => (
                       <span
+                        key={tagIndex}
                         className="
-                          text-[16px]
-                          text-[#181818]
-                          font-nixie
+                          font-clash
+                          text-[34px]
+                          leading-[1.2]
+                          text-[#38362e]
 
-                          max-md:text-[14px]
+                          max-[1500px]:text-[21px]
+
+                          max-[1100px]:text-[18px]
+
+                          max-md:text-[16px]
                         "
                       >
                         {tag}
+
+                        {tagIndex < work.tags.length - 1 && (
+                          <span className="ml-[10px]">/</span>
+                        )}
                       </span>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                {/* CTA */}
-                <button
-                  ref={(el) => {
-                    ctaRefs.current[index] = el;
-                  }}
-                  className="
-                    group
-                    flex
-                    items-center
-                    gap-[6px]
-                    text-[#80c46c]
-                    mr-[18px]
-                    cursor-pointer
+                  {/* VIEW PROJECT */}
 
-                    max-md:mr-0
-                  "
-                >
-                  <HiArrowTurnDownRight
+                  <button
+                    ref={(el) => {
+                      ctaRefs.current[index] = el;
+                    }}
+                    type="button"
                     className="
-                      text-[24px]
-                      stroke-[0.2]
-                      mb-[8px]
-                      transition-transform
-                      duration-500
-                      group-hover:translate-x-[5px]
+                      group
+                      mt-[48px]
+                      flex
+                      items-center
+                      gap-[7px]
+                      border-0
+                      bg-transparent
+                      p-0
+                      cursor-pointer
 
-                      max-md:text-[20px]
-                    "
-                  />
-
-                  <span
-                    className="
-                      text-[15px]
+                      font-clash
+                      text-[20px]
                       uppercase
-                      tracking-[0.08em]
-                      font-nixie
-                      mr-[30px]
+                      text-[#38362e]
 
-                      max-md:mr-0
+                      transition-colors
+                      duration-300
+                      hover:text-[#70ad61]
+
+                      max-[1100px]:
+                        mt-[35px]
+                        text-[13px]
+
+                      max-md:
+                        mt-[28px]
+                        text-[11px]
                     "
                   >
-                    SEE PORTFOLIO
-                  </span>
-                </button>
+                    <HiArrowTurnDownRight
+                      className="
+                        text-[22px]
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-[4px]
+
+                        max-[1100px]:text-[18px]
+
+                        max-md:text-[15px]
+                      "
+                    />
+
+                    <span>View Project</span>
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
-      ))}
+
+        {/* =========================================================
+            COMPLETE ARCHIVE CTA
+        ========================================================= */}
+
+        <div
+          className="
+    h-[184px]
+    w-full
+    flex
+    items-center
+    justify-center
+    border-b
+    border-black/30
+
+    max-md:h-[140px]
+  "
+        >
+          <button
+            type="button"
+            className="
+      group
+      flex
+      items-center
+      gap-[7px]
+
+      border-0
+      bg-transparent
+      p-0
+      m-0
+
+      cursor-pointer
+
+      font-clash
+      text-[20px]
+      leading-none
+      uppercase
+      tracking-[0.04em]
+
+      text-[#80c46c]
+
+      transition-all
+      duration-300
+      hover:gap-[11px]
+    "
+          >
+            <HiArrowTurnDownRight
+              className="
+        shrink-0
+        text-[20px]
+        transition-transform
+        duration-300
+        group-hover:translate-x-[3px]
+      "
+            />
+
+            <span>Explore the complete archive</span>
+          </button>
+        </div>
+      </div>
     </section>
   );
 }

@@ -36,6 +36,13 @@ import {
 } from "react-icons/fa";
 
 export const SOCIAL_LINKS = [
+
+{
+    icon: FaLinkedin,
+    href: "https://twitter.com",
+    label: "Twitter",
+  },
+
   {
     icon: FaInstagram,
     href: "https://instagram.com",
@@ -48,23 +55,20 @@ export const SOCIAL_LINKS = [
     label: "Pinterest",
   },
 
-  {
-    icon: FaTwitter,
-    href: "https://twitter.com",
-    label: "Twitter",
-  },
+  
 ];
 
 export const socialss = [
+  FaLinkedin,
   FaInstagram,
   FaPinterest,
-  FaTwitter,
+  
 ];
 
 export const links = [
-  { number: "01", label: "CREATIVE" },
-  { number: "02", label: "EDITIONS" },
-  { number: "03", label: "COHORT" },
+  { number: "01", label: "Creative" },
+  { number: "02", label: "Editions" },
+  { number: "03", label: "Cohort" },
 ];
 
 // artwork
@@ -80,76 +84,102 @@ export const links = [
   //creative
 
    export const cards = [
-    {
-      number: "01",
-      title: "CREATIVE",
-      icon: "●",
-      desc: "Building brands, systems, and digital experiences with clarity, depth, and character.",
-      image:"/images/creative.avif",
-      items: [
-        "Brand Strategy & Systems",
-        "Digital Experiences",
-        "Communication Design",
-        "Creative Direction",
-      ],
-      footerTitle: "100+",
-      footerDesc: "projects across industries and geographies",
-    },
-    {
-      number: "02",
-      title: "EDITIONS",
-      icon: "▲",
-      desc: "An evolving collection of artworks, objects, merchandise, and experimental explorations.",
-      image:"/images/editions.avif",
-      items: [
-        "Artworks & Creative Explorations",
-        "Merchandise",
-        "Objects",
-        "Publishing",
-      ],
-      footerTitle: "6000+",
-      footerDesc: "artworks curated, created, & sourced since 2015",
-    },
-    {
-      number: "03",
-      title: "COHORT",
-      icon: "■",
-      desc: "Creating spaces for learning, dialogue, collaboration, and collective creative growth.",
-      image:"/images/cohart.avif",
-      items: [
-        "Workshops",
-        "Exhibitions",
-        "Conversations",
-        "Collective Initiatives",
-      ],
-      footerTitle: "",
-      footerDesc:
-        "A growing network of creators, students, artists, and collaborators",
-    },
-  ];
+  {
+    number: "01",
+    category: "Creative",
+    title: "Brands, systems, and digital experiences.",
+    icon: "●",
+    desc: "We help businesses become clearer, more distinctive, and more coherent across the ways they are seen, understood, and experienced.",
+    image: "/images/creative.avif",
+    items: [
+      "Brand Strategy & Identity",
+      "Websites & Digital Experiences",
+      "Communication & Content Systems",
+      "Creative Direction",
+    ],
+    footerTitle: "100+",
+    footerDesc: "projects across industries and geographies",
+  },
 
+  {
+    number: "02",
+    category: "Editions",
+    title: "Artworks, objects, and physical expressions.",
+    icon: "▲",
+    desc: "We work with architects, interior designers, brands, institutions, and individuals to curate, source, create, and commission artworks and other physical expressions.",
+    image: "/images/editions.avif",
+    items: [
+      "Art Consultation",
+      "Artwork Sourcing & Creation",
+      "Objects & Merchandise",
+      "Print & Publishing",
+    ],
+    footerTitle: "6000+",
+    footerDesc: "artworks curated, created,  sourced since 2015",
+  },
+
+  {
+    number: "03",
+    category: "Cohort",
+    title: "Learning, dialogue, and collective creative experiences.",
+    icon: "■",
+    desc: "Cohort brings people together through workshops, conversations, exhibitions, cultural initiatives, and collaborative projects.",
+    image: "/images/cohart.avif",
+    items: [
+      "Workshops",
+      "Exhibitions",
+      "Conversations",
+      "Collective Initiatives",
+    ],
+    footerTitle: "",
+    footerDesc:
+      "A growing network of creators, students, artists, institutions and collaborators.",
+  },
+];
   // archive
 
-  export const works = [
+ export const works = [
   {
     year: "2026",
     country: "SPAIN",
-    title: "THE SPANISH ALCHEMIST",
+    title: "The Spanish Alchemist",
     image: "/trust-hero.jpg",
-    desc: "Building a skincare brand rooted in freshness, performance, and cultural identity.",
-    tags: ["Brand Identity", "Packaging", "Digital"],
-    shape: "circle",
+    desc: "Building a skincare brand around freshness, efficacy, and a different way of thinking about shelf life.",
+    tags: [
+      "Brand Strategy",
+      "Identity",
+      "Packaging",
+      "Digital",
+      "Creative Direction",
+    ],
   },
+
   {
-    year: "2025",
+    year: "2026",
     country: "INDIA",
-    title: "THE INVISIBLE MUSEUM",
+    title: "Invisible Museum",
     image: "/trust-hero.jpg",
     desc: "Reimagining heritage discovery through public interaction and spatial storytelling.",
-    tags: ["Spatial Experience", "Cultural Initiative"],
-    shape: "square",
+    tags: [
+      "Spatial Experience",
+      "Cultural Initiative",
+    ],
+  },
+
+  {
+    year: "XXXX",
+    country: "USA / EUROPE / AUSTRALIA",
+    title: "[ International Project ]",
+    image: "/trust-hero.jpg",
+    desc: "[One-line description]",
+    tags: [
+      "Strategy",
+      "Identity",
+      "Digital",
+    ],
   },
 ];
+
 
 // areas
 

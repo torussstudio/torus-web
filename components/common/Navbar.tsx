@@ -108,7 +108,7 @@ export default function Navbar() {
                           tracking-[0.16em]
                           transition-colors
                           duration-200
-                          font-nixie
+                          font-clashlight
                           text-[14px]
                           lg:text-[15px]
                           xl:text-[16px]
@@ -202,7 +202,7 @@ export default function Navbar() {
             <span
               className="
                 select-none
-                font-mono
+                font-clash
                 text-[11px]
                 uppercase
                 tracking-[0.35em]
@@ -246,7 +246,7 @@ export default function Navbar() {
                           items-center
                           gap-3
                           py-4
-                          font-mono
+                          font-clash
                           text-[11px]
                           uppercase
                           tracking-[0.22em]
@@ -277,7 +277,7 @@ export default function Navbar() {
 
                       <span>{item.label}</span>
 
-                      <span className="ml-auto font-mono text-[10px] tracking-[0.2em] text-[#c5c2bc] sm:text-[11px]">
+                      <span className="ml-auto font-clash text-[10px] tracking-[0.2em] text-[#c5c2bc] sm:text-[11px]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </Link>

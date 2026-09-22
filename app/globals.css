@@ -2,21 +2,18 @@
  
  @import "tailwindcss";
 
-.font-nova {
+.font-clashlight {
+  font-family: var(--font-nav);
+}
+
+.font-trial {
   font-family: var(--font-heading);
 }
 
-.font-nixie {
+.font-clash {
   font-family: var(--font-body);
 }
 
-.font-recife {
-  font-family: var(--font-recife);
-}
-
-.font-serendipity {
-  font-family: var(--font-serendipity);
-}
 
 :root {
   --background: #ffffff;

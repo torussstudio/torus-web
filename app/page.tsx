@@ -6,6 +6,7 @@ import CreativeGrid from "@/components/sections/home/Creative";
 import ArchiveSection from "@/components/sections/home/Archive";
 import AreasOfPractice from "@/components/sections/home/Areas";
 import UXPage from "@/components/sections/home/StudioNote";
+import DisciplineSection from "@/components/sections/home/DisciplineSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Artwork />
       <CreativeGrid />
       <ArchiveSection />
+      <DisciplineSection />
       <AreasOfPractice />
       <UXPage/>
       <Footer />
