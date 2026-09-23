@@ -32,7 +32,6 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPinterest,
-  FaTwitter,
 } from "react-icons/fa";
 
 export const SOCIAL_LINKS = [
@@ -73,13 +72,35 @@ export const links = [
 
 // artwork
 
-  export const menu = [
-    "ARTWORKS & PRINTS",
-    "EDITIONS",
-    "IDENTITY SYSTEMS",
-    "WORKS & STUDIOS",
-    "OBJECTS",
-  ];
+ export const spaces = [
+   {
+     title: "Work Spaces",
+     image: "/images/artwork1.avif",
+   },
+   {
+     title: "Experiments",
+     image: "/images/cohart.avif",
+   },
+   {
+     title: "Collaboration",
+     image: "/images/creative.avif",
+   },
+ ];
+ 
+ export const stats = [
+  {
+    value: "100+",
+    label: "Projects",
+  },
+  {
+    value: "10+",
+    label: "Years of practice",
+  },
+  {
+    value: "6000+",
+    label: "Artworks curated, created and sourced",
+  },
+];
 
   //creative
 
@@ -183,108 +204,89 @@ export const links = [
 
 // areas
 
- export const practices = [
-  {
-    number: "01",
-    title: "STRATEGY &\nIDENTITY SYSTEMS",
-    desc: "Building brands with clarity, character, and long-term coherence.",
-    image:"/images/communication.avif",
-    items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "02",
-    title: "DIGITAL\nEXPERIENCES",
-    desc: "From websites to product interfaces, we create digital experiences that balance usability, storytelling, and visual clarity.",
-    image:"/images/creativedirection.avif ",
-    items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "03",
-    title: "COMMUNICA-\nTION&CONTENT",
-    desc: "Creating systems of expression across campaigns, content, and ongoing brand communication.",
-    image:"/images/objects.avif",
-        items: [
-      "UI/UX Design",
-      "Website Design & Development",
-      "Interaction Design",
-      "Digital Systems",
-      "Motion & Microinteractions",
-    ],
-  },
-
-  {
-    number: "04",
-    title: "CREATIVE\nDIRECTION",
-    desc: "Developing visual systems and narratives that guide products, campaigns, and evolving cultural identities.",
-    image:"/images/strategy.avif",
-        items: [
-      "Campaign Direction",
-      "Art Direction",
-      "Brand Systems",
-      "Visual Storytelling",
-      "Motion Direction",
-    ],
-  },
-
-  {
-    number: "05",
-    title: "OBJECTS &\nINSTALLATIONS",
-    desc: "Exploring physical experiences through objects, environments, and tactile systems.",
-    image:"/images/digital.avif",
-    items: [
-      "Spatial Design",
-      "Installation Concepts",
-      "Material Systems",
-      "Interactive Objects",
-      "Exhibition Design",
-    ],
-  },
-];
-
-// studionote
-
-export const values = [
-  {
-    no: "01",
-    title: "CLARITY",
-    sub: "OVER NOISE",
-    green: false,
-  },
-  {
-    no: "02",
-    title: "CURIOSITY",
-    sub: "OVER ASSUMPTION",
-    green: true,
-  },
-  {
-    no: "03",
-    title: "PROCESS",
-    sub: "OVER POSTURING",
-    green: false,
-  },
-  {
-    no: "04",
-    title: "GOOD",
-    sub: "CONVERSATIONS",
-    green: false,
-  },
-];
-
-
+ type Practice = {
+   id: string;
+   title: string[];
+   description: string;
+   details: string[];
+   image: string;
+ };
+ 
+ export const practices: Practice[] = [
+   {
+     id: "01",
+     title: ["Branding", "and Strategy"],
+     description:
+       "Building clear, distinctive brands and the systems that hold them together.",
+     image: "/images/practice-branding.jpg",
+     details: [
+       "Brand Strategy /",
+       "Visual Identity /",
+       "Brand Positioning /",
+       "Naming & Messaging /",
+       "Brand Guidelines",
+     ],
+   },
+ 
+   {
+     id: "02",
+     title: ["Web", "and Digital"],
+     description:
+       "Creating websites and digital products that balance usability, expression, storytelling, and business goals.",
+     image: "/images/practice-web.jpg",
+     details: [
+       "Website Design & Development ",
+       "Ecommerce / Motion / UI/UX /",
+       "Digital Products /",
+       "Interaction Design",
+     ],
+   },
+ 
+   {
+     id: "03",
+     title: ["Communication", "and Growth"],
+     description:
+       "Helping brands communicate consistently across campaigns, content, digital channels, and everyday customer interactions.",
+     image: "/images/practice-communication.jpg",
+     details: [
+       "Campaign Strategy /",
+       "Content & Communication /",
+       "Social Media /",
+       "Digital Campaigns /",
+       "Creative Direction",
+     ],
+   },
+ 
+   {
+     id: "04",
+     title: ["Art", "and Editions"],
+     description:
+       "Bringing art and physical expression into spaces, brands, and cultural projects.",
+     image: "/images/practice-art.jpg",
+     details: [
+       "Art Direction /",
+       "Art Curation /",
+       "Artwork Sourcing /",
+       "Print & Publishing /",
+       "Objects & Editions",
+     ],
+   },
+ 
+   {
+     id: "05",
+     title: ["Culture and", "Collective Projects"],
+     description:
+       "Creating experiences that bring people together around learning, creativity, culture, and exchange.",
+     image: "/images/practice-culture.jpg",
+     details: [
+       "Workshops & Learning /",
+       "Exhibitions /",
+       "Cultural Programs /",
+       "Collaborative Projects /",
+       "Community Initiatives",
+     ],
+   },
+ ];
 // STUDIO SECTION
 
 // hero

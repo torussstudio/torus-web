@@ -215,8 +215,8 @@ export default function ArchiveSection() {
       ref={sectionRef}
       className="
         w-full
-        bg-[#f7f6f0]
-        text-[#34332f]
+        bg-[#f9f8f2]
+        text-[#38362e]
         border-t
         border-black/30
         overflow-hidden
@@ -275,7 +275,7 @@ export default function ArchiveSection() {
               m-0
               max-w-[370px]
               font-clash
-              text-[18px]
+              text-[20px]
               leading-[1.2]
               text-[#35322e]
 
@@ -448,7 +448,7 @@ export default function ArchiveSection() {
                       text-[20px]
                       uppercase
                       tracking-[0.04em]
-                      text-[#35322e]
+                      text-[#38362e]
 
                       max-[1100px]:text-[17px]
                       max-md:text-[15px]
@@ -482,7 +482,7 @@ export default function ArchiveSection() {
                       text-[52px]
                       leading-[0.98]
                       tracking-[-0.045em]
-                      text-[#34322e]
+                      text-[#38362e]
 
                       max-[1500px]:text-[44px]
 
@@ -598,11 +598,11 @@ export default function ArchiveSection() {
                       font-clash
                       text-[20px]
                       uppercase
-                      text-[#38362e]
+                      text#38362e]
 
                       transition-colors
                       duration-300
-                      hover:text-[#70ad61]
+                      hover:text-[#80c46c]
 
                       max-[1100px]:
                         mt-[35px]

@@ -68,7 +68,7 @@ export default function Navbar() {
       {/* FIXED HEADER - logo always visible, nav slides behind it */}
       <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full">
         {/* LOGO */}
-        <div className="relative z-50 flex items-center justify-center border-b border-black/35 bg-[#f4f4f2] px-4 py-4 sm:py-5 md:py-4">
+        <div className="relative z-50 flex items-center justify-center border-b border-black/35 bg-[#f9f8f2] px-4 py-4 sm:py-5 md:py-4">
           <Link href="/" className="block">
             <Image
               src="/images/NewLogo.png"
@@ -84,7 +84,7 @@ export default function Navbar() {
         {/* DESKTOP NAV - sits right below logo, hides behind logo on scroll down, shows on scroll up */}
         <nav
           className={cn(
-            "relative z-40 hidden border-b border-black/35 bg-[#f4f4f2] transition-transform duration-300 ease-in-out lg:block",
+            "relative z-40 hidden border-b border-black/35 bg-[#f9f8f2] transition-transform duration-300 ease-in-out lg:block",
             hideNav ? "-translate-y-full" : "translate-y-0"
           )}
         >
@@ -115,15 +115,15 @@ export default function Navbar() {
                           2xl:text-[17px]
                         `,
                         isActive
-                          ? "text-[#707070]"
-                          : "text-black hover:text-[#6b6b6b]"
+                          ? "text-[#38362e]"
+                          : " hover:text-[#6b6b6b]"
                       )}
                     >
                       <span
                         className={cn(
                           `
-                            h-[6px]
-                            w-[6px]
+                            h-[8px]
+                            w-[8px]
                             shrink-0
                             bg-[#2a2a2a]
                             transition-opacity
@@ -295,3 +295,7 @@ export default function Navbar() {
     </>
   );
 }
+
+
+
+

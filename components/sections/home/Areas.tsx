@@ -1,1036 +1,540 @@
 "use client";
 
+import { useState } from "react";
 import { practices } from "@/lib/constants";
-import { useState, useRef, useLayoutEffect } from "react";
-import { HiOutlineArrowRight, HiOutlineArrowLeft } from "react-icons/hi";
-import { HiArrowTurnDownRight } from "react-icons/hi2";
-import gsap from "gsap";
+
 
 export default function AreasOfPractice() {
-  const [active, setActive] = useState(1);
-  const [direction, setDirection] = useState("right");
-  const cardRefs = useRef<HTMLDivElement[]>([]);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // desktop header
-  const dHeaderTitleRef = useRef<HTMLHeadingElement>(null);
-  const dHeaderDescRef = useRef<HTMLParagraphElement>(null);
-  const dCounterRef = useRef<HTMLDivElement>(null);
-  const dArrowsRef = useRef<HTMLDivElement>(null);
-
-  // mobile header
-  const mHeaderTitleRef = useRef<HTMLHeadingElement>(null);
-  const mHeaderDescRef = useRef<HTMLParagraphElement>(null);
-  const mCounterRef = useRef<HTMLDivElement>(null);
-
-  // desktop active-card detail content
-  const dNumberRef = useRef<HTMLSpanElement>(null);
-  const dTitleRef = useRef<HTMLHeadingElement>(null);
-  const dDividerRef = useRef<HTMLDivElement>(null);
-  const dDescRef = useRef<HTMLParagraphElement>(null);
-  const dListRef = useRef<HTMLDivElement>(null);
-  const dBtnRef = useRef<HTMLDivElement>(null);
-
-  // mobile active-card detail content
-  const mNumberRef = useRef<HTMLSpanElement>(null);
-  const mTitleRef = useRef<HTMLHeadingElement>(null);
-  const mDividerRef = useRef<HTMLDivElement>(null);
-  const mDescRef = useRef<HTMLParagraphElement>(null);
-  const mListRef = useRef<HTMLDivElement>(null);
-  const mBtnRef = useRef<HTMLDivElement>(null);
-
-  const CARD_WIDTH = 340;
-
-  const scrollToCard = (index: number) => {
-    setTimeout(() => {
-      cardRefs.current[index]?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "start",
-      });
-    }, 50);
+  const toggleRow = (id: string) => {
+    setActiveId((current) => (current === id ? null : id));
   };
-
-  const nextSlide = () => {
-    setActive((prev) => {
-      const next = prev === practices.length - 1 ? 0 : prev + 1;
-      scrollToCard(next);
-      return next;
-    });
-  };
-
-  const prevSlide = () => {
-    setActive((prev) => {
-      const next = prev === 0 ? practices.length - 1 : prev - 1;
-      scrollToCard(next);
-      return next;
-    });
-  };
-
-  // entrance animation — runs once on mount
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap
-        .timeline({ defaults: { ease: "power3.out" } })
-        .fromTo(
-          [dHeaderTitleRef.current, mHeaderTitleRef.current],
-          { autoAlpha: 0, y: 60, clipPath: "inset(0 0 100% 0)" },
-          { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 1.8 }
-        )
-        .fromTo(
-          [dHeaderDescRef.current, mHeaderDescRef.current],
-          { autoAlpha: 0, y: 30 },
-          { autoAlpha: 1, y: 0, duration: 1.2 },
-          "-=1.1"
-        )
-        .fromTo(
-          [dCounterRef.current, mCounterRef.current],
-          { autoAlpha: 0, y: 24 },
-          { autoAlpha: 1, y: 0, duration: 1 },
-          "-=0.7"
-        )
-        .fromTo(
-          dArrowsRef.current,
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1 },
-          "-=0.6"
-        );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // active-card detail content animation — replays whenever `active` changes
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      [
-        { number: dNumberRef, title: dTitleRef, divider: dDividerRef, desc: dDescRef, list: dListRef, btn: dBtnRef },
-        { number: mNumberRef, title: mTitleRef, divider: mDividerRef, desc: mDescRef, list: mListRef, btn: mBtnRef },
-      ].forEach(({ number, title, divider, desc, list, btn }) => {
-        if (!title.current) return;
-
-        const listItems = list.current
-          ? Array.from(list.current.children)
-          : [];
-
-        gsap
-          .timeline({ defaults: { ease: "power3.out" } })
-          .fromTo(
-            number.current,
-            { autoAlpha: 0, y: -20 },
-            { autoAlpha: 1, y: 0, duration: 0.9 }
-          )
-          .fromTo(
-            title.current,
-            { autoAlpha: 0, y: 48, clipPath: "inset(0 0 100% 0)" },
-            { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 1.3 },
-            "-=0.5"
-          )
-          .fromTo(
-            divider.current,
-            { scaleX: 0 },
-            { scaleX: 1, duration: 1.1, transformOrigin: "left" },
-            "-=0.7"
-          )
-          .fromTo(
-            desc.current,
-            { autoAlpha: 0, y: 26 },
-            { autoAlpha: 1, y: 0, duration: 1 },
-            "-=0.6"
-          )
-          .fromTo(
-            listItems,
-            { autoAlpha: 0, x: -24 },
-            { autoAlpha: 1, x: 0, duration: 0.8, stagger: 0.18 },
-            "-=0.5"
-          )
-          .fromTo(
-            btn.current,
-            { autoAlpha: 0, y: 18 },
-            { autoAlpha: 1, y: 0, duration: 0.8 },
-            "-=0.3"
-          );
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [active]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-[#ebe9e6] overflow-hidden border-t border-black/50 pb-[62px]"
-    >
-      <div className="pt-[62px]">
-        <>
-          <div className="w-full border-t border-black/50" />
+    <section className="m-0 w-full bg-[#f9f8f2] text-[#38362e]">
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[1350px]
+          -translate-x-[40px]
+        "
+      >
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
 
-          {/* =========================
-          DESKTOP
-          ========================= */}
-          {/* max-width wrapper add cheythu — 1920px+ screens-il muzhu grid
-              stretch aavathe oru limit-il centered aayi nilkkum */}
-          <div className="hidden xl:block max-w-[1728px] mx-auto">
-            <div
-              className="
-                grid
-                grid-cols-[560px_minmax(0,1fr)]
-                min-h-[760px]
-              "
-            >
-              {/* LEFT PANEL */}
-              <div
-                className="
-                  border-r
-                  border-black/50
-                  px-[74px]
-                  pt-[58px]
-                  pb-[52px]
-                  flex
-                  flex-col
-                "
-              >
-                <div>
-                  <h2
-                    ref={dHeaderTitleRef}
-                    className="
-                      text-[47px]
-                      leading-[1]
-                      tracking-[-0.01em]
-                      uppercase
-                      text-[#181818]
-                      font-recife
-                      pl-[100px]
-                    "
-                  >
-                    AREAS
-                    <br />
-                    OF PRACTICE
-                  </h2>
+        <header
+          className="
+    m-0
+    flex
+    items-start
+    justify-between
 
-                  <p
-                    ref={dHeaderDescRef}
-                    className="
-                      mt-[42px]
-                      max-w-[420px]
-                      text-[16px]
-                      leading-[1.25]
-                      text-[#181818]
-                      font-nixie
-                      pl-[100px]
-                    "
-                  >
-                    Toruss works across a range of interconnected creative
-                    disciplines, spanning identity, digital, objects,
-                    communication, and collective initiatives.
-                  </p>
-                </div>
+    min-h-[340px]
 
-                <div className="mt-auto">
-                  <div
-                    ref={dCounterRef}
-                    className="flex items-end gap-[10px] pl-[100px]"
-                  >
-                    <span
-                      className="
-                        text-[54px]
-                        leading-none
-                        tracking-[-0.06em]
-                        text-[#181818]
-                        font-nixie
-                      "
-                    >
-                      {active === -1 ? "00" : `0${active + 1}`}
-                    </span>
+    px-[42px]
+    pt-[58px]
+    pb-[200px]
 
-                    <span
-                      className="
-                        text-[54px]
-                        leading-none
-                        tracking-[-0.06em]
-                        text-[#181818]
-                        font-nixie
-                      "
-                    >
-                      /05
-                    </span>
-                  </div>
+    max-[1200px]:
+      min-h-[300px]
+      px-[34px]
+      pt-[52px]
+      pb-[165px]
 
-                  <div
-                    ref={dArrowsRef}
-                    className="mt-[92px] pl-[100px] flex items-center justify-between"
-                  >
-                    <button
-                      onClick={prevSlide}
-                      className="
-                        text-[42px]
-                        text-[#181818]
-                        hover:opacity-60
-                        transition-opacity
-                        duration-300
-                        cursor-pointer
-                      "
-                    >
-                      <HiOutlineArrowLeft />
-                    </button>
+    max-[900px]:
+      min-h-[250px]
+      px-[26px]
+      pt-[44px]
+      pb-[125px]
 
-                    <button
-                      onClick={nextSlide}
-                      className="
-                        text-[42px]
-                        text-[#181818]
-                        hover:opacity-60
-                        transition-opacity
-                        duration-300
-                        cursor-pointer
-                      "
-                    >
-                      <HiOutlineArrowRight />
-                    </button>
-                  </div>
-                </div>
-              </div>
+    max-[600px]:
+      min-h-[210px]
+      px-[20px]
+      pt-[38px]
+      pb-[100px]
+  "
+        >
+          <h2
+            className="
+      m-0
+      shrink-0
+      translate-y-[85px]
+      p-0
 
-              {/* CAROUSEL COLUMN — min-w-0 CRITICAL aanu: grid item-inte default
-                  "min-width: auto" content-inte natural width (1020px+) edukkum,
-                  minmax(0,1fr) undayittum ath override cheyyilla. min-w-0 vech
-                  aa auto-minimum override cheyyunnu, appo column YETHENKILUM
-                  narrow screen-ilum shrink aavum, overflow/crop varilla. */}
-              <div className="flex justify-center overflow-hidden border-b border-black/40 min-w-0">
+      font-trial
+      text-[60px]
+      leading-none
+      tracking-[-0.045em]
+
+      text-[#38362e]
+
+      max-[1200px]:text-[52px]
+      max-[900px]:translate-y-[18px]
+      max-[900px]:text-[27px]
+      max-[600px]:translate-y-[12px]
+      max-[600px]:text-[24px]
+    "
+          >
+            Areas of Practice
+          </h2>
+
+          <span
+            className="
+      m-0
+      shrink-0
+      translate-y-[85px]
+      whitespace-nowrap
+      p-0
+      pt-[10px]
+
+      font-clash
+      text-[20px]
+      uppercase
+      leading-none
+      tracking-[0.02em]
+
+      text-[#38362e]
+
+      max-[1200px]:text-[17px]
+      max-[900px]:translate-y-[18px]
+      max-[900px]:text-[13px]
+      max-[600px]:translate-y-[12px]
+      max-[600px]:text-[9px]
+    "
+          >
+            [ WHAT WE CAN HELP WITH ]
+          </span>
+        </header>
+
+        {/* =========================================================
+            PRACTICE LIST
+        ========================================================= */}
+
+        <div className="m-0 w-full p-0">
+          {practices.map((practice) => {
+            const isActive = activeId === practice.id;
+
+            return (
+              <div key={practice.id} className="group relative w-full">
+                {/* FULL WIDTH HOVER / ACTIVE BACKGROUND */}
                 <div
+                  aria-hidden="true"
+                  className={`
+      pointer-events-none
+      absolute
+      inset-y-0
+      left-[calc(50%+40px)]
+      z-0
+      w-screen
+      -translate-x-1/2
+
+      bg-[#f9f8f2]
+      transition-colors
+      duration-300
+      ease-out
+
+      group-hover:bg-[#eae6dc]
+      ${isActive ? "bg-[#eae6dc]" : ""}
+    `}
+                />
+
+                <article
                   className="
-                    relative
-                    w-full
-                    max-w-[1020px]
-                    min-w-0
-                    overflow-hidden
-                  "
+      relative
+      z-10
+      m-0
+      w-full
+      overflow-hidden
+      bg-transparent
+  "
                 >
-                  <button
-                    onClick={() => {
-                      setActive((prev) => {
-                        if (direction === "right") {
-                          if (prev === practices.length - 1) {
-                            setDirection("left");
-                            return prev - 1;
-                          }
-                          return prev + 1;
-                        }
-
-                        if (prev === 0) {
-                          setDirection("right");
-                          return prev + 1;
-                        }
-
-                        return prev - 1;
-                      });
-                    }}
-                    className="
-                      absolute
-                      left-[62.7%]
-                      bottom-[118px]
-                      w-[80px]
-                      h-[80px]
-                      bg-[#ebe9e6]
-                      border
-                      border-black/50
-                      flex
-                      items-center
-                      justify-center
-                      text-[42px]
-                      text-[#181818]
-                      z-[100]
-                      transition-all
-                      duration-300
-                      hover:translate-x-[4px]
-                    "
-                  >
-                    {direction === "right" ? "→" : "←"}
-                  </button>
+                  {/* =================================================
+    COLLAPSED / MAIN ROW
+================================================= */}
 
                   <div
                     className="
-                      flex
-                      h-full
-                      transition-transform
-                      duration-700
-                      ease-out
-                    "
-                    style={{
-                      transform: `translateX(-${
-                        active <= 1
-                          ? 0
-                          : active >= 3
-                            ? 2 * CARD_WIDTH
-                            : 1 * CARD_WIDTH
-                      }px)`,
-                    }}
+    grid
+    min-h-[285px]
+    w-full
+    items-center
+
+    grid-cols-[150px_minmax(0,500px)_minmax(280px,1fr)_70px]
+
+    px-[118px]
+
+    border-0
+
+    max-[1400px]:
+      min-h-[270px]
+      grid-cols-[140px_minmax(0,460px)_minmax(260px,1fr)_60px]
+      px-[80px]
+
+    max-[1200px]:
+      min-h-[240px]
+      grid-cols-[120px_minmax(0,400px)_minmax(220px,1fr)_55px]
+      px-[60px]
+
+    max-[900px]:
+      min-h-[190px]
+      grid-cols-[55px_minmax(0,1fr)_45px]
+      gap-[20px]
+      px-[40px]
+
+    max-[700px]:
+      min-h-[150px]
+      grid-cols-[40px_minmax(0,1fr)_35px]
+      gap-[12px]
+      px-[20px]
+  "
                   >
-                    {practices.map((item, index) => {
-                      const isActive = active === index;
+                    {/* =================================================
+      NUMBER
+  ================================================= */}
 
-                      return (
-                        <div
-                          key={index}
-                          onClick={() => setActive(index)}
-                          className="
-                            relative
-                            w-[340px]
-                            flex-shrink-0
-                            border-r
-                            border-black/50
-                            overflow-visible
-                            cursor-pointer
-                          "
-                        >
-                          {isActive ? (
-                            <div className="relative h-full">
-                              <img
-                                src={item.image}
-                                alt={item.title}
-                                className="absolute inset-0 w-full h-full object-cover"
-                              />
+                    <div
+                      className="
+      self-center
+      font-clash
+      text-[25px]
+      leading-none
+      tracking-[0.02em]
+      text-[#38362e]
+    "
+                    >
+                      [{practice.id}]
+                    </div>
 
-                              <div className="absolute inset-0 bg-black/60" />
+                    {/* =================================================
+      TITLE
+  ================================================= */}
 
-                              <div
-                                className="
-                                  relative
-                                  z-20
-                                  h-full
-                                  px-[30px]
-                                  pt-[24px]
-                                  pb-[28px]
-                                  flex
-                                  flex-col
-                                "
-                              >
-                                <span
-                                  ref={dNumberRef}
-                                  className="
-                                    text-[20px]
-                                    tracking-[0.18em]
-                                    uppercase
-                                    text-[#80c46c]
-                                    font-nixie
-                                  "
-                                >
-                                  — {item.number}
-                                </span>
+                    <h3
+                      className="
+      m-0
+      min-w-0
+      self-center
+      p-0
 
-                                <h3
-                                  ref={dTitleRef}
-                                  className="
-                                    mt-[18px]
-                                    whitespace-pre-line
-                                    text-[45px]
-                                    leading-[0.92]
-                                    tracking-[-0.05em]
-                                    uppercase
-                                    text-[#80c46c]
-                                    font-nixie
-                                  "
-                                >
-                                  {item.title}
-                                </h3>
+      font-clash
+      text-[48px]
+      leading-[1.08]
+      tracking-[-0.035em]
+      text-[#403e38]
 
-                                <div
-                                  ref={dDividerRef}
-                                  className="mt-[28px] h-px w-full bg-white/45"
-                                />
+      max-[1400px]:text-[42px]
+      max-[1200px]:text-[36px]
+      max-[900px]:text-[30px]
+      max-[700px]:text-[23px]
+    "
+                    >
+                      {practice.title.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </h3>
 
-                                <p
-                                  ref={dDescRef}
-                                  className="
-                                    mt-[22px]
-                                    text-[20px]
-                                    leading-[1.5]
-                                    text-white/90
-                                    font-nixie
-                                    max-w-[380px]
-                                  "
-                                >
-                                  {item.desc}
-                                </p>
+                    {/* =================================================
+      DESCRIPTION
+================================================= */}
 
-                                <div
-                                  ref={dListRef}
-                                  className="mt-[30px] space-y-[28px]"
-                                >
-                                  {item.items.map((listItem, i) => (
-                                    <div
-                                      key={i}
-                                      className="flex items-center gap-[16px]"
-                                    >
-                                      <div className="flex items-center gap-[5px]">
-                                        <div className="flex flex-col gap-[5px]">
-                                          <span className="w-[5px] h-[5px] bg-white block" />
-                                          <span className="w-[5px] h-[5px] bg-white block" />
-                                        </div>
-                                        <div className="flex items-center h-[11px]">
-                                          <span className="w-[5px] h-[5px] bg-white block" />
-                                        </div>
-                                      </div>
+                    <div
+                      className="
+      z-10
+      w-full
+      max-w-[280px]
+      self-center
+      justify-self-start
 
-                                      <span
-                                        className="
-                                          text-[16px]
-                                          text-white/92
-                                          font-nixie
-                                        "
-                                      >
-                                        {listItem}
-                                      </span>
-                                    </div>
-                                  ))}
-                                </div>
+      max-[1400px]:max-w-[280px]
+      max-[1200px]:max-w-[240px]
 
-                                <div
-                                  ref={dBtnRef}
-                                  className="mt-auto flex items-center"
-                                >
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setActive(-1);
-                                    }}
-                                    className="
-                                      group
-                                      flex
-                                      items-center
-                                      gap-[10px]
-                                      text-white
-                                    "
-                                  >
-                                    <span
-                                      className="
-                                        text-[32px]
-                                        transition-transform
-                                        duration-300
-                                        group-hover:translate-x-[4px]
-                                      "
-                                    >
-                                      ↳
-                                    </span>
-
-                                    <span
-                                      className="
-                                        text-[16px]
-                                        uppercase
-                                        tracking-[0.08em]
-                                        font-nixie
-                                        cursor-pointer
-                                      "
-                                    >
-                                      VIEW LESS
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div
-                              className="
-                                h-full
-                                px-[28px]
-                                pt-[28px]
-                                pb-[24px]
-                                flex
-                                flex-col
-                                bg-[#ebe9e6]
-                              "
-                            >
-                              <div className="w-full h-[275px] overflow-hidden">
-                                <img
-                                  src={item.image}
-                                  alt={item.title}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-
-                              <span
-                                className="
-                                  mt-[40px]
-                                  text-[20px]
-                                  tracking-[0.18em]
-                                  uppercase
-                                  text-[#181818]
-                                  font-nixie
-                                "
-                              >
-                                — {item.number}
-                              </span>
-
-                              <h3
-                                className="
-                                  mt-[18px]
-                                  whitespace-pre-line
-                                  text-[42px]
-                                  leading-[0.92]
-                                  tracking-[-0.05em]
-                                  uppercase
-                                  text-[#181818]
-                                  font-nixie
-                                "
-                              >
-                                {item.title}
-                              </h3>
-
-                              <p
-                                className="
-                                  mt-[24px]
-                                  text-[12px]
-                                  leading-[1.15]
-                                  text-[#181818]
-                                  font-nixie
-                                  max-w-[230px]
-                                "
-                              >
-                                {item.desc}
-                              </p>
-
-                              <div className="mt-auto">
-                                <button
-                                  className="
-                                    group
-                                    flex
-                                    items-center
-                                    gap-[10px]
-                                    text-[#80c46c]
-                                  "
-                                >
-                                  <HiArrowTurnDownRight
-                                    style={{
-                                      fontSize: "24px",
-                                      strokeWidth: "0.2",
-                                      marginBottom: "8px",
-                                    }}
-                                  />
-
-                                  <span
-                                    className="
-                                      text-[16px]
-                                      uppercase
-                                      tracking-[0.08em]
-                                      font-nixie
-                                    "
-                                  >
-                                    VIEW MORE
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* =========================
-          TABLET + MOBILE (UNCHANGED)
-          ========================= */}
-          <div className="xl:hidden">
-            {/* HEADER */}
-            <div className="border-b border-black/20 px-5 sm:px-8 md:px-10 pt-8 pb-6">
-              <h2
-                ref={mHeaderTitleRef}
-                className="
-                  text-[34px]
-                  sm:text-[52px]
-                  md:text-[68px]
-                  leading-[0.95]
-                  tracking-[-0.05em]
-                  uppercase
-                  text-[#181818]
-                  font-nixie
-                "
-              >
-                AREAS
-                <br />
-                OF PRACTICE
-              </h2>
-
-              <p
-                ref={mHeaderDescRef}
-                className="
-                  mt-5
-                  max-w-[700px]
-                  text-[13px]
-                  sm:text-[16px]
-                  md:text-[18px]
-                  leading-[1.4]
-                  text-black/75
-                  font-nixie
-                "
-              >
-                Toruss works across a range of interconnected creative
-                disciplines, spanning identity, digital, objects, communication,
-                and collective initiatives.
-              </p>
-
-              <div className="mt-6 flex items-center justify-between">
-                <div
-                  ref={mCounterRef}
-                  className="flex items-end gap-[8px]"
-                >
-                  <span
-                    className="
-                      text-[36px]
-                      sm:text-[54px]
-                      leading-none
-                      tracking-[-0.06em]
-                      text-[#181818]
-                      font-nixie
-                    "
-                  >
-                    0{active + 1}
-                  </span>
-
-                  <span
-                    className="
-                      text-[36px]
-                      sm:text-[54px]
-                      leading-none
-                      tracking-[-0.06em]
-                      text-black/25
-                      font-nixie
-                    "
-                  >
-                    /05
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={prevSlide}
-                    className="
-                      w-[44px]
-                      h-[44px]
-                      sm:w-[66px]
-                      sm:h-[66px]
-                      border
-                      border-black/20
-                      flex
-                      items-center
-                      justify-center
-                      text-[22px]
-                      sm:text-[34px]
-                      text-[#181818]
-                    "
-                  >
-                    <HiOutlineArrowLeft />
-                  </button>
-
-                  <button
-                    onClick={nextSlide}
-                    className="
-                      w-[44px]
-                      h-[44px]
-                      sm:w-[66px]
-                      sm:h-[66px]
-                      border
-                      border-black/20
-                      flex
-                      items-center
-                      justify-center
-                      text-[22px]
-                      sm:text-[34px]
-                      text-[#181818]
-                    "
-                  >
-                    <HiOutlineArrowRight />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* MOBILE CARDS */}
-            <div className="px-4 sm:px-6 md:px-8 py-5">
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-4 w-max">
-                  {practices.map((item, index) => {
-                    const isActive = active === index;
-
-                    return (
+      max-[900px]:hidden
+    "
+                    >
                       <div
-                        key={index}
-                        ref={(el) => {
-                          if (el) cardRefs.current[index] = el;
+                        className="
+        m-0
+        block
+        w-full
+
+        font-clash
+        text-[20px]
+        leading-[1.28]
+        tracking-[-0.01em]
+
+        !text-[#38362e]
+        opacity-100
+        visible
+      "
+                        style={{
+                          display: "block",
+                          visibility: "visible",
+                          opacity: 1,
+                          color: "#38362e",
                         }}
-                        onClick={() => {
-                          setActive(index);
-                          scrollToCard(index);
-                        }}
-                        className={`
-                          relative
-                          overflow-hidden
-                          border
-                          border-black/20
-                          transition-all
-                          duration-500
-                          flex-shrink-0
-                          ${
-                            isActive
-                              ? "w-[88vw] sm:w-[620px] md:w-[720px]"
-                              : "w-[60vw] sm:w-[300px] md:w-[360px]"
-                          }
-                        `}
                       >
-                        {isActive ? (
-                          <div className="relative min-h-[480px] sm:min-h-[620px]">
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="absolute inset-0 w-full h-full object-cover"
-                            />
-
-                            <div className="absolute inset-0 bg-black/60" />
-
-                            <div
-                              className="
-                                relative
-                                z-20
-                                px-5
-                                sm:px-8
-                                md:px-10
-                                pt-5
-                                pb-5
-                                flex
-                                flex-col
-                                min-h-[480px]
-                                sm:min-h-[620px]
-                              "
-                            >
-                              <span
-                                ref={mNumberRef}
-                                className="
-                                  text-[14px]
-                                  sm:text-[18px]
-                                  tracking-[0.18em]
-                                  uppercase
-                                  text-[#85A56F]
-                                  font-nixie
-                                "
-                              >
-                                — {item.number}
-                              </span>
-
-                              <h3
-                                ref={mTitleRef}
-                                className="
-                                  mt-3
-                                  whitespace-pre-line
-                                  text-[32px]
-                                  sm:text-[46px]
-                                  md:text-[58px]
-                                  leading-[0.92]
-                                  tracking-[-0.05em]
-                                  uppercase
-                                  text-[#85A56F]
-                                  font-nixie
-                                "
-                              >
-                                {item.title}
-                              </h3>
-
-                              <div
-                                ref={mDividerRef}
-                                className="mt-4 h-px w-full bg-white/45"
-                              />
-
-                              <p
-                                ref={mDescRef}
-                                className="
-                                  mt-4
-                                  text-[13px]
-                                  sm:text-[16px]
-                                  md:text-[18px]
-                                  leading-[1.5]
-                                  text-white/90
-                                  font-nixie
-                                "
-                              >
-                                {item.desc}
-                              </p>
-
-                              <div ref={mListRef} className="mt-4 space-y-3">
-                                {item.items.map((listItem, i) => (
-                                  <div
-                                    key={i}
-                                    className="flex items-center gap-3"
-                                  >
-                                    <div className="flex items-center gap-[5px]">
-                                      <div className="flex flex-col gap-[5px]">
-                                        <span className="w-[4px] h-[4px] bg-white block" />
-                                        <span className="w-[4px] h-[4px] bg-white block" />
-                                      </div>
-                                      <div className="flex items-center h-[9px]">
-                                        <span className="w-[4px] h-[4px] bg-white block" />
-                                      </div>
-                                    </div>
-
-                                    <span
-                                      className="
-                                        text-[13px]
-                                        sm:text-[16px]
-                                        md:text-[18px]
-                                        text-white/92
-                                        font-nixie
-                                      "
-                                    >
-                                      {listItem}
-                                    </span>
-                                  </div>
-                                ))}
-                              </div>
-
-                              <div ref={mBtnRef} className="mt-auto pt-5">
-                                <button
-                                  className="
-                                    group
-                                    flex
-                                    items-center
-                                    gap-[8px]
-                                    text-white
-                                  "
-                                >
-                                  <HiArrowTurnDownRight
-                                    style={{
-                                      fontSize: "16px",
-                                      strokeWidth: "0.2",
-                                      marginBottom: "6px",
-                                    }}
-                                  />
-
-                                  <span
-                                    className="
-                                      text-[13px]
-                                      sm:text-[15px]
-                                      uppercase
-                                      tracking-[0.08em]
-                                      font-nixie
-                                    "
-                                  >
-                                    VIEW LESS
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ) : (
-                          <div
-                            className="
-                              bg-[#ebe9e6]
-                              px-4
-                              sm:px-6
-                              pt-4
-                              pb-5
-                              min-h-[420px]
-                              sm:min-h-[520px]
-                              flex
-                              flex-col
-                            "
-                          >
-                            <div className="w-full h-[150px] sm:h-[220px] overflow-hidden">
-                              <img
-                                src={item.image}
-                                alt={item.title}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-
-                            <span
-                              className="
-                                mt-4
-                                text-[13px]
-                                sm:text-[16px]
-                                tracking-[0.18em]
-                                uppercase
-                                text-black/35
-                                font-nixie
-                              "
-                            >
-                              — {item.number}
-                            </span>
-
-                            <h3
-                              className="
-                                mt-3
-                                whitespace-pre-line
-                                text-[22px]
-                                sm:text-[32px]
-                                leading-[0.92]
-                                tracking-[-0.05em]
-                                uppercase
-                                text-black/20
-                                font-nixie
-                              "
-                            >
-                              {item.title}
-                            </h3>
-
-                            <p
-                              className="
-                                mt-3
-                                text-[12px]
-                                sm:text-[14px]
-                                leading-[1.4]
-                                text-black/40
-                                font-nixie
-                              "
-                            >
-                              {item.desc}
-                            </p>
-
-                            <div className="mt-auto pt-5">
-                              <button
-                                className="
-                                  group
-                                  flex
-                                  items-center
-                                  gap-[8px]
-                                  text-[#85A56F]/45
-                                "
-                              >
-                                <span
-                                  className="
-                                    text-[24px]
-                                    transition-transform
-                                    duration-300
-                                    group-hover:translate-x-[4px]
-                                  "
-                                >
-                                  ↳
-                                </span>
-
-                                <span
-                                  className="
-                                    text-[12px]
-                                    sm:text-[14px]
-                                    uppercase
-                                    tracking-[0.08em]
-                                    font-nixie
-                                  "
-                                >
-                                  VIEW MORE
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        )}
+                        {practice.description}
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+
+                    {/* =================================================
+      PLUS / MINUS
+  ================================================= */}
+
+                    <div
+                      className="
+      flex
+      items-center
+      justify-end
+      self-center
+    "
+                    >
+                      <button
+                        type="button"
+                        aria-expanded={isActive}
+                        aria-label={
+                          isActive
+                            ? `Collapse ${practice.title.join(" ")}`
+                            : `Expand ${practice.title.join(" ")}`
+                        }
+                        onClick={() => toggleRow(practice.id)}
+                        className="
+  relative
+  flex
+  h-[42px]
+  w-[42px]
+  shrink-0
+  cursor-pointer
+  items-center
+  justify-center
+  translate-x-[20px]
+
+  border-0
+  bg-transparent
+  p-0
+  outline-none
+
+  max-[900px]:
+    h-[36px]
+    w-[36px]
+    translate-x-[10px]
+
+  max-[700px]:
+    h-[28px]
+    w-[28px]
+    translate-x-0
+"
+                      >
+                        {/* horizontal */}
+                        <span
+                          className="
+          absolute
+          left-1/2
+          top-1/2
+
+          h-px
+          w-[30px]
+
+          -translate-x-1/2
+          -translate-y-1/2
+
+          bg-[#85837d]
+
+          max-[900px]:w-[24px]
+          max-[700px]:w-[18px]
+        "
+                        />
+
+                        {/* vertical */}
+                        <span
+                          className={`
+          absolute
+          left-1/2
+          top-1/2
+
+          h-[30px]
+          w-px
+
+          -translate-x-1/2
+          -translate-y-1/2
+
+          bg-[#85837d]
+
+          transition-transform
+          duration-300
+          ease-out
+
+          max-[900px]:h-[24px]
+          max-[700px]:h-[18px]
+
+          ${isActive ? "scale-y-0" : "scale-y-100"}
+        `}
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* =================================================
+                    EXPANDED CONTENT
+                ================================================= */}
+
+                  <div
+                    className={`
+                    grid
+
+                    transition-[grid-template-rows]
+                    duration-600
+                    ease-[cubic-bezier(0.22,1,0.36,1)]
+
+                    ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}
+                  `}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <div
+                        className="
+                        grid
+                        grid-cols-[195px_420px_20px_300px_1fr]
+                        items-start
+
+                        px-[118px]
+                        pb-[55px]
+
+                        max-[1400px]:
+                          grid-cols-[170px_400px_20px_280px_1fr]
+                          px-[80px]
+
+                        max-[1200px]:
+                          grid-cols-[150px_360px_20px_250px_1fr]
+                          px-[60px]
+
+                        max-[900px]:
+                          grid-cols-[60px_minmax(0,1fr)]
+                          gap-[25px]
+                          px-[40px]
+                          pb-[40px]
+
+                        max-[700px]:
+                          grid-cols-1
+                          gap-[22px]
+                          px-[20px]
+                          pb-[32px]
+                      "
+                      >
+                        {/* EMPTY NUMBER */}
+
+                        <div className="max-[900px]:hidden" />
+
+                        {/* =================================================
+                          IMAGE
+                      ================================================= */}
+
+                        <div
+                          className="
+    relative
+    
+
+    h-[145px]
+    w-[190px]
+    overflow-hidden
+
+    max-[900px]:
+      left-[-30px]
+      h-[125px]
+      w-[165px]
+
+    max-[700px]:
+      left-0
+      h-[150px]
+      w-full
+      max-w-[280px]
+  "
+                        >
+                          <img
+                            src={practice.image}
+                            alt=""
+                            className="
+      block
+      h-full
+      w-full
+      object-cover
+    "
+                          />
+                        </div>
+                        {/* SPACER */}
+
+                        <div className="max-[900px]:hidden" />
+
+                        {/* =================================================
+                          DETAILS
+                      ================================================= */}
+
+                        <div
+                          className="
+
+    max-w-[600px]
+
+    font-clash
+    text-[22px]
+    leading-[1.18]
+
+    text-[#38362e]
+
+    max-[1200px]:
+      left-[-60px]
+      text-[14px]
+
+    max-[900px]:
+      left-[-20px]
+      max-w-[280px]
+      text-[13px]
+
+    max-[700px]:
+      left-0
+      max-w-[280px]
+      text-[14px]
+  "
+                        >
+                          {practice.details.map((detail, index) => (
+                            <span key={`${detail}-${index}`} className="block">
+                              {detail}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* EMPTY RIGHT */}
+
+                        <div className="max-[900px]:hidden" />
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                {/* FULL WIDTH DIVIDER */}
+                <div
+                  aria-hidden="true"
+                  className="
+    relative
+    left-1/2
+    h-px
+    w-[calc(100vw+80px)]
+    -translate-x-1/2
+    bg-black/30
+  "
+                />
               </div>
-            </div>
-          </div>
-        </>
+            );
+          })}
+        </div>
+
+        {/* =========================================================
+            BOTTOM BORDER
+        ========================================================= */}
+
+        <div className="h-px w-full bg-black/30" />
       </div>
     </section>
   );

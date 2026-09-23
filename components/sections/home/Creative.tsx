@@ -205,7 +205,7 @@ export default function CreativeGrid() {
   className="
     w-full
     min-h-screen
-    bg-[#f8f7f1]
+    bg-[#f9f8f2]
     px-[56px]
     py-[70px]
     max-[1100px]:px-[28px]
@@ -237,7 +237,7 @@ export default function CreativeGrid() {
                 min-w-0
                 border
                 border-black/35
-                bg-[#f8f7f1]
+                bg-[#f9f8f2]
                 flex
                 flex-col
                 overflow-hidden
@@ -268,7 +268,7 @@ export default function CreativeGrid() {
     text-[28px]
     leading-none
     tracking-[-0.03em]
-    text-[#36322e]
+    text-[#38362e]
     capitalize
   "
                   >
@@ -288,7 +288,7 @@ export default function CreativeGrid() {
                     justify-center
                     font-clash
                     text-[18px]
-                    text-[#36322e]
+                    text-[#38362e]
                   "
                 >
                   {card.number}
@@ -312,7 +312,7 @@ export default function CreativeGrid() {
       text-[26px]
       leading-[1.02]
       tracking-[-0.035em]
-      text-[#36352f]
+      text-[#38362e]
       max-[1100px]:max-w-[250px]
       max-[1100px]:text-[23px]
       max-[700px]:max-w-full
