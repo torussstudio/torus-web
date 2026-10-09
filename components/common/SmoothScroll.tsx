@@ -2,11 +2,18 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export default function SmoothScroll() {
   useEffect(() => {
-    let lenis: Lenis;
-    let rafId: number;
+    let lenis: Lenis | undefined;
+
+    // Lenis runs on GSAP's ticker (one shared animation loop) and tells
+    // ScrollTrigger about every smooth-scroll step, so scrub / parallax
+    // animations stay in sync instead of running on a separate loop.
+    const tick = (time: number) => {
+      lenis?.raf(time * 1000); // gsap ticker time is in seconds
+    };
 
     const init = () => {
       lenis = new Lenis({
@@ -14,31 +21,33 @@ export default function SmoothScroll() {
         smoothWheel: true,
       });
 
-      function raf(time: number) {
-        lenis.raf(time);
-        rafId = requestAnimationFrame(raf);
-      }
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+    };
 
-      rafId = requestAnimationFrame(raf);
+    const cleanup = () => {
+      gsap.ticker.remove(tick);
+      gsap.ticker.lagSmoothing(500, 33); // GSAP default
+      lenis?.destroy();
+      lenis = undefined;
     };
 
     // Idle time-il init cheyyuka, main thread block cheyyathe
     if ("requestIdleCallback" in window) {
-      const idleId = (window as any).requestIdleCallback(init);
+      const idleId = window.requestIdleCallback(init);
       return () => {
-        (window as any).cancelIdleCallback(idleId);
-        lenis?.destroy();
-        cancelAnimationFrame(rafId);
-      };
-    } else {
-      // Fallback (Safari support illa requestIdleCallback-inu)
-      const timeoutId = setTimeout(init, 200);
-      return () => {
-        clearTimeout(timeoutId);
-        lenis?.destroy();
-        cancelAnimationFrame(rafId);
+        window.cancelIdleCallback(idleId);
+        cleanup();
       };
     }
+
+    // Fallback (Safari support illa requestIdleCallback-inu)
+    const timeoutId = setTimeout(init, 200);
+    return () => {
+      clearTimeout(timeoutId);
+      cleanup();
+    };
   }, []);
 
   return null;
