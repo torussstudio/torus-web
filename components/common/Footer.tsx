@@ -1,586 +1,127 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { cn } from "@/lib/utils";
+import { footerContent as f } from "@/lib/constants";
+import Media from "@/components/sections/archive/Media";
+import Lines from "@/components/sections/archive/Lines";
+import { t } from "@/components/sections/archive/styles";
 
-gsap.registerPlugin(ScrollTrigger);
-
+/**
+ * Site footer (home page design).
+ * Uses the same design unit as the archive/home pages:
+ * on xl every number is a px value of the 1920px artboard.
+ */
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
-
-  const leftVerticalRef = useRef<HTMLSpanElement>(null);
-  const mobileLabelRef = useRef<HTMLSpanElement>(null);
-  const heroImgRef = useRef<HTMLDivElement>(null);
-  const heroTitleRef = useRef<HTMLHeadingElement>(null);
-  const heroDescRef = useRef<HTMLParagraphElement>(null);
-  const socialsRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
-
-  const coordsRef = useRef<HTMLDivElement>(null);
- const studioTitleRef = useRef<HTMLDivElement>(null);
-  const infoRightRef = useRef<HTMLDivElement>(null);
-
-  const copyrightRef = useRef<HTMLSpanElement>(null);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // helper: skip the tween instead of erroring when a target is
-      // null/undefined (e.g. hidden on the current breakpoint)
-      const safeFromTo = (
-        tl: gsap.core.Timeline,
-        target: any,
-        from: gsap.TweenVars,
-        to: gsap.TweenVars,
-        position: number
-      ) => {
-        if (!target || (Array.isArray(target) && target.length === 0)) {
-          return tl;
-        }
-        return tl.fromTo(target, from, to, position);
-      };
-
-      // HERO AREA — scroll triggered
-      const heroTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: heroImgRef.current,
-          start: "top 85%",
-          once: true,
-        },
-        defaults: { ease: "power3.out" },
-      });
-
-      safeFromTo(
-        heroTl,
-        [leftVerticalRef.current, mobileLabelRef.current],
-        { autoAlpha: 0, y: 20 },
-        { autoAlpha: 1, y: 0, duration: 1 },
-        0
-      );
-      safeFromTo(
-        heroTl,
-        heroImgRef.current,
-        { autoAlpha: 0, scale: 1.15, clipPath: "inset(0 0 100% 0)" },
-        { autoAlpha: 1, scale: 1, clipPath: "inset(0 0 0% 0)", duration: 1.8 },
-        0.1
-      );
-      safeFromTo(
-        heroTl,
-        heroTitleRef.current,
-        { autoAlpha: 0, y: 60 },
-        { autoAlpha: 1, y: 0, duration: 1.6 },
-        0.4
-      );
-      safeFromTo(
-        heroTl,
-        heroDescRef.current,
-        { autoAlpha: 0, y: 30 },
-        { autoAlpha: 1, y: 0, duration: 1.2 },
-        0.9
-      );
-      safeFromTo(
-        heroTl,
-        socialsRef.current ? Array.from(socialsRef.current.children) : null,
-        { autoAlpha: 0, y: 20 },
-        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12 },
-        1.1
-      );
-      safeFromTo(
-        heroTl,
-        ctaRef.current,
-        { autoAlpha: 0, x: -16 },
-        { autoAlpha: 1, x: 0, duration: 1 },
-        1.3
-      );
-
-      // INFO SECTION — scroll triggered
-      const infoTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: studioTitleRef.current,
-          start: "top 85%",
-          once: true,
-        },
-        defaults: { ease: "power3.out" },
-      });
-
-      safeFromTo(
-        infoTl,
-        coordsRef.current,
-        { autoAlpha: 0, y: 20 },
-        { autoAlpha: 1, y: 0, duration: 1 },
-        0
-      );
-      safeFromTo(
-        infoTl,
-        studioTitleRef.current,
-        { autoAlpha: 0, y: 50 },
-        { autoAlpha: 1, y: 0, duration: 1.6 },
-        0.2
-      );
-      safeFromTo(
-        infoTl,
-        infoRightRef.current ? Array.from(infoRightRef.current.children) : null,
-        { autoAlpha: 0, y: 20 },
-        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.15 },
-        0.4
-      );
-
-      // COPYRIGHT
-      safeFromTo(
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: copyrightRef.current,
-            start: "top 95%",
-            once: true,
-          },
-        }),
-        copyrightRef.current,
-        { autoAlpha: 0, y: 14 },
-        { autoAlpha: 1, y: 0, duration: 0.9, ease: "power3.out" },
-        0
-      );
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <footer
-      ref={footerRef}
-      className={cn(
-        "w-full",
-        "bg-[#e9e8e6]",
-        "border-t",
-        "border-black/40"
-      )}
-    >
-      {/* TOP GRID */}
-      <div
-        className={cn(
-          "grid",
-          "grid-cols-[96px_1fr]",
-          "md:grid-cols-[96px_1fr]",
-          "border-b",
-          "border-black/40",
-          "max-md:grid-cols-1"
-        )}
-      >
-        {/* LEFT VERTICAL */}
-        <div
-          className={cn(
-            "border-r",
-            "border-black/40",
-            "flex",
-            "items-center",
-            "justify-center",
-            "max-md:hidden"
-          )}
-        >
-          <span
-            ref={leftVerticalRef}
-            className={cn(
-              "text-[28px]",
-              "tracking-[0.22em]",
-              "uppercase",
-              "text-[#181818]",
-              "font-nixie",
-              
-            )}
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-            }}
-          >
-            Get In Touch
-          </span>
-        </div>
-
-        {/* MOBILE LABEL */}
-        <div
-          className={cn(
-            "hidden",
-            "max-md:flex",
-            "items-center",
-            "justify-center",
-            "h-[52px]",
-            "border-b",
-            "border-black/40"
-          )}
-        >
-          <span
-            ref={mobileLabelRef}
-            className={cn(
-              "text-[16px]",
-              "tracking-[0.22em]",
-              "uppercase",
-              "text-black/40",
-              "font-nixie",
-              "font-normal"
-            )}
-          >
-            Get In Touch
-          </span>
-        </div>
-
-        {/* RIGHT CONTENT */}
-        <div>
-          {/* HERO AREA */}
-          <div
-            className={cn(
-              "grid",
-              "grid-cols-[0.78fr_1.22fr]",
-              "border-b",
-              "border-black/40",
-              "max-md:grid-cols-1"
-            )}
-          >
-            {/* IMAGE */}
-            <div
-              ref={heroImgRef}
-              className={cn(
-                "relative",
-                "h-[420px]",
-                "border-r",
-                "border-black/40",
-                "max-md:h-[260px]",
-                "max-md:border-r-0",
-                "max-md:border-b",
-                "max-md:border-black/40"
-              )}
-            >
-              <Image
-                src="/images/footer.avif"
-                alt="Footer"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover grayscale"
-              />
-            </div>
-
-            {/* TEXT */}
-            <div
-              className={cn(
-                "px-[42px]",
-                "pt-[120px]",
-                "max-md:px-[24px]",
-                "max-md:pt-[40px]",
-                "max-md:pb-[40px]"
-              )}
-            >
-              <h2
-                ref={heroTitleRef}
-                className={cn(
-                  "text-[70px]",
-                  "leading-[0.92]",
-                  "tracking-[-0.03em]",
-                  "uppercase",
-                  "text-[#181818]",
-                  "font-recife",
-                  "md:text-[58px]",
-                  "max-md:text-[46px]",
-                  "max-md:leading-[1]"
-                )}
-              >
-                LET'S SHAPE WHAT'S NEXT.
-              </h2>
-
-              <p
-                ref={heroDescRef}
-                className={cn(
-                  "mt-[34px]",
-                  "max-w-[460px]",
-                  "text-[17px]",
-                  "leading-[1.25]",
-                  "text-[#181818]",
-                  "font-nixie",
-                  "max-md:mt-[20px]",
-                  "max-md:text-[15px]"
-                )}
-              >
-                If you're building, rethinking, or evolving something
-                meaningful, we'd love to understand where you are headed. No
-                pitch. No rush. Just a light conversation to begin with.
-              </p>
-            </div>
+    <footer className="overflow-x-clip bg-[#f9f8f2] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]">
+      <div className={t.inner}>
+        {/* ===== CONTACT BOX ===== */}
+        <div className="grid grid-cols-1 border-y md:grid-cols-[64px_1fr] xl:grid-cols-[152fr_1768fr]">
+          {/* vertical label */}
+          <div className="hidden items-center justify-center border-r md:flex">
+            <span className="rotate-180 font-clashlight text-[28px] tracking-[0.1em] whitespace-nowrap text-[#898a8a] uppercase [writing-mode:vertical-rl] xl:text-[length:max(28px,calc(var(--spacing)*46.8))]">
+              {f.sideLabel}
+            </span>
           </div>
 
-          {/* SOCIAL ROW */}
-          <div
-            className={cn(
-              "grid",
-              "grid-cols-[1fr_620px]",
-              "max-md:grid-cols-1",
-              "max-lg:grid-cols-1"
-            )}
-          >
-            {/* SOCIALS */}
-            <div
-              className={cn(
-                "h-[104px]",
-                "border-r",
-                "border-black/50",
-                "flex",
-                "items-center",
-                "px-[72px]",
-                "max-lg:border-r-0",
-                "max-lg:border-b",
-                "max-lg:border-black/40",
-                "max-md:h-auto",
-                "max-md:px-[24px]",
-                "max-md:py-[28px]",
-                "max-md:justify-center"
-              )}
-            >
-              <div
-                ref={socialsRef}
-                className={cn(
-                  "flex",
-                  "items-center",
-                  "gap-[72px]",
-                  "max-md:gap-[28px]",
-                  "max-md:flex-wrap",
-                  "max-md:justify-center"
-                )}
-              >
-                {[
-                  "INSTAGRAM",
-                  "BEHANCE",
-                  "LINKEDIN",
-                  "PINTEREST",
-                ].map((item) => (
-                  <span
-                    key={item}
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] xl:h-594 xl:grid-cols-[664fr_1104fr]">
+              <Media
+                media={{ ...f.image, tone: "dark" }}
+                className="aspect-[664/595] h-auto xl:aspect-auto xl:h-full [&_img]:grayscale"
+                sizes="(max-width: 767px) 100vw, 35vw"
+              />
+
+              <div className="flex flex-col justify-center px-24 py-48 md:px-40 md:py-56 xl:p-0 xl:pr-60 xl:pl-131">
+                <h2 className={t.h2}>{f.title}</h2>
+
+                {f.paragraphs.map((lines, i) => (
+                  <p
+                    key={i}
                     className={cn(
-                      "text-[20px]",
-                      "tracking-[0.18em]",
-                      "uppercase",
-                      "text-[#181818]",
-                      "font-nixie",
-                      "cursor-pointer",
-                      "hover:text-[#6b6b6b]",
-                      "transition-colors",
-                      "max-md:text-[13px]",
-                      "max-md:tracking-[0.12em]"
+                      "font-clashlight text-[16px] leading-[1.4] tracking-[0.02em] text-[#171717] xl:text-[length:max(15px,calc(var(--spacing)*24))] xl:leading-[1.17]",
+                      i === 0 ? "mt-20 xl:mt-34" : "mt-14 xl:mt-30",
                     )}
                   >
-                    {item}
-                  </span>
+                    <Lines lines={lines} />
+                  </p>
                 ))}
+
+                <Link
+                  href={f.cta.href}
+                  className="group mt-32 inline-flex items-center gap-8 self-start text-[14px] leading-[1.3] tracking-[0.05em] text-[#3da32e] uppercase xl:mt-60 xl:gap-13 xl:text-[length:max(14px,calc(var(--spacing)*25.2))]"
+                >
+                  <HiArrowTurnDownRight
+                    aria-hidden="true"
+                    className="-mt-4 size-14 transition-transform duration-300 group-hover:translate-x-4 xl:-mt-8 xl:size-[max(14px,calc(var(--spacing)*24))]"
+                  />
+                  <span>{f.cta.label}</span>
+                </Link>
               </div>
             </div>
 
-            {/* CTA */}
-            <div
-              className={cn(
-                "h-[104px]",
-                "flex",
-                "items-center",
-                "justify-center",
-                "max-md:h-[80px]"
-              )}
-            >
-              <button
-                ref={ctaRef}
-                className={cn(
-                  "group",
-                  "flex",
-                  "items-center",
-                  "gap-2",
-                  "hover:gap-4",
-                  "transition-all",
-                  "duration-300",
-                  "text-[#80c46c]",
-                  "mr-[55px]",
-                  "cursor-pointer",
-                  "max-md:mr-0"
-                )}
-              >
-                <HiArrowTurnDownRight
+            {/* socials */}
+            <ul className="grid grid-cols-2 border-t md:flex md:items-center md:justify-between md:px-40 xl:h-124 xl:px-134">
+              {f.socials.map((s, i) => (
+                <li
+                  key={s.label}
                   className={cn(
-                    "text-[24px]",
-                    "stroke-[0.2]",
-                    "mb-[8px]",
-                    "transition-transform",
-                    "duration-300",
-                    "group-hover:translate-x-[4px]",
-                    "max-md:text-[20px]"
-                  )}
-                />
-
-                <span
-                  className={cn(
-                    "text-[20px]",
-                    "tracking-[0.04em]",
-                    "uppercase",
-                    "font-nixie",
-                    "max-md:text-[16px]"
+                    "border-[#d4d1c8] md:border-0",
+                    i % 2 === 0 && "border-r",
+                    i < 2 && "border-b",
                   )}
                 >
-                  Start A Conversation
-                </span>
-              </button>
-            </div>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-20 text-center font-clashlight text-[16px] tracking-[0.1em] text-[#898a8a] uppercase transition-colors xl:tracking-[0.135em] duration-200 hover:text-[#38362e] md:py-28 md:text-[20px] xl:py-0 xl:text-[length:max(18px,calc(var(--spacing)*35.2))]"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* INFO SECTION */}
-      <div
-        className={cn(
-          "grid",
-          "grid-cols-2",
-          "border-b",
-          "border-black/40",
-          "max-md:grid-cols-1"
-        )}
-      >
-        {/* LEFT */}
-        <div
-          className={cn(
-            "px-[94px]",
-            "py-[54px]",
-            "max-md:px-[24px]",
-            "max-md:py-[36px]",
-            "max-md:border-b",
-            "max-md:border-black/40"
-          )}
-        >
-          <div
-            ref={coordsRef}
-            className={cn(
-              "flex",
-              "items-center",
-              "gap-[48px]",
-              "text-[20px]",
-              "tracking-[0.16em]",
-              "uppercase",
-              "text-[#181818]",
-              "font-nixie",
-              "max-md:gap-[24px]",
-              "max-md:text-[15px]"
-            )}
-          >
-            <span>10°46'41.5"N</span>
+        {/* ===== CONTACT DETAILS + COPYRIGHT ===== */}
+        <div className="flex flex-col gap-32 px-24 pt-40 md:flex-row md:justify-between md:px-40 md:pt-56 xl:gap-0 xl:px-0 xl:pt-0">
+          <ul className="space-y-12 font-clashlight text-[16px] tracking-[0.05em] text-[#171717] xl:space-y-38 xl:pt-83 xl:pl-152 xl:text-[length:max(15px,calc(var(--spacing)*27))] xl:leading-[1.11]">
+            {f.contact.map((c) => (
+              <li key={c.label}>
+                {c.href ? (
+                  <a href={c.href} className="transition-opacity duration-200 hover:opacity-60">
+                    {c.label}
+                  </a>
+                ) : (
+                  c.label
+                )}
+              </li>
+            ))}
+          </ul>
 
-            <span className="text-black/50">|</span>
-
-            <span>76°39'22.0"E</span>
-          </div>
-
-  <div
-  ref={studioTitleRef}
-  className={cn(
-    "relative",
-    "mt-[56px]",
-    "max-md:mt-[36px]"
-  )}
-  style={{
-    width: "min(800px, 90vw)",
-    maxWidth: "none",
-  }}
->
-  <Image
-    src="/images/TORUSS STUDIO LOGO PNG.png"
-    alt="Toruss Studio"
-    width={1020}
-    height={150}
-    priority
-    className="h-auto w-full"
-  />
-</div>
+          <p className="font-clashlight text-[14px] leading-[1.6] tracking-[0.1em] text-[#898a8a] uppercase md:text-right xl:w-503 xl:pt-101 xl:text-left xl:text-[length:max(14px,calc(var(--spacing)*28))] xl:leading-[1.786]">
+            {f.copyright.map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
+          </p>
         </div>
 
-        {/* RIGHT */}
-        <div
-          ref={infoRightRef}
-          className={cn(
-            "px-[90px]",
-            "py-[54px]",
-            "flex",
-            "flex-col",
-            "gap-[38px]",
-            "ml-[160px]",
-            "max-lg:ml-0",
-            "max-lg:px-[48px]",
-            "max-md:px-[24px]",
-            "max-md:py-[36px]",
-            "max-md:gap-[24px]"
-          )}
-        >
-          <span
-            className={cn(
-              "text-[18px]",
-              "tracking-[0.12em]",
-              "uppercase",
-              "text-[#181818]",
-              "font-nixie",
-              "max-md:text-[15px]"
-            )}
-          >
-            +91-81296 75834
-          </span>
-
-          <span
-            className={cn(
-              "text-[18px]",
-              "tracking-[0.12em]",
-              "uppercase",
-              "text-[#181818] ",
-              "font-nixie",
-              "max-md:text-[15px]"
-            )}
-          >
-            INFO@TORUSS.STUDIO
-          </span>
-
-          <span
-            className={cn(
-              "text-[18px]",
-              "tracking-[0.12em]",
-              "uppercase",
-              "text-[#181818] ",
-              "font-nixie",
-              "whitespace-nowrap",
-              "max-md:text-[15px]",
-              "max-md:whitespace-normal"
-            )}
-          >
-            PALAKKAD, KERALA, INDIA - 678001
-          </span>
+        {/* ===== WORDMARK ===== */}
+        <div className="px-24 pt-48 pb-32 md:px-40 md:pt-64 md:pb-40 xl:px-0 xl:pt-85 xl:pb-60 xl:pl-152">
+          <Image
+            src="/images/TORUSS STUDIO LOGO PNG.png"
+            alt="Toruss Studio"
+            width={3669}
+            height={222}
+            sizes="(max-width: 1279px) 100vw, 85vw"
+            className="h-auto w-full xl:w-1633"
+          />
         </div>
-      </div>
-
-      {/* COPYRIGHT */}
-      <div
-        className={cn(
-          "h-[94px]",
-          "flex",
-          "items-center",
-          "justify-center",
-          "max-md:h-auto",
-          "max-md:py-[28px]",
-          "max-md:px-[16px]"
-        )}
-      >
-        <span
-          ref={copyrightRef}
-          className={cn(
-            "text-[20px]",
-            "tracking-[0.16em]",
-            "uppercase",
-            "text-[#181818] ",
-            "font-nixie",
-            "max-md:text-[12px]",
-            "max-md:tracking-[0.10em]",
-            "max-md:text-center"
-          )}
-        >
-          © 2026 TORUSS STUDIO. ALL RIGHTS RESERVED.
-        </span>
       </div>
     </footer>
   );

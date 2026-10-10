@@ -1,11 +1,15 @@
-import React from 'react'
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
-function page() {
+export default function ContactPage() {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <main>
+      <Navbar />
 
-export default page
+      {/* page content goes here */}
+      <div></div>
+
+      <Footer />
+    </main>
+  );
+}

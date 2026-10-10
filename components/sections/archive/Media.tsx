@@ -26,7 +26,7 @@ export default function Media({
       data-reveal="media"
       className={cn(
         "relative h-full w-full overflow-hidden",
-        dark ? "bg-[#34322b]" : "bg-[#e9e5db]",
+        dark ? "bg-[#34322b]" : "bg-[#eae6dc]",
         className,
       )}
     >
@@ -44,7 +44,7 @@ export default function Media({
           aria-hidden="true"
           className={cn(
             "absolute inset-0 flex items-center justify-center p-16 text-center text-[10px] uppercase tracking-[0.14em] xl:text-[length:max(10px,calc(var(--spacing)*15))]",
-            dark ? "text-[#fafaf4]/35" : "text-[#38362e]/45",
+            dark ? "text-[#f9f8f2]/35" : "text-[#38362e]/45",
           )}
         >
           {media.alt}

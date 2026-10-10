@@ -213,7 +213,7 @@ export default function StudioHowWeThink() {
             </div>
             <p
               ref={quoteRef}
-              className="font-nixie text-[13px] sm:text-[25px] leading-[1.7] text-[#80c46c] max-w-[200px] sm:max-w-[200px] mx-auto text-start"
+              className="font-nixie text-[18px] sm:text-[16px] md:text-[18px] lg:text-[21px] xl:text-[25px] leading-[1.6] text-[#80c46c] max-w-[340px] sm:max-w-none xl:max-w-[200px] mx-auto text-start"
             >
               Like good architecture. Or good editing in cinema. Or a
               well-written sentence that does not need to explain itself twice.
@@ -277,7 +277,13 @@ export default function StudioHowWeThink() {
                     {text.split("\n").map((line, j) => (
                       <span key={j}>
                         {line}
-                        {j < text.split("\n").length - 1 && <br />}
+                        {/* designed line breaks only on large screens */}
+                        {j < text.split("\n").length - 1 && (
+                          <>
+                            {" "}
+                            <br className="hidden xl:inline" />
+                          </>
+                        )}
                       </span>
                     ))}
                   </p>
@@ -295,7 +301,7 @@ export default function StudioHowWeThink() {
         <div className="mt-16 sm:mt-20 lg:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           <h3
             ref={closingHeadingRef}
-            className="lg:col-span-7 lg:ml-14 xl:ml-20 font-recife text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[3.4rem] leading-[1.3] tracking-normal text-[#6b6b6b]"
+            className="lg:col-span-7 lg:ml-6 xl:ml-20 font-recife text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[2.4rem] xl:text-[3rem] 2xl:text-[3.4rem] leading-[1.3] tracking-normal text-[#6b6b6b]"
           >
             So much of our work <br /> involves observing:{" "}
             <span className="text-[#80c46c]">

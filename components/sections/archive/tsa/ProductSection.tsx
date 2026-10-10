@@ -1,13 +1,14 @@
 import { cn } from "@/lib/utils";
-import { archiveProduct as d } from "@/lib/constants";
-import Lines from "./Lines";
-import Media from "./Media";
-import { t } from "./styles";
+import { tsaProduct as d } from "@/lib/constants";
+import Lines from "../Lines";
+import Media from "../Media";
+import { t } from "../styles";
 
 export default function ProductSection() {
   return (
     <section className={cn(t.inner, "grid grid-cols-1 border-b px-24 py-48 md:grid-cols-2 md:gap-40 md:px-40 md:py-64 xl:grid-cols-[812fr_723fr] xl:gap-81 xl:px-152 xl:pt-106 xl:pb-130")}>
-      <div>
+      {/* sticky on md+ (two columns): stays in view while the right column scrolls */}
+      <div className="md:sticky md:top-96 md:self-start xl:top-110">
         <span data-reveal className={t.label}>
           {d.label}
         </span>

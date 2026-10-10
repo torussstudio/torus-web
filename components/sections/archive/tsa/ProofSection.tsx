@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { archiveProof as d } from "@/lib/constants";
-import Lines from "./Lines";
-import Media from "./Media";
-import { t } from "./styles";
+import { tsaProof as d } from "@/lib/constants";
+import Lines from "../Lines";
+import Media from "../Media";
+import { t } from "../styles";
 
 export default function ProofSection() {
   return (

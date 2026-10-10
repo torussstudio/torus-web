@@ -361,11 +361,11 @@ export default function WhatWeValue() {
         </div>
 
         {/* ============ "THE FUTURE OF TORUSS" HEADING + SIDE NOTE ============ */}
-        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           <h2
             ref={futureHeadingRef}
             className="
-              sm:col-span-1
+              lg:col-span-2 2xl:col-span-1
               font-recife
               text-[1.9rem] sm:text-[2.2rem] md:text-[2.4rem] lg:text-[2.6rem] xl:text-[2.9rem]
               leading-[1.15] tracking-[0.01em] text-[#181818]
@@ -378,21 +378,21 @@ export default function WhatWeValue() {
 
           <div
             ref={futureNoteRef}
-            className="sm:col-start-3 sm:col-span-1 sm:-ml-8 lg:-ml-12 xl:-ml-16"
+            className="max-w-[520px] lg:max-w-none lg:col-start-3 lg:col-span-1 lg:-ml-12 xl:-ml-16"
           >
             <p className="font-nixie text-[13px] sm:text-[16px] leading-[1.75] text-[#181818]">
               We&apos;re interested in slowly building
-              <span className="hidden sm:inline">
+              <span className="hidden lg:inline">
                 {" "}
                 <br />
               </span>{" "}
               a studio that can move
-              <span className="hidden sm:inline">
+              <span className="hidden lg:inline">
                 {" "}
                 <br />
               </span>{" "}
               fluidly
-              <span className="hidden sm:inline">
+              <span className="hidden lg:inline">
                 {" "}
                 <br />
               </span>{" "}

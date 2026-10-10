@@ -1,706 +1,88 @@
-"use client";
-
+import { cn } from "@/lib/utils";
 import { works } from "@/lib/constants";
-import Image from "next/image";
-import { HiArrowTurnDownRight } from "react-icons/hi2";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Media from "@/components/sections/archive/Media";
+import Lines from "@/components/sections/archive/Lines";
+import { TurnLink } from "./Icons";
+import { h } from "./styles";
 
-gsap.registerPlugin(ScrollTrigger);
+const intro = [
+  "A selection of identities, digital experiences,",
+  "campaigns, cultural initiatives, artworks, and",
+  "experiments from across the studio.",
+];
+
+/** keep each tag on one line: "Brand Strategy / Identity / …" */
+const tagLine = (tags: string[]) =>
+  tags.map((tag) => tag.replace(/ /g, "\u00a0")).join("\u00a0/ "); // slash stays at the end of a line, never starts one
 
 export default function ArchiveSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const headerTitleRef = useRef<HTMLHeadingElement>(null);
-  const headerDescRef = useRef<HTMLParagraphElement>(null);
-
-  const rowRefs = useRef<(HTMLElement | null)[]>([]);
-  const imageWrapRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const metaRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
-  const descRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-  const tagsRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const ctaRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // =========================================================
-      // HEADER ANIMATION
-      // =========================================================
-
-      const headerTimeline = gsap.timeline({
-        defaults: {
-          ease: "power3.out",
-        },
-      });
-
-      headerTimeline
-        .fromTo(
-          headerTitleRef.current,
-          {
-            autoAlpha: 0,
-            y: 25,
-            clipPath: "inset(0 0 100% 0)",
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            clipPath: "inset(0 0 0% 0)",
-            duration: 0.8,
-          },
-        )
-        .fromTo(
-          headerDescRef.current,
-          {
-            autoAlpha: 0,
-            y: 15,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.6,
-          },
-          "-=0.45",
-        );
-
-      // =========================================================
-      // PROJECT ROW ANIMATIONS
-      // =========================================================
-
-      rowRefs.current.forEach((row, index) => {
-        if (!row) return;
-
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: row,
-            start: "top 82%",
-            once: true,
-          },
-          defaults: {
-            ease: "power3.out",
-          },
-        });
-
-        // IMAGE
-        timeline.fromTo(
-          imageWrapRefs.current[index],
-          {
-            autoAlpha: 0,
-            scale: 1.08,
-            clipPath: "inset(0 0 100% 0)",
-          },
-          {
-            autoAlpha: 1,
-            scale: 1,
-            clipPath: "inset(0 0 0% 0)",
-            duration: 1,
-          },
-          0,
-        );
-
-        // META
-        timeline.fromTo(
-          metaRefs.current[index],
-          {
-            autoAlpha: 0,
-            y: 15,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.6,
-          },
-          0.15,
-        );
-
-        // TITLE
-        timeline.fromTo(
-          titleRefs.current[index],
-          {
-            autoAlpha: 0,
-            y: 25,
-            clipPath: "inset(0 0 100% 0)",
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            clipPath: "inset(0 0 0% 0)",
-            duration: 0.8,
-          },
-          0.25,
-        );
-
-        // DESCRIPTION
-        timeline.fromTo(
-          descRefs.current[index],
-          {
-            autoAlpha: 0,
-            y: 15,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.6,
-          },
-          0.4,
-        );
-
-        // TAGS
-        timeline.fromTo(
-          tagsRefs.current[index],
-          {
-            autoAlpha: 0,
-            y: 15,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.6,
-          },
-          0.5,
-        );
-
-        // CTA
-        timeline.fromTo(
-          ctaRefs.current[index],
-          {
-            autoAlpha: 0,
-            x: -12,
-          },
-          {
-            autoAlpha: 1,
-            x: 0,
-            duration: 0.5,
-          },
-          0.65,
-        );
-
-        // =======================================================
-        // IMAGE PARALLAX
-        // =======================================================
-
-        const image = imageWrapRefs.current[index];
-
-        if (image) {
-          gsap.fromTo(
-            image,
-            {
-              yPercent: -3,
-            },
-            {
-              yPercent: 3,
-              ease: "none",
-              scrollTrigger: {
-                trigger: row,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-              },
-            },
-          );
-        }
-      });
-
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="
-        w-full
-        max-w-full
-        bg-[#f9f8f2]
-        text-[#38362e]
-        border-t
-        border-black/30
-        overflow-hidden
-      "
-    >
-      {/* =========================================================
-          WHOLE COMPONENT
-      ========================================================= */}
+    <section className={cn(h.inner, "border-b")}>
+      {/* HEADER */}
+      <div className="grid gap-16 border-b px-24 pt-56 pb-40 md:grid-cols-2 md:px-40 md:pt-72 md:pb-56 xl:grid-cols-[1111fr_809fr] xl:gap-0 xl:px-0 xl:pt-55 xl:pb-60">
+        <h2 data-reveal className={cn(h.h2, "xl:pl-153")}>
+          Selected Archive
+        </h2>
+        <p data-reveal className={cn(h.body, "md:pt-8 xl:pt-4 xl:pr-40 xl:pl-153")}>
+          <Lines lines={intro} />
+        </p>
+      </div>
 
-      <div className="w-full max-w-[1728px] min-w-0 mx-auto">
-        {/* =======================================================
-            HEADER
-        ======================================================= */}
-
-        <div
-          className="
-            min-h-[120px]
-            border-b
-            border-black/30
-            px-[88px]
-            flex
-            items-center
-            justify-between
-            gap-10
-
-            max-[1100px]:px-[50px]
-
-            max-md:min-h-[100px]
-            max-md:px-[24px]
-            max-md:py-[24px]
-            max-md:items-start
-            max-md:flex-col
-            max-md:gap-4
-          "
+      {/* PROJECT ROWS */}
+      {works.map((work) => (
+        <article
+          key={work.title}
+          className="grid grid-cols-1 border-b md:grid-cols-[1fr_1fr] xl:h-637 xl:grid-cols-[922fr_998fr]"
         >
-          <h2
-            ref={headerTitleRef}
-            className="
-              m-0
-              min-w-0
-              font-trial
-              text-[48px]
-              leading-none
-              tracking-[-0.035em]
-              text-[#35322e]
-
-              max-[1100px]:text-[42px]
-              max-md:text-[28px]
-            "
-          >
-            Selected Archive
-          </h2>
-
-          <p
-            ref={headerDescRef}
-            className="
-              m-0
-              max-w-[370px]
-              font-clash
-              text-[20px]
-              leading-[1.2]
-              text-[#35322e]
-
-              max-[1100px]:max-w-[320px]
-              max-[1100px]:text-[16px]
-
-              max-md:max-w-[340px]
-              max-md:text-[12px]
-            "
-          >
-            A selection of identities, digital experiences, campaigns, cultural
-            initiatives, artworks, and experiments from across the studio.
-          </p>
-        </div>
-
-        {/* =======================================================
-            PROJECT ROWS
-        ======================================================= */}
-
-        <div className="w-full min-w-0">
-          {works.map((work, index) => (
-            <article
-              key={index}
-              ref={(el) => {
-                rowRefs.current[index] = el;
-              }}
-              className="
-                relative
-                grid
-                grid-cols-2
-                min-h-[586px]
-                border-b
-                border-black/30
-
-                max-[1100px]:min-h-[500px]
-
-                max-md:grid-cols-1
-                max-md:min-h-0
-              "
-            >
-              {/* =================================================
-                  CENTER DIVIDER
-              ================================================= */}
-
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-                  top-0
-                  bottom-0
-                  left-1/2
-                  w-px
-                  -translate-x-1/2
-                  bg-black/30
-                  pointer-events-none
-                  z-10
-
-                  max-md:hidden
-                "
-              />
-
-              {/* =================================================
-                  LEFT IMAGE COLUMN
-              ================================================= */}
-
-              <div
-                className="
-                  flex
-                  items-center
-
-                  pl-[142px]
-                  pr-[72px]
-                  py-[61px]
-
-                  max-[1500px]:pl-[90px]
-                  max-[1500px]:pr-[55px]
-
-                  max-[1100px]:pl-[55px]
-                  max-[1100px]:pr-[40px]
-                  max-[1100px]:py-[45px]
-
-                  max-md:
-                    border-b
-                    px-[24px]
-                    py-[28px]
-                    justify-center
-                "
-              >
-                <div
-                  ref={(el) => {
-                    imageWrapRefs.current[index] = el;
-                  }}
-                  className="
-                    relative
-                    w-full
-                    max-w-[646px]
-                    aspect-[646/459]
-                    overflow-hidden
-                    shrink-0
-
-                    max-[1500px]:max-w-[560px]
-
-                    max-[1100px]:max-w-[500px]
-
-                    max-md:
-                      max-w-[420px]
-                      aspect-[646/459]
-                  "
-                >
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    fill
-                    priority={index === 0}
-                    sizes="
-                      (max-width: 768px) 90vw,
-                      (max-width: 1100px) 55vw,
-                      (max-width: 1500px) 42vw,
-                      646px
-                    "
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* =================================================
-                  RIGHT CONTENT COLUMN
-              ================================================= */}
-
-              <div
-                className="
-                  min-w-0
-                  px-[70px]
-                  py-[67px]
-                  flex
-                  flex-col
-                  justify-between
-
-                  max-[1500px]:px-[55px]
-                  max-[1500px]:py-[55px]
-
-                  max-[1100px]:px-[40px]
-                  max-[1100px]:py-[45px]
-
-                  max-md:
-                    px-[24px]
-                    py-[35px]
-                    min-h-[400px]
-                "
-              >
-                {/* =================================================
-                    TOP CONTENT
-                ================================================= */}
-
-                <div className="min-w-0">
-                  {/* META */}
-
-                  <div
-                    ref={(el) => {
-                      metaRefs.current[index] = el;
-                    }}
-                    className="
-                      flex
-                      items-center
-                      gap-[18px]
-                      font-clash
-                      text-[20px]
-                      uppercase
-                      tracking-[0.04em]
-                      text-[#38362e]
-
-                      max-[1100px]:text-[17px]
-                      max-md:text-[15px]
-                    "
-                  >
-                    <span>{work.year}</span>
-
-                    <span
-                      className="
-                        w-[7px]
-                        h-[7px]
-                        bg-[#34332f]
-                        shrink-0
-                      "
-                    />
-
-                    <span>{work.country}</span>
-                  </div>
-
-                  {/* TITLE */}
-
-                  <h3
-                    ref={(el) => {
-                      titleRefs.current[index] = el;
-                    }}
-                    className="
-                      m-0
-                      mt-[42px]
-                      max-w-[720px]
-                      font-clash
-                      text-[52px]
-                      leading-[0.98]
-                      tracking-[-0.045em]
-                      text-[#38362e]
-                      break-words
-
-                      max-[1500px]:text-[44px]
-
-                      max-[1100px]:
-                        mt-[30px]
-                        text-[36px]
-
-                      max-md:
-                        mt-[24px]
-                        text-[30px]
-                    "
-                  >
-                    {work.title}
-                  </h3>
-
-                  {/* DESCRIPTION */}
-
-                  <p
-                    ref={(el) => {
-                      descRefs.current[index] = el;
-                    }}
-                    className="
-                      m-0
-                      mt-[34px]
-                      max-w-[300px]
-                      font-clash
-                      text-[20px]
-                      leading-[1.35]
-                      text-[#38362e]
-                      break-words
-
-                      max-[1500px]:
-                        mt-[28px]
-                        max-w-[430px]
-                        text-[14px]
-
-                      max-[1100px]:
-                        mt-[24px]
-                        max-w-[380px]
-                        text-[13px]
-
-                      max-md:
-                        mt-[20px]
-                        max-w-[400px]
-                        text-[12px]
-                    "
-                  >
-                    {work.desc}
-                  </p>
-                </div>
-
-                {/* =================================================
-                    BOTTOM CONTENT
-                ================================================= */}
-
-                <div className="mt-[40px] min-w-0">
-                  {/* TAGS */}
-
-                  <div
-                    ref={(el) => {
-                      tagsRefs.current[index] = el;
-                    }}
-                    className="
-                      flex
-                      flex-wrap
-                      gap-x-[10px]
-                      gap-y-[4px]
-                      max-w-[760px]
-                      min-w-0
-                    "
-                  >
-                    {work.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="
-                          font-clash
-                          text-[34px]
-                          leading-[1.2]
-                          text-[#38362e]
-
-                          max-[1500px]:text-[21px]
-
-                          max-[1100px]:text-[18px]
-
-                          max-md:text-[16px]
-                        "
-                      >
-                        {tag}
-
-                        {tagIndex < work.tags.length - 1 && (
-                          <span className="ml-[10px]">/</span>
-                        )}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* VIEW PROJECT */}
-
-                  <button
-                    ref={(el) => {
-                      ctaRefs.current[index] = el;
-                    }}
-                    type="button"
-                    className="
-                      group
-                      mt-[48px]
-                      flex
-                      items-center
-                      gap-[7px]
-                      border-0
-                      bg-transparent
-                      p-0
-                      cursor-pointer
-
-                      font-clash
-                      text-[20px]
-                      uppercase
-                      text-[#38362e]
-
-                      transition-colors
-                      duration-300
-                      hover:text-[#80c46c]
-
-                      max-[1100px]:
-                        mt-[35px]
-                        text-[13px]
-
-                      max-md:
-                        mt-[28px]
-                        text-[11px]
-                    "
-                  >
-                    <HiArrowTurnDownRight
-                      className="
-                        shrink-0
-                        text-[22px]
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-[4px]
-
-                        max-[1100px]:text-[18px]
-
-                        max-md:text-[15px]
-                      "
-                    />
-
-                    <span>View Project</span>
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* =========================================================
-            COMPLETE ARCHIVE CTA
-        ========================================================= */}
-
-        <div
-          className="
-            h-[184px]
-            w-full
-            flex
-            items-center
-            justify-center
-            border-b
-            border-black/30
-
-            max-md:h-[140px]
-            max-md:px-[20px]
-          "
-        >
-          <button
-            type="button"
-            className="
-              group
-              flex
-              items-center
-              gap-[7px]
-
-              border-0
-              bg-transparent
-              p-0
-              m-0
-
-              cursor-pointer
-
-              font-clash
-              text-[20px]
-              leading-none
-              uppercase
-              tracking-[0.04em]
-
-              text-[#80c46c]
-
-              transition-all
-              duration-300
-              hover:gap-[11px]
-
-              max-md:text-[15px]
-              max-md:text-center
-            "
-          >
-            <HiArrowTurnDownRight
-              className="
-                shrink-0
-                text-[20px]
-                transition-transform
-                duration-300
-                group-hover:translate-x-[3px]
-
-                max-md:text-[16px]
-              "
+          <div className="px-24 pt-32 md:border-r md:px-40 md:py-48 xl:px-0 xl:pt-73 xl:pb-74 xl:pl-152">
+            <Media
+              media={{ src: work.image, alt: work.title }}
+              className="aspect-[692/490] h-auto xl:aspect-auto xl:h-490 xl:w-692"
+              sizes="(max-width: 767px) 100vw, 40vw"
             />
+          </div>
 
-            <span>Explore the complete archive</span>
-          </button>
-        </div>
+          <div className="flex flex-col px-24 pt-28 pb-40 md:px-40 md:py-48 xl:px-0 xl:pt-75 xl:pr-60 xl:pb-75 xl:pl-76">
+            <p data-reveal className={cn(h.body, "flex items-center uppercase")}>
+              <span>{work.year}</span>
+              <span aria-hidden="true" className="mx-14 size-6 bg-current xl:mx-34 xl:size-8" />
+              <span>{work.country}</span>
+            </p>
+
+            <h3
+              data-reveal
+              className="mt-16 font-trial text-[length:clamp(28px,5vw,40px)] leading-[1.2] tracking-normal xl:mt-34 xl:-ml-6 xl:text-[length:max(28px,calc(var(--spacing)*55))]"
+            >
+              {/* keep "[ Title ]" brackets attached to the words */}
+              {work.title.replace("[ ", "[\u00a0").replace(" ]", "\u00a0]")}
+            </h3>
+
+            <p
+              data-reveal
+              className={cn(h.body, "mt-16 max-w-[520px] xl:mt-36 xl:min-h-87 xl:max-w-none")}
+            >
+              <Lines lines={work.descLines} />
+            </p>
+
+            <p
+              data-reveal
+              className="mt-24 text-[length:clamp(20px,3.6vw,26px)] leading-[1.25] tracking-[0.05em] xl:mt-44 xl:max-w-800 xl:text-[length:max(20px,calc(var(--spacing)*40))] xl:leading-[1.2]"
+            >
+              {tagLine(work.tags)}
+            </p>
+
+            <div data-reveal className="mt-32 xl:mt-auto">
+              <TurnLink href={work.href} tone="ink">
+                View project
+              </TurnLink>
+            </div>
+          </div>
+        </article>
+      ))}
+
+      {/* EXPLORE ALL */}
+      <div className="flex items-center justify-center py-48 xl:h-186 xl:py-0">
+        <TurnLink href="/archive">Explore the complete archive</TurnLink>
       </div>
     </section>
   );

@@ -1,11 +1,15 @@
-import React from 'react'
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
-function page() {
+export default function ShopPage() {
   return (
-    <div>
+    <main>
+      <Navbar />
 
-    </div>
-  )
+      {/* page content goes here */}
+      <div></div>
+
+      <Footer />
+    </main>
+  );
 }
-
-export default page

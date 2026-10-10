@@ -1,45 +1,9 @@
-import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/Navbar";
+import { redirect } from "next/navigation";
+import { archiveHref, archiveProjects } from "@/lib/constants";
 
-import ArchiveReveal from "@/components/sections/archive/ArchiveReveal";
-import HeroSection from "@/components/sections/archive/HeroSection";
-import ChallengeSection from "@/components/sections/archive/ChallengeSection";
-import QuestionSection from "@/components/sections/archive/QuestionSection";
-import NamingSection from "@/components/sections/archive/NamingSection";
-import IdentitySection from "@/components/sections/archive/IdentitySection";
-import SystemSection from "@/components/sections/archive/SystemSection";
-import ProofSection from "@/components/sections/archive/ProofSection";
-import ProductSection from "@/components/sections/archive/ProductSection";
-import PackagingSection from "@/components/sections/archive/PackagingSection";
-import SensorySection from "@/components/sections/archive/SensorySection";
-import DigitalSection from "@/components/sections/archive/DigitalSection";
-import OutcomeSection from "@/components/sections/archive/OutcomeSection";
-import ReflectionsSection from "@/components/sections/archive/ReflectionsSection";
-import NextProjectSection from "@/components/sections/archive/NextProjectSection";
-
+// The archive listing page isn't designed yet — the navbar's ARCHIVE
+// dropdown links straight to each project. Anyone opening /archive
+// directly is sent to the first project for now.
 export default function ArchivePage() {
-  return (
-    <main>
-      <Navbar />
-
-      <ArchiveReveal>
-        <HeroSection />
-        <ChallengeSection />
-        <QuestionSection />
-        <NamingSection />
-        <IdentitySection />
-        <SystemSection />
-        <ProofSection />
-        <ProductSection />
-        <PackagingSection />
-        <SensorySection />
-        <DigitalSection />
-        <OutcomeSection />
-        <ReflectionsSection />
-        <NextProjectSection />
-      </ArchiveReveal>
-
-      <Footer />
-    </main>
-  );
+  redirect(archiveHref(archiveProjects[0].slug));
 }

@@ -1,9 +1,21 @@
 import { cn } from "@/lib/utils";
-import { archiveHero as p } from "@/lib/constants";
+import type { ArchiveMedia } from "@/lib/constants";
 import Media from "./Media";
 import { t } from "./styles";
 
-export default function HeroSection() {
+export type HeroData = {
+  title: string;
+  intro: string;
+  services: string[];
+  /** 2 items -> left-aligned halves (TSA), 3 items -> centred thirds (Exult) */
+  meta: string[];
+  team: string;
+  heroImage: ArchiveMedia;
+};
+
+export default function HeroSection({ data: p, index }: { data: HeroData; index: string }) {
+  const thirds = p.meta.length >= 3;
+
   return (
     <section className={cn(t.inner, "grid grid-cols-1 border-b md:grid-cols-2")}>
       <div className="border-b p-16 md:border-r md:border-b-0 md:p-24 xl:border-r xl:border-b-0 xl:px-42 xl:pt-37 xl:pb-42">
@@ -21,7 +33,7 @@ export default function HeroSection() {
             data-reveal
             className="flex items-center gap-10 text-[12px] leading-[1.2] tracking-[0.1em] uppercase text-[#999688] xl:gap-12 xl:text-[length:max(11px,calc(var(--spacing)*17.6))]"
           >
-            <span>{p.index}</span>
+            <span>{index}</span>
             <span aria-hidden="true" className="h-px w-40 bg-[#999588] xl:w-53" />
             <span>Archive</span>
           </div>
@@ -45,17 +57,33 @@ export default function HeroSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 border-t">
-          <div className={cn(t.body, "flex items-center px-24 py-20 md:px-40 xl:px-58 xl:py-0")}>
-            {p.location}
-          </div>
-          <div className={cn(t.body, "flex items-center border-l px-24 py-20 md:px-40 xl:py-0 xl:pr-58 xl:pl-66")}>
-            {p.period}
-          </div>
+        <div
+          className={cn(
+            "grid border-t",
+            thirds ? "grid-cols-3 xl:grid-cols-[326fr_334fr_300fr]" : "grid-cols-2",
+          )}
+        >
+          {p.meta.map((item, i) => (
+            <div
+              key={i}
+              className={cn(
+                t.body,
+                "flex items-center py-20 xl:py-0",
+                i > 0 && "border-l",
+                thirds
+                  ? "justify-center px-8 text-center md:px-16"
+                  : i === 0
+                    ? "px-24 md:px-40 xl:px-58"
+                    : "px-24 md:px-40 xl:pr-58 xl:pl-66",
+              )}
+            >
+              {item}
+            </div>
+          ))}
         </div>
 
         <div className="border-t px-24 py-20 md:px-40 xl:px-58 xl:pt-36 xl:pb-0">
-          <p className={cn(t.body, "xl:max-w-680")}>{p.team}</p>
+          <p className={cn(t.body, "xl:max-w-720")}>{p.team}</p>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { archiveQuestion as q } from "@/lib/constants";
-import Media from "./Media";
-import { t } from "./styles";
+import { tsaQuestion as q } from "@/lib/constants";
+import Media from "../Media";
+import { t } from "../styles";
 
 export default function QuestionSection() {
   return (

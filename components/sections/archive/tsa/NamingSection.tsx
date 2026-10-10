@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { archiveNaming as n } from "@/lib/constants";
-import Lines from "./Lines";
-import Media from "./Media";
-import { t } from "./styles";
+import { tsaNaming as n } from "@/lib/constants";
+import Lines from "../Lines";
+import Media from "../Media";
+import { t } from "../styles";
 
 export default function NamingSection() {
   return (

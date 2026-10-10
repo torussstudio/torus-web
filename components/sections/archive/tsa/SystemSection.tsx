@@ -1,16 +1,9 @@
 import { cn } from "@/lib/utils";
-import { archiveSystem as d } from "@/lib/constants";
-import Lines from "./Lines";
-import Media from "./Media";
-import { t } from "./styles";
-
-// small square + centred caption under the signature / seal blocks
-const caption = cn(
-  t.body,
-  "relative mt-14 text-center xl:mt-33",
-  "before:absolute before:top-1/2 before:left-0 before:size-7 before:-translate-y-1/2 before:bg-[#38362e] before:content-['']",
-  "xl:before:size-[max(7px,calc(var(--spacing)*11))]",
-);
+import { tsaSystem as d } from "@/lib/constants";
+import Lines from "../Lines";
+import Media from "../Media";
+import MarksSection from "../MarksSection";
+import { t } from "../styles";
 
 export default function SystemSection() {
   return (
@@ -44,7 +37,7 @@ export default function SystemSection() {
               {layer.title}
             </h3>
             <p data-reveal className={cn(t.body, "mt-6 xl:mt-16 xl:max-w-560 xl:pl-10")}>
-              {layer.text}
+              <Lines lines={layer.text} />
             </p>
           </div>
         ))}
@@ -52,32 +45,16 @@ export default function SystemSection() {
 
       {/* NOTE */}
       <div className="grid grid-cols-1 border-b xl:grid-cols-[272fr_1648fr]">
-        <div aria-hidden="true" className="hidden xl:block xl:border-r" />
-        <p data-reveal className={cn(t.body, "px-24 py-36 md:max-w-[880px] md:px-40 md:py-48 xl:max-w-1276 xl:pt-90 xl:pr-0 xl:pb-92 xl:pl-401")}>
+        <div className={cn(t.sideLabel, "xl:pt-94")}>
+          <span className={t.label}>{d.noteLabel}</span>
+        </div>
+        <p data-reveal className={cn(t.body, "px-24 pt-14 pb-36 md:max-w-[880px] md:px-40 md:pt-20 md:pb-48 xl:max-w-1276 xl:pt-90 xl:pr-0 xl:pb-92 xl:pl-401")}>
           {d.note}
         </p>
       </div>
 
       {/* SIGNATURE + SEAL */}
-      <div className="grid grid-cols-1 border-b md:grid-cols-[1.6fr_1fr] xl:grid-cols-[1171fr_749fr]">
-        <div className="p-24 md:p-32 xl:pt-49 xl:pr-0 xl:pb-42 xl:pl-50">
-          <Media
-            media={d.signature.image}
-            className="aspect-[1070/878] h-auto xl:aspect-auto xl:h-878 xl:w-1070"
-            sizes="(max-width: 1023px) 100vw, 56vw"
-          />
-          <p className={cn(caption, "xl:w-1070")}>{d.signature.caption}</p>
-        </div>
-
-        <div className="border-t p-24 md:border-t-0 md:border-l md:p-32 xl:border-t-0 xl:border-l xl:pt-49 xl:pr-0 xl:pb-42 xl:pl-53">
-          <Media
-            media={d.seal.image}
-            className="aspect-square h-auto xl:aspect-auto xl:h-648 xl:w-646"
-            sizes="(max-width: 1023px) 100vw, 34vw"
-          />
-          <p className={cn(caption, "xl:w-646")}>{d.seal.caption}</p>
-        </div>
-      </div>
+      <MarksSection data={d} />
     </section>
   );
 }

@@ -62,7 +62,7 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
   return (
     <div
       ref={rootRef}
-      className="overflow-x-clip bg-[#fafaf4] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]"
+      className="overflow-x-clip bg-[#f9f8f2] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]"
     >
       {children}
     </div>

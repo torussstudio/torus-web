@@ -200,7 +200,7 @@ export default function StudioArchives() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 flex flex-col justify-between pt-4 sm:pt-6 lg:pt-6 pb-8 sm:pb-10 lg:pb-10 px-0 lg:pl-10 xl:pl-14">
+            <div className="lg:col-span-6 flex flex-col justify-between pt-4 sm:pt-6 lg:pt-6 pb-8 sm:pb-10 lg:pb-10 px-4 sm:px-8 md:px-12 lg:px-0 lg:pr-6 lg:pl-10 xl:pl-14">
               <div className="-mt-2 sm:-mt-3 lg:-mt-4">
                 <span
                   ref={labelRef}

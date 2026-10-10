@@ -427,15 +427,15 @@ export function StoryCards() {
               if (el) cardRefs.current[index] = el;
             }}
             className={`
-              absolute left-1/2 top-0
-              flex h-full w-[82%] -translate-x-1/2 items-center justify-between
+              absolute inset-x-0 top-0 mx-auto
+              flex h-full w-[90%] sm:w-[82%] items-center justify-between gap-4
               border border-white/15 bg-[#262626]/90
-              px-8 backdrop-blur-md
+              px-5 sm:px-8 backdrop-blur-md
               will-change-transform
               ${position === 0 ? "pointer-events-auto" : "pointer-events-none"}
             `}
           >
-            <h3 className="max-w-[70%] font-recife text-[26px] leading-none tracking-[-0.02em] text-[#7fa86d]">
+            <h3 className="max-w-[80%] sm:max-w-[70%] font-recife text-[18px] sm:text-[22px] lg:text-[26px] leading-[1.15] lg:leading-none tracking-[-0.02em] text-[#7fa86d]">
               {card.title}
             </h3>
 

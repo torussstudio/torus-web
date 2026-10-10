@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { archiveSensory as d } from "@/lib/constants";
-import Media from "./Media";
-import { t } from "./styles";
+import { tsaSensory as d } from "@/lib/constants";
+import Media from "../Media";
+import { t } from "../styles";
 
 export default function SensorySection() {
   return (
@@ -19,7 +19,7 @@ export default function SensorySection() {
       {/* beige card overlapping the bottom of the photo */}
       <div
         data-reveal
-        className="relative -mt-48 ml-24 bg-[#e9e5db] px-24 py-32 md:-mt-160 md:ml-[30%] md:mr-[6%] md:p-48 xl:mr-0 xl:-mt-474 xl:ml-596 xl:w-1120 xl:pt-107 xl:pr-100 xl:pb-96 xl:pl-130"
+        className="relative -mt-48 ml-24 bg-[#eae6dc] px-24 py-32 md:-mt-160 md:ml-[30%] md:mr-[6%] md:p-48 xl:mr-0 xl:-mt-474 xl:ml-596 xl:w-1120 xl:pt-107 xl:pr-100 xl:pb-96 xl:pl-130"
       >
         <h2 className={cn(t.h2, "xl:-ml-9")}>{d.heading}</h2>
         <div className="mt-18 xl:mt-50 xl:max-w-715">
