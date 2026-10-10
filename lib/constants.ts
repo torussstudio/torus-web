@@ -208,8 +208,13 @@ export const links = [
     desc: "Building a SaaS/RPA automation brand across identity, digital growth, events, and enterprise communication.",
     descLines: ["Branding / Website / SEO / Content Strategy / UI/UX / Email Marketing / Pitch Decks"],
     tags: [
-      "Spatial Experience",
-      "Cultural Initiative",
+      "Brand Strategy",
+      "Website",
+      "SEO",
+      "UI/UX",
+      "Email Marketing",
+      "Pitch Decks"
+
     ],
   },
 ];
