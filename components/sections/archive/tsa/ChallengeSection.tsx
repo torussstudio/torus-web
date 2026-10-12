@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { tsaChallenge as c } from "@/lib/constants";
 import Lines from "../Lines";
+import Media from "../Media";
 import { t } from "../styles";
 
 export default function ChallengeSection() {
@@ -26,11 +27,10 @@ export default function ChallengeSection() {
         </p>
       </div>
 
-      {/* MEDIA — placeholder until the image is provided */}
-      <div
-        data-reveal="media"
-        aria-hidden="true"
-        className="relative aspect-[4/3] w-full bg-[#38362e] md:col-span-2 md:aspect-[1648/512] xl:col-span-2 xl:col-start-2"
+      <Media
+        media={c.image}
+        className="aspect-[4/3] h-auto md:col-span-2 md:aspect-[1648/512] xl:col-span-2 xl:col-start-2"
+        sizes="(max-width: 1023px) 100vw, 86vw"
       />
 
       <div className="px-24 py-36 md:px-40 md:py-48 xl:pt-73 xl:pr-0 xl:pb-78 xl:pl-89">

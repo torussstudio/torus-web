@@ -43,14 +43,14 @@ export default function Navbar() {
     if (!headerRef.current) return;
     const el = headerRef.current;
 
-    const update = () => {
-      const h = el.offsetHeight;
+    // ResizeObserver fires once right after observe() and again on every
+    // size change, after layout is done, so the height comes from the
+    // entry instead of reading offsetHeight during mount (a forced reflow).
+    const ro = new ResizeObserver(([entry]) => {
+      const h = Math.round(entry.borderBoxSize?.[0]?.blockSize ?? el.offsetHeight);
       setHeaderHeight(h);
       document.documentElement.style.setProperty("--header-height", `${h}px`);
-    };
-    update();
-
-    const ro = new ResizeObserver(update);
+    });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);

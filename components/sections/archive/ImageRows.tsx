@@ -98,14 +98,16 @@ export function LabeledImageRow({
   label,
   media,
 }: {
-  label: string;
+  label?: string;
   media: ArchiveMedia;
 }) {
   return (
     <div className={cn(t.inner, "border-b px-16 py-48 md:px-24 md:py-64 xl:px-51 xl:pt-108 xl:pb-223")}>
-      <span data-reveal className={cn(t.label, "pl-8 md:pl-16 xl:pl-0")}>
-        {label}
-      </span>
+      {label && (
+        <span data-reveal className={cn(t.label, "pl-8 md:pl-16 xl:pl-0")}>
+          {label}
+        </span>
+      )}
       <Media
         media={media}
         className="mt-16 aspect-[1818/1738] h-auto md:mt-24 md:aspect-[1818/1300] xl:mt-54 xl:aspect-auto xl:h-1738"

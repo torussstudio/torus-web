@@ -75,28 +75,28 @@ export const links = [
  // photo row — auto-scrolls sideways (dummy descriptions, swap later)
  export const spaces = [
    {
-     title: "Work Spaces",
-     image: "/images/artwork1.avif",
+     title: "THE DISCUSSIONS",
+     image: "/images/home/space-discussions.avif",
    },
    {
-     title: "Experiments",
-     image: "/images/cohart.avif",
+     title: "THE IN-BETWEENS",
+     image: "/images/home/space-in-betweens.avif",
    },
    {
-     title: "Collaboration",
-     image: "/images/creative.avif",
+     title: "THE WORKPLACE",
+     image: "/images/home/space-workplace.avif",
    },
    {
-     title: "Editions",
-     image: "/images/editions.avif",
+     title: "THE COLLABORATIONS",
+     image: "/images/home/space-collaborations.avif",
    },
    {
-     title: "Conversations",
-     image: "/images/curiosity.avif",
+     title: "THE EXPLORATIONS",
+     image: "/images/home/space-explorations.avif",
    },
    {
-     title: "Direction",
-     image: "/images/creativedirection.avif",
+     title: "THE INSPIRATIONS",
+     image: "/images/home/space-inspirations.avif",
    },
  ];
  
@@ -128,7 +128,7 @@ export const links = [
     titleLines: ["Brands, systems, and", "digital experiences."],
     icon: "●",
     desc: "We help businesses become clearer, more distinctive, and more coherent across the ways they are seen, understood, and experienced.",
-    image: "/images/creative.avif",
+    image: "/images/home/card-creative.avif",
     items: [
       "Brand Strategy & Identity",
       "Websites & Digital Experiences",
@@ -147,7 +147,7 @@ export const links = [
     titleLines: ["Artworks, objects, and", "physical expressions."],
     icon: "▲",
     desc: "We work with architects, interior designers, brands, institutions, and individuals to curate, source, create, and commission artworks and other physical expressions.",
-    image: "/images/editions.avif",
+    image: "/images/home/card-editions.avif",
     items: [
       "Art Consultation",
       "Artwork Sourcing & Creation",
@@ -166,7 +166,7 @@ export const links = [
     titleLines: ["Learning, dialogue,", "and collective creative", "experiences."],
     icon: "■",
     desc: "Cohort brings people together through workshops, conversations, exhibitions, cultural initiatives, and collaborative projects.",
-    image: "/images/cohart.avif",
+    image: "/images/home/card-cohort.avif",
     items: [
       "Workshops & Learning",
       "Exhibitions",
@@ -186,7 +186,7 @@ export const links = [
     year: "2026",
     country: "SPAIN",
     title: "The Spanish Alchemist",
-    image: "/images/alchemist-desk-overhead.jpg",
+    image: "/images/home/archive-tsa.avif",
     href: "/archive/the-spanish-alchemist",
     desc: "Building a skincare brand around freshness, efficacy, and a different way of thinking about shelf life.",
     descLines: ["Building a skincare brand around freshness,", "efficacy, and a different way of thinking about", "shelf life."],
@@ -203,8 +203,8 @@ export const links = [
     year: "2023",
     country: "USA",
     title: "Exult Global",
-    image: "/trust-hero.jpg",
-    href: "#",
+    image: "/images/home/archive-exult.avif",
+    href: "/archive/exult-global",
     desc: "Building a SaaS/RPA automation brand across identity, digital growth, events, and enterprise communication.",
     descLines: ["Branding / Website / SEO / Content Strategy / UI/UX / Email Marketing / Pitch Decks"],
     tags: [
@@ -235,6 +235,7 @@ export const links = [
  export const practices: Practice[] = [
    {
      id: "01",
+     image: "/images/home/practice-branding-strategy.avif",
      title: ["Branding", "and Strategy"],
      description:
        ["Building clear,", "distinctive brands and", "the systems that hold", "them together."],
@@ -250,6 +251,7 @@ export const links = [
  
    {
      id: "02",
+     image: "/images/home/practice-web-digital.avif",
      title: ["Web", "and Digital"],
      description:
        ["Creating websites and digital", "products that balance usability,", "expression, storytelling, and", "business goals."],
@@ -263,6 +265,7 @@ export const links = [
  
    {
      id: "03",
+     image: "/images/home/practice-communication-growth.avif",
      title: ["Communication", "and Growth"],
      description:
        ["Helping brands communicate", "consistently across campaigns,", "content, digital channels, and", "everyday customer interactions."],
@@ -278,6 +281,7 @@ export const links = [
  
    {
      id: "04",
+     image: "/images/home/practice-art-editions.avif",
      title: ["Art", "and Editions"],
      description:
        ["Bringing art and", "physical expression", "into spaces, brands,", "and cultural projects."],
@@ -293,6 +297,7 @@ export const links = [
  
    {
      id: "05",
+     image: "/images/home/practice-culture-collective.avif",
      title: ["Culture and", "Collective Projects"],
      description:
        ["Creating experiences that", "bring people together around", "learning, creativity, culture,", "and exchange."],
@@ -603,6 +608,8 @@ export const mobileAspects = [
 
 export type ArchiveMedia = {
   src?: string;
+  /** autoplaying muted loop — used instead of `src` when set */
+  video?: string;
   alt: string;
   /** "dark" renders the solid dark block used in the design */
   tone?: "light" | "dark";
@@ -620,7 +627,7 @@ export const tsaHero = {
   team:
     "Hari (Lead), Abhinav, Archana, Sreejith, Arun Anand, Vibish, Raunak, Kishor, Rahul",
   heroImage: {
-    src: "/images/spanish-alchemist-main.jpg",
+    src: "/images/tsa/hero.avif",
     alt: "The Spanish Alchemist — brand hero",
   } as ArchiveMedia,
 };
@@ -632,6 +639,7 @@ export const tsaChallenge = {
     "When the project came to us, the task was to build a complete brand ecosystem around a clear idea of skincare made fresh, in smaller batches. And when we began exploring the project, what stood out was not just the product itself, but the larger contradiction surrounding the skincare industry. The category had become increasingly focused on shelf life, preservation, and mass distribution.",
   leadIn: "The challenge was more interesting:",
   highlight: "how to make people believe in the idea of freshly made skincare.",
+  image: { src: "/images/tsa/challenge-freshness-label.avif", alt: "Freshness label on the red TSA bottle" } as ArchiveMedia,
   left:
     "Freshness is already a familiar idea in skincare. It is often used loosely to suggest something natural. But the brand’s idea of fresh was connected to the time closest to manufacturing, when the formulation is newly prepared, and the product is closer to its peak performance.",
   right: [
@@ -645,7 +653,7 @@ export const tsaQuestion = {
   body:
     "From naming and identity to packaging, e-commerce, social media, email marketing, digital assets, and content direction, the project became a full brand system ready for launch, built around one question:",
   question: "How do we make freshness feel real to the customer?",
-  image: { alt: "Hand sketching molecular bubble forms" } as ArchiveMedia,
+  image: { src: "/images/tsa/question-sketch.avif", alt: "Hand sketching molecular bubble forms" } as ArchiveMedia,
 };
 
 export const tsaNaming = {
@@ -654,9 +662,9 @@ export const tsaNaming = {
   body:
     "The name ‘The Spanish Alchemist’ was finalized after exploring multiple naming directions. It gave the brand a world that could hold both science and emotion. The idea of the alchemist brought in a strong creative base, hands-on experimentation, transformation, natural ingredients, ritual, precision, and the search for something rare. It also allowed us to build symbolic references such as the Philosopher’s Stone, the cycle of seasons, and the ritualistic nature of selfcare, helping us move away from the usual skincare language and build a brand that felt more distinct.",
   images: [
-    { src: "/images/tsa-meeting.jpg", alt: "Naming workshop" },
-    { src: "/images/tsa-installation.jpg", alt: "Projection installation" },
-    { src: "/images/tsa-field.jpg", alt: "Field exploration" },
+    { src: "/images/tsa/naming-alicante.avif", alt: "Naming workshop" },
+    { src: "/images/tsa/naming-philosophers-stone.avif", alt: "Projection installation" },
+    { src: "/images/tsa/naming-alchemist.avif", alt: "Field exploration" },
   ] as ArchiveMedia[],
 };
 
@@ -667,7 +675,7 @@ export const tsaIdentity = {
     "The identity was built to feel both human and trustworthy. The brand did not have to look purely clinical. It also did not have to look overly soft, beige, or generic. TSA could sit in a more ownable space: freshly prepared skincare from its lab in Alicante, Spain, shaped with Mediterranean warmth.",
     "The challenge was to create an identity that could work across bottles, boxes, stickers, seals, tissue paper, social posts, website pages, printed inserts, and emailers. TSA needed a flexible identity system.",
   ],
-  image: { alt: "Moodboard with material swatches" } as ArchiveMedia,
+  image: { src: "/images/tsa/identity-swatches-tray.avif", alt: "Moodboard with material swatches" } as ArchiveMedia,
 };
 
 export const tsaSystem = {
@@ -679,17 +687,17 @@ export const tsaSystem = {
     {
       title: "The seal",
       text: ["like a freshness stamp, a mark of trust,", "approval, and authenticity."],
-      image: { alt: "The seal" } as ArchiveMedia,
+      image: { src: "/images/tsa/system-seal.avif", alt: "The seal" } as ArchiveMedia,
     },
     {
       title: "The full logo",
       text: ["created brand presence."],
-      image: { alt: "The full logo" } as ArchiveMedia,
+      image: { src: "/images/tsa/system-full-logo.avif", alt: "The full logo" } as ArchiveMedia,
     },
     {
       title: "The TSA signature",
       text: ["worked across smaller moments."],
-      image: { alt: "The TSA signature" } as ArchiveMedia,
+      image: { src: "/images/tsa/system-signature.avif", alt: "The TSA signature" } as ArchiveMedia,
     },
   ],
 
@@ -697,12 +705,12 @@ export const tsaSystem = {
   note:
     "Instead of creating a purely corporate skincare logo, we developed a handcrafted signature-style mark. It gave the brand the feeling of a real presence behind the product: the Alchemist, someone involved in the making, testing, and care behind each formulation. This thinking extended into the packaging language as well.",
   signature: {
-    caption: "Signature mark",
-    image: { alt: "Signature mark", tone: "dark" } as ArchiveMedia,
+    caption: "The seal",
+    image: { src: "/images/tsa/marks-seal.avif", alt: "Signature mark", tone: "dark" } as ArchiveMedia,
   },
   seal: {
-    caption: "The seal",
-    image: { alt: "The seal", tone: "dark" } as ArchiveMedia,
+    caption: "The signature mark",
+    image: { src: "/images/tsa/marks-signature.avif", alt: "The seal", tone: "dark" } as ArchiveMedia,
   },
 };
 
@@ -722,7 +730,7 @@ export const tsaProof = {
     "Lines like “Made Fresh Just For You” became a simple expression of this world.",
   summary:
     "Together, these details made the brand’s freshness process more visible to the customer. The freshness, timing, and care behind each product were made visible through a language of dates, codes, and labels. The narrative, proof points, and visual language helped make the fresh manufacturing concept clearly felt.",
-  image: { alt: "Freshness label detail", tone: "dark" } as ArchiveMedia,
+  image: { src: "/images/tsa/proof-batch-label.avif", alt: "Freshness label detail", tone: "dark" } as ArchiveMedia,
 };
 
 export const tsaProduct = {
@@ -733,8 +741,8 @@ export const tsaProduct = {
     "One of the strongest visual decisions was the translucent red bottle that extended the alchemist world into the product itself. Its colour drew from the idea of the Philosopher’s Stone, reflecting subtle cues of intensity, transformation, and potency. It made the product feel active, alive, and instantly recognisable.",
     "However, the product line also needed clear navigation, helping customers understand the range while keeping the brand visually unified. So instead of changing the entire bottle language for every product, we retained the red bottle as the core brand cue and built a smaller coding system through geometric markers, accent colours, line labels, and visual details. This kept each product distinct while keeping the range recognisable, easy to understand, and scalable.",
   ],
-  imageMain: { alt: "Model holding the red TSA bottle" } as ArchiveMedia,
-  imageSecondary: { alt: "TSA product range on a tray" } as ArchiveMedia,
+  imageMain: { src: "/images/tsa/product-model.avif", alt: "Model holding the red TSA bottle" } as ArchiveMedia,
+  imageSecondary: { src: "/images/tsa/product-range.avif", alt: "TSA product range on a tray" } as ArchiveMedia,
 };
 
 export const tsaPackaging = {
@@ -746,10 +754,10 @@ export const tsaPackaging = {
     "Micro and nano encapsulation technologies also became important visual and communication anchors. They helped bring out the brand’s focus on potency, formulation precision, laboratory testing, and controlled active delivery. We translated this into soft molecular graphics inspired by capsules, cells, bubbles, and active delivery systems. These forms helped the science feel understandable without making the brand feel clinical or intimidating.",
     "Small details like structured typography, handwritten labels, seals, product codes, molecular graphics, batch information, and lab-inspired layouts played an important role too. Together, they made the brand feel precise, personal, credible, and considered.",
   ],
-  wide: { alt: "Model with TSA box and bottle" } as ArchiveMedia,
+  wide: { src: "/images/tsa/packaging-model.avif", alt: "Model with TSA box and bottle" } as ArchiveMedia,
   pair: [
-    { alt: "Cleanser packaging dieline" },
-    { alt: "Serum packaging dieline" },
+    { src: "/images/tsa/packaging-cleanser.avif", alt: "Cleanser packaging dieline" },
+    { src: "/images/tsa/packaging-cream.avif", alt: "Cream packaging dieline" },
   ] as ArchiveMedia[],
 };
 
@@ -761,7 +769,7 @@ export const tsaSensory = {
     "Material direction shaped how TSA felt across both physical and digital touchpoints.",
     "Glass, texture, depth, light, and subtle sensory cues informed the bottle, packaging, website, social content, and digital assets. The same feeling of tactility was carried from the product in hand to the way it appeared on screen. This helped the brand feel consistent across every interaction.",
   ],
-  image: { alt: "People gathered in a warm interior" } as ArchiveMedia,
+  image: { src: "/images/tsa/sensory-team.avif", alt: "People gathered in a warm interior" } as ArchiveMedia,
 };
 
 export const tsaDigital = {
@@ -771,7 +779,7 @@ export const tsaDigital = {
     "We extended the same system into a successful e-commerce website, digital assets, social media design, email marketing, and content direction. The red bottle, TSA seal, lab-inspired typography, square brackets, handwritten labels, product codes, molecular graphics, playful print pieces, and Spanish cues became repeated memory markers across every platform.",
     "On social media, freshness was also communicated and shown through culture, lifestyle, science, and everyday freshness cues: flowers, bread, apples, sea, sunlight, skin, laboratory details, and the atmosphere of Alicante. This gave the brand more room to speak. TSA could talk about skincare but also about time, preparation, freshness, routine, and care without sounding repetitive.",
   ],
-  wide: { alt: "Campaign portrait" } as ArchiveMedia,
+  wide: { src: "/images/tsa/digital-social-ecommerce.avif", alt: "Campaign portrait" } as ArchiveMedia,
   trio: [
     { alt: "Packaging dieline 1" },
     { alt: "Packaging dieline 2" },
@@ -790,8 +798,8 @@ export const tsaOutcome = {
     "The work has also continued beyond the initial launch system. As the brand grows, we continue to support TSA across content, campaigns, digital communication, lead-generation, and new customer experiences, strengthening the brand’s presence across different touchpoints.",
     "What has been built so far is a living brand ecosystem; it is a foundation that keeps expanding with the brand, shaped by new ideas, market responses, and the opportunities that continue to emerge.",
   ],
-  image: { alt: "Two models with TSA bottles" } as ArchiveMedia,
-  collage: { alt: "TSA collage — sea, portrait and lab" } as ArchiveMedia,
+  image: { src: "/images/tsa/outcome-models.avif", alt: "Two models with TSA bottles" } as ArchiveMedia,
+  collage: { src: "/images/tsa/outcome-collage.avif", alt: "TSA collage — sea, portrait and lab" } as ArchiveMedia,
 };
 
 export const tsaReflections = {
@@ -809,7 +817,7 @@ export const tsaReflections = {
 // The design (Illustrator) never breaks a line inside a hyphenated word
 // like "low-code" or "25–30K"; browsers do. A word-joiner after
 // each in-word hyphen keeps those words together, so lines wrap like the
-// design. Image paths (`src`) are left untouched.
+// design. Media paths (`src`, `video`) are left untouched.
 function keepHyphenatedWords<T>(value: T): T {
   if (typeof value === "string") {
     return value.replace(/(\w)([-–])(?=\w)/g, "$1$2\u2060") as T;
@@ -817,7 +825,7 @@ function keepHyphenatedWords<T>(value: T): T {
   if (Array.isArray(value)) return value.map(keepHyphenatedWords) as T;
   if (value && typeof value === "object") {
     return Object.fromEntries(
-      Object.entries(value).map(([k, v]) => [k, k === "src" ? v : keepHyphenatedWords(v)]),
+      Object.entries(value).map(([k, v]) => [k, k === "src" || k === "video" ? v : keepHyphenatedWords(v)]),
     ) as T;
   }
   return value;
@@ -834,7 +842,7 @@ export const exultHero = keepHyphenatedWords({
   meta: ["California, USA", "2023 – Present", "SaaS & RPA"],
   team:
     "Hari, Archana, Sreejith, Arun Anand, Vibish, Raunak, Aishwarya, Ranjith",
-  heroImage: { alt: "Exult Global — brand hero", tone: "dark" } as ArchiveMedia,
+  heroImage: { src: "/images/exult/hero-pin.avif", alt: "Exult Global — brand hero", tone: "dark" } as ArchiveMedia,
 });
 
 export const exultChallenge = keepHyphenatedWords({
@@ -844,7 +852,7 @@ export const exultChallenge = keepHyphenatedWords({
     "Exult Global entered the market with a practical belief: automation should not be reserved only for the largest enterprises with the biggest budgets.",
     "The company was developing RPA, SaaS, and low-code/no-code solutions to help businesses automate workflows, build dashboards, and improve efficiency across departments. Sales, accounts, operations, projects, reporting; the solutions could be shaped module by module, depending on what each team needed.",
   ],
-  image: { alt: "Exult Global — challenge visual", tone: "dark" } as ArchiveMedia,
+  image: { src: "/images/exult/challenge-brand-collage.avif", alt: "Exult Global — challenge visual", tone: "dark" } as ArchiveMedia,
   left:
     "Many automation platforms in the market were expensive, rigid, and difficult to customise. Exult Global wanted to offer something more accessible and flexible: Microsoft-powered automation solutions that were dependable, customisable, and viable.",
   leadIn:
@@ -861,7 +869,7 @@ export const exultPartnership = keepHyphenatedWords({
     "That is where Toruss became part of the journey, not only as a design partner, but as a strategic creative partner.",
   body:
     "Our partnership grew across branding, website, content, SEO, social media, event marketing, email campaigns, product UI/UX, pitch decks, infographics, explainer videos, and client-facing design support.",
-  image: { alt: "Partnership sketch" } as ArchiveMedia,
+  image: { video: "/videos/exult/partnership.mp4", alt: "Partnership sketch" } as ArchiveMedia,
 });
 
 export const exultIdentity = keepHyphenatedWords({
@@ -872,9 +880,9 @@ export const exultIdentity = keepHyphenatedWords({
     "The colour palette was built around pastel blue and gold, blue for trust, calmness, and approachability; gold for success, strength, and dependability.",
   ],
   images: [
-    { src: "/images/tsa-meeting.jpg", alt: "Identity workshop" },
-    { src: "/images/tsa-installation.jpg", alt: "Identity exploration" },
-    { src: "/images/tsa-field.jpg", alt: "Identity in context" },
+    { src: "/images/exult/identity-sketch.avif", alt: "Identity workshop" },
+    { src: "/images/exult/identity-wordmark.avif", alt: "Identity exploration" },
+    { src: "/images/exult/identity-acrylic.avif", alt: "Identity in context" },
   ] as ArchiveMedia[],
   left:
     "The logo combined a wordmark with an icon designed around the brand’s core ideas. The geometric X became a direct reference to Exult, while also suggesting multiplier, a symbol for improving productivity and amplifying efficiency. The icon also carried the feel of a dial, representing fine-tuning, optimisation, and process control. At another level, it suggested a bridge, reflecting Exult’s role in helping businesses move from where they are to where they want to be.",
@@ -891,7 +899,7 @@ export const exultWebsite = keepHyphenatedWords({
     "Once the identity was in place, the website became Exult Global’s most important explanation tool.",
     "The brand had to speak about RPA, Power Platform, Power Automate, Power Apps, Power BI, Microsoft Fabric, low-code/no-code development, dashboards, workflow optimisation, and digital transformation. These were valuable services, but they needed to be presented in a way that business owners, decision-makers, and department heads could quickly understand.",
   ],
-  image: { alt: "Website design process" } as ArchiveMedia,
+  image: { src: "/images/exult/website-mockups.avif", alt: "Website design process" } as ArchiveMedia,
   lead: "The website had to simplify this world without reducing its credibility.",
   note:
     "We worked across content structure, layout, UI/UX design, and development to create a website that was informative, structured, and easy to move through. The narrative was built to help users quickly understand what Exult Global offered, who it served, and how its solutions could help businesses automate work, improve decision-making, and reduce operational friction.",
@@ -904,9 +912,9 @@ export const exultContent = keepHyphenatedWords({
     "For Exult Global, content was not treated as filler for the website. It became a way to educate the market. For a SaaS/RPA company, visibility is not built only through design. It is built through useful explanations, search-friendly content, and consistent thought leadership.",
   points: ["Keyword Research", "Blog Planning", "SEO", "Structured Content"],
   images: [
-    { alt: "Content planning" },
-    { alt: "Blog sketching" },
-    { alt: "Content team session" },
+    { src: "/images/exult/content-office-sign.avif", alt: "Content planning" },
+    { src: "/images/exult/content-social-card.avif", alt: "Blog sketching" },
+    { src: "/images/exult/content-laptop.avif", alt: "Content team session" },
   ] as ArchiveMedia[],
   left:
     "We worked on keyword research, blog planning, SEO, and structured content development around topics that mattered to the brand’s audience to help Exult Global become more discoverable to the right audience.",
@@ -916,12 +924,10 @@ export const exultContent = keepHyphenatedWords({
 
 export const exultMarks = keepHyphenatedWords({
   signature: {
-    caption: "Signature mark",
-    image: { alt: "Signature mark", tone: "dark" } as ArchiveMedia,
+    image: { src: "/images/exult/marks-stage-logo.avif", alt: "Signature mark", tone: "dark" } as ArchiveMedia,
   },
   seal: {
-    caption: "The seal",
-    image: { alt: "The seal", tone: "dark" } as ArchiveMedia,
+    image: { video: "/videos/exult/logo-motion.mp4", alt: "The seal", tone: "dark" } as ArchiveMedia,
   },
 });
 
@@ -944,13 +950,13 @@ export const exultCommunication = keepHyphenatedWords({
       // DUMMY copy — replace with final text
       body:
         "LinkedIn became the main channel for thought leadership. Regular posts on automation, Microsoft solutions, and client stories helped the brand grow from zero to around 25–30K followers.",
-      image: { alt: "LinkedIn content" } as ArchiveMedia,
+      image: { src: "/images/exult/comm-linkedin.avif", alt: "LinkedIn content" } as ArchiveMedia,
     },
     {
       name: "Instagram",
       title: ["Engaging Content.", "Consistent Visibility."],
       body: "Instagram played a different role. It carried shorter, more engaging, educational, and event-led content that helped the brand stay visible and consistent.",
-      image: { alt: "Instagram content" } as ArchiveMedia,
+      image: { src: "/images/exult/comm-instagram.avif", alt: "Instagram content" } as ArchiveMedia,
     },
     {
       name: "Medium",
@@ -958,7 +964,7 @@ export const exultCommunication = keepHyphenatedWords({
       // DUMMY copy — replace with final text
       body:
         "Medium carried longer articles that explained technical ideas in more depth. Simple visuals and clear structure made complex topics easier for decision-makers to follow.",
-      image: { alt: "Medium articles" } as ArchiveMedia,
+      image: { src: "/images/exult/comm-medium.avif", alt: "Medium articles" } as ArchiveMedia,
     },
     {
       name: "Podcasts",
@@ -966,25 +972,25 @@ export const exultCommunication = keepHyphenatedWords({
       // DUMMY copy — replace with final text
       body:
         "Podcasts added a conversational format around automation and digital transformation, giving the brand a voice people could listen to and remember.",
-      image: { alt: "Podcasts" } as ArchiveMedia,
+      image: { src: "/images/exult/comm-podcasts.avif", alt: "Podcasts" } as ArchiveMedia,
     },
   ],
   // which platform is open when the page loads (Instagram in the design)
-  defaultOpen: 1,
+  defaultOpen: 0,
   impactLabel: "The Impact",
   impact:
     "Together, these platforms helped Exult Global move from simply having a digital presence to building an identifiable brand voice.",
 });
 
 export const exultEvent = keepHyphenatedWords({
-  label: "The Product",
+  label: "THE CAMPAIGN",
   heading: ["Turning an international", "event into a brand and", "lead-generation", "opportunity."],
   body: [
     "Exult Global’s participation at The Microsoft Fabric Community Conference (FabCon) became an important moment for brand visibility.",
     "Our role covered end-to-end digital event marketing, including promotional, educational, and informative content across multiple formats. We worked on event communication, branding collateral, merchandise, and the design language for the event environment.",
   ],
-  imageMain: { alt: "FabCon event booth", tone: "dark" } as ArchiveMedia,
-  imageSecondary: { alt: "Event collateral", tone: "dark" } as ArchiveMedia,
+  imageMain: { src: "/images/exult/event-creatives.avif", alt: "FabCon event booth", tone: "dark" } as ArchiveMedia,
+  imageSecondary: { src: "/images/exult/event-entrance.avif", alt: "Event collateral", tone: "dark" } as ArchiveMedia,
 });
 
 export const exultEmail = keepHyphenatedWords({
@@ -993,13 +999,12 @@ export const exultEmail = keepHyphenatedWords({
     "We developed focused, lead-specific email sequences with careful audience profiling, planning, drafting, designing, scheduling, subject-line development, hooks, and message structures. The campaign included a mix of educational, informative, and offer-led communication, while carrying Exult Global’s visual language consistently across each email.",
   right:
     "The campaign achieved approximately 45% open rate and around 10% conversion rate, making email an important contributor to event engagement and lead generation.",
-  wide: { alt: "Email campaign designs", tone: "dark" } as ArchiveMedia,
+  wide: { src: "/images/exult/email-stage.avif", alt: "Email campaign designs", tone: "dark" } as ArchiveMedia,
   pair: [
-    { alt: "Email design 1", tone: "dark" },
-    { alt: "Email design 2", tone: "dark" },
+    { src: "/images/exult/email-booth.avif", alt: "Email design 1", tone: "dark" },
+    { src: "/images/exult/email-pavilion.avif", alt: "Email design 2", tone: "dark" },
   ] as ArchiveMedia[],
-  showcaseLabel: "The Product",
-  showcase: { alt: "Event showcase", tone: "dark" } as ArchiveMedia,
+  showcase: { src: "/images/exult/email-showcase.avif", alt: "Event showcase", tone: "dark" } as ArchiveMedia,
 });
 
 export const exultDigital = keepHyphenatedWords({
@@ -1011,15 +1016,15 @@ export const exultDigital = keepHyphenatedWords({
     "Pitch presentations, client conversations, product demos, and dashboard experiences.",
   body:
     "We designed pitch decks that helped Exult Global explain its solutions with more clarity and confidence. These decks were used for presentations, sales conversations, and explanatory purposes, turning complex offerings into structured, persuasive stories.",
-  wide: { alt: "Pitch deck designs", tone: "dark" } as ArchiveMedia,
+  wide: { src: "/images/exult/digital-icons.avif", alt: "Pitch deck designs", tone: "dark" } as ArchiveMedia,
   left:
     "Explainer videos served a similar purpose. We identified relevant topics, developed scripts, produced the videos, and published them across digital platforms. They addressed real pain points faced by the target audience and showed how Exult Global’s solutions could solve them. Some were also used in pitch presentations and event displays.",
   right:
     "The work also extended into UI/UX design for several dashboards, across web and mobile-optimised interfaces. This allowed us to support not only how Exult Global communicated its solutions, but also how some of those solutions were experienced by users.",
   trio: [
-    { alt: "Dashboard UI 1", tone: "dark" },
-    { alt: "Dashboard UI 2", tone: "dark" },
-    { alt: "Dashboard UI 3", tone: "dark" },
+    { src: "/images/exult/digital-powerbi.avif", alt: "Dashboard UI 1", tone: "dark" },
+    { src: "/images/exult/digital-touch.avif", alt: "Dashboard UI 2", tone: "dark" },
+    { src: "/images/exult/digital-copilot.avif", alt: "Dashboard UI 3", tone: "dark" },
   ] as ArchiveMedia[],
 });
 
@@ -1033,8 +1038,8 @@ export const exultOutcome = keepHyphenatedWords({
     "The impact has been visible across growth touchpoints: website traffic increased by approximately 300%, LinkedIn grew from zero to around 25–30K followers, and the Fab Con email campaign achieved approximately 45% open rate with around 10% conversion.",
     "These numbers reflect a larger shift: Exult Global has been reaching more people, entering stronger conversations, and building credibility with the right audience.",
   ],
-  image: { alt: "Exult Global team", tone: "dark" } as ArchiveMedia,
-  collage: { alt: "Exult Global collage", tone: "dark" } as ArchiveMedia,
+  image: { video: "/videos/exult/logo-rotation.mp4", alt: "Exult Global team", tone: "dark" } as ArchiveMedia,
+  collage: { src: "/images/exult/outcome-collage.avif", alt: "Exult Global collage", tone: "dark" } as ArchiveMedia,
 });
 
 export const exultReflections = keepHyphenatedWords({
@@ -1069,7 +1074,7 @@ export const archiveProjects: ArchiveProjectSummary[] = [
     year: "2025",
     country: "Spain",
     category: "Naming / Identity System / Packaging",
-    thumb: { src: "/images/spanish-alchemist-thumb.jpg", alt: "The Spanish Alchemist" },
+    thumb: { src: "/images/tsa/hero.avif", alt: "The Spanish Alchemist" },
   },
   {
     slug: "exult-global",
@@ -1077,7 +1082,7 @@ export const archiveProjects: ArchiveProjectSummary[] = [
     year: "2023",
     country: "USA",
     category: "Branding / Website / SEO / Events",
-    thumb: { alt: "Exult Global" },
+    thumb: { src: "/images/home/archive-exult.avif", alt: "Exult Global" },
   },
 ];
 
@@ -1088,7 +1093,7 @@ export const archiveHref = (slug: string) => `/archive/${slug}`;
 // =========================================================
 
 export const footerContent = {
-  image: { src: "/images/footer.avif", alt: "Toruss studio desk" },
+  image: { src: "/images/home/footer-telephone.avif", alt: "Toruss studio desk" },
   sideLabel: "Get in touch",
   title: "Let's shape what's next.",
   paragraphs: [

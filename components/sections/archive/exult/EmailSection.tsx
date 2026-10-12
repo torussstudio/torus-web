@@ -27,7 +27,7 @@ export default function EmailSection() {
 
       <WideImageRow media={d.wide} className="xl:pt-44 xl:pb-52" imageClassName="xl:h-1050" />
       <PairImageRow items={d.pair} />
-      <LabeledImageRow label={d.showcaseLabel} media={d.showcase} />
+      <LabeledImageRow media={d.showcase} />
     </section>
   );
 }

@@ -68,3 +68,17 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+/* Scroll-reveal start state (ArchiveReveal adds .reveal-armed once GSAP is
+   ready; without JS or with reduced motion everything stays visible) */
+.reveal-armed [data-reveal]:not([data-reveal="media"]) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal-armed [data-reveal="media"] {
+  visibility: hidden;
+  opacity: 0;
+  clip-path: inset(0% 0% 12% 0%);
+}

@@ -10,8 +10,8 @@ type Props = {
 };
 
 /**
- * Image box for the archive page. Shows the photo when `media.src`
- * is set, otherwise a labelled placeholder of the same size.
+ * Image box for the archive page. Plays `media.video` when set, shows the
+ * photo when `media.src` is set, otherwise a labelled placeholder of the same size.
  */
 export default function Media({
   media,
@@ -30,7 +30,19 @@ export default function Media({
         className,
       )}
     >
-      {media.src ? (
+      {media.video ? (
+        <video
+          src={media.video}
+          poster={media.src}
+          aria-label={media.alt}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : media.src ? (
         <Image
           src={media.src}
           alt={media.alt}

@@ -24,15 +24,20 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
       const text = gsap.utils.toArray<HTMLElement>("[data-reveal]:not([data-reveal='media'])");
       const media = gsap.utils.toArray<HTMLElement>("[data-reveal='media']");
 
-      // hidden start state (set once, before any measuring)
-      gsap.set(text, { autoAlpha: 0, y: 28 });
-      gsap.set(media, { autoAlpha: 0, clipPath: "inset(0 0 12% 0)" });
+      // Hidden start state comes from CSS (.reveal-armed in globals.css),
+      // not gsap.set. gsap.set on every element made GSAP parse each
+      // element's transform (getComputedStyle + offsetParent, plus a
+      // temporary style write for hidden ones) one by one, forcing ~60
+      // style recalcs on load. Now GSAP only touches an element when its
+      // batch enters the viewport.
+      const root = rootRef.current;
+      root?.classList.add("reveal-armed");
 
       ScrollTrigger.batch(text, {
         start: "top 88%",
         once: true,
         onEnter: (els) =>
-          gsap.to(els, {
+          gsap.fromTo(els, { autoAlpha: 0, y: 28 }, {
             autoAlpha: 1,
             y: 0,
             duration: 0.9,
@@ -46,15 +51,17 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
         start: "top 88%",
         once: true,
         onEnter: (els) =>
-          gsap.to(els, {
+          gsap.fromTo(els, { autoAlpha: 0, clipPath: "inset(0% 0% 12% 0%)" }, {
             autoAlpha: 1,
-            clipPath: "inset(0 0 0% 0)",
+            clipPath: "inset(0% 0% 0% 0%)",
             duration: 1.2,
             ease: "power3.out",
             stagger: 0.1,
             overwrite: true,
           }),
       });
+
+      return () => root?.classList.remove("reveal-armed");
     },
     rootRef,
   );

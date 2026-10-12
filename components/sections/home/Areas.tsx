@@ -34,7 +34,7 @@ function ToggleIcon({ open }: { open: boolean }) {
 }
 
 export default function AreasOfPractice() {
-  const [activeId, setActiveId] = useState<string | null>(practices[1]?.id ?? null);
+  const [activeId, setActiveId] = useState<string | null>(practices[0]?.id ?? null);
 
   return (
     <section className={cn(h.inner, "pb-64 md:pb-96 xl:pb-0")}>

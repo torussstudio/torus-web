@@ -18,16 +18,15 @@ export function useScrollTrigger(
   callback: (
     gsap: typeof import("gsap").gsap,
     ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger
-  ) => void,
+  ) => void | (() => void),
   scope?: Scope,
   deps: DependencyList = []
 ) {
   const ctx = useRef<gsap.Context | null>(null);
 
   useLayoutEffect(() => {
-    ctx.current = gsap.context(() => {
-      callback(gsap, ScrollTrigger);
-    }, scope);
+    // a function returned from the callback runs when the context reverts
+    ctx.current = gsap.context(() => callback(gsap, ScrollTrigger), scope);
 
     return () => {
       ctx.current?.revert();

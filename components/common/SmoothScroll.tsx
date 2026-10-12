@@ -22,7 +22,12 @@ export default function SmoothScroll() {
       });
 
       lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add(tick);
+      // prioritize = true: Lenis scrolls at the START of each GSAP tick,
+      // before tweens write styles. Added at the end (the default), its
+      // scrollTo ran right after those writes and forced a layout every
+      // frame while scrolling, which kept the main thread busy and delayed
+      // wheel input.
+      gsap.ticker.add(tick, false, true);
       gsap.ticker.lagSmoothing(0);
     };
 

@@ -57,7 +57,7 @@ export default function StudioHero() {
       {/* IMAGE */}
       <div className="px-24 pt-40 md:px-40 md:py-56 xl:p-0 xl:pt-59 xl:pb-84">
         <Media
-          media={{ src: "/images/heroimage.avif", alt: "Inside the Toruss studio" }}
+          media={{ src: "/images/home/hero-studio.avif", alt: "Inside the Toruss studio" }}
           className="aspect-[4/3] h-auto md:aspect-[742/822] xl:aspect-auto xl:h-822"
           sizes="(max-width: 767px) 100vw, 40vw"
           priority
