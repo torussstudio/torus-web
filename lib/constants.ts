@@ -869,7 +869,7 @@ export const exultPartnership = keepHyphenatedWords({
     "That is where Toruss became part of the journey, not only as a design partner, but as a strategic creative partner.",
   body:
     "Our partnership grew across branding, website, content, SEO, social media, event marketing, email campaigns, product UI/UX, pitch decks, infographics, explainer videos, and client-facing design support.",
-  image: { video: "/videos/exult/partnership.mp4", alt: "Partnership sketch" } as ArchiveMedia,
+  image: { video: "/videos/exult/partnershipp.mp4", alt: "Partnership sketch" } as ArchiveMedia,
 });
 
 export const exultIdentity = keepHyphenatedWords({

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { ArchiveMedia } from "@/lib/constants";
+import LazyVideo from "./LazyVideo";
 
 type Props = {
   media: ArchiveMedia;
@@ -12,6 +13,9 @@ type Props = {
 /**
  * Image box for the archive page. Plays `media.video` when set, shows the
  * photo when `media.src` is set, otherwise a labelled placeholder of the same size.
+ *
+ * ArchiveReveal puts the photo / video on its own GPU layer only while the
+ * clip-path reveal runs (see there), then removes it again.
  */
 export default function Media({
   media,
@@ -31,15 +35,10 @@ export default function Media({
       )}
     >
       {media.video ? (
-        <video
+        <LazyVideo
           src={media.video}
           poster={media.src}
-          aria-label={media.alt}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+          label={media.alt}
           className="absolute inset-0 h-full w-full object-cover"
         />
       ) : media.src ? (

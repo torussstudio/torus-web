@@ -14,7 +14,7 @@ export default function StudioNote() {
     >
       <div className="md:py-56 xl:py-0">
         <Media
-          media={{ src: "/images/home/inside-studio.avif", alt: "Inside the Toruss studio" }}
+          media={{ src: "/images/home/insidestudio.avif", alt: "Inside the Toruss studio" }}
           className="aspect-[4/3] h-auto md:aspect-[812/1054] xl:aspect-auto xl:h-1054"
           sizes="(max-width: 767px) 100vw, 42vw"
         />

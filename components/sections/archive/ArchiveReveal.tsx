@@ -50,15 +50,29 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
       ScrollTrigger.batch(media, {
         start: "top 88%",
         once: true,
-        onEnter: (els) =>
-          gsap.fromTo(els, { autoAlpha: 0, clipPath: "inset(0% 0% 12% 0%)" }, {
+        onEnter: (els) => {
+          // The photo / video gets its own GPU layer only while the clip-path
+          // animates. Without it every frame of the reveal repainted and
+          // re-rasterised the full-size image (scroll stutter). Keeping the
+          // layer permanently left thin horizontal tile seams on some images,
+          // so it is removed once the reveal is done.
+          const inner = els.flatMap((el) => Array.from(el.children));
+          gsap.set(inner, { willChange: "transform" });
+
+          return gsap.fromTo(els, { autoAlpha: 0, clipPath: "inset(0% 0% 12% 0%)" }, {
             autoAlpha: 1,
             clipPath: "inset(0% 0% 0% 0%)",
             duration: 1.2,
             ease: "power3.out",
             stagger: 0.1,
             overwrite: true,
-          }),
+            onComplete: () => {
+              // "none" (not clearProps): the CSS start state would hide it again
+              gsap.set(els, { clipPath: "none" });
+              gsap.set(inner, { clearProps: "willChange" });
+            },
+          });
+        },
       });
 
       return () => root?.classList.remove("reveal-armed");
