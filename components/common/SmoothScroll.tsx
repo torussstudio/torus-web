@@ -1,25 +1,32 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export default function SmoothScroll() {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | undefined>(undefined);
+
   useEffect(() => {
-    let lenis: Lenis | undefined;
+    // Every page opens at the top (also on back / forward), instead of the
+    // browser restoring an old position.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
     // Lenis runs on GSAP's ticker (one shared animation loop) and tells
     // ScrollTrigger about every smooth-scroll step, so scrub / parallax
     // animations stay in sync instead of running on a separate loop.
     const tick = (time: number) => {
-      lenis?.raf(time * 1000); // gsap ticker time is in seconds
+      lenisRef.current?.raf(time * 1000); // gsap ticker time is in seconds
     };
 
     const init = () => {
-      lenis = new Lenis({
+      const lenis = new Lenis({
         duration: 1.2,
         smoothWheel: true,
       });
+      lenisRef.current = lenis;
 
       lenis.on("scroll", ScrollTrigger.update);
       // prioritize = true: Lenis scrolls at the START of each GSAP tick,
@@ -34,8 +41,8 @@ export default function SmoothScroll() {
     const cleanup = () => {
       gsap.ticker.remove(tick);
       gsap.ticker.lagSmoothing(500, 33); // GSAP default
-      lenis?.destroy();
-      lenis = undefined;
+      lenisRef.current?.destroy();
+      lenisRef.current = undefined;
     };
 
     // Idle time-il init cheyyuka, main thread block cheyyathe
@@ -54,6 +61,23 @@ export default function SmoothScroll() {
       cleanup();
     };
   }, []);
+
+  // New page -> jump to the top. Lenis keeps its own (animated) scroll
+  // position, so without this it carried the old page's position over and
+  // the new page opened in the middle or at the bottom.
+  useLayoutEffect(() => {
+    const lenis = lenisRef.current;
+    if (lenis) {
+      lenis.stop(); // cancel any smooth scroll still running
+      lenis.scrollTo(0, { immediate: true, force: true });
+      lenis.start();
+    }
+    window.scrollTo(0, 0);
+
+    // new page's ScrollTriggers measure from the top
+    const id = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
 
   return null;
 }
