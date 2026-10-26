@@ -8,21 +8,25 @@ import ArchiveSection from "@/components/sections/home/Archive";
 import DisciplineSection from "@/components/sections/home/DisciplineSection";
 import AreasOfPractice from "@/components/sections/home/Areas";
 import StudioNote from "@/components/sections/home/StudioNote";
+import HomeScrollFx from "@/components/sections/home/HomeScrollFx";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
 
-      {/* same design scale + scroll reveals as the archive pages */}
+      {/* same design scale + scroll reveals as the archive pages,
+          plus the home-only scrubbed scroll animations */}
       <ArchiveReveal>
-        <StudioHero />
-        <Artwork />
-        <CreativeGrid />
-        <ArchiveSection />
-        <DisciplineSection />
-        <AreasOfPractice />
-        <StudioNote />
+        <HomeScrollFx>
+          <StudioHero />
+          <Artwork />
+          <CreativeGrid />
+          <ArchiveSection />
+          <DisciplineSection />
+          <AreasOfPractice />
+          <StudioNote />
+        </HomeScrollFx>
       </ArchiveReveal>
 
       <Footer />

@@ -22,9 +22,14 @@ export default function SmoothScroll() {
     };
 
     const init = () => {
+      // lerp (not a fixed duration): every wheel tick eases toward the
+      // target at the same rate, so long / fast scrolls glide evenly
+      // instead of speeding up and stopping in steps.
       const lenis = new Lenis({
-        duration: 1.2,
+        lerp: 0.08,
         smoothWheel: true,
+        wheelMultiplier: 0.9,
+        touchMultiplier: 1.2,
       });
       lenisRef.current = lenis;
 

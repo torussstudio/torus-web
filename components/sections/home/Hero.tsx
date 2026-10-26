@@ -5,6 +5,7 @@ import Lines from "@/components/sections/archive/Lines";
 import Media from "@/components/sections/archive/Media";
 import { LongArrow, TurnLink } from "./Icons";
 import { h } from "./styles";
+import HeroIntro from "./HeroIntro";
 
 const heading = [
   "A multidimensional",
@@ -21,13 +22,16 @@ export default function StudioHero() {
         "grid grid-cols-1 border-b md:grid-cols-[1.3fr_1fr] xl:grid-cols-[1026fr_742fr_152fr]",
       )}
     >
+      {/* page load-in: band → full cover → photo flies in → text rises */}
+      <HeroIntro />
+
       {/* TEXT */}
-      <div className="px-24 pt-40 md:px-40 md:py-56 xl:pt-44 xl:pr-40 xl:pb-0 xl:pl-152">
-        <h1 data-reveal className={h.h2}>
+      <div data-fx="hero-text" className="px-24 pt-40 md:px-40 md:py-56 xl:pt-44 xl:pr-40 xl:pb-0 xl:pl-152">
+        <h1 data-intro="title" className={h.h2}>
           <Lines lines={heading} />
         </h1>
 
-        <p data-reveal className={cn(h.body, "mt-20 xl:mt-55 xl:max-w-700")}>
+        <p data-intro="item" className={cn(h.body, "mt-20 xl:mt-55 xl:max-w-700")}>
           We work with businesses, founders, and institutions across branding,
           strategy, digital experiences, communication, art, and creative
           direction, bringing different disciplines together to solve complex
@@ -36,7 +40,7 @@ export default function StudioHero() {
 
         <ul className="mt-32 max-w-[409px] xl:mt-39 xl:max-w-409">
           {links.map((link) => (
-            <li key={link.number} data-reveal className="border-b">
+            <li key={link.number} data-intro="item" className="border-b">
               <Link
                 href={link.href}
                 className={cn(h.body, "group flex h-56 items-center xl:h-72")}
@@ -49,13 +53,13 @@ export default function StudioHero() {
           ))}
         </ul>
 
-        <div data-reveal className="mt-36 xl:mt-73">
+        <div data-intro="item" className="mt-36 xl:mt-73">
           <TurnLink href="/studio">Explore the studio</TurnLink>
         </div>
       </div>
 
       {/* IMAGE */}
-      <div className="px-24 pt-40 md:px-40 md:py-56 xl:p-0 xl:pt-59 xl:pb-84">
+      <div data-fx="hero-media" className="px-24 pt-40 md:px-40 md:py-56 xl:p-0 xl:pt-59 xl:pb-84">
         <Media
           media={{ src: "/images/home/hero-studio.avif", alt: "Inside the Toruss studio" }}
           className="aspect-[4/3] h-auto md:aspect-[742/822] xl:aspect-auto xl:h-822"
@@ -73,6 +77,7 @@ export default function StudioHero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
+            data-intro="item"
             className="text-[#38362e]/60 transition-colors duration-200 hover:text-[#38362e]"
           >
             <Icon className="size-22 xl:size-28" />

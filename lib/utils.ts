@@ -28,3 +28,18 @@ export function slugify(text: string): string {
     .replace(/\s+/g, "-")
     .replace(/[^\w-]+/g, "");
 }
+/**
+ * SplitText treats every <br> as a forced line break, even the ones the
+ * <Lines> component hides below xl (`hidden xl:inline`). Remove the hidden
+ * ones before splitting so phone / tablet lines wrap naturally.
+ * Returns a function that puts the original markup back.
+ */
+export function dropHiddenBreaks(els: HTMLElement[]) {
+  const originals = els.map((el) => el.innerHTML);
+  els.forEach((el) =>
+    el.querySelectorAll("br").forEach((br) => {
+      if (getComputedStyle(br).display === "none") br.remove();
+    }),
+  );
+  return () => els.forEach((el, i) => (el.innerHTML = originals[i]));
+}

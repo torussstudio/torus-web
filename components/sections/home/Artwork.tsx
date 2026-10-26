@@ -14,7 +14,7 @@ const caption = cn(
 
 export default function StudioSpaces() {
   return (
-    <section className={cn(h.inner, "pt-40 pb-64 md:pt-56 xl:pt-74 xl:pb-211")}>
+    <section data-fx="spaces" className={cn(h.inner, "pt-40 pb-64 md:pt-56 xl:pt-74 xl:pb-211")}>
       {/* PHOTO ROW — auto-scrolls sideways in a loop (pauses on hover / touch) */}
       <AutoScrollRow className="gap-16 px-24 md:gap-24 md:px-40 xl:gap-48 xl:px-0">
         {spaces.map((space) => (

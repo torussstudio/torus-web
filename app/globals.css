@@ -82,3 +82,12 @@ html.lenis body {
   opacity: 0;
   clip-path: inset(0% 0% 12% 0%);
 }
+
+/* Home hero intro cover (HeroIntro.tsx): if its JavaScript never runs, hide
+   the cover after 6s so the page is never stuck behind it */
+@keyframes fx-intro-failsafe {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

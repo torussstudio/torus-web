@@ -28,13 +28,20 @@ export default function ArchiveSection() {
         </p>
       </div>
 
-      {/* PROJECT ROWS */}
+      {/* PROJECT ROWS — on desktop HomeScrollFx pins this box and swaps the
+          projects with a diagonal slash wipe (the bar below is the slash) */}
+      <div data-fx="wipe" className="relative xl:overflow-hidden">
+      <span
+        data-fx="wipe-bar"
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[-25%] left-0 z-20 hidden h-[150%] w-26 bg-[#1b0f0b] opacity-0 xl:block"
+      />
       {works.map((work) => (
         <article
           key={work.title}
           className="grid grid-cols-1 border-b md:grid-cols-[1fr_1fr] xl:h-637 xl:grid-cols-[922fr_998fr]"
         >
-          <div className="px-24 pt-32 md:border-r md:px-40 md:py-48 xl:px-0 xl:pt-73 xl:pb-74 xl:pl-152">
+          <div data-fx="parallax" className="px-24 pt-32 md:border-r md:px-40 md:py-48 xl:px-0 xl:pt-73 xl:pb-74 xl:pl-152">
             <Media
               media={{ src: work.image, alt: work.title }}
               className="aspect-[692/490] h-auto xl:aspect-auto xl:h-490 xl:w-692"
@@ -79,6 +86,7 @@ export default function ArchiveSection() {
           </div>
         </article>
       ))}
+      </div>
 
       {/* EXPLORE ALL */}
       <div className="flex items-center justify-center py-48 xl:h-186 xl:py-0">

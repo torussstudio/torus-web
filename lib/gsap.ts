@@ -3,9 +3,10 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
+import { SplitText } from "gsap/SplitText";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, CustomEase);
+  gsap.registerPlugin(ScrollTrigger, CustomEase, SplitText);
 
   CustomEase.create("smoothReveal", "0.87,0,0.13,1");
 }
@@ -20,7 +21,7 @@ ScrollTrigger.defaults({
   start: "top 85%",
 });
 
-export { gsap, ScrollTrigger };
+export { gsap, ScrollTrigger, SplitText };
 export default gsap;
 
 

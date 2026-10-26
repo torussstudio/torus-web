@@ -15,12 +15,11 @@ export default function CreativeGrid() {
         "border-b px-24 pt-48 pb-64 md:px-40 md:pb-96 xl:px-128 xl:pt-0 xl:pb-145",
       )}
     >
-      <div className="grid grid-cols-1 gap-y-40 md:grid-cols-2 md:gap-x-24 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-0 xl:gap-x-25">
+      <div data-fx="cards" className="grid grid-cols-1 gap-y-40 md:grid-cols-2 md:gap-x-24 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-0 xl:gap-x-25">
         {cards.map((card, i) => (
           <article
             key={card.number}
             id={ids[i]}
-            data-reveal
             className="grid scroll-mt-120 border md:max-lg:last:col-span-2 lg:row-span-6 lg:grid-rows-subgrid"
           >
             {/* HEADER */}
@@ -41,7 +40,7 @@ export default function CreativeGrid() {
             </div>
 
             {/* IMAGE */}
-            <div className="border-b px-20 py-24 xl:px-34 xl:py-40">
+            <div data-fx="parallax" className="border-b px-20 py-24 xl:px-34 xl:py-40">
               <div
                 data-reveal="media"
                 className="relative aspect-[468/258] w-full overflow-hidden bg-[#eae6dc]"
