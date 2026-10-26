@@ -899,7 +899,11 @@ export const exultWebsite = keepHyphenatedWords({
     "Once the identity was in place, the website became Exult Global’s most important explanation tool.",
     "The brand had to speak about RPA, Power Platform, Power Automate, Power Apps, Power BI, Microsoft Fabric, low-code/no-code development, dashboards, workflow optimisation, and digital transformation. These were valuable services, but they needed to be presented in a way that business owners, decision-makers, and department heads could quickly understand.",
   ],
-  image: { src: "/images/exult/website-mockups.avif", alt: "Website design process" } as ArchiveMedia,
+image: {
+  video: "/videos/exult/exult-website-animation.mp4",
+  alt: "Exult Global website animation",
+  tone: "dark",
+} as ArchiveMedia,
   lead: "The website had to simplify this world without reducing its credibility.",
   note:
     "We worked across content structure, layout, UI/UX design, and development to create a website that was informative, structured, and easy to move through. The narrative was built to help users quickly understand what Exult Global offered, who it served, and how its solutions could help businesses automate work, improve decision-making, and reduce operational friction.",

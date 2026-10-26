@@ -31,8 +31,23 @@ export default function HeroIntro() {
   useLayoutEffect(() => {
     const cover = coverRef.current;
     if (!cover) return;
+    const introKey = "torus-home-hero-intro-seen";
+    let introSeen = false;
+    try {
+      introSeen = window.sessionStorage.getItem(introKey) === "true";
+    } catch {
+      // Keep the intro available if browser storage is disabled.
+    }
+    const markIntroSeen = () => {
+      try {
+        window.sessionStorage.setItem(introKey, "true");
+      } catch {
+        // The animation still completes when browser storage is disabled.
+      }
+    };
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       cover.style.display = "none";
+      markIntroSeen();
       return;
     }
     cover.style.animation = "none"; // JS is alive – cancel the CSS fail-safe
@@ -57,11 +72,13 @@ export default function HeroIntro() {
       window.removeEventListener("touchmove", block, opts);
       window.removeEventListener("keydown", block, opts);
     };
-    window.scrollTo(0, 0);
+    if (!introSeen) window.scrollTo(0, 0);
 
     let clone: HTMLImageElement | null = null;
     let split: SplitText | null = null;
     let restoreTitle: (() => void) | null = null;
+    let transitionFrame1 = 0;
+    let transitionFrame2 = 0;
 
     const ctx = gsap.context(() => {
       const band = cover.querySelector<HTMLElement>("[data-intro='band']");
@@ -73,6 +90,34 @@ export default function HeroIntro() {
       const items = gsap.utils.toArray<HTMLElement>("[data-intro='item']");
       const header = document.querySelector<HTMLElement>("header");
       if (!band || !label || !counter) return;
+
+      // Returning visits use a content transition instead of the full-screen
+      // first-visit hero sequence.
+      if (introSeen) {
+        cover.style.display = "none";
+        const homePage = document.querySelector<HTMLElement>("[data-home-page]");
+        if (!homePage) {
+          unlock();
+          return;
+        }
+
+        gsap.set(homePage, { autoAlpha: 0 });
+        const transition = gsap.timeline({ paused: true, onComplete: unlock });
+        transition.to(homePage, {
+          autoAlpha: 1,
+          duration: 0.55,
+          ease: "power2.out",
+          clearProps: "opacity,visibility",
+        });
+        transitionFrame1 = requestAnimationFrame(() => {
+          // Let Next, Lenis, and ScrollTrigger finish positioning the new
+          // route before revealing it, so the page doesn't jump vertically.
+          transitionFrame2 = requestAnimationFrame(() => {
+            transition.play();
+          });
+        });
+        return;
+      }
 
       // hero text waits hidden under the cover
       if (title) {
@@ -93,6 +138,7 @@ export default function HeroIntro() {
           cover.style.display = "none";
           clone?.remove();
           clone = null;
+          markIntroSeen();
           unlock();
         },
       });
@@ -192,6 +238,8 @@ export default function HeroIntro() {
       split?.revert();
       restoreTitle?.();
       clone?.remove();
+      cancelAnimationFrame(transitionFrame1);
+      cancelAnimationFrame(transitionFrame2);
       unlock();
     };
   }, []);
@@ -199,6 +247,7 @@ export default function HeroIntro() {
   return (
     <div
       ref={coverRef}
+      data-home-hero-intro
       aria-hidden="true"
       className="fixed inset-0 z-[100] overflow-hidden motion-reduce:hidden [animation:fx-intro-failsafe_0s_linear_6s_forwards]"
       style={{ backgroundColor: PAPER }}
@@ -222,3 +271,4 @@ export default function HeroIntro() {
     </div>
   );
 }
+

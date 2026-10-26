@@ -12,7 +12,7 @@ import HomeScrollFx from "@/components/sections/home/HomeScrollFx";
 
 export default function Home() {
   return (
-    <main>
+    <main data-home-page>
       <Navbar />
 
       {/* same design scale + scroll reveals as the archive pages,

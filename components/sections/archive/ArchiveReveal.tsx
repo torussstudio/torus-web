@@ -21,8 +21,26 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) return;
 
-      const text = gsap.utils.toArray<HTMLElement>("[data-reveal]:not([data-reveal='media'])");
-      const media = gsap.utils.toArray<HTMLElement>("[data-reveal='media']");
+      const root = rootRef.current;
+      let isHomeReturn = Boolean(root?.querySelector("[data-home-hero-intro]"));
+      try {
+        isHomeReturn =
+          isHomeReturn && window.sessionStorage.getItem("torus-home-hero-intro-seen") === "true";
+      } catch {
+        isHomeReturn = false;
+      }
+      if (isHomeReturn) root?.classList.add("home-hero-return");
+
+      const isHomeHeroReveal = (el: HTMLElement) =>
+        Boolean(el.closest("[data-fx='hero-text'], [data-fx='hero-media']"));
+      const text = gsap
+        .utils
+        .toArray<HTMLElement>("[data-reveal]:not([data-reveal='media'])")
+        .filter((el) => !isHomeReturn || !isHomeHeroReveal(el));
+      const media = gsap
+        .utils
+        .toArray<HTMLElement>("[data-reveal='media']")
+        .filter((el) => !isHomeReturn || !isHomeHeroReveal(el));
 
       // Hidden start state comes from CSS (.reveal-armed in globals.css),
       // not gsap.set. gsap.set on every element made GSAP parse each
@@ -30,7 +48,6 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
       // temporary style write for hidden ones) one by one, forcing ~60
       // style recalcs on load. Now GSAP only touches an element when its
       // batch enters the viewport.
-      const root = rootRef.current;
       root?.classList.add("reveal-armed");
 
       ScrollTrigger.batch(text, {
@@ -75,7 +92,10 @@ export default function ArchiveReveal({ children }: { children: ReactNode }) {
         },
       });
 
-      return () => root?.classList.remove("reveal-armed");
+      return () => {
+        root?.classList.remove("reveal-armed");
+        root?.classList.remove("home-hero-return");
+      };
     },
     rootRef,
   );
