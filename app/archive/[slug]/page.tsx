@@ -8,13 +8,19 @@ import ArchiveReveal from "@/components/sections/archive/ArchiveReveal";
 import NextProjectSection from "@/components/sections/archive/NextProjectSection";
 import TsaProject from "@/components/sections/archive/tsa/TsaProject";
 import ExultProject from "@/components/sections/archive/exult/ExultProject";
+import MedtechProject from "@/components/sections/archive/medtech/MedtechProject";
 import { archiveProjects } from "@/lib/constants";
 
 // slug -> page body. Add a line here when a new project page is built.
 const projectPages: Record<string, ComponentType<{ index: string }>> = {
   "the-spanish-alchemist": TsaProject,
   "exult-global": ExultProject,
+  medtech: MedtechProject,
 };
+
+// listed in the navbar, but kept out of "Next Project" until the
+// case study + thumbnail are ready. Remove the slug here when done.
+const hiddenFromNext = new Set(["medtech"]);
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -40,7 +46,9 @@ export default async function ArchiveProjectPage({ params }: Props) {
   if (position === -1 || !Project) notFound();
 
   const index = String(position + 1).padStart(2, "0");
-  const others = archiveProjects.filter((p) => p.slug !== slug && projectPages[p.slug]);
+  const others = archiveProjects.filter(
+    (p) => p.slug !== slug && projectPages[p.slug] && !hiddenFromNext.has(p.slug)
+  );
 
   return (
     <main>
