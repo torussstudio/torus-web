@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { medtechJourney as d } from "@/lib/constants";
 import Lines from "../Lines";
-import Media from "../Media";
+import { WideImageRow } from "../ImageRows";
 import { t } from "../styles";
 
 /**
@@ -38,7 +38,7 @@ export default function JourneySection() {
             ))}
 
             <p data-reveal className={cn(t.lead, "mt-32 xl:mt-56")}>
-              {d.highlight.text} <span className="text-[#7b2630]">{d.highlight.accent}</span>
+              {d.highlight.text} <span className={t.accent}>{d.highlight.accent}</span>
             </p>
 
             <p data-reveal className={cn(t.body, "mt-28 xl:mt-56")}>
@@ -49,16 +49,15 @@ export default function JourneySection() {
       </div>
 
       {/* row 2 — wide image */}
-      <div className="border-t p-16 md:p-24 xl:p-56">
-        <Media
-          media={d.image}
-          className="aspect-[1808/945] h-auto xl:aspect-auto xl:h-945"
-          sizes="100vw"
-        />
-      </div>
+      <WideImageRow
+        media={d.image}
+        className="border-t xl:p-56"
+        aspect="aspect-[1808/945]"
+        imageClassName="xl:h-945"
+      />
 
       {/* row 3 — three equal columns */}
-      <div className="grid grid-cols-1 border-t md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3">
         {d.columns.map((text, i) => (
           <div
             key={i}

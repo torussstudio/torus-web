@@ -1,15 +1,16 @@
 import { cn } from "@/lib/utils";
 import { medtechReflections as d } from "@/lib/constants";
-import Lines from "../Lines";
+import Accented from "../Accented";
+import Statement from "../Statement";
 import { t } from "../styles";
 
 /**
  * MedTech "Reflections" (MedTech-only layout — not the shared ../ReflectionsSection)
- *   ┌──────────(──┬────────────────────────────┐
- *   │ Reflections ) │ lead + note              │
- *   ├──────────(──┼────────────────────────────┤
- *   │ team         │ leadIn + statement         │
- *   └──────────────┴────────────────────────────┘
+ *   ┌─────────────(─┬────────────────────────────┐
+ *   │ Reflections  )│ lead + note                │
+ *   ├───────────────┼────────────────────────────┤
+ *   │ team          │ leadIn + statement         │
+ *   └───────────────┴────────────────────────────┘
  */
 export default function ReflectionsSection() {
   return (
@@ -32,15 +33,7 @@ export default function ReflectionsSection() {
             {d.lead}
           </p>
           <p data-reveal className={cn(t.body, "mt-24 xl:mt-74 xl:max-w-780")}>
-            {d.note.map((p, i) =>
-              p.accent ? (
-                <span key={i} className="text-[#7b2630]">
-                  {p.text}
-                </span>
-              ) : (
-                <span key={i}>{p.text}</span>
-              ),
-            )}
+            <Accented parts={d.note} />
           </p>
         </div>
 
@@ -56,15 +49,7 @@ export default function ReflectionsSection() {
           <p data-reveal className={cn(t.body, "text-[#999688]")}>
             {d.leadIn}
           </p>
-          <p
-            data-reveal
-            className="mt-20 text-[length:clamp(26px,5.4vw,40px)] leading-[1.25] tracking-[0.02em] xl:mt-68 xl:text-[length:max(26px,calc(var(--spacing)*58))]"
-          >
-            <span className="md:hidden">{d.statement.join(" ")}</span>
-            <span className="hidden md:block">
-              <Lines lines={d.statement} />
-            </span>
-          </p>
+          <Statement lines={d.statement} className={cn(t.statement, "mt-20 xl:mt-68")} />
         </div>
       </div>
     </section>

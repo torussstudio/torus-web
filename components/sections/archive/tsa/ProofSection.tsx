@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { tsaProof as d } from "@/lib/constants";
 import Lines from "../Lines";
 import Media from "../Media";
+import IndexTag from "../IndexTag";
 import { t } from "../styles";
 
 export default function ProofSection() {
@@ -30,9 +31,7 @@ export default function ProofSection() {
               <span className="text-[18px] leading-[1.2] tracking-[0.05em] xl:text-[length:max(18px,calc(var(--spacing)*36))]">
                 {point}
               </span>
-              <span className="text-[11px] whitespace-pre tracking-[0.05em] xl:text-[length:max(11px,calc(var(--spacing)*20))]">
-                {`[ ${String(i + 1).padStart(2, "0")} ]`}
-              </span>
+              <IndexTag index={i} className={t.tagList} />
             </li>
           ))}
         </ul>

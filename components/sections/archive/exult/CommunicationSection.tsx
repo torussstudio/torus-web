@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { exultCommunication as d } from "@/lib/constants";
 import Lines from "../Lines";
 import Media from "../Media";
+import IndexTag from "../IndexTag";
 import { t } from "../styles";
 
 export default function CommunicationSection() {
@@ -47,7 +48,7 @@ export default function CommunicationSection() {
                 >
                   {/* index + platform (one line on phone) */}
                   <span className={cn(t.body, "col-span-2 mb-8 flex gap-16 md:col-span-1 md:mb-0 md:contents")}>
-                    <span className="whitespace-pre xl:pl-24">{`[ ${String(i + 1).padStart(2, "0")} ]`}</span>
+                    <IndexTag index={i} className="xl:pl-24" />
                     <span className="xl:w-118 xl:text-center">{item.name}</span>
                   </span>
 

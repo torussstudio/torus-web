@@ -11,16 +11,19 @@ export function WideImageRow({
   media,
   className = "xl:pt-44 xl:pb-41",
   imageClassName = "xl:h-1052",
+  aspect = "aspect-[1820/1052]",
 }: {
   media: ArchiveMedia;
   className?: string;
   imageClassName?: string;
+  /** phone/tablet shape of the image */
+  aspect?: string;
 }) {
   return (
     <div className={cn(t.inner, "border-b p-16 md:p-24 xl:px-50", className)}>
       <Media
         media={media}
-        className={cn("aspect-[1820/1052] h-auto xl:aspect-auto", imageClassName)}
+        className={cn(aspect, "h-auto xl:aspect-auto", imageClassName)}
         sizes="(max-width: 1023px) 100vw, 95vw"
       />
     </div>
@@ -32,10 +35,14 @@ export function PairImageRow({
   items,
   className = "xl:pt-51 xl:pb-51",
   imageClassName = "xl:h-1084",
+  aspect = "aspect-[855/1084]",
 }: {
   items: ArchiveMedia[];
+  /** padding of each half; overrides the default side padding when it sets it */
   className?: string;
   imageClassName?: string;
+  /** phone/tablet shape of the images */
+  aspect?: string;
 }) {
   return (
     <div className={cn(t.inner, "grid grid-cols-1 border-b md:grid-cols-2")}>
@@ -44,13 +51,13 @@ export function PairImageRow({
           key={i}
           className={cn(
             "p-16 md:p-24",
-            className,
             i === 0 ? "xl:pr-54 xl:pl-51" : "border-t md:border-t-0 md:border-l xl:pr-51 xl:pl-54",
+            className,
           )}
         >
           <Media
             media={img}
-            className={cn("aspect-[855/1084] h-auto xl:aspect-auto", imageClassName)}
+            className={cn(aspect, "h-auto xl:aspect-auto", imageClassName)}
             sizes="(max-width: 1023px) 100vw, 45vw"
           />
         </div>
@@ -125,8 +132,8 @@ export function TextColumnsRow({
   leftClassName = "xl:pl-151 xl:*:max-w-682",
   rightClassName = "xl:pl-145 xl:*:max-w-593",
 }: {
-  left: string;
-  right: string;
+  left: string | string[];
+  right: string | string[];
   className?: string;
   leftClassName?: string;
   rightClassName?: string;
@@ -134,15 +141,24 @@ export function TextColumnsRow({
   return (
     <div className={cn(t.inner, "grid grid-cols-1 border-b md:grid-cols-2")}>
       <div className={cn("px-24 py-36 md:px-40 md:py-48 xl:pr-40", className, leftClassName)}>
-        <p data-reveal className={t.body}>
-          {left}
-        </p>
+        <Paragraphs text={left} />
       </div>
       <div className={cn("border-t px-24 py-36 md:border-t-0 md:border-l md:px-40 md:py-48 xl:pr-40", className, rightClassName)}>
-        <p data-reveal className={t.body}>
-          {right}
-        </p>
+        <Paragraphs text={right} />
       </div>
     </div>
+  );
+}
+
+function Paragraphs({ text }: { text: string | string[] }) {
+  const paras = Array.isArray(text) ? text : [text];
+  return (
+    <>
+      {paras.map((p, i) => (
+        <p key={i} data-reveal className={cn(t.body, i > 0 && "mt-16 xl:mt-26")}>
+          {p}
+        </p>
+      ))}
+    </>
   );
 }

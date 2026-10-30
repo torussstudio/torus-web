@@ -2911,13 +2911,13 @@ export const archiveProjects: ArchiveProjectSummary[] = [
     thumb: { src: "/images/home/archive-exult.avif", alt: "Exult Global" },
   },
   {
-    // TODO: add the thumbnail once the MedTech images are in
+    // TODO: add `src: "/images/medtech/hero.avif"` to thumb once the image is in
     slug: "medtech",
     title: "MedTech Corporation",
     year: "2024",
     country: "Qatar",
     category: "Branding / Website / Content Strategy / Events",
-    thumb: { src: "/images/medtech/hero.avif", alt: "MedTech Corporation" },
+    thumb: { alt: "MedTech Corporation" },
   },
 ];
 

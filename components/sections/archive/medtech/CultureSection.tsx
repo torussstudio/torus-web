@@ -1,25 +1,10 @@
 import { cn } from "@/lib/utils";
 import { medtechCulture as d } from "@/lib/constants";
+import Accented from "../Accented";
+import IndexTag from "../IndexTag";
 import Lines from "../Lines";
 import Media from "../Media";
 import { t } from "../styles";
-
-// renders text parts, `accent` parts in maroon
-function Accented({ parts }: { parts: { text: string; accent?: boolean }[] }) {
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.accent ? (
-          <span key={i} className="text-[#7b2630]">
-            {p.text}
-          </span>
-        ) : (
-          <span key={i}>{p.text}</span>
-        ),
-      )}
-    </>
-  );
-}
 
 /**
  * MedTech "Culture"
@@ -58,15 +43,12 @@ export default function CultureSection() {
 
       {/* row 2 — centred lead */}
       <div className="border-b px-24 py-40 text-center md:px-40 md:py-56 xl:py-96">
-        <p
-          data-reveal
-          className="text-[19px] leading-[1.35] tracking-[0.05em] xl:text-[length:max(17px,calc(var(--spacing)*34))]"
-        >
+        <p data-reveal className={t.intro}>
           {d.lead}
         </p>
       </div>
 
-      {/* row 3 — two calendars */}
+      {/* row 3 — two calendars (image + text, so not a PairImageRow) */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2">
         {d.calendars.map((c, i) => (
           <div
@@ -82,9 +64,11 @@ export default function CultureSection() {
               sizes="(max-width: 767px) 100vw, 45vw"
             />
 
-            <span className="mt-24 block text-[10px] uppercase tracking-[0.08em] text-[#999688] whitespace-pre xl:mt-54 xl:text-[length:max(10px,calc(var(--spacing)*18))]">
-              {`[ ${String(i + 1).padStart(2, "0")} ]  ${c.tag}`}
-            </span>
+            <IndexTag
+              index={i}
+              suffix={c.tag}
+              className={cn(t.tag, "mt-24 uppercase tracking-[0.08em] xl:mt-54")}
+            />
 
             <p data-reveal className={cn(t.body, "mt-12 xl:mt-32 xl:max-w-710")}>
               <Accented parts={c.text} />

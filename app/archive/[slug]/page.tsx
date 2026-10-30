@@ -18,10 +18,6 @@ const projectPages: Record<string, ComponentType<{ index: string }>> = {
   medtech: MedtechProject,
 };
 
-// listed in the navbar, but kept out of "Next Project" until the
-// case study + thumbnail are ready. Remove the slug here when done.
-const hiddenFromNext = new Set(["medtech"]);
-
 type Props = { params: Promise<{ slug: string }> };
 
 // only the projects above exist; any other /archive/<slug> is a 404
@@ -46,9 +42,7 @@ export default async function ArchiveProjectPage({ params }: Props) {
   if (position === -1 || !Project) notFound();
 
   const index = String(position + 1).padStart(2, "0");
-  const others = archiveProjects.filter(
-    (p) => p.slug !== slug && projectPages[p.slug] && !hiddenFromNext.has(p.slug)
-  );
+  const others = archiveProjects.filter((p) => p.slug !== slug && projectPages[p.slug]);
 
   return (
     <main>

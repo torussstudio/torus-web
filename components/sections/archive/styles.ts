@@ -28,6 +28,23 @@ export const t = {
   // large Clash statements — "how to make people believe…"
   lead: "text-[length:clamp(22px,4.4vw,32px)] leading-[1.2] tracking-[0.05em] md:text-[length:clamp(24px,3vw,32px)] xl:text-[length:max(22px,calc(var(--spacing)*49))]",
 
+  // slightly larger intro line beside a heading — "The brand story video extended…"
+  intro:
+    "text-[19px] leading-[1.35] tracking-[0.05em] xl:text-[length:max(17px,calc(var(--spacing)*34))]",
+
+  // big closing statement — "Precise enough to feel credible, …"
+  statement:
+    "text-[length:clamp(26px,5.4vw,40px)] leading-[1.25] tracking-[0.02em] xl:text-[length:max(26px,calc(var(--spacing)*58))]",
+
+  // highlighted words inside copy (MedTech maroon)
+  accent: "text-[#7b2630]",
+
+  // small grey "[ 01 ]" tag above a card (MedTech)
+  tag: "block text-[10px] tracking-[0.05em] text-[#999688] xl:text-[length:max(10px,calc(var(--spacing)*18))]",
+
+  // "[ 01 ]" at the end of a bordered list row (Exult content, TSA proof)
+  tagList: "text-[11px] tracking-[0.05em] xl:text-[length:max(11px,calc(var(--spacing)*20))]",
+
   // centred full-width wrapper (design scales up to 2560px wide screens)
   inner: "mx-auto w-full max-w-[2560px]",
 

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { medtechOutcome as d } from "@/lib/constants";
 import Lines from "../Lines";
 import Media from "../Media";
+import { TextColumnsRow, WideImageRow } from "../ImageRows";
 import { t } from "../styles";
 
 /**
@@ -35,10 +36,7 @@ export default function OutcomeSection() {
             <h2 data-reveal className={cn(t.h2, "mt-12 xl:mt-28")}>
               <Lines lines={d.heading} />
             </h2>
-            <p
-              data-reveal
-              className="mt-24 text-[19px] leading-[1.35] tracking-[0.05em] xl:mt-74 xl:max-w-770 xl:text-[length:max(17px,calc(var(--spacing)*34))]"
-            >
+            <p data-reveal className={cn(t.intro, "mt-24 xl:mt-74 xl:max-w-770")}>
               {d.intro}
             </p>
           </div>
@@ -46,28 +44,21 @@ export default function OutcomeSection() {
       </div>
 
       {/* row 2 — left | right */}
-      <div className="grid grid-cols-1 border-b md:grid-cols-2">
-        <div className="px-24 py-36 md:px-40 md:py-56 xl:pt-126 xl:pr-80 xl:pb-122 xl:pl-152">
-          <p data-reveal className={cn(t.body, "xl:max-w-672")}>
-            {d.left}
-          </p>
-        </div>
-
-        <div className="border-t px-24 py-36 md:border-t-0 md:border-l md:px-40 md:py-56 xl:pt-126 xl:pr-80 xl:pb-122 xl:pl-148">
-          <p data-reveal className={cn(t.body, "xl:max-w-600")}>
-            {d.right}
-          </p>
-        </div>
-      </div>
+      <TextColumnsRow
+        left={d.left}
+        right={d.right}
+        className="md:py-56 xl:pt-126 xl:pb-122"
+        leftClassName="xl:pl-152 xl:*:max-w-672"
+        rightClassName="xl:pl-148 xl:*:max-w-600"
+      />
 
       {/* row 3 — wide collage */}
-      <div className="border-b p-16 md:p-24 xl:px-50 xl:pt-64 xl:pb-66">
-        <Media
-          media={d.collage}
-          className="aspect-[1820/864] h-auto xl:aspect-auto xl:h-864"
-          sizes="100vw"
-        />
-      </div>
+      <WideImageRow
+        media={d.collage}
+        className="xl:pt-64 xl:pb-66"
+        aspect="aspect-[1820/864]"
+        imageClassName="xl:h-864"
+      />
     </section>
   );
 }

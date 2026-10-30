@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 import { medtechProfile as d } from "@/lib/constants";
+import IndexTag from "../IndexTag";
 import Lines from "../Lines";
 import Media from "../Media";
+import { PairImageRow } from "../ImageRows";
+import SideLabel from "../SideLabel";
 import { t } from "../styles";
 
 /**
@@ -24,21 +27,14 @@ export default function ProfileSection() {
     <section className={t.inner}>
       {/* row 1 — label | heading + intro | body */}
       <div className="grid grid-cols-1 border-b xl:grid-cols-[272fr_1648fr]">
-        <div className="flex items-center px-24 pt-48 md:px-40 md:pt-64 xl:justify-center xl:border-r xl:p-0">
-          <span className={cn(t.label, "xl:rotate-180 xl:[writing-mode:vertical-rl]")}>
-            {d.label}
-          </span>
-        </div>
+        <SideLabel label={d.label} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[852fr_796fr]">
           <div className="px-24 pt-14 md:px-40 md:py-64 xl:pt-146 xl:pr-0 xl:pb-146 xl:pl-98">
             <h2 data-reveal className={t.h2}>
               <Lines lines={d.heading} />
             </h2>
-            <p
-              data-reveal
-              className="mt-24 text-[19px] leading-[1.35] tracking-[0.05em] xl:mt-70 xl:max-w-610 xl:text-[length:max(17px,calc(var(--spacing)*34))]"
-            >
+            <p data-reveal className={cn(t.intro, "mt-24 xl:mt-70 xl:max-w-610")}>
               {d.intro}
             </p>
           </div>
@@ -83,9 +79,7 @@ export default function ProfileSection() {
                   i % 4 === 0 ? "md:border-l-0 md:pl-0" : "md:border-l md:pl-24 xl:pl-38",
                 )}
               >
-                <span className="block text-[10px] tracking-[0.05em] text-[#999688] whitespace-pre xl:text-[length:max(10px,calc(var(--spacing)*18))]">
-                  {`[ ${String(i + 1).padStart(2, "0")} ]`}
-                </span>
+                <IndexTag index={i} className={t.tag} />
                 <p className="mt-16 text-[16px] leading-[1.35] tracking-[0.05em] xl:mt-84 xl:max-w-340 xl:text-[length:max(15px,calc(var(--spacing)*30))]">
                   {point}
                 </p>
@@ -96,20 +90,12 @@ export default function ProfileSection() {
       </div>
 
       {/* row 3 — two images side by side */}
-      <div className="grid grid-cols-1 border-b md:grid-cols-2">
-        {d.images.map((img, i) => (
-          <div
-            key={i}
-            className={cn("p-16 md:p-24 xl:p-52", i > 0 && "border-t md:border-t-0 md:border-l")}
-          >
-            <Media
-              media={img}
-              className="aspect-[856/1000] h-auto xl:aspect-auto xl:h-1000"
-              sizes="(max-width: 767px) 100vw, 45vw"
-            />
-          </div>
-        ))}
-      </div>
+      <PairImageRow
+        items={d.images}
+        className="xl:p-52"
+        aspect="aspect-[856/1000]"
+        imageClassName="xl:h-1000"
+      />
 
       {/* row 4 — THE INTENTION */}
       <div className="grid grid-cols-1 border-b px-24 py-48 md:grid-cols-[1fr_2fr] md:px-40 md:py-64 xl:grid-cols-[824fr_1096fr] xl:px-0 xl:pt-116 xl:pb-124">

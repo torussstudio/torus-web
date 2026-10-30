@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 import { medtechCollateral as d } from "@/lib/constants";
+import Accented from "../Accented";
 import Lines from "../Lines";
 import Media from "../Media";
+import { TrioImageRow } from "../ImageRows";
+import Statement from "../Statement";
 import { t } from "../styles";
 
 /**
@@ -33,10 +36,7 @@ export default function CollateralSection() {
         </div>
 
         <div className="px-24 pt-24 pb-48 md:px-40 md:py-64 xl:pt-170 xl:pr-120 xl:pb-0 xl:pl-0">
-          <p
-            data-reveal
-            className="text-[19px] leading-[1.35] tracking-[0.05em] xl:max-w-760 xl:text-[length:max(17px,calc(var(--spacing)*34))]"
-          >
+          <p data-reveal className={cn(t.intro, "xl:max-w-760")}>
             {d.intro}
           </p>
         </div>
@@ -61,29 +61,11 @@ export default function CollateralSection() {
 
       {/* row 3 — centred statement */}
       <div className="border-b px-24 py-56 text-center md:px-40 md:py-72 xl:pt-144 xl:pb-154">
-        <p data-reveal className={cn(t.lead, "mx-auto xl:max-w-1500")}>
-          <span className="md:hidden">{d.statement.join(" ")}</span>
-          <span className="hidden md:block">
-            <Lines lines={d.statement} />
-          </span>
-        </p>
+        <Statement lines={d.statement} className={cn(t.lead, "mx-auto xl:max-w-1500")} />
       </div>
 
       {/* row 4 — three images */}
-      <div className="grid grid-cols-1 border-b md:grid-cols-3">
-        {d.images.map((img, i) => (
-          <div
-            key={i}
-            className={cn("p-16 md:p-24 xl:px-48 xl:py-44", i > 0 && "border-t md:border-t-0 md:border-l")}
-          >
-            <Media
-              media={img}
-              className="aspect-[545/691] h-auto xl:aspect-auto xl:h-691"
-              sizes="(max-width: 767px) 100vw, 30vw"
-            />
-          </div>
-        ))}
-      </div>
+      <TrioImageRow items={d.images} />
 
       {/* row 5 — tags | events */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2">
@@ -102,15 +84,7 @@ export default function CollateralSection() {
 
         <div className="px-24 pt-28 pb-48 md:border-l md:px-40 md:py-56 xl:pt-116 xl:pr-80 xl:pb-112 xl:pl-148">
           <p data-reveal className={cn(t.body, "xl:max-w-670")}>
-            {d.events.map((part, i) =>
-              part.accent ? (
-                <span key={i} className="text-[#7b2630]">
-                  {part.text}
-                </span>
-              ) : (
-                <span key={i}>{part.text}</span>
-              ),
-            )}
+            <Accented parts={d.events} />
           </p>
         </div>
       </div>

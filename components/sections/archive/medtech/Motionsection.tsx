@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 import { medtechMotion as d } from "@/lib/constants";
+import IndexTag from "../IndexTag";
 import Lines from "../Lines";
 import Media from "../Media";
+import { WideImageRow } from "../ImageRows";
+import Statement from "../Statement";
 import { t } from "../styles";
 
 /**
@@ -34,29 +37,25 @@ export default function MotionSection() {
         </div>
 
         <div className="px-24 pt-24 pb-48 md:px-40 md:py-64 xl:pt-170 xl:pr-160 xl:pb-0 xl:pl-0">
-          <p
-            data-reveal
-            className="text-[19px] leading-[1.35] tracking-[0.05em] xl:max-w-620 xl:text-[length:max(17px,calc(var(--spacing)*34))]"
-          >
+          <p data-reveal className={cn(t.intro, "xl:max-w-620")}>
             {d.intro}
           </p>
         </div>
       </div>
 
       {/* row 2 — brand film */}
-      <div className="border-b p-16 md:p-24 xl:px-50 xl:py-46">
-        <Media
-          media={d.film}
-          className="aspect-[1820/1022] h-auto xl:aspect-auto xl:h-1022"
-          sizes="100vw"
-        />
-      </div>
+      <WideImageRow
+        media={d.film}
+        className="xl:py-46"
+        aspect="aspect-[1820/1022]"
+        imageClassName="xl:h-1022"
+      />
 
       {/* row 3 — story | stills */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2 xl:grid-cols-[962fr_958fr]">
         <div className="px-24 py-36 md:px-40 md:py-56 xl:pt-114 xl:pr-0 xl:pb-114 xl:pl-154">
           <p data-reveal className={cn(t.body, "xl:max-w-680")}>
-            {d.story.before} <span className="text-[#7b2630]">{d.story.accent}</span>
+            {d.story.before} <span className={t.accent}>{d.story.accent}</span>
             {d.story.after}
           </p>
         </div>
@@ -75,12 +74,7 @@ export default function MotionSection() {
 
       {/* row 4 — centred statement + two modes */}
       <div className="border-b px-24 py-56 text-center md:px-40 md:py-72 xl:px-152 xl:pt-140 xl:pb-124">
-        <p data-reveal className={cn(t.lead, "mx-auto xl:max-w-1300")}>
-          <span className="md:hidden">{d.statement.join(" ")}</span>
-          <span className="hidden md:block">
-            <Lines lines={d.statement} />
-          </span>
-        </p>
+        <Statement lines={d.statement} className={cn(t.lead, "mx-auto xl:max-w-1300")} />
 
         <p data-reveal className={cn(t.body, "mt-40 xl:mt-120")}>
           {d.modesIntro}
@@ -95,9 +89,7 @@ export default function MotionSection() {
                 i > 0 ? "border-t md:border-t-0 md:border-l md:pl-32 xl:pl-62" : "md:pr-32",
               )}
             >
-              <span className="block text-[10px] tracking-[0.05em] text-[#999688] whitespace-pre xl:text-[length:max(10px,calc(var(--spacing)*18))]">
-                {`[ ${String(i + 1).padStart(2, "0")} ]`}
-              </span>
+              <IndexTag index={i} className={t.tag} />
               <p
                 data-reveal
                 className="mt-12 text-[18px] leading-[1.3] tracking-[0.05em] xl:mt-24 xl:max-w-720 xl:text-[length:max(17px,calc(var(--spacing)*34))]"
