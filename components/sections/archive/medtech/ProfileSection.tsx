@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { medtechProfile as d } from "@/lib/constants";
 import Lines from "../Lines";
-import { TextColumnsRow } from "../ImageRows";
+import Media from "../Media";
 import { t } from "../styles";
 
 /**
@@ -9,12 +9,15 @@ import { t } from "../styles";
  *   ┌──────┬────────────────────┬──────────────┐
  *   │ label│ heading + intro    │ body         │
  *   ├──────┴────────────────────┴──────────────┤
+ *   │ [ image ]   [ image ]   [ image ]        │
  *   │ statement                                │
  *   │ [01] [02] [03] [04]                      │
  *   │ [05] [06] [07] [08]                      │
  *   ├─────────────────────┬────────────────────┤
- *   │ left                │ right              │
- *   └─────────────────────┴────────────────────┘
+ *   │ image               │ image              │
+ *   ├─────────────────────┴────────────────────┤
+ *   │ THE INTENTION        paragraph           │
+ *   └──────────────────────────────────────────┘
  */
 export default function ProfileSection() {
   return (
@@ -48,44 +51,75 @@ export default function ProfileSection() {
         </div>
       </div>
 
-      {/* row 2 — statement + 4 x 2 grid */}
-      <div className="border-b px-24 py-48 md:px-40 md:py-64 xl:px-152 xl:pt-124 xl:pb-120">
-        <p data-reveal className={cn(t.lead, "xl:max-w-1090 xl:text-[length:max(20px,calc(var(--spacing)*38))]")}>
-          {d.statement}
-        </p>
-
-        <ul className="mt-32 grid grid-cols-2 border-t md:mt-48 md:grid-cols-4 xl:mt-88">
-          {d.points.map((point, i) => (
-            <li
-              key={point}
-              data-reveal
-              className={cn(
-                "border-b py-20 pr-12 md:pt-24 md:pb-32 xl:min-h-256 xl:pt-52 xl:pr-40 xl:pb-48",
-                // phone/tablet: 2 columns
-                i % 2 === 1 ? "border-l pl-16" : "pl-0",
-                // md+: 4 columns
-                i % 4 === 0 ? "md:border-l-0 md:pl-0" : "md:border-l md:pl-24 xl:pl-38",
-              )}
-            >
-              <span className="block text-[10px] tracking-[0.05em] text-[#999688] whitespace-pre xl:text-[length:max(10px,calc(var(--spacing)*18))]">
-                {`[ ${String(i + 1).padStart(2, "0")} ]`}
-              </span>
-              <p className="mt-16 text-[16px] leading-[1.35] tracking-[0.05em] xl:mt-84 xl:max-w-340 xl:text-[length:max(15px,calc(var(--spacing)*30))]">
-                {point}
-              </p>
-            </li>
+      {/* row 2 — images, statement, 4 x 2 grid */}
+      <div className="border-b py-48 md:py-64 xl:pt-110 xl:pb-120">
+        {/* three images, same as Exult's content row */}
+        <div className="grid grid-cols-1 gap-24 px-24 md:grid-cols-3 md:gap-20 md:px-40 xl:gap-44 xl:px-50">
+          {d.gallery.map((img, i) => (
+            <Media
+              key={i}
+              media={img}
+              className="aspect-[577/708] h-auto xl:aspect-auto xl:h-708"
+              sizes="(max-width: 1023px) 100vw, 30vw"
+            />
           ))}
-        </ul>
+        </div>
+
+        <div className="mt-40 px-24 md:mt-56 md:px-40 xl:mt-124 xl:px-152">
+          <p data-reveal className={cn(t.lead, "xl:max-w-1300")}>
+            {d.statement}
+          </p>
+
+          <ul className="mt-32 grid grid-cols-2 border-t md:mt-48 md:grid-cols-4 xl:mt-88">
+            {d.points.map((point, i) => (
+              <li
+                key={point}
+                data-reveal
+                className={cn(
+                  "border-b py-20 pr-12 md:pt-24 md:pb-32 xl:min-h-256 xl:pt-52 xl:pr-40 xl:pb-48",
+                  // phone/tablet: 2 columns
+                  i % 2 === 1 ? "border-l pl-16" : "pl-0",
+                  // md+: 4 columns
+                  i % 4 === 0 ? "md:border-l-0 md:pl-0" : "md:border-l md:pl-24 xl:pl-38",
+                )}
+              >
+                <span className="block text-[10px] tracking-[0.05em] text-[#999688] whitespace-pre xl:text-[length:max(10px,calc(var(--spacing)*18))]">
+                  {`[ ${String(i + 1).padStart(2, "0")} ]`}
+                </span>
+                <p className="mt-16 text-[16px] leading-[1.35] tracking-[0.05em] xl:mt-84 xl:max-w-340 xl:text-[length:max(15px,calc(var(--spacing)*30))]">
+                  {point}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* bottom two-column row */}
-      <TextColumnsRow
-        left={d.left}
-        right={d.right}
-        className="xl:pt-151 xl:pb-131"
-        leftClassName="xl:pl-154 xl:*:max-w-553"
-        rightClassName="xl:pl-158 xl:*:max-w-614"
-      />
+      {/* row 3 — two images side by side */}
+      <div className="grid grid-cols-1 border-b md:grid-cols-2">
+        {d.images.map((img, i) => (
+          <div
+            key={i}
+            className={cn("p-16 md:p-24 xl:p-52", i > 0 && "border-t md:border-t-0 md:border-l")}
+          >
+            <Media
+              media={img}
+              className="aspect-[856/1000] h-auto xl:aspect-auto xl:h-1000"
+              sizes="(max-width: 767px) 100vw, 45vw"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* row 4 — THE INTENTION */}
+      <div className="grid grid-cols-1 border-b px-24 py-48 md:grid-cols-[1fr_2fr] md:px-40 md:py-64 xl:grid-cols-[824fr_1096fr] xl:px-0 xl:pt-116 xl:pb-124">
+        <span data-reveal className={cn(t.label, "xl:pl-154")}>
+          {d.intentionLabel}
+        </span>
+        <p data-reveal className={cn(t.body, "mt-16 md:mt-0 xl:max-w-860")}>
+          {d.intention}
+        </p>
+      </div>
     </section>
   );
 }

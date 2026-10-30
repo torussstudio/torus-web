@@ -1168,6 +1168,227 @@
 //   ],
 // });
 
+// export const medtechProfile = keepHyphenatedWords({
+//   label: "Company Profile",
+//   heading: ["The company profile", "became the first", "wide landscape"],
+//   // row 1, under the heading (larger text)
+//   intro:
+//     "The company profile became one of the most important spaces for the brand system to prove itself.",
+//   // row 1, right column
+//   body:
+//     "A profile for an organisation like MedTech naturally carries a lot of information: history, leadership, vision, divisions, partners, customers, infrastructure, organisational structure, values, and growth. The challenge was to keep that information clear while making it more memorable.",
+//   // row 2, top — three images (no `src` yet, Media shows placeholders)
+//   gallery: [
+//     { alt: "MedTech company profile — cover" },
+//     { alt: "MedTech company profile — inner spread" },
+//     { alt: "MedTech company profile — detail" },
+//   ] as ArchiveMedia[],
+//   // row 2, under the images
+//   statement:
+//     "So instead of treating it as a catalogue of facts, we shaped it around the idea of the nomad’s journey in a desert.",
+//   // row 2, 4 x 2 grid
+//   points: [
+//     "History became cultivated growth.",
+//     "Values became roots.",
+//     "Leadership became direction.",
+//     "Partnerships became networks.",
+//     "Customers became accumulated trust.",
+//     "Business divisions became guided specialisms.",
+//     "Infrastructure became a living support system.",
+//     "Revenue and growth became terrain crossed over time.",
+//   ],
+//   // row 3 — two images side by side (no `src` yet, Media shows placeholders)
+//   images: [
+//     { alt: "Company profile — history as cultivated growth" },
+//     { alt: "Company profile — values as roots" },
+//   ] as ArchiveMedia[],
+//   // row 4 — label left, paragraph right
+//   intentionLabel: "The Intention",
+//   intention:
+//     "The intention was to make the company profile easier to understand and remember. Every metaphor used was aligned to the content. Typography, hierarchy, spacing, and structure kept the information clear, while the illustrations and symbols gave each section a stronger emotional and visual identity.",
+// });
+
+// export const medtechProcess = keepHyphenatedWords({
+//   label: "Process",
+//   heading: "Fragments from the process",
+//   // row 1, left column
+//   left: [
+//     "Behind the final system was a wide field of visual and narrative exploration.",
+//     "The process involved studying the existing logo, exploring how its shapes could become patterns, symbols, cells, flowers, networks, and intricate systems. It also explored how Qatar’s landscapes could become more than backdrops: how dunes could hold data, how roots could hold values, how architectural marvels could hold partner information, how pearls could hold valuable customers, and how a horizon could carry vision.",
+//   ],
+//   // row 1, right column
+//   colour:
+//     "The colour direction was shaped to balance authority and warmth. Red, crimson, navy, sand, and pearl white kept the brand connected to healthcare and institutional trust while softening the overall atmosphere.",
+//   // TODO: replace with the exact brand hex values
+//   swatches: [
+//     { name: "Red", hex: "#b0232f", dark: true },
+//     { name: "Crimson", hex: "#7a2129", dark: true },
+//     { name: "Navy", hex: "#1f2a48", dark: true },
+//     { name: "Sand", hex: "#dcc9a8", dark: false },
+//     { name: "Pearl White", hex: "#f3efe6", dark: false },
+//   ],
+//   // row 2 — no `src` yet, Media shows placeholders
+//   images: [
+//     { alt: "Exploration — dunes holding data, roots holding values" },
+//     { alt: "Exploration — pearls & horizon studies", tone: "dark" },
+//   ] as ArchiveMedia[],
+//   // row 3
+//   typography:
+//     "Typography played a quieter but important role. Since the visual world carried emotion and metaphor, type had to bring order. Clean, geometric, disciplined typography helped keep the system usable across dense corporate information, presentations, brochures, social layouts, and event applications.",
+//   statement:
+//     "The process was not about creating one beautiful visual style. It was about building a system with enough depth to survive many types of communication.",
+// });
+
+// export const medtechMotion = keepHyphenatedWords({
+//   label: "Motion",
+//   heading: ["A storytelling video", "gave the journey", "another life"],
+//   intro: "The brand story video extended this narrative into motion.",
+//   // row 2 — set `video` (or `src`) when the film is ready
+//   film: { alt: "Brand story film — silhouette / shadow-puppetry style", tone: "dark" } as ArchiveMedia,
+//   // row 3, left — `accent` part in maroon
+//   story: {
+//     before: "Developed in a",
+//     accent: "silhouette-led style inspired by shadow puppetry",
+//     after:
+//       ", the film followed a traveller moving through the desert and changing landscapes. The core narrative of a nomad’s journey through the sea, desert, dunes, oasis, and the metaphorical use of the traveller, camel, a caravan in the desert, emerging civilisation, and the larger journey of adaptation, building, growth, and transformation gave MedTech’s story a visual rhythm.",
+//   },
+//   // row 3, right — film stills
+//   stills: [
+//     { alt: "Traveller & caravan", tone: "dark" },
+//     { alt: "Emerging civilisation", tone: "dark" },
+//   ] as ArchiveMedia[],
+//   // row 4 — centred
+//   statement: [
+//     "The video helped the company to explain its journey,",
+//     "shaped by endurance, adaptation, and care.",
+//   ],
+//   modesIntro: "This gave MedTech two complementary modes of communication.",
+//   modes: [
+//     "One explained the brand system clearly.",
+//     "The other allowed the audience to inhabit the brand world emotionally.",
+//   ],
+//   together:
+//     "Together, they showed how the identity could work both as a rational corporate system and as a story-led visual experience.",
+// });
+
+// export const medtechCollateral = keepHyphenatedWords({
+//   label: "Collateral & Events",
+//   heading: ["Making corporate", "communication feel", "less distant"],
+//   intro: "One of the most meaningful shifts was in how MedTech’s corporate material began to feel.",
+//   // row 2 — no `src` yet, Media shows placeholders
+//   image: { alt: "Brochure & corporate presentation", tone: "dark" } as ArchiveMedia,
+//   body:
+//     "The identity system was extended across a wide range of formal and practical applications. The narrative was carried into brochures, corporate presentations, pitch decks, business cards, ID cards, email signatures, and other communication templates. They made the larger identity system usable inside the organisation and consistent outside it.",
+//   // row 3 — centred, design line breaks (desktop)
+//   statement: [
+//     "At the same time, MedTech’s event and industry",
+//     "presence required a more spatial and public-facing",
+//     "expression.",
+//   ],
+//   // row 4 — three images
+//   images: [
+//     { alt: "Business card & ID card" },
+//     { alt: "WHX exhibition stand" },
+//     { alt: "Ramadhan & Suhoor gathering", tone: "dark" },
+//   ] as ArchiveMedia[],
+//   // row 5
+//   tags: [
+//     "World Health Expo (WHX)",
+//     "Conference series",
+//     "Workshops",
+//     "Industry engagements",
+//     "Ramadhan & Suhoor",
+//   ],
+//   // `accent: true` parts render in maroon
+//   events: [
+//     { text: "As the narrative got stronger, the brand system was extended into event videos, exhibition communication, branded environments, and partnership communication. It was adapted for major global healthcare exhibitions like the " },
+//     { text: "World Health Expo (WHX)", accent: true },
+//     { text: ", other conference series, workshops, conferences, industry engagements, and seasonal cultural gatherings, including " },
+//     { text: "Ramadhan and Suhoor", accent: true },
+//     { text: "." },
+//   ] as { text: string; accent?: boolean }[],
+// });
+
+// export const medtechTouchpoints = keepHyphenatedWords({
+//   label: "Touchpoints",
+//   heading: ["Everyday", "touchpoints,", "made consistent"],
+//   // row 1, right column
+//   body: [
+//     "From business cards, ID cards, email signatures, corporate presentations, pitch decks, and communication templates to the website and social media, the brand had to stay consistent across every everyday touchpoint.",
+//     "The website became a key space where MedTech’s story, services, partnerships, and vision could come together in one clear digital experience. The journey-led visual language was translated into page layouts, content flow, imagery, hierarchy, and interactive details, helping visitors move through the brand naturally while understanding its legacy and role in Qatar’s healthcare sector. The site was also developed to feel smooth, responsive, fast-loading, and easy to navigate across devices.",
+//   ],
+//   // row 2 — no `src` yet, Media shows a placeholder
+//   website: { alt: "Website — desktop & mobile mockups" } as ArchiveMedia,
+//   // row 3
+//   social:
+//     "Social media extended the same brand language into a more active and ongoing communication space. Posts, event updates, partnership announcements, healthcare narratives, cultural messages, and campaign-led creatives were designed to feel consistent with the larger identity while remaining flexible enough for everyday communication.",
+//   aligned:
+//     "Across digital and physical touchpoints, the goal was to make every interaction feel aligned. Some applications needed only colour, type, hierarchy, and subtle patterning, while others carried more illustration, symbolism, motion, or storytelling. This ability to adjust the intensity of the brand became one of the system’s strongest qualities.",
+//   // row 4 — two landscape images, one per half
+//   posts: [
+//     { alt: "Social posts & cultural messages", tone: "dark" },
+//     { alt: "Event updates & partnership posts" },
+//   ] as ArchiveMedia[],
+// });
+
+// // text made of parts — `accent: true` parts render in maroon
+// type AccentText = { text: string; accent?: boolean }[];
+
+// export const medtechCulture = keepHyphenatedWords({
+//   label: "Culture",
+//   heading: ["A continuing presence", "as a wider cultural", "canvas"],
+//   intro:
+//     "Over time, MedTech’s brand presence began moving beyond corporate communication into cultural, seasonal, and narrative-led touchpoints.",
+//   // row 2 — centred line
+//   lead: "The annual calendars became an opportunity for this exploration.",
+//   // row 3 — two calendars (no `src` yet, Media shows placeholders)
+//   calendars: [
+//     {
+//       tag: "Calendar",
+//       image: { alt: "Calendar — Qatar through MedTech’s perspective" } as ArchiveMedia,
+//       text: [
+//         { text: "One of the narratives explored was " },
+//         { text: "Qatar’s landscape, culture, and journey through MedTech’s perspective", accent: true },
+//         { text: ", connecting the country’s places, heritage, and transformation with MedTech’s long-standing presence." },
+//       ] as AccentText,
+//     },
+//     {
+//       tag: "Calendar",
+//       image: { alt: "Calendar — The Journey of Life", tone: "dark" } as ArchiveMedia,
+//       text: [
+//         { text: "The other explored was " },
+//         { text: "The Journey of Life", accent: true },
+//         { text: ", linking MedTech’s divisions to different stages of human life and the role healthcare plays across each phase." },
+//       ] as AccentText,
+//     },
+//   ],
+//   // row 4 — centred heading + two paragraphs
+//   fabric: ["MedTech as a fabric", "woven into Qatar"],
+//   fabricLeft: [
+//     { text: "The same narrative depth extended into other brand materials. In the company brochure, the idea of " },
+//     { text: "MedTech as a fabric woven into Qatar", accent: true },
+//     { text: " positioned the brand as something naturally interlaced with the country’s healthcare progress, partnerships, communities, and systems of care." },
+//   ] as AccentText,
+//   fabricRight:
+//     "Together, these touchpoints helped MedTech’s identity gain a wider cultural and emotional range, rooted not only in healthcare, but in Qatar’s history, traditions, places, people, and evolving story.",
+// });
+
+// export const medtechOutcome = keepHyphenatedWords({
+//   label: "The Outcome",
+//   heading: ["A brand world with", "room to continue"],
+//   // row 1 — no `src` yet, Media shows a placeholder
+//   image: { alt: "Outcome — MedTech brand world overview", tone: "dark" } as ArchiveMedia,
+//   intro:
+//     "The MedTech project resulted in a more connected way for the brand to express its 40+ year healthcare legacy across identity, storytelling, corporate communication, digital platforms, events, cultural communication, and ongoing brand applications.",
+//   // row 2
+//   left:
+//     "The work helped MedTech present its credibility, expertise, systems, partnerships, and presence with greater clarity, consistency, familiarity, and confidence. From profiles, brochures, presentations, website, social media, event videos, pitch decks, calendars, and seasonal campaigns, the brand gained a system that could adapt without losing its identity.",
+//   right:
+//     "For Toruss, the collaboration became an opportunity to be a creative partner for an established healthcare organisation with a brand language built to evolve across new audiences, partnerships, and touchpoints.",
+//   // row 3 — wide collage
+//   collage: { alt: "Collage — profile, calendar, WHX, film stills" } as ArchiveMedia,
+// });
+
 // // =========================================================
 // // ARCHIVE — project list (navbar dropdown + "Next Project")
 // // ---------------------------------------------------------
@@ -2422,7 +2643,13 @@ export const medtechProfile = keepHyphenatedWords({
   // row 1, right column
   body:
     "A profile for an organisation like MedTech naturally carries a lot of information: history, leadership, vision, divisions, partners, customers, infrastructure, organisational structure, values, and growth. The challenge was to keep that information clear while making it more memorable.",
-  // row 2, full width
+  // row 2, top — three images (no `src` yet, Media shows placeholders)
+  gallery: [
+    { alt: "MedTech company profile — cover" },
+    { alt: "MedTech company profile — inner spread" },
+    { alt: "MedTech company profile — detail" },
+  ] as ArchiveMedia[],
+  // row 2, under the images
   statement:
     "So instead of treating it as a catalogue of facts, we shaped it around the idea of the nomad’s journey in a desert.",
   // row 2, 4 x 2 grid
@@ -2436,11 +2663,218 @@ export const medtechProfile = keepHyphenatedWords({
     "Infrastructure became a living support system.",
     "Revenue and growth became terrain crossed over time.",
   ],
-  // bottom two-column row
+  // row 3 — two images side by side (no `src` yet, Media shows placeholders)
+  images: [
+    { alt: "Company profile — history as cultivated growth" },
+    { alt: "Company profile — values as roots" },
+  ] as ArchiveMedia[],
+  // row 4 — label left, paragraph right
+  intentionLabel: "The Intention",
+  intention:
+    "The intention was to make the company profile easier to understand and remember. Every metaphor used was aligned to the content. Typography, hierarchy, spacing, and structure kept the information clear, while the illustrations and symbols gave each section a stronger emotional and visual identity.",
+});
+
+export const medtechProcess = keepHyphenatedWords({
+  label: "Process",
+  heading: "Fragments from the process",
+  // row 1, left column
+  left: [
+    "Behind the final system was a wide field of visual and narrative exploration.",
+    "The process involved studying the existing logo, exploring how its shapes could become patterns, symbols, cells, flowers, networks, and intricate systems. It also explored how Qatar’s landscapes could become more than backdrops: how dunes could hold data, how roots could hold values, how architectural marvels could hold partner information, how pearls could hold valuable customers, and how a horizon could carry vision.",
+  ],
+  // row 1, right column
+  colour:
+    "The colour direction was shaped to balance authority and warmth. Red, crimson, navy, sand, and pearl white kept the brand connected to healthcare and institutional trust while softening the overall atmosphere.",
+  // TODO: replace with the exact brand hex values
+  swatches: [
+    { name: "Red", hex: "#b0232f", dark: true },
+    { name: "Crimson", hex: "#7a2129", dark: true },
+    { name: "Navy", hex: "#1f2a48", dark: true },
+    { name: "Sand", hex: "#dcc9a8", dark: false },
+    { name: "Pearl White", hex: "#f3efe6", dark: false },
+  ],
+  // row 2 — no `src` yet, Media shows placeholders
+  images: [
+    { alt: "Exploration — dunes holding data, roots holding values" },
+    { alt: "Exploration — pearls & horizon studies", tone: "dark" },
+  ] as ArchiveMedia[],
+  // row 3
+  typography:
+    "Typography played a quieter but important role. Since the visual world carried emotion and metaphor, type had to bring order. Clean, geometric, disciplined typography helped keep the system usable across dense corporate information, presentations, brochures, social layouts, and event applications.",
+  statement:
+    "The process was not about creating one beautiful visual style. It was about building a system with enough depth to survive many types of communication.",
+});
+
+export const medtechMotion = keepHyphenatedWords({
+  label: "Motion",
+  heading: ["A storytelling video", "gave the journey", "another life"],
+  intro: "The brand story video extended this narrative into motion.",
+  // row 2 — set `video` (or `src`) when the film is ready
+  film: { alt: "Brand story film — silhouette / shadow-puppetry style", tone: "dark" } as ArchiveMedia,
+  // row 3, left — `accent` part in maroon
+  story: {
+    before: "Developed in a",
+    accent: "silhouette-led style inspired by shadow puppetry",
+    after:
+      ", the film followed a traveller moving through the desert and changing landscapes. The core narrative of a nomad’s journey through the sea, desert, dunes, oasis, and the metaphorical use of the traveller, camel, a caravan in the desert, emerging civilisation, and the larger journey of adaptation, building, growth, and transformation gave MedTech’s story a visual rhythm.",
+  },
+  // row 3, right — film stills
+  stills: [
+    { alt: "Traveller & caravan", tone: "dark" },
+    { alt: "Emerging civilisation", tone: "dark" },
+  ] as ArchiveMedia[],
+  // row 4 — centred
+  statement: [
+    "The video helped the company to explain its journey,",
+    "shaped by endurance, adaptation, and care.",
+  ],
+  modesIntro: "This gave MedTech two complementary modes of communication.",
+  modes: [
+    "One explained the brand system clearly.",
+    "The other allowed the audience to inhabit the brand world emotionally.",
+  ],
+  together:
+    "Together, they showed how the identity could work both as a rational corporate system and as a story-led visual experience.",
+});
+
+export const medtechCollateral = keepHyphenatedWords({
+  label: "Collateral & Events",
+  heading: ["Making corporate", "communication feel", "less distant"],
+  intro: "One of the most meaningful shifts was in how MedTech’s corporate material began to feel.",
+  // row 2 — no `src` yet, Media shows placeholders
+  image: { alt: "Brochure & corporate presentation", tone: "dark" } as ArchiveMedia,
+  body:
+    "The identity system was extended across a wide range of formal and practical applications. The narrative was carried into brochures, corporate presentations, pitch decks, business cards, ID cards, email signatures, and other communication templates. They made the larger identity system usable inside the organisation and consistent outside it.",
+  // row 3 — centred, design line breaks (desktop)
+  statement: [
+    "At the same time, MedTech’s event and industry",
+    "presence required a more spatial and public-facing",
+    "expression.",
+  ],
+  // row 4 — three images
+  images: [
+    { alt: "Business card & ID card" },
+    { alt: "WHX exhibition stand" },
+    { alt: "Ramadhan & Suhoor gathering", tone: "dark" },
+  ] as ArchiveMedia[],
+  // row 5
+  tags: [
+    "World Health Expo (WHX)",
+    "Conference series",
+    "Workshops",
+    "Industry engagements",
+    "Ramadhan & Suhoor",
+  ],
+  // `accent: true` parts render in maroon
+  events: [
+    { text: "As the narrative got stronger, the brand system was extended into event videos, exhibition communication, branded environments, and partnership communication. It was adapted for major global healthcare exhibitions like the " },
+    { text: "World Health Expo (WHX)", accent: true },
+    { text: ", other conference series, workshops, conferences, industry engagements, and seasonal cultural gatherings, including " },
+    { text: "Ramadhan and Suhoor", accent: true },
+    { text: "." },
+  ] as { text: string; accent?: boolean }[],
+});
+
+export const medtechTouchpoints = keepHyphenatedWords({
+  label: "Touchpoints",
+  heading: ["Everyday", "touchpoints,", "made consistent"],
+  // row 1, right column
+  body: [
+    "From business cards, ID cards, email signatures, corporate presentations, pitch decks, and communication templates to the website and social media, the brand had to stay consistent across every everyday touchpoint.",
+    "The website became a key space where MedTech’s story, services, partnerships, and vision could come together in one clear digital experience. The journey-led visual language was translated into page layouts, content flow, imagery, hierarchy, and interactive details, helping visitors move through the brand naturally while understanding its legacy and role in Qatar’s healthcare sector. The site was also developed to feel smooth, responsive, fast-loading, and easy to navigate across devices.",
+  ],
+  // row 2 — no `src` yet, Media shows a placeholder
+  website: { alt: "Website — desktop & mobile mockups" } as ArchiveMedia,
+  // row 3
+  social:
+    "Social media extended the same brand language into a more active and ongoing communication space. Posts, event updates, partnership announcements, healthcare narratives, cultural messages, and campaign-led creatives were designed to feel consistent with the larger identity while remaining flexible enough for everyday communication.",
+  aligned:
+    "Across digital and physical touchpoints, the goal was to make every interaction feel aligned. Some applications needed only colour, type, hierarchy, and subtle patterning, while others carried more illustration, symbolism, motion, or storytelling. This ability to adjust the intensity of the brand became one of the system’s strongest qualities.",
+  // row 4 — two landscape images, one per half
+  posts: [
+    { alt: "Social posts & cultural messages", tone: "dark" },
+    { alt: "Event updates & partnership posts" },
+  ] as ArchiveMedia[],
+});
+
+// text made of parts — `accent: true` parts render in maroon
+type AccentText = { text: string; accent?: boolean }[];
+
+export const medtechCulture = keepHyphenatedWords({
+  label: "Culture",
+  heading: ["A continuing presence", "as a wider cultural", "canvas"],
+  intro:
+    "Over time, MedTech’s brand presence began moving beyond corporate communication into cultural, seasonal, and narrative-led touchpoints.",
+  // row 2 — centred line
+  lead: "The annual calendars became an opportunity for this exploration.",
+  // row 3 — two calendars (no `src` yet, Media shows placeholders)
+  calendars: [
+    {
+      tag: "Calendar",
+      image: { alt: "Calendar — Qatar through MedTech’s perspective" } as ArchiveMedia,
+      text: [
+        { text: "One of the narratives explored was " },
+        { text: "Qatar’s landscape, culture, and journey through MedTech’s perspective", accent: true },
+        { text: ", connecting the country’s places, heritage, and transformation with MedTech’s long-standing presence." },
+      ] as AccentText,
+    },
+    {
+      tag: "Calendar",
+      image: { alt: "Calendar — The Journey of Life", tone: "dark" } as ArchiveMedia,
+      text: [
+        { text: "The other explored was " },
+        { text: "The Journey of Life", accent: true },
+        { text: ", linking MedTech’s divisions to different stages of human life and the role healthcare plays across each phase." },
+      ] as AccentText,
+    },
+  ],
+  // row 4 — centred heading + two paragraphs
+  fabric: ["MedTech as a fabric", "woven into Qatar"],
+  fabricLeft: [
+    { text: "The same narrative depth extended into other brand materials. In the company brochure, the idea of " },
+    { text: "MedTech as a fabric woven into Qatar", accent: true },
+    { text: " positioned the brand as something naturally interlaced with the country’s healthcare progress, partnerships, communities, and systems of care." },
+  ] as AccentText,
+  fabricRight:
+    "Together, these touchpoints helped MedTech’s identity gain a wider cultural and emotional range, rooted not only in healthcare, but in Qatar’s history, traditions, places, people, and evolving story.",
+});
+
+export const medtechOutcome = keepHyphenatedWords({
+  label: "The Outcome",
+  heading: ["A brand world with", "room to continue"],
+  // row 1 — no `src` yet, Media shows a placeholder
+  image: { alt: "Outcome — MedTech brand world overview", tone: "dark" } as ArchiveMedia,
+  intro:
+    "The MedTech project resulted in a more connected way for the brand to express its 40+ year healthcare legacy across identity, storytelling, corporate communication, digital platforms, events, cultural communication, and ongoing brand applications.",
+  // row 2
   left:
-    "The intention was to make the company profile easier to understand and remember. Every metaphor used was aligned to the content.",
+    "The work helped MedTech present its credibility, expertise, systems, partnerships, and presence with greater clarity, consistency, familiarity, and confidence. From profiles, brochures, presentations, website, social media, event videos, pitch decks, calendars, and seasonal campaigns, the brand gained a system that could adapt without losing its identity.",
   right:
-    "Typography, hierarchy, spacing, and structure kept the information clear, while the illustrations and symbols gave each section a stronger emotional and visual identity.",
+    "For Toruss, the collaboration became an opportunity to be a creative partner for an established healthcare organisation with a brand language built to evolve across new audiences, partnerships, and touchpoints.",
+  // row 3 — wide collage
+  collage: { alt: "Collage — profile, calendar, WHX, film stills" } as ArchiveMedia,
+});
+
+export const medtechReflections = keepHyphenatedWords({
+  heading: "Reflections",
+  // row 1, right
+  lead:
+    "MedTech was one of those projects that slowly opened up in layers. It allowed us to explore how a brand system can be shaped through one central story.",
+  note: [
+    { text: "The idea of " },
+    { text: "Journey", accent: true },
+    { text: " did not remain as a theme in the background. It gradually informed the narrative, visual language, motion, cultural communication, company profile, events, and everyday brand applications. Each layer opened a different way to express MedTech’s legacy and its relationship with Qatar." },
+  ] as AccentText,
+  // row 2, left
+  team:
+    "For our team, the project was meaningful because it allowed strategy, writing, illustration, design, motion, and digital thinking to work from the same core idea, while still finding different forms of expression.",
+  // row 2, right — small line, then the closing statement
+  leadIn: "It reminded us that a strong brand story is not just something a brand says.",
+  statement: [
+    "It can become the system",
+    "through which the brand is seen,",
+    "understood, and remembered.",
+  ],
 });
 
 // =========================================================
