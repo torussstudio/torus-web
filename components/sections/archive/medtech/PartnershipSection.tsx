@@ -43,7 +43,7 @@ export default function PartnershipSection() {
             <div className="p-16 md:p-24 xl:px-40 xl:py-44">
               <Media
                 media={d.image}
-                className="aspect-[876/632] h-auto xl:aspect-auto xl:h-632"
+                className="aspect-[876/632] h-auto xl:aspect-auto xl:h-701"
                 sizes="(max-width: 767px) 100vw, 45vw"
               />
             </div>
@@ -68,7 +68,7 @@ export default function PartnershipSection() {
 
         <Statement
           lines={d.statement}
-          className={cn(t.statement, t.accent, "mx-auto mt-24 max-w-[22ch] md:max-w-none xl:mt-48")}
+          className={cn(t.statement, "text-[#38362e]", "mx-auto mt-24 max-w-[22ch] md:max-w-none xl:mt-48")}
         />
       </div>
     </section>

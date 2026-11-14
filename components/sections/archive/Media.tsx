@@ -39,7 +39,7 @@ export default function Media({
           src={media.video}
           poster={media.src}
           label={media.alt}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full scale-[1.015] bg-[#fdfaf8] object-cover"
         />
       ) : media.src ? (
         <Image

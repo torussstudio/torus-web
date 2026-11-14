@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { medtechProfile as d } from "@/lib/constants";
 import IndexTag from "../IndexTag";
 import Lines from "../Lines";
-import Media from "../Media";
+import ProfileFlipbook from "./ProfileFlipbook";
 import { PairImageRow } from "../ImageRows";
 import SideLabel from "../SideLabel";
 import { t } from "../styles";
@@ -47,21 +47,12 @@ export default function ProfileSection() {
         </div>
       </div>
 
-      {/* row 2 — images, statement, 4 x 2 grid */}
-      <div className="border-b py-48 md:py-64 xl:pt-110 xl:pb-120">
-        {/* three images, same as Exult's content row */}
-        <div className="grid grid-cols-1 gap-24 px-24 md:grid-cols-3 md:gap-20 md:px-40 xl:gap-44 xl:px-50">
-          {d.gallery.map((img, i) => (
-            <Media
-              key={i}
-              media={img}
-              className="aspect-[577/708] h-auto xl:aspect-auto xl:h-708"
-              sizes="(max-width: 1023px) 100vw, 30vw"
-            />
-          ))}
-        </div>
+      {/* row 2 — flip book (full-width gradient backdrop), statement, 4 x 2 grid */}
+      <div className="border-b">
+        {/* flip book — cover, then spread by spread */}
+        <ProfileFlipbook items={d.gallery} />
 
-        <div className="mt-40 px-24 md:mt-56 md:px-40 xl:mt-124 xl:px-152">
+        <div className="px-24 pt-40 pb-48 md:px-40 md:pt-56 md:pb-64 xl:px-152 xl:pt-124 xl:pb-120">
           <p data-reveal className={cn(t.lead, "xl:max-w-1300")}>
             {d.statement}
           </p>

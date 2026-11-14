@@ -3,7 +3,7 @@ import { medtechCollateral as d } from "@/lib/constants";
 import Accented from "../Accented";
 import Lines from "../Lines";
 import Media from "../Media";
-import { TrioImageRow } from "../ImageRows";
+import CollateralCarousel from "./CollateralCarousel";
 import Statement from "../Statement";
 import { t } from "../styles";
 
@@ -47,12 +47,12 @@ export default function CollateralSection() {
         <div className="p-16 md:p-24 xl:pt-46 xl:pr-44 xl:pb-46 xl:pl-50">
           <Media
             media={d.image}
-            className="aspect-[1006/760] h-auto xl:aspect-auto xl:h-760"
+            className="aspect-video h-auto"
             sizes="(max-width: 767px) 100vw, 55vw"
           />
         </div>
 
-        <div className="flex items-center border-t px-24 py-36 md:border-t-0 md:border-l md:px-40 md:py-48 xl:py-0 xl:pr-80 xl:pl-92">
+        <div className="flex items-center border-t px-24 py-36 md:border-t-0 md:border-l md:px-40 md:py-48 xl:py-0 xl:pr-80 xl:pl-130">
           <p data-reveal className={cn(t.body, "xl:max-w-600")}>
             {d.body}
           </p>
@@ -64,8 +64,8 @@ export default function CollateralSection() {
         <Statement lines={d.statement} className={cn(t.lead, "mx-auto xl:max-w-1500")} />
       </div>
 
-      {/* row 4 — three images */}
-      <TrioImageRow items={d.images} />
+      {/* row 4 — image carousel (each slide keeps its own ratio) */}
+      <CollateralCarousel items={d.images} />
 
       {/* row 5 — tags | events */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2">

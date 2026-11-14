@@ -70,12 +70,12 @@ export default function ProcessSection() {
       </div>
 
       {/* row 2 — two images */}
-      <div className="grid grid-cols-1 gap-16 border-b p-16 md:grid-cols-[983fr_785fr] md:gap-24 md:p-24 xl:gap-38 xl:px-52 xl:py-45">
+      <div className="grid grid-cols-1 gap-16 border-b p-16 md:grid-cols-2 md:gap-24 md:p-24 xl:gap-38 xl:px-52 xl:py-45">
         {d.images.map((img, i) => (
           <Media
             key={i}
             media={img}
-            className="aspect-[983/814] h-auto md:aspect-auto md:h-full md:min-h-400 xl:h-814"
+            className="aspect-[4117/3336] h-auto"
             sizes="(max-width: 767px) 100vw, 50vw"
           />
         ))}

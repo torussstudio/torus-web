@@ -23,13 +23,18 @@ export default function IdentitySection() {
         </div>
       </div>
 
-      <div className="mt-32 grid grid-cols-1 gap-12 md:mt-48 md:grid-cols-3 md:gap-16 xl:mt-123 xl:gap-26">
-        {d.images.map((img, i) => (
+      {/* wide block + narrow block */}
+      <div className="mt-32 grid grid-cols-1 gap-12 md:mt-48 md:grid-cols-[731fr_293fr] md:gap-16 xl:mt-123 xl:gap-26">
+        {d.images.slice(0, 2).map((img, i) => (
           <Media
             key={i}
             media={img}
-            className="aspect-[522/646] h-auto xl:aspect-auto xl:h-646"
-            sizes="(max-width: 1023px) 100vw, 28vw"
+            className={cn(
+              "aspect-[4/3] h-auto xl:aspect-auto xl:h-646",
+              i === 0 && "md:aspect-[731/411] xl:aspect-auto",
+              i === 1 && "md:aspect-auto",
+            )}
+            sizes={i === 1 ? "(max-width: 767px) 100vw, 29vw" : "(max-width: 767px) 100vw, 71vw"}
           />
         ))}
       </div>

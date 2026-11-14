@@ -38,7 +38,7 @@ export default function JourneySection() {
             ))}
 
             <p data-reveal className={cn(t.lead, "mt-32 xl:mt-56")}>
-              {d.highlight.text} <span className={t.accent}>{d.highlight.accent}</span>
+              {d.highlight.text} {d.highlight.accent}
             </p>
 
             <p data-reveal className={cn(t.body, "mt-28 xl:mt-56")}>

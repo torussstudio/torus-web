@@ -15,15 +15,13 @@ export default function Home() {
     <main data-home-page>
       <Navbar />
 
-      {/* same design scale + scroll reveals as the archive pages,
-          plus the home-only scrubbed scroll animations */}
       <ArchiveReveal>
         <HomeScrollFx>
           <StudioHero />
-          <Artwork />
           <CreativeGrid />
           <ArchiveSection />
           <DisciplineSection />
+          <Artwork />
           <AreasOfPractice />
           <StudioNote />
         </HomeScrollFx>
