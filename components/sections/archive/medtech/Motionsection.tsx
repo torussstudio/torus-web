@@ -51,7 +51,7 @@ export default function MotionSection() {
         imageClassName="xl:h-1022"
       />
 
-      {/* row 3 — story | stills */}
+      {/* row 3 — story | character sheet */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2 xl:grid-cols-[962fr_958fr]">
         <div className="px-24 py-36 md:px-40 md:py-56 xl:pt-114 xl:pr-0 xl:pb-114 xl:pl-154">
           <p data-reveal className={cn(t.body, "xl:max-w-680")}>
@@ -60,15 +60,12 @@ export default function MotionSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-12 border-t p-16 md:border-t-0 md:border-l md:p-24 xl:gap-22 xl:pt-46 xl:pr-50 xl:pb-42 xl:pl-46">
-          {d.stills.map((img, i) => (
-            <Media
-              key={i}
-              media={img}
-              className="aspect-[422/402] h-auto xl:aspect-auto xl:h-402"
-              sizes="(max-width: 767px) 50vw, 25vw"
-            />
-          ))}
+        <div className="flex items-center border-t p-16 md:border-t-0 md:border-l md:p-24 xl:pt-46 xl:pr-50 xl:pb-42 xl:pl-46">
+          <Media
+            media={d.still}
+            className="aspect-[1792/850] h-auto"
+            sizes="(max-width: 767px) 100vw, 50vw"
+          />
         </div>
       </div>
 

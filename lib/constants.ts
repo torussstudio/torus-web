@@ -1,5 +1,6 @@
 import { StoryCards } from "../components/sections/studio/Studiostory";
-export const NAV_LINKS = [
+// `hidden: true` keeps a link out of the navbar without deleting it — remove the flag to bring it back
+export const NAV_LINKS: { label: string; href: string; hidden?: boolean }[] = [
   {
     label: "STUDIO",
     href: "/studio",
@@ -7,6 +8,7 @@ export const NAV_LINKS = [
   {
     label: "AREAS OF PRACTICE",
     href: "/areas-of-practice",
+    hidden: true, // kept out of the navbar for now; the page still exists
   },
   {
     label: "ARCHIVE",
@@ -19,10 +21,12 @@ export const NAV_LINKS = [
   {
     label: "BLOG",
     href: "/blog",
+    hidden: true, // kept out of the navbar for now; the page still exists
   },
   {
     label: "SHOP",
     href: "/shop",
+    hidden: true, // kept out of the navbar for now; the page still exists
   },
 ];
 
@@ -1484,11 +1488,11 @@ export const medtechMotion = keepHyphenatedWords({
     after:
       ", the film followed a traveller moving through the desert and changing landscapes. The core narrative of a nomad’s journey through the sea, desert, dunes, oasis, and the metaphorical use of the traveller, camel, a caravan in the desert, emerging civilisation, and the larger journey of adaptation, building, growth, and transformation gave MedTech’s story a visual rhythm.",
   },
-  // row 3, right — film stills
-  stills: [
-    { alt: "Traveller & caravan", tone: "dark" },
-    { alt: "Emerging civilisation", tone: "dark" },
-  ] as ArchiveMedia[],
+  // row 3, right — character model sheet (nomad, camel & children)
+  still: {
+    src: "/images/medtech/motion-character-sheet-detail.avif",
+    alt: "MedTech character model sheet — nomad, camel and children",
+  } as ArchiveMedia,
   // row 4 — centred
   statement: [
     "The video helped the company to explain its journey,",
@@ -1562,8 +1566,11 @@ export const medtechTouchpoints = keepHyphenatedWords({
     "From business cards, ID cards, email signatures, corporate presentations, pitch decks, and communication templates to the website and social media, the brand had to stay consistent across every everyday touchpoint.",
     "The website became a key space where MedTech’s story, services, partnerships, and vision could come together in one clear digital experience. The journey-led visual language was translated into page layouts, content flow, imagery, hierarchy, and interactive details, helping visitors move through the brand naturally while understanding its legacy and role in Qatar’s healthcare sector. The site was also developed to feel smooth, responsive, fast-loading, and easy to navigate across devices.",
   ],
-  // row 2 — no `src` yet, Media shows a placeholder
-  website: { alt: "Website — desktop & mobile mockups" } as ArchiveMedia,
+  // row 2 — website on a laptop mockup
+  website: {
+    src: "/images/medtech/website-mockup.avif",
+    alt: "MedTech website homepage on a laptop mockup",
+  } as ArchiveMedia,
   // row 3
   social:
     "Social media extended the same brand language into a more active and ongoing communication space. Posts, event updates, partnership announcements, healthcare narratives, cultural messages, and campaign-led creatives were designed to feel consistent with the larger identity while remaining flexible enough for everyday communication.",
@@ -1571,8 +1578,14 @@ export const medtechTouchpoints = keepHyphenatedWords({
     "Across digital and physical touchpoints, the goal was to make every interaction feel aligned. Some applications needed only colour, type, hierarchy, and subtle patterning, while others carried more illustration, symbolism, motion, or storytelling. This ability to adjust the intensity of the brand became one of the system’s strongest qualities.",
   // row 4 — two landscape images, one per half
   posts: [
-    { alt: "Social posts & cultural messages", tone: "dark" },
-    { alt: "Event updates & partnership posts" },
+    {
+      src: "/images/medtech/social-posts.avif",
+      alt: "MedTech Instagram profile with social posts",
+    },
+    {
+      src: "/images/medtech/event-booth.avif",
+      alt: "MedTech exhibition booth with partner brands",
+    },
   ] as ArchiveMedia[],
 });
 
@@ -1586,13 +1599,32 @@ export const medtechCulture = keepHyphenatedWords({
     "Over time, MedTech’s brand presence began moving beyond corporate communication into cultural, seasonal, and narrative-led touchpoints.",
   // row 2 — centred line
   lead: "The annual calendars became an opportunity for this exploration.",
-  // row 3 — two calendars (no `src` yet, Media shows placeholders)
+  // row 3 — the 2027 "Journey of Life" calendar, page by page (exported from the print PDF:
+  // cover, each month's page — the planner grids are left out — and the intro page last)
+  calendar: [
+    "Cover",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    "The Journey of Life",
+  ].map((title, i) => ({
+    src: `/images/medtech/calendar/page-${String(i + 1).padStart(2, "0")}.webp`,
+    alt: `MedTech 2027 calendar — ${title}`,
+    title,
+  })),
+  // the two calendar narratives, under the calendar
   calendars: [
     {
       tag: "Calendar",
-      image: {
-        alt: "Calendar — Qatar through MedTech’s perspective",
-      } as ArchiveMedia,
       text: [
         { text: "One of the narratives explored was " },
         {
@@ -1606,10 +1638,6 @@ export const medtechCulture = keepHyphenatedWords({
     },
     {
       tag: "Calendar",
-      image: {
-        alt: "Calendar — The Journey of Life",
-        tone: "dark",
-      } as ArchiveMedia,
       text: [
         { text: "The other explored was " },
         { text: "The Journey of Life", accent: true },
@@ -1637,10 +1665,10 @@ export const medtechCulture = keepHyphenatedWords({
 export const medtechOutcome = keepHyphenatedWords({
   label: "The Outcome",
   heading: ["A brand world with", "room to continue"],
-  // row 1 — no `src` yet, Media shows a placeholder
+  // row 1 — brand world overview: event backdrop, website on tablet, event flyer
   image: {
-    alt: "Outcome — MedTech brand world overview",
-    tone: "dark",
+    src: "/images/medtech/outcome.avif",
+    alt: "MedTech brand world — event backdrop, website on a tablet and an event flyer",
   } as ArchiveMedia,
   intro:
     "The MedTech project resulted in a more connected way for the brand to express its 40+ year healthcare legacy across identity, storytelling, corporate communication, digital platforms, events, cultural communication, and ongoing brand applications.",

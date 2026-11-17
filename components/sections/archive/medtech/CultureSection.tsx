@@ -3,7 +3,7 @@ import { medtechCulture as d } from "@/lib/constants";
 import Accented from "../Accented";
 import IndexTag from "../IndexTag";
 import Lines from "../Lines";
-import Media from "../Media";
+import CalendarFlip from "./CalendarFlip";
 import { t } from "../styles";
 
 /**
@@ -13,7 +13,8 @@ import { t } from "../styles";
  *   ├──────────────────────┴─────────────────────┤
  *   │               lead (centred)               │
  *   ├──────────────────────┬─────────────────────┤
- *   │ [ calendar ]         │ [ calendar ]        │
+ *   │      [ calendar, flips page by page ]      │
+ *   ├──────────────────────┬─────────────────────┤
  *   │ [01] text            │ [02] text           │
  *   ├──────────────────────┴─────────────────────┤
  *   │        MedTech as a fabric (centred)       │
@@ -48,26 +49,23 @@ export default function CultureSection() {
         </p>
       </div>
 
-      {/* row 3 — two calendars (image + text, so not a PairImageRow) */}
+      {/* row 3 — the calendar, centred, turned page by page */}
+      <CalendarFlip pages={d.calendar} />
+
+      {/* row 4 — the two calendar narratives */}
       <div className="grid grid-cols-1 border-b md:grid-cols-2">
         {d.calendars.map((c, i) => (
           <div
             key={i}
             className={cn(
-              "p-16 pb-40 md:p-24 md:pb-56 xl:px-52 xl:pt-52 xl:pb-96",
+              "px-24 pt-32 pb-40 md:px-40 md:pt-48 md:pb-56 xl:px-52 xl:pt-64 xl:pb-96",
               i > 0 && "border-t md:border-t-0 md:border-l",
             )}
           >
-            <Media
-              media={c.image}
-              className="aspect-[856/1000] h-auto xl:aspect-auto xl:h-1000"
-              sizes="(max-width: 767px) 100vw, 45vw"
-            />
-
             <IndexTag
               index={i}
               suffix={c.tag}
-              className={cn(t.tag, "mt-24 uppercase tracking-[0.08em] xl:mt-54")}
+              className={cn(t.tag, "uppercase tracking-[0.08em]")}
             />
 
             <p data-reveal className={cn(t.body, "mt-12 xl:mt-32 xl:max-w-710")}>

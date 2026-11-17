@@ -15,6 +15,9 @@ const ARCHIVE_ITEMS = archiveProjects.map((p) => ({
   href: archiveHref(p.slug),
 }));
 
+// links flagged `hidden` in constants stay out of the navbar
+const LINKS = NAV_LINKS.filter((l) => !l.hidden);
+
 export default function Navbar() {
   const pathname = usePathname();
 
@@ -106,7 +109,10 @@ export default function Navbar() {
       `
         relative
         flex
+        h-full
+        w-full
         items-center
+        justify-center
         gap-1.5
         whitespace-nowrap
         uppercase
@@ -120,8 +126,18 @@ export default function Navbar() {
         xl:tracking-[0.045em]
         xl:text-[length:max(15px,calc(var(--nu)*24))]
       `,
-      active ? "font-clash" : "font-clashlight hover:text-[#6b6b6b]"
+      active ? "font-clash" : "font-clashlight hover:bg-[#f1efe8] hover:text-[#6b6b6b]"
     );
+
+  // a quiet index next to each label, as in the mobile menu and the archive grids
+  const linkIndex = (i: number) => (
+    <span
+      aria-hidden="true"
+      className="font-clashlight text-[11px] tracking-[0.2em] text-[#8f8b86] xl:text-[length:max(11px,calc(var(--nu)*14))]"
+    >
+      {String(i + 1).padStart(2, "0")}
+    </span>
+  );
 
   const activeSquare = (active: boolean) => (
     <span
@@ -166,8 +182,9 @@ export default function Navbar() {
           )}
         >
           <div className="mx-auto w-full max-w-[1800px] xl:max-w-[2560px]">
-            <ul className="flex items-center justify-between px-8 py-[16px] lg:px-10 xl:grid xl:grid-cols-[273fr_457fr_291fr_291fr_240fr_84fr] xl:h-[calc(var(--nu)*57)] xl:py-0 xl:pr-[calc(var(--nu)*154)] xl:pl-[calc(var(--nu)*130)]">
-              {NAV_LINKS.map((item) => {
+            {/* three equal cells split by hairlines — the same ruled grid the pages use */}
+            <ul className="grid h-[52px] grid-cols-3 xl:h-[calc(var(--nu)*57)]">
+              {LINKS.map((item, index) => {
                 const active = isActive(item.href);
 
                 // ARCHIVE — opens the project list (hover or click)
@@ -178,7 +195,7 @@ export default function Navbar() {
                       ref={archiveRef}
                       // the li spans the full nav height so the pointer can
                       // move from the label into the panel without closing it
-                      className="relative -my-[16px] py-[16px] xl:my-0 xl:justify-self-start xl:flex xl:h-full xl:items-center xl:py-0"
+                      className="relative h-full border-l border-black/35 first:border-l-0"
                       onMouseEnter={() => setArchiveOpen(true)}
                       onMouseLeave={() => setArchiveOpen(false)}
                     >
@@ -199,6 +216,7 @@ export default function Navbar() {
                       >
                         {activeSquare(active)}
                         <span>{item.label}</span>
+                        {linkIndex(index)}
                       </button>
 
                       {/* PROJECT LIST */}
@@ -275,10 +293,11 @@ export default function Navbar() {
                 }
 
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className="h-full border-l border-black/35 first:border-l-0">
                     <Link href={item.href} className={desktopLinkClass(active)}>
                       {activeSquare(active)}
                       <span>{item.label}</span>
+                      {linkIndex(index)}
                     </Link>
                   </li>
                 );
@@ -374,7 +393,7 @@ export default function Navbar() {
             )}
           >
             <ul className="flex flex-col px-5 pb-2 sm:px-7">
-              {NAV_LINKS.map((item, index) => {
+              {LINKS.map((item, index) => {
                 const active = isActive(item.href);
 
                 const rowClass = cn(
