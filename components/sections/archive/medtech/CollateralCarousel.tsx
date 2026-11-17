@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 import type { ArchiveMedia } from "@/lib/constants";
@@ -13,29 +13,37 @@ export type CarouselItem = ArchiveMedia & { width: number; height: number };
  * Horizontal carousel with a common height. Every slide takes the exact shape of its own image
  * (width = height × the image's ratio), so a landscape image sits at its true width beside
  * portrait ones and nothing is cropped. Swipe / scroll, or use the arrows.
+ *
+ * It loops: the slides are laid out three times over and the view lives in the middle set.
+ * Whenever the scroll comes to rest in the first or last set it is moved, instantly, by exactly
+ * one set's width — the same picture, so the jump can't be seen — and the track never runs out.
  */
+const COPIES = 3;
+
 export default function CollateralCarousel({ items }: { items: CarouselItem[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
-  const [edge, setEdge] = useState({ start: true, end: false });
+  const n = items.length;
+  const loop = Array.from({ length: COPIES }, () => items).flat();
 
-  const measure = useCallback(() => {
+  // width of one full set of slides, gaps included
+  const period = useCallback(() => {
     const el = trackRef.current;
-    if (!el) return;
-    const slides = Array.from(el.children) as HTMLElement[];
+    if (!el || !n) return 0;
+    const slides = el.children as HTMLCollectionOf<HTMLElement>;
+    return slides[n].offsetLeft - slides[0].offsetLeft;
+  }, [n]);
+
+  // keep the view inside the middle set (instant, invisible jump)
+  const recenter = useCallback(() => {
+    const el = trackRef.current;
+    const p = period();
+    if (!el || !p) return;
     const left = el.scrollLeft;
-    let nearest = 0;
-    let best = Infinity;
-    slides.forEach((s, i) => {
-      const d = Math.abs(s.offsetLeft - slides[0].offsetLeft - left);
-      if (d < best) {
-        best = d;
-        nearest = i;
-      }
-    });
-    setIndex(nearest);
-    setEdge({ start: left <= 2, end: left >= el.scrollWidth - el.clientWidth - 2 });
-  }, []);
+    let next = left;
+    if (left < p * 0.5) next = left + p;
+    else if (left >= p * 1.5) next = left - p;
+    if (next !== left) el.scrollTo({ left: next, behavior: "instant" });
+  }, [period]);
 
   // Free scrolling (no CSS snap: with mixed widths the browser's snap points were unreliable). When the
   // scroll comes to rest, ease to the nearest position that shows an image in full: left edge at the
@@ -46,6 +54,7 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
   const settle = useCallback(() => {
     const el = trackRef.current;
     if (!el || touching.current) return;
+    recenter();
     const slides = Array.from(el.children) as HTMLElement[];
     const box = el.getBoundingClientRect();
     const cs = getComputedStyle(el);
@@ -53,14 +62,12 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
     const padR = parseFloat(cs.paddingRight) || 0;
     const left = el.scrollLeft;
     const view = el.clientWidth;
-    const max = el.scrollWidth - view;
     let best = left;
     let bestD = Infinity;
     slides.forEach((s) => {
       const r = s.getBoundingClientRect();
       const l = r.left - box.left + left;
-      [l - padL, l + r.width + padR - view].forEach((c) => {
-        const x = Math.min(max, Math.max(0, c));
+      [l - padL, l + r.width + padR - view].forEach((x) => {
         const d = Math.abs(x - left);
         if (d < bestD) {
           bestD = d;
@@ -69,7 +76,7 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
       });
     });
     if (bestD > 2) el.scrollTo({ left: best, behavior: "smooth" });
-  }, []);
+  }, [recenter]);
 
   const queueSettle = () => {
     window.clearTimeout(timer.current);
@@ -78,18 +85,20 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
+  // start on the first slide of the middle set, and stay in the middle set across resizes
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
-    measure();
-    const ro = new ResizeObserver(measure);
+    el.scrollTo({ left: period(), behavior: "instant" });
+    const ro = new ResizeObserver(recenter);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [measure]);
+  }, [period, recenter]);
 
   const go = (dir: 1 | -1) => {
     const el = trackRef.current;
     if (!el) return;
+    recenter();
     const slides = Array.from(el.children) as HTMLElement[];
     const box = el.getBoundingClientRect();
     const cs = getComputedStyle(el);
@@ -97,7 +106,6 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
     const padR = parseFloat(cs.paddingRight) || 0;
     const left = el.scrollLeft;
     const view = el.clientWidth;
-    const max = el.scrollWidth - view;
     // each slide's edges in the track's own scroll coordinates
     const edges = slides.map((s) => {
       const r = s.getBoundingClientRect();
@@ -109,13 +117,12 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
       // first slide that is cut off on the right -> bring it fully into view (right edge at the right padding)
       const cut = edges.find((e) => e.r > left + view + 2);
       if (cut) target = cut.r + padR - view <= cut.l - padL ? cut.r + padR - view : cut.l - padL;
-      else target = max;
     } else {
       // last slide that is cut off on the left -> bring it fully into view (left edge at the left padding)
       const cut = [...edges].reverse().find((e) => e.l < left - 2);
-      target = cut ? cut.l - padL : 0;
+      if (cut) target = cut.l - padL;
     }
-    el.scrollTo({ left: Math.min(max, Math.max(0, target)), behavior: "smooth" });
+    el.scrollTo({ left: target, behavior: "smooth" });
   };
 
   const arrow =
@@ -125,10 +132,7 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
     <div className={cn(t.inner, "border-b py-16 md:py-24 xl:pt-43 xl:pb-44")}>
       <div
         ref={trackRef}
-        onScroll={() => {
-          measure();
-          queueSettle();
-        }}
+        onScroll={queueSettle}
         onTouchStart={() => {
           touching.current = true;
         }}
@@ -141,11 +145,13 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
         aria-label="Collateral and events"
         className="flex gap-12 overflow-x-auto scroll-smooth px-16 [scrollbar-width:none] md:gap-16 md:px-24 xl:gap-24 xl:px-51 [&::-webkit-scrollbar]:hidden"
       >
-        {items.map((img, i) => (
+        {loop.map((img, i) => (
           <div
             key={i}
+            // only the middle set is announced; the copies either side are for the loop
+            aria-hidden={i < n || i >= 2 * n ? true : undefined}
             aria-roledescription="slide"
-            aria-label={`${i + 1} of ${items.length}`}
+            aria-label={`${(i % n) + 1} of ${n}`}
             className="h-[420px] shrink-0 md:h-[460px] xl:h-691"
             style={{ aspectRatio: `${img.width} / ${img.height}` }}
           >
@@ -155,10 +161,10 @@ export default function CollateralCarousel({ items }: { items: CarouselItem[] })
       </div>
 
       <div className="mt-16 flex items-center justify-center gap-8 px-16 md:mt-20 md:px-24 xl:mt-28 xl:gap-12 xl:px-51">
-        <button type="button" aria-label="Previous image" disabled={edge.start} onClick={() => go(-1)} className={arrow}>
+        <button type="button" aria-label="Previous image" onClick={() => go(-1)} className={arrow}>
           <HiArrowLeft className="size-16 xl:size-[calc(var(--spacing)*22)]" />
         </button>
-        <button type="button" aria-label="Next image" disabled={edge.end} onClick={() => go(1)} className={arrow}>
+        <button type="button" aria-label="Next image" onClick={() => go(1)} className={arrow}>
           <HiArrowRight className="size-16 xl:size-[calc(var(--spacing)*22)]" />
         </button>
       </div>

@@ -129,16 +129,6 @@ export default function Navbar() {
       active ? "font-clash" : "font-clashlight hover:bg-[#f1efe8] hover:text-[#6b6b6b]"
     );
 
-  // a quiet index next to each label, as in the mobile menu and the archive grids
-  const linkIndex = (i: number) => (
-    <span
-      aria-hidden="true"
-      className="font-clashlight text-[11px] tracking-[0.2em] text-[#8f8b86] xl:text-[length:max(11px,calc(var(--nu)*14))]"
-    >
-      {String(i + 1).padStart(2, "0")}
-    </span>
-  );
-
   const activeSquare = (active: boolean) => (
     <span
       className={cn(
@@ -184,7 +174,7 @@ export default function Navbar() {
           <div className="mx-auto w-full max-w-[1800px] xl:max-w-[2560px]">
             {/* three equal cells split by hairlines — the same ruled grid the pages use */}
             <ul className="grid h-[52px] grid-cols-3 xl:h-[calc(var(--nu)*57)]">
-              {LINKS.map((item, index) => {
+              {LINKS.map((item) => {
                 const active = isActive(item.href);
 
                 // ARCHIVE — opens the project list (hover or click)
@@ -216,7 +206,6 @@ export default function Navbar() {
                       >
                         {activeSquare(active)}
                         <span>{item.label}</span>
-                        {linkIndex(index)}
                       </button>
 
                       {/* PROJECT LIST */}
@@ -297,7 +286,6 @@ export default function Navbar() {
                     <Link href={item.href} className={desktopLinkClass(active)}>
                       {activeSquare(active)}
                       <span>{item.label}</span>
-                      {linkIndex(index)}
                     </Link>
                   </li>
                 );
