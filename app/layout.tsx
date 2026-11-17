@@ -5,7 +5,7 @@ import { heading, body, nav } from "./fonts";
 import SmoothScrollLoader from "@/components/common/SmoothScrollLoader";
 
 export const metadata: Metadata = {
-  title: "Torus",
+  title: "Toruss",
   description: "Studio Website",
 };
 
