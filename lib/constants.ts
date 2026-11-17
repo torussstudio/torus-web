@@ -1443,14 +1443,13 @@ export const medtechProcess = keepHyphenatedWords({
   // row 1, right column
   colour:
     "The colour direction was shaped to balance authority and warmth. Red, crimson, navy, sand, and pearl white kept the brand connected to healthcare and institutional trust while softening the overall atmosphere.",
-  // TODO: replace with the exact brand hex values
-  swatches: [
-    { name: "Red", hex: "#b0232f", dark: true },
-    { name: "Crimson", hex: "#7a2129", dark: true },
-    { name: "Navy", hex: "#1f2a48", dark: true },
-    { name: "Sand", hex: "#dcc9a8", dark: false },
-    { name: "Pearl White", hex: "#f3efe6", dark: false },
-  ],
+  // the five brand colours as the logo's own linked-cell shape (transparent background)
+  palette: {
+    src: "/images/medtech/colour-palette.avif",
+    alt: "MedTech colour palette — red, crimson, navy, sand and pearl white",
+    width: 292,
+    height: 62,
+  },
   // row 2 — no `src` yet, Media shows placeholders
   images: [
     {
@@ -1579,7 +1578,7 @@ export const medtechTouchpoints = keepHyphenatedWords({
   // row 4 — two landscape images, one per half
   posts: [
     {
-      src: "/images/medtech/social-posts.avif",
+      src: "/images/medtech/social-posts-v2.avif",
       alt: "MedTech Instagram profile with social posts",
     },
     {

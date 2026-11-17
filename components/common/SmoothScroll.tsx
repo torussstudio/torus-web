@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import ScrollToTop from "./ScrollToTop";
 
 export default function SmoothScroll() {
   const pathname = usePathname();
@@ -84,5 +85,6 @@ export default function SmoothScroll() {
     return () => cancelAnimationFrame(id);
   }, [pathname]);
 
-  return null;
+  // the back-to-top button rides along here, on every page, with access to Lenis
+  return <ScrollToTop getLenis={() => lenisRef.current} />;
 }

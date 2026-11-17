@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { medtechProcess as d } from "@/lib/constants";
 import Media from "../Media";
@@ -7,7 +8,7 @@ import { t } from "../styles";
  * MedTech "Process"
  *   ┌──────┬──────────────────────────────────────┐
  *   │ label│ heading                              │
- *   │      │ left paras        colour + swatches  │
+ *   │      │ left paras        colour + palette   │
  *   ├──────┴──────────────────────────────────────┤
  *   │ [ image              ] [ image          ]   │
  *   ├──────────────────────┬──────────────────────┤
@@ -42,28 +43,16 @@ export default function ProcessSection() {
                 {d.colour}
               </p>
 
-              {/* colour swatches */}
-              <div data-reveal className="mt-24 grid grid-cols-5 xl:mt-45">
-                {d.swatches.map((s) => (
-                  <div
-                    key={s.name}
-                    className={cn(
-                      "flex h-96 items-end px-8 pb-10 xl:h-150 xl:px-18 xl:pb-24",
-                      !s.dark && "border border-black/15",
-                    )}
-                    style={{ backgroundColor: s.hex }}
-                  >
-                    <span
-                      className={cn(
-                        "text-[9px] leading-[1.25] uppercase tracking-[0.08em] xl:text-[length:max(9px,calc(var(--spacing)*16))]",
-                        s.dark ? "text-white/85" : "text-[#38362e]/80",
-                      )}
-                    >
-                      {s.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {/* colour palette */}
+              <Image
+                data-reveal
+                src={d.palette.src}
+                alt={d.palette.alt}
+                width={d.palette.width}
+                height={d.palette.height}
+                unoptimized
+                className="mt-24 h-auto w-full max-w-[420px] xl:mt-45 xl:max-w-none"
+              />
             </div>
           </div>
         </div>
