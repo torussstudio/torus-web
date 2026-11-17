@@ -152,7 +152,7 @@ export default function HomeScrollFx({ children }: { children: ReactNode }) {
 
       if (desktop && wipe && bar && rows.length > 1) {
         const SLANT = 0.18; // bar leans by 18% of the box height
-        const BAR_W = 26;
+        const BAR_W = 10;
         let W = 0;
         let H = 0;
         const measure = () => {

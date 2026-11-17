@@ -178,7 +178,7 @@ export const works = [
     year: "2026",
     country: "SPAIN",
     title: "The Spanish Alchemist",
-    image: "/images/home/archive-tsa.avif",
+    image: "/images/home/hero.avif",
     href: "/archive/the-spanish-alchemist",
     desc: "Building a skincare brand around freshness, efficacy, and a different way of thinking about shelf life.",
     descLines: [
@@ -211,6 +211,28 @@ export const works = [
       "SEO",
       "UI/UX",
       "Email Marketing",
+      "Pitch Decks",
+    ],
+  },
+
+  {
+    year: "2024 – Present",
+    country: "QATAR, GCC",
+    title: "MedTech Corporation",
+    image: "/images/medtech/hero.avif",
+    href: "/archive/medtech",
+    desc: "Giving a clearer visual expression and brand experience to a 45+ year healthcare journey in Qatar.",
+    descLines: [
+      "Giving a clearer visual expression and",
+      "brand experience to a 45+ year healthcare",
+      "journey in Qatar.",
+    ],
+    tags: [
+      "Branding",
+      "Website",
+      "Content Strategy",
+      "Events",
+      "UI/UX",
       "Pitch Decks",
     ],
   },
@@ -1392,7 +1414,7 @@ export const medtechProfile = keepHyphenatedWords({
   // row 3 — two images side by side (no `src` yet, Media shows placeholders)
   images: [
     {
-      src: "/images/medtech/culture-growth.avif",
+      video: "/videos/medtech/companygrowth.mp4",
       alt: "Company profile — history as cultivated growth",
     },
     {
@@ -1628,7 +1650,9 @@ export const medtechOutcome = keepHyphenatedWords({
     "For Toruss, the collaboration became an opportunity to be a creative partner for an established healthcare organisation with a brand language built to evolve across new audiences, partnerships, and touchpoints.",
   // row 3 — wide collage
   collage: {
-    alt: "Collage — profile, calendar, WHX, film stills",
+    src: "/images/medtech/logo-sketch-poster.jpg",
+    video: "/videos/medtech/Medtech-Logo-Sketch.mp4",
+    alt: "MedTech logo sketching and printables",
   } as ArchiveMedia,
 });
 
@@ -1707,7 +1731,7 @@ export const archiveHref = (slug: string) => `/archive/${slug}`;
 
 export const footerContent = {
   image: {
-    src: "/images/home/footer-telephone.avif",
+    src: "/images/home/phone.webp",
     alt: "Toruss studio desk",
   },
   sideLabel: "Get in touch",

@@ -34,7 +34,7 @@ export default function ArchiveSection() {
       <span
         data-fx="wipe-bar"
         aria-hidden="true"
-        className="pointer-events-none absolute top-[-25%] left-0 z-20 hidden h-[150%] w-26 bg-[#1b0f0b] opacity-0 xl:block"
+        className="pointer-events-none absolute top-[-25%] left-0 z-20 hidden h-[150%] w-10 bg-[#1b0f0b] opacity-0 xl:block"
       />
       {works.map((work) => (
         <article
