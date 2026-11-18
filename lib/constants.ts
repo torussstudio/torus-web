@@ -1173,8 +1173,8 @@ export const exultEvent = keepHyphenatedWords({
     tone: "dark",
   } as ArchiveMedia,
   imageSecondary: {
-    src: "/optimized/event-entrance-7f65c1dac8f3.avif",
-    alt: "Event collateral",
+    src: "/optimized/event-booth-407.avif",
+    alt: "Exult Global booth 407 at the Microsoft Fabric Community Conference",
     tone: "dark",
   } as ArchiveMedia,
 });
@@ -1185,14 +1185,14 @@ export const exultEmail = keepHyphenatedWords({
   right:
     "The campaign achieved approximately 45% open rate and around 10% conversion rate, making email an important contributor to event engagement and lead generation.",
   wide: {
-    src: "/optimized/email-stage-114827809a70.avif",
-    alt: "Email campaign designs",
+    src: "/optimized/email-stage-ai-unified.avif",
+    alt: "Exult Global speakers at the Microsoft Fabric conference",
     tone: "dark",
   } as ArchiveMedia,
   pair: [
     {
-      src: "/optimized/email-booth-87249ac1f471.avif",
-      alt: "Email design 1",
+      src: "/optimized/email-booth-connected-analytics.avif",
+      alt: "Exult Global team discussing connected analytics at FabCon 2025",
       tone: "dark",
     },
     {
