@@ -72,14 +72,6 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/home/card-cohort.avif",
-    "output": "/optimized/card-cohort-1d4b448ffd08.avif",
-    "before": 347872,
-    "after": 209411,
-    "sourceHash": "fc5d7c96aeb788ffe685ae36a7de283683708092cbbf23474f03e0bcef4d2a99",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/images/home/hero.avif",
     "output": "/optimized/hero-579399d2d0a7.avif",
     "before": 478825,

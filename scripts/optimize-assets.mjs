@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, readdir, writeFile, stat } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile, stat, unlink } from "node:fs/promises";
 import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -78,20 +78,26 @@ for (const source of urls) {
   if (video) {
     // Background loops are muted. 1080p/30fps avoids decoding 4K/60fps
     // while scrolling; faststart lets playback begin before download ends.
+    // Vercel does not include ffmpeg, so retain the original when transcoding
+    // is unavailable instead of failing the production build.
     const temporary = path.join(outputDir, "encoding.mp4");
-    execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", input,
-      "-vf", "scale=w='min(1920,iw)':h='min(1080,ih)':force_original_aspect_ratio=decrease:force_divisible_by=2,fps=30",
-      "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-threads", "1",
-      "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", temporary]);
-    data = await readFile(temporary);
-    const { unlink } = await import("node:fs/promises");
-    await unlink(temporary);
+    try {
+      execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", input,
+        "-vf", "scale=w='min(1920,iw)':h='min(1080,ih)':force_original_aspect_ratio=decrease:force_divisible_by=2,fps=30",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-threads", "1",
+        "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", temporary]);
+      data = await readFile(temporary);
+    } catch (error) {
+      console.warn(`Could not encode ${source}; original retained: ${error.message}`);
+      continue;
+    } finally {
+      await unlink(temporary).catch(() => {});
+    }
   } else {
     try {
       const temporary = path.join(outputDir, "encoding.avif");
       execFileSync(process.execPath, [path.join(root, "scripts/encode-image.mjs"), input, temporary]);
       data = await readFile(temporary);
-      const { unlink } = await import("node:fs/promises");
       await unlink(temporary);
     } catch (error) {
       console.warn(`Could not encode ${source}; original retained: ${error.message}`);
