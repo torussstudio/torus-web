@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   sizes?: string;
   priority?: boolean;
+  reveal?: boolean;
 };
 
 /**
@@ -22,12 +23,13 @@ export default function Media({
   className,
   sizes = "100vw",
   priority = false,
+  reveal = true,
 }: Props) {
   const dark = media.tone === "dark";
 
   return (
     <div
-      data-reveal="media"
+      data-reveal={reveal ? "media" : undefined}
       className={cn(
         "relative h-full w-full overflow-hidden",
         dark ? "bg-[#34322b]" : "bg-[#eae6dc]",

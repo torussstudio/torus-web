@@ -18,7 +18,7 @@ import { dropHiddenBreaks } from "@/lib/utils";
  * Safety:
  *  - the cover is server-rendered, so the page never flashes before it
  *  - reduced motion: the cover is hidden by CSS and nothing runs
- *  - if JS never runs, a CSS fail-safe hides the cover after 6s
+ *  - if JS never runs, a CSS fail-safe hides the cover after 2s
  *  - page scroll is blocked only while the intro plays
  */
 
@@ -45,7 +45,7 @@ export default function HeroIntro() {
         // The animation still completes when browser storage is disabled.
       }
     };
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (introSeen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       cover.style.display = "none";
       markIntroSeen();
       return;
@@ -77,8 +77,6 @@ export default function HeroIntro() {
     let clone: HTMLImageElement | null = null;
     let split: SplitText | null = null;
     let restoreTitle: (() => void) | null = null;
-    let transitionFrame1 = 0;
-    let transitionFrame2 = 0;
 
     const ctx = gsap.context(() => {
       const band = cover.querySelector<HTMLElement>("[data-intro='band']");
@@ -89,33 +87,9 @@ export default function HeroIntro() {
       const title = document.querySelector<HTMLElement>("[data-intro='title']");
       const items = gsap.utils.toArray<HTMLElement>("[data-intro='item']");
       const header = document.querySelector<HTMLElement>("header");
-      if (!band || !label || !counter) return;
-
-      // Returning visits use a content transition instead of the full-screen
-      // first-visit hero sequence.
-      if (introSeen) {
+      if (!band || !label || !counter) {
         cover.style.display = "none";
-        const homePage = document.querySelector<HTMLElement>("[data-home-page]");
-        if (!homePage) {
-          unlock();
-          return;
-        }
-
-        gsap.set(homePage, { autoAlpha: 0 });
-        const transition = gsap.timeline({ paused: true, onComplete: unlock });
-        transition.to(homePage, {
-          autoAlpha: 1,
-          duration: 0.55,
-          ease: "power2.out",
-          clearProps: "opacity,visibility",
-        });
-        transitionFrame1 = requestAnimationFrame(() => {
-          // Let Next, Lenis, and ScrollTrigger finish positioning the new
-          // route before revealing it, so the page doesn't jump vertically.
-          transitionFrame2 = requestAnimationFrame(() => {
-            transition.play();
-          });
-        });
+        unlock();
         return;
       }
 
@@ -146,6 +120,12 @@ export default function HeroIntro() {
       // 1. band fills left → right, counter rides the edge
       const FILL = desktop ? 1.5 : 1.2;
       const progress = { p: 0 };
+      // Measure once, before animation writes, instead of forcing layout on
+      // every counter frame. Reserve width for the longest label (100%).
+      counter.textContent = "100%";
+      const minX = label.offsetLeft + label.offsetWidth + 20;
+      const counterWidth = counter.offsetWidth;
+      counter.textContent = "0%";
       tl.fromTo(band, { scaleX: 0 }, { scaleX: 1, duration: FILL, ease: "power2.inOut" }, 0.15);
       tl.to(
         progress,
@@ -156,8 +136,7 @@ export default function HeroIntro() {
           onUpdate: () => {
             counter.textContent = `${Math.round(progress.p * 100)}%`;
             // ride the band's edge, but never sit on top of "Loading"
-            const minX = label.offsetLeft + label.offsetWidth + 20;
-            const x = Math.max(minX, progress.p * W - counter.offsetWidth - 24);
+            const x = Math.max(minX, progress.p * W - counterWidth - 24);
             gsap.set(counter, { x });
           },
         },
@@ -231,6 +210,8 @@ export default function HeroIntro() {
       if (header) tl.to(header, { yPercent: 0, duration: 0.8, ease: "expo.out" }, "-=0.2");
       if (split) tl.to(split.lines, { yPercent: 0, duration: 1, ease: "expo.out", stagger: 0.09 }, "<");
       tl.to(items, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.06 }, "<0.25");
+      // Keep the branded entrance, but cap its interaction-blocking duration.
+      tl.duration(desktop ? 1.6 : 1.2);
     });
 
     return () => {
@@ -238,8 +219,6 @@ export default function HeroIntro() {
       split?.revert();
       restoreTitle?.();
       clone?.remove();
-      cancelAnimationFrame(transitionFrame1);
-      cancelAnimationFrame(transitionFrame2);
       unlock();
     };
   }, []);
@@ -249,7 +228,7 @@ export default function HeroIntro() {
       ref={coverRef}
       data-home-hero-intro
       aria-hidden="true"
-      className="fixed inset-0 z-[100] overflow-hidden motion-reduce:hidden [animation:fx-intro-failsafe_0s_linear_6s_forwards]"
+      className="fixed inset-0 z-[100] overflow-hidden motion-reduce:hidden [animation:fx-intro-failsafe_0s_linear_2s_forwards]"
       style={{ backgroundColor: PAPER }}
     >
       <div

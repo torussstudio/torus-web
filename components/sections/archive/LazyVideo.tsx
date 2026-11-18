@@ -22,19 +22,43 @@ export default function LazyVideo({ src, poster, label, className }: Props) {
     const video = ref.current;
     if (!video) return;
 
-    // no IntersectionObserver (very old browser) -> just play
-    if (!("IntersectionObserver" in window)) {
+    let visible = false;
+    let loaded = false;
+    const syncPlayback = () => {
+      if (visible && !document.hidden) video.play().catch(() => {});
+      else video.pause();
+    };
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      if (poster) video.poster = poster;
+      video.preload = "auto";
       video.src = src;
-      video.play().catch(() => {});
-      return;
+      video.load();
+    };
+    const cleanup = () => {
+      document.removeEventListener("visibilitychange", syncPlayback);
+      video.removeEventListener("canplay", syncPlayback);
+      video.pause();
+      video.removeAttribute("src");
+      video.removeAttribute("poster");
+      video.load();
+    };
+    document.addEventListener("visibilitychange", syncPlayback);
+    video.addEventListener("canplay", syncPlayback);
+
+    if (!("IntersectionObserver" in window)) {
+      visible = true;
+      load();
+      syncPlayback();
+      return cleanup;
     }
 
     // start fetching a little before it scrolls into view
     const loader = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        video.src = src;
-        video.load();
+        load();
         loader.disconnect();
       },
       { rootMargin: "600px 0px" },
@@ -43,8 +67,9 @@ export default function LazyVideo({ src, poster, label, className }: Props) {
     // play only while visible
     const player = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
+        visible = entry.isIntersecting;
+        if (visible) load();
+        syncPlayback();
       },
       { threshold: 0.05 },
     );
@@ -54,13 +79,13 @@ export default function LazyVideo({ src, poster, label, className }: Props) {
     return () => {
       loader.disconnect();
       player.disconnect();
+      cleanup();
     };
-  }, [src]);
+  }, [src, poster]);
 
   return (
     <video
       ref={ref}
-      poster={poster}
       aria-label={label}
       muted
       loop

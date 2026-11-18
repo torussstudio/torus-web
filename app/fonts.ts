@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Nixie_One } from "next/font/google";
 
 
 export const nav = localFont({

@@ -40,6 +40,7 @@ export default function ExultProject({ index }: { index: string }) {
       <DigitalSection />
       <OutcomeSection
         data={exultOutcome}
+        fullWidthMediaOnMobile
         topPadding="xl:pt-84"
         columnWidths={["xl:max-w-390", "xl:max-w-454", "xl:max-w-386"]}
       />

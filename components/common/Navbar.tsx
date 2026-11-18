@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, archiveHref, archiveProjects } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import MobileMenu from "./MobileMenu";
 
 // ARCHIVE doesn't open a page (the archive listing isn't built yet) —
 // it opens a list of the projects, and each project opens its own page.
@@ -27,7 +28,7 @@ export default function Navbar() {
 
   // archive project list: desktop dropdown + mobile sub-menu
   const [archiveOpen, setArchiveOpen] = useState(false);
-  const [mobileArchiveOpen, setMobileArchiveOpen] = useState(false);
+  const closeMobileMenu = useCallback(() => setMenuOpen(false), []);
 
   const headerRef = useRef<HTMLElement>(null);
   const archiveRef = useRef<HTMLLIElement>(null);
@@ -151,7 +152,7 @@ export default function Navbar() {
       {/* FIXED HEADER - logo always visible, nav slides behind it */}
       <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full [--nu:1px] xl:[--nu:min(1.3333px,calc(100vw/1920))]">
         {/* LOGO */}
-        <div className="relative z-50 flex items-center justify-center border-b border-black/35 bg-[#f9f8f2] px-4 py-4 sm:py-5 md:py-4 xl:h-[calc(var(--nu)*81)] xl:py-0">
+        <div className="relative z-50 flex items-center justify-between border-b border-black/35 bg-[#f9f8f2] px-5 py-2 sm:px-7 sm:py-3 md:py-2 lg:justify-center lg:px-4 lg:py-4 xl:h-[calc(var(--nu)*81)] xl:py-0">
           <Link href="/" className="block">
             <Image
               src="/images/NewLogo.png"
@@ -162,6 +163,29 @@ export default function Navbar() {
               className="h-auto w-[140px] sm:w-[170px] md:w-[200px] lg:w-[150px] xl:w-[max(150px,calc(var(--nu)*198))] select-none"
             />
           </Link>
+          <button
+            type="button"
+            aria-label="Toggle Menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="relative -mr-2 flex size-11 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden"
+          >
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute h-px w-7 bg-[#2a2a2a] transition-transform duration-300",
+                menuOpen ? "rotate-45" : "-translate-y-1"
+              )}
+            />
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute h-px w-7 bg-[#2a2a2a] transition-transform duration-300",
+                menuOpen ? "-rotate-45" : "translate-y-1"
+              )}
+            />
+          </button>
         </div>
 
         {/* DESKTOP NAV - sits right below logo, hides behind logo on scroll down, shows on scroll up */}
@@ -294,233 +318,8 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* MOBILE / TABLET - always fixed right below logo, does NOT hide */}
-        <div className="relative z-40 border-b border-black/35 bg-[#f4f4f2] lg:hidden">
-          {/* TOP BAR */}
-          <div className="flex items-center justify-between px-5 py-2 sm:px-7 sm:py-3">
-            <button
-              aria-label="Toggle Menu"
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((prev) => !prev)}
-              className="flex cursor-pointer flex-col justify-center gap-[5px] p-1 -ml-1"
-            >
-              <span
-                className={cn(
-                  `
-                    block
-                    h-px
-                    w-6
-                    bg-[#2a2a2a]
-                    origin-center
-                    transition-all
-                    duration-300
-                  `,
-                  menuOpen && "translate-y-[6px] rotate-45"
-                )}
-              />
-
-              <span
-                className={cn(
-                  `
-                    block
-                    h-px
-                    w-6
-                    bg-[#2a2a2a]
-                    transition-all
-                    duration-300
-                  `,
-                  menuOpen
-                    ? "scale-x-0 opacity-0"
-                    : "scale-x-100 opacity-100"
-                )}
-              />
-
-              <span
-                className={cn(
-                  `
-                    block
-                    h-px
-                    w-6
-                    bg-[#2a2a2a]
-                    origin-center
-                    transition-all
-                    duration-300
-                  `,
-                  menuOpen && "-translate-y-[6px] -rotate-45"
-                )}
-              />
-            </button>
-
-            <span
-              className="
-                select-none
-                font-clash
-                text-[11px]
-                uppercase
-                tracking-[0.35em]
-                text-[#8f8b86]
-                sm:text-[12px]
-              "
-            >
-              MENU
-            </span>
-          </div>
-
-          {/* DROPDOWN */}
-          <div
-            className={cn(
-              `
-                overflow-hidden
-                transition-all
-                duration-300
-                ease-in-out
-              `,
-              menuOpen
-                ? "max-h-[800px] opacity-100"
-                : "max-h-0 opacity-0"
-            )}
-          >
-            <ul className="flex flex-col px-5 pb-2 sm:px-7">
-              {LINKS.map((item, index) => {
-                const active = isActive(item.href);
-
-                const rowClass = cn(
-                  `
-                    flex
-                    w-full
-                    items-center
-                    gap-3
-                    py-4
-                    font-clash
-                    text-[11px]
-                    uppercase
-                    tracking-[0.22em]
-                    transition-colors
-                    duration-150
-                    sm:py-5
-                    sm:text-[13px]
-                    md:text-[14px]
-                  `,
-                  active ? "text-[#2a2a2a]" : "text-[#8f8b86]"
-                );
-
-                const square = (
-                  <span
-                    className={cn(
-                      `
-                        h-[5px]
-                        w-[5px]
-                        shrink-0
-                        bg-[#2a2a2a]
-                        transition-opacity
-                        duration-150
-                      `,
-                      active ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                );
-
-                const number = (
-                  <span className="ml-auto font-clash text-[10px] tracking-[0.2em] text-[#c5c2bc] sm:text-[11px]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                );
-
-                // ARCHIVE — expands the project list in place
-                if (item.href === ARCHIVE_HREF) {
-                  return (
-                    <li
-                      key={item.href}
-                      className="border-t border-black/10 first:border-t-0"
-                    >
-                      <button
-                        type="button"
-                        aria-expanded={mobileArchiveOpen}
-                        onClick={() => setMobileArchiveOpen((prev) => !prev)}
-                        className={cn(rowClass, "cursor-pointer text-left")}
-                      >
-                        {square}
-                        <span>{item.label}</span>
-                        <span
-                          aria-hidden="true"
-                          className={cn(
-                            "text-[13px] leading-none transition-transform duration-200",
-                            mobileArchiveOpen && "rotate-45"
-                          )}
-                        >
-                          +
-                        </span>
-                        {number}
-                      </button>
-
-                      <div
-                        className={cn(
-                          "grid transition-[grid-template-rows] duration-300 ease-in-out",
-                          mobileArchiveOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                        )}
-                      >
-                        <ul className="overflow-hidden">
-                          {ARCHIVE_ITEMS.map((project) => {
-                            const current = pathname === project.href;
-
-                            return (
-                              <li key={project.href}>
-                                <Link
-                                  href={project.href}
-                                  onClick={() => {
-                                    setMenuOpen(false);
-                                    setMobileArchiveOpen(false);
-                                  }}
-                                  className={cn(
-                                    `
-                                      flex
-                                      items-center
-                                      gap-3
-                                      py-3
-                                      pl-[20px]
-                                      font-clash
-                                      text-[11px]
-                                      uppercase
-                                      tracking-[0.22em]
-                                      sm:text-[12px]
-                                      md:text-[13px]
-                                    `,
-                                    current ? "text-[#2a2a2a]" : "text-[#8f8b86]"
-                                  )}
-                                >
-                                  <span className="h-px w-3 shrink-0 bg-current" />
-                                  <span>{project.label}</span>
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    </li>
-                  );
-                }
-
-                return (
-                  <li
-                    key={item.href}
-                    className="border-t border-black/10 first:border-t-0"
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className={rowClass}
-                    >
-                      {square}
-                      <span>{item.label}</span>
-                      {number}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
       </header>
+      <MobileMenu open={menuOpen} onClose={closeMobileMenu} />
 
       {/* SPACER - reserves the header's height in normal document flow
           so page content doesn't slide under the fixed header */}

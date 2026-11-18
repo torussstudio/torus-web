@@ -32,26 +32,39 @@ export const NAV_LINKS: { label: string; href: string; hidden?: boolean }[] = [
 
 // hero
 
-import { FaInstagram, FaLinkedin, FaPinterest } from "react-icons/fa";
+import {
+  FaBehance,
+  FaEnvelope,
+  FaInstagram,
+  FaLinkedin,
+  FaPhoneAlt,
+  FaPinterest,
+} from "react-icons/fa";
 
-export const SOCIAL_LINKS = [
-  {
-    icon: FaLinkedin,
-    href: "https://www.linkedin.com/company/torusdxn/",
-    label: "Twitter",
-  },
+const studioEmail = {
+  label: "info@toruss.studio",
+  href: "mailto:info@toruss.studio",
+};
+const studioPhone = { label: "+91 812 9675 834", href: "tel:+918129675834" };
+const studioInstagram = {
+  label: "Instagram",
+  href: "https://www.instagram.com/toruss.studio?srtk=Z3Z3YXhiZzluYXFm",
+};
 
+export const HOME_CONTACT_LINKS = [
   {
-    icon: FaInstagram,
-    href: "https://www.instagram.com/toruss.studio?srtk=Z3Z3YXhiZzluYXFm",
-    label: "Instagram",
+    icon: FaEnvelope,
+    href: studioEmail.href,
+    label: "Email Toruss",
+    external: false,
   },
-
   {
-    icon: FaPinterest,
-    href: "https://in.pinterest.com/studiotoruss/",
-    label: "Pinterest",
+    icon: FaPhoneAlt,
+    href: studioPhone.href,
+    label: "Call Toruss",
+    external: false,
   },
+  { ...studioInstagram, icon: FaInstagram, external: true },
 ];
 
 export const socialss = [FaLinkedin, FaInstagram, FaPinterest];
@@ -68,27 +81,27 @@ export const links = [
 export const spaces = [
   {
     title: "THE DISCUSSIONS",
-    image: "/images/home/space-discussions.avif",
+    image: "/optimized/space-discussions-a987f3457007.avif",
   },
   {
     title: "THE IN-BETWEENS",
-    image: "/images/home/space-in-betweens.avif",
+    image: "/optimized/space-in-betweens-1feb44e00d95.avif",
   },
   {
     title: "THE WORKPLACE",
-    image: "/images/home/space-workplace.avif",
+    image: "/optimized/space-workplace-a8e2f18a99e1.avif",
   },
   {
     title: "THE COLLABORATIONS",
-    image: "/images/home/space-collaborations.avif",
+    image: "/optimized/space-collaborations-04a5e0c9a637.avif",
   },
   {
     title: "THE EXPLORATIONS",
-    image: "/images/home/space-explorations.avif",
+    image: "/optimized/space-explorations-a5e3f1a7a08e.avif",
   },
   {
     title: "THE INSPIRATIONS",
-    image: "/images/home/space-inspirations.avif",
+    image: "/optimized/space-inspirations-3e651a7f16ab.avif",
   },
 ];
 
@@ -139,7 +152,7 @@ export const cards = [
     titleLines: ["Artworks, objects, and", "physical expressions."],
     icon: "▲",
     desc: "We work with architects, interior designers, brands, institutions, and individuals to curate, source, create, and commission artworks and other physical expressions.",
-    image: "/images/home/card-editions.avif",
+    image: "/optimized/card-editions-76ea86a5c73b.avif",
     items: [
       "Art Consultation",
       "Artwork Sourcing & Creation",
@@ -162,7 +175,7 @@ export const cards = [
     ],
     icon: "■",
     desc: "Cohort brings people together through workshops, conversations, exhibitions, cultural initiatives, and collaborative projects.",
-    image: "/images/home/card-cohort.avif",
+    image: "/optimized/card-cohort-1d4b448ffd08.avif",
     items: [
       "Workshops & Learning",
       "Exhibitions",
@@ -179,10 +192,10 @@ export const cards = [
 
 export const works = [
   {
-    year: "2026",
+    year: "2024 - Present",
     country: "SPAIN",
     title: "The Spanish Alchemist",
-    image: "/images/home/hero.avif",
+    image: "/optimized/hero-579399d2d0a7.avif",
     href: "/archive/the-spanish-alchemist",
     desc: "Building a skincare brand around freshness, efficacy, and a different way of thinking about shelf life.",
     descLines: [
@@ -200,10 +213,10 @@ export const works = [
   },
 
   {
-    year: "2023",
+    year: "2023 - Present",
     country: "USA",
     title: "Exult Global",
-    image: "/images/home/archive-exult.avif",
+    image: "/optimized/archive-exult-67106e740ac0.avif",
     href: "/archive/exult-global",
     desc: "Building a SaaS/RPA automation brand across identity, digital growth, events, and enterprise communication.",
     descLines: [
@@ -506,7 +519,7 @@ type Project = {
 export const project: Project = {
   title: "THE SPANISH ALCHEMIST",
   location: "Alicante, Spain",
-  period: "2025 – Present",
+  period: "2024 – Present",
   projectLead: "Hari Sankar",
   contributors: [
     "Abhinav",
@@ -571,7 +584,7 @@ export const overview: Overview = {
   statement:
     "TURNING A FRESH SKINCARE IDEA FROM ALICANTE INTO A LAUNCH-READY BRAND, PACKAGING, E-COMMERCE, AND DIGITAL SYSTEM.",
   location: "Alicante, Spain",
-  period: "2025 – Present",
+  period: "2024 – Present",
   services: [
     "Naming",
     "Identity System",
@@ -674,10 +687,10 @@ export const tsaHero = {
     "Naming / Identity System / Packaging / E-Commerce",
     "Social Media / Email Marketing",
   ],
-  meta: ["Barcelona, Spain", "2025 - Present"],
+  meta: ["Barcelona, Spain", "2024 - Present"],
   team: "Hari (Lead), Abhinav, Archana, Sreejith, Arun Anand, Vibish, Raunak, Kishor, Rahul",
   heroImage: {
-    src: "/images/tsa/hero.avif",
+    src: "/optimized/hero-579399d2d0a7.avif",
     alt: "The Spanish Alchemist — brand hero",
   } as ArchiveMedia,
 };
@@ -705,7 +718,7 @@ export const tsaQuestion = {
   body: "From naming and identity to packaging, e-commerce, social media, email marketing, digital assets, and content direction, the project became a full brand system ready for launch, built around one question:",
   question: "How do we make freshness feel real to the customer?",
   image: {
-    src: "/images/tsa/question-sketch.avif",
+    src: "/optimized/question-sketch-0f76cc9ef5d5.avif",
     alt: "Hand sketching molecular bubble forms",
   } as ArchiveMedia,
 };
@@ -715,12 +728,18 @@ export const tsaNaming = {
   heading: ["Naming the world before", "designing it."],
   body: "The name ‘The Spanish Alchemist’ was finalized after exploring multiple naming directions. It gave the brand a world that could hold both science and emotion. The idea of the alchemist brought in a strong creative base, hands-on experimentation, transformation, natural ingredients, ritual, precision, and the search for something rare. It also allowed us to build symbolic references such as the Philosopher’s Stone, the cycle of seasons, and the ritualistic nature of selfcare, helping us move away from the usual skincare language and build a brand that felt more distinct.",
   images: [
-    { src: "/images/tsa/naming-alicante.avif", alt: "Naming workshop" },
     {
-      src: "/images/tsa/naming-philosophers-stone.avif",
+      src: "/optimized/naming-alicante-8e80a8aa8630.avif",
+      alt: "Naming workshop",
+    },
+    {
+      src: "/optimized/naming-philosophers-stone-86b8f1e12aa5.avif",
       alt: "Projection installation",
     },
-    { src: "/images/tsa/naming-alchemist.avif", alt: "Field exploration" },
+    {
+      src: "/optimized/naming-alchemist-21c91c1e3695.avif",
+      alt: "Field exploration",
+    },
   ] as ArchiveMedia[],
 };
 
@@ -732,7 +751,7 @@ export const tsaIdentity = {
     "The challenge was to create an identity that could work across bottles, boxes, stickers, seals, tissue paper, social posts, website pages, printed inserts, and emailers. TSA needed a flexible identity system.",
   ],
   image: {
-    src: "/images/tsa/identity-swatches-tray.avif",
+    src: "/optimized/identity-swatches-tray-d23729fb7098.avif",
     alt: "Moodboard with material swatches",
   } as ArchiveMedia,
 };
@@ -750,7 +769,7 @@ export const tsaSystem = {
         "approval, and authenticity.",
       ],
       image: {
-        src: "/images/tsa/system-seal.avif",
+        src: "/optimized/system-seal-5efd86d5cbaf.avif",
         alt: "The seal",
       } as ArchiveMedia,
     },
@@ -758,7 +777,7 @@ export const tsaSystem = {
       title: "The full logo",
       text: ["created brand presence."],
       image: {
-        src: "/images/tsa/system-full-logo.avif",
+        src: "/optimized/system-full-logo-452fff91c9f2.avif",
         alt: "The full logo",
       } as ArchiveMedia,
     },
@@ -766,7 +785,7 @@ export const tsaSystem = {
       title: "The TSA signature",
       text: ["worked across smaller moments."],
       image: {
-        src: "/images/tsa/system-signature.avif",
+        src: "/optimized/system-signature-c23fdbcddcd1.avif",
         alt: "The TSA signature",
       } as ArchiveMedia,
     },
@@ -785,7 +804,7 @@ export const tsaSystem = {
   seal: {
     caption: "The signature mark",
     image: {
-      src: "/images/tsa/marks-signature.avif",
+      src: "/optimized/marks-signature-b1895974261b.avif",
       alt: "The seal",
       tone: "dark",
     } as ArchiveMedia,
@@ -823,11 +842,11 @@ export const tsaProduct = {
     "However, the product line also needed clear navigation, helping customers understand the range while keeping the brand visually unified. So instead of changing the entire bottle language for every product, we retained the red bottle as the core brand cue and built a smaller coding system through geometric markers, accent colours, line labels, and visual details. This kept each product distinct while keeping the range recognisable, easy to understand, and scalable.",
   ],
   imageMain: {
-    src: "/images/tsa/product-model.avif",
+    src: "/optimized/product-model-1dbef79ab8c6.avif",
     alt: "Model holding the red TSA bottle",
   } as ArchiveMedia,
   imageSecondary: {
-    src: "/images/tsa/product-range.avif",
+    src: "/optimized/product-range-c10b9289b3a4.avif",
     alt: "TSA product range on a tray",
   } as ArchiveMedia,
 };
@@ -846,10 +865,13 @@ export const tsaPackaging = {
   } as ArchiveMedia,
   pair: [
     {
-      src: "/images/tsa/packaging-cleanser.avif",
+      src: "/optimized/packaging-cleanser-6ede71949ac3.avif",
       alt: "Cleanser packaging dieline",
     },
-    { src: "/images/tsa/packaging-cream.avif", alt: "Cream packaging dieline" },
+    {
+      src: "/optimized/packaging-cream-be1dc1c887bb.avif",
+      alt: "Cream packaging dieline",
+    },
   ] as ArchiveMedia[],
 };
 
@@ -875,7 +897,7 @@ export const tsaDigital = {
     "On social media, freshness was also communicated and shown through culture, lifestyle, science, and everyday freshness cues: flowers, bread, apples, sea, sunlight, skin, laboratory details, and the atmosphere of Alicante. This gave the brand more room to speak. TSA could talk about skincare but also about time, preparation, freshness, routine, and care without sounding repetitive.",
   ],
   wide: {
-    src: "/images/tsa/digital-social-ecommerce.avif",
+    src: "/optimized/digital-social-ecommerce-7269ef719f96.avif",
     alt: "Campaign portrait",
   } as ArchiveMedia,
   trio: [
@@ -897,11 +919,11 @@ export const tsaOutcome = {
     "What has been built so far is a living brand ecosystem; it is a foundation that keeps expanding with the brand, shaped by new ideas, market responses, and the opportunities that continue to emerge.",
   ],
   image: {
-    src: "/images/tsa/outcome-models.avif",
+    src: "/optimized/outcome-models-6ba906751a1c.avif",
     alt: "Two models with TSA bottles",
   } as ArchiveMedia,
   collage: {
-    src: "/images/tsa/outcome-collage.avif",
+    src: "/optimized/outcome-collage-80ccc9ec63c8.avif",
     alt: "TSA collage — sea, portrait and lab",
   } as ArchiveMedia,
 };
@@ -948,7 +970,7 @@ export const exultHero = keepHyphenatedWords({
   meta: ["California, USA", "2023 – Present", "SaaS & RPA"],
   team: "Hari, Archana, Sreejith, Arun Anand, Vibish, Raunak, Aishwarya, Ranjith",
   heroImage: {
-    src: "/images/exult/hero-pin.avif",
+    src: "/optimized/hero-pin-cd35f2030601.avif",
     alt: "Exult Global — brand hero",
     tone: "dark",
   } as ArchiveMedia,
@@ -962,7 +984,7 @@ export const exultChallenge = keepHyphenatedWords({
     "The company was developing RPA, SaaS, and low-code/no-code solutions to help businesses automate workflows, build dashboards, and improve efficiency across departments. Sales, accounts, operations, projects, reporting; the solutions could be shaped module by module, depending on what each team needed.",
   ],
   image: {
-    src: "/images/exult/challenge-brand-collage.avif",
+    src: "/optimized/challenge-brand-collage-ab41bcc6623b.avif",
     alt: "Exult Global — challenge visual",
     tone: "dark",
   } as ArchiveMedia,
@@ -980,7 +1002,7 @@ export const exultPartnership = keepHyphenatedWords({
   lead: "That is where Toruss became part of the journey, not only as a design partner, but as a strategic creative partner.",
   body: "Our partnership grew across branding, website, content, SEO, social media, event marketing, email campaigns, product UI/UX, pitch decks, infographics, explainer videos, and client-facing design support.",
   image: {
-    video: "/videos/exult/partnershipp.mp4",
+    video: "/videos/exult/logo-motion.mp4",
     alt: "Partnership sketch",
   } as ArchiveMedia,
 });
@@ -993,12 +1015,18 @@ export const exultIdentity = keepHyphenatedWords({
     "The colour palette was built around pastel blue and gold, blue for trust, calmness, and approachability; gold for success, strength, and dependability.",
   ],
   images: [
-    { src: "/images/exult/identity-sketch.avif", alt: "Identity workshop" },
     {
-      src: "/images/exult/identity-wordmark.avif",
+      src: "/optimized/identity-sketch-cbe54316789b.avif",
+      alt: "Identity workshop",
+    },
+    {
+      src: "/optimized/identity-wordmark-684f07a37878.avif",
       alt: "Identity exploration",
     },
-    { src: "/images/exult/identity-acrylic.avif", alt: "Identity in context" },
+    {
+      src: "/optimized/identity-acrylic-7741de684bec.avif",
+      alt: "Identity in context",
+    },
   ] as ArchiveMedia[],
   left: "The logo combined a wordmark with an icon designed around the brand’s core ideas. The geometric X became a direct reference to Exult, while also suggesting multiplier, a symbol for improving productivity and amplifying efficiency. The icon also carried the feel of a dial, representing fine-tuning, optimisation, and process control. At another level, it suggested a bridge, reflecting Exult’s role in helping businesses move from where they are to where they want to be.",
   right: [
@@ -1019,7 +1047,7 @@ export const exultWebsite = keepHyphenatedWords({
     "The brand had to speak about RPA, Power Platform, Power Automate, Power Apps, Power BI, Microsoft Fabric, low-code/no-code development, dashboards, workflow optimisation, and digital transformation. These were valuable services, but they needed to be presented in a way that business owners, decision-makers, and department heads could quickly understand.",
   ],
   image: {
-    video: "/videos/exult/exult-website-animation.mp4",
+    video: "/optimized/exult-website-animation-4d816714296d.mp4",
     alt: "Exult Global website animation",
     tone: "dark",
   } as ArchiveMedia,
@@ -1033,9 +1061,18 @@ export const exultContent = keepHyphenatedWords({
   body: "For Exult Global, content was not treated as filler for the website. It became a way to educate the market. For a SaaS/RPA company, visibility is not built only through design. It is built through useful explanations, search-friendly content, and consistent thought leadership.",
   points: ["Keyword Research", "Blog Planning", "SEO", "Structured Content"],
   images: [
-    { src: "/images/exult/content-office-sign.avif", alt: "Content planning" },
-    { src: "/images/exult/content-social-card.avif", alt: "Blog sketching" },
-    { src: "/images/exult/content-laptop.avif", alt: "Content team session" },
+    {
+      src: "/optimized/content-office-sign-9916fea17075.avif",
+      alt: "Content planning",
+    },
+    {
+      src: "/optimized/content-social-card-231e1e721f7c.avif",
+      alt: "Blog sketching",
+    },
+    {
+      src: "/optimized/content-laptop-25443074ac6e.avif",
+      alt: "Content team session",
+    },
   ] as ArchiveMedia[],
   left: "We worked on keyword research, blog planning, SEO, and structured content development around topics that mattered to the brand’s audience to help Exult Global become more discoverable to the right audience.",
   right:
@@ -1045,7 +1082,7 @@ export const exultContent = keepHyphenatedWords({
 export const exultMarks = keepHyphenatedWords({
   signature: {
     image: {
-      src: "/images/exult/marks-stage-logo.avif",
+      src: "/optimized/marks-stage-logo-bcafd9dfcf87.avif",
       alt: "Signature mark",
       tone: "dark",
     } as ArchiveMedia,
@@ -1131,12 +1168,12 @@ export const exultEvent = keepHyphenatedWords({
     "Our role covered end-to-end digital event marketing, including promotional, educational, and informative content across multiple formats. We worked on event communication, branding collateral, merchandise, and the design language for the event environment.",
   ],
   imageMain: {
-    src: "/images/exult/event-creatives.avif",
+    src: "/optimized/event-creatives-3afb9aa66851.avif",
     alt: "FabCon event booth",
     tone: "dark",
   } as ArchiveMedia,
   imageSecondary: {
-    src: "/images/exult/event-entrance.avif",
+    src: "/optimized/event-entrance-7f65c1dac8f3.avif",
     alt: "Event collateral",
     tone: "dark",
   } as ArchiveMedia,
@@ -1148,24 +1185,24 @@ export const exultEmail = keepHyphenatedWords({
   right:
     "The campaign achieved approximately 45% open rate and around 10% conversion rate, making email an important contributor to event engagement and lead generation.",
   wide: {
-    src: "/images/exult/email-stage.avif",
+    src: "/optimized/email-stage-114827809a70.avif",
     alt: "Email campaign designs",
     tone: "dark",
   } as ArchiveMedia,
   pair: [
     {
-      src: "/images/exult/email-booth.avif",
+      src: "/optimized/email-booth-87249ac1f471.avif",
       alt: "Email design 1",
       tone: "dark",
     },
     {
-      src: "/images/exult/email-pavilion.avif",
+      src: "/optimized/email-pavilion-73a6ea4aa8f8.avif",
       alt: "Email design 2",
       tone: "dark",
     },
   ] as ArchiveMedia[],
   showcase: {
-    src: "/images/exult/email-showcase.avif",
+    src: "/optimized/email-showcase-fbb87e5ab2c6.avif",
     alt: "Event showcase",
     tone: "dark",
   } as ArchiveMedia,
@@ -1185,7 +1222,7 @@ export const exultDigital = keepHyphenatedWords({
     "Pitch presentations, client conversations, product demos, and dashboard experiences.",
   body: "We designed pitch decks that helped Exult Global explain its solutions with more clarity and confidence. These decks were used for presentations, sales conversations, and explanatory purposes, turning complex offerings into structured, persuasive stories.",
   wide: {
-    src: "/images/exult/digital-icons.avif",
+    src: "/optimized/digital-icons-96f7871f2468.avif",
     alt: "Pitch deck designs",
     tone: "dark",
   } as ArchiveMedia,
@@ -1194,17 +1231,17 @@ export const exultDigital = keepHyphenatedWords({
     "The work also extended into UI/UX design for several dashboards, across web and mobile-optimised interfaces. This allowed us to support not only how Exult Global communicated its solutions, but also how some of those solutions were experienced by users.",
   trio: [
     {
-      src: "/images/exult/digital-powerbi.avif",
+      src: "/optimized/digital-powerbi-d42d4ad4deba.avif",
       alt: "Dashboard UI 1",
       tone: "dark",
     },
     {
-      src: "/images/exult/digital-touch.avif",
+      src: "/optimized/digital-touch-5517ba82f583.avif",
       alt: "Dashboard UI 2",
       tone: "dark",
     },
     {
-      src: "/images/exult/digital-copilot.avif",
+      src: "/optimized/digital-copilot-4129c4734e6c.avif",
       alt: "Dashboard UI 3",
       tone: "dark",
     },
@@ -1227,8 +1264,8 @@ export const exultOutcome = keepHyphenatedWords({
     tone: "dark",
   } as ArchiveMedia,
   collage: {
-    src: "/images/exult/outcome-collage.avif",
-    alt: "Exult Global collage",
+    src: "/optimized/outcome-collage-cf41b584828a.avif",
+    alt: "Exult Global logo surrounded by branding, website, and digital service tiles",
     tone: "dark",
   } as ArchiveMedia,
 });
@@ -1382,24 +1419,96 @@ export const medtechProfile = keepHyphenatedWords({
   // (cover first, back page last). `title` is the caption shown under the book;
   // files live in /public/images/medtech/profile/
   gallery: [
-    { src: "/images/medtech/profile/page-01.jpg", title: "Company Profile", alt: "MedTech Company Profile 2026 — Company Profile" },
-    { src: "/images/medtech/profile/page-02.jpg", title: "Contents", alt: "MedTech Company Profile 2026 — Contents" },
-    { src: "/images/medtech/profile/page-03.jpg", title: "Our History", alt: "MedTech Company Profile 2026 — Our History" },
-    { src: "/images/medtech/profile/page-04.jpg", title: "Our Credo", alt: "MedTech Company Profile 2026 — Our Credo" },
-    { src: "/images/medtech/profile/page-05.jpg", title: "Our Leadership", alt: "MedTech Company Profile 2026 — Our Leadership" },
-    { src: "/images/medtech/profile/page-06.jpg", title: "Our Leadership", alt: "MedTech Company Profile 2026 — Our Leadership" },
-    { src: "/images/medtech/profile/page-07.jpg", title: "Our Vision & Mission", alt: "MedTech Company Profile 2026 — Our Vision & Mission" },
-    { src: "/images/medtech/profile/page-08.jpg", title: "Our Business Divisions", alt: "MedTech Company Profile 2026 — Our Business Divisions" },
-    { src: "/images/medtech/profile/page-09.jpg", title: "Some of Our Partners", alt: "MedTech Company Profile 2026 — Some of Our Partners" },
-    { src: "/images/medtech/profile/page-10.jpg", title: "Some of Our Partners", alt: "MedTech Company Profile 2026 — Some of Our Partners" },
-    { src: "/images/medtech/profile/page-11.jpg", title: "Our Customers", alt: "MedTech Company Profile 2026 — Our Customers" },
-    { src: "/images/medtech/profile/page-12.jpg", title: "Our Infrastructure", alt: "MedTech Company Profile 2026 — Our Infrastructure" },
-    { src: "/images/medtech/profile/page-13.jpg", title: "Our Family", alt: "MedTech Company Profile 2026 — Our Family" },
-    { src: "/images/medtech/profile/page-14.jpg", title: "Our Organisation Structure", alt: "MedTech Company Profile 2026 — Our Organisation Structure" },
-    { src: "/images/medtech/profile/page-15.jpg", title: "Our Evolution in People & Revenue", alt: "MedTech Company Profile 2026 — Our Evolution in People & Revenue" },
-    { src: "/images/medtech/profile/page-16.jpg", title: "The Strength Behind Every Step", alt: "MedTech Company Profile 2026 — The Strength Behind Every Step" },
-    { src: "/images/medtech/profile/page-17.jpg", title: "Contact Us", alt: "MedTech Company Profile 2026 — Contact Us" },
-    { src: "/images/medtech/profile/page-18.jpg", title: "45 Years of Business Excellence", alt: "MedTech Company Profile 2026 — 45 Years of Business Excellence" },
+    {
+      src: "/images/medtech/profile/page-01.jpg",
+      title: "Company Profile",
+      alt: "MedTech Company Profile 2026 — Company Profile",
+    },
+    {
+      src: "/images/medtech/profile/page-02.jpg",
+      title: "Contents",
+      alt: "MedTech Company Profile 2026 — Contents",
+    },
+    {
+      src: "/images/medtech/profile/page-03.jpg",
+      title: "Our History",
+      alt: "MedTech Company Profile 2026 — Our History",
+    },
+    {
+      src: "/images/medtech/profile/page-04.jpg",
+      title: "Our Credo",
+      alt: "MedTech Company Profile 2026 — Our Credo",
+    },
+    {
+      src: "/images/medtech/profile/page-05.jpg",
+      title: "Our Leadership",
+      alt: "MedTech Company Profile 2026 — Our Leadership",
+    },
+    {
+      src: "/images/medtech/profile/page-06.jpg",
+      title: "Our Leadership",
+      alt: "MedTech Company Profile 2026 — Our Leadership",
+    },
+    {
+      src: "/images/medtech/profile/page-07.jpg",
+      title: "Our Vision & Mission",
+      alt: "MedTech Company Profile 2026 — Our Vision & Mission",
+    },
+    {
+      src: "/images/medtech/profile/page-08.jpg",
+      title: "Our Business Divisions",
+      alt: "MedTech Company Profile 2026 — Our Business Divisions",
+    },
+    {
+      src: "/images/medtech/profile/page-09.jpg",
+      title: "Some of Our Partners",
+      alt: "MedTech Company Profile 2026 — Some of Our Partners",
+    },
+    {
+      src: "/images/medtech/profile/page-10.jpg",
+      title: "Some of Our Partners",
+      alt: "MedTech Company Profile 2026 — Some of Our Partners",
+    },
+    {
+      src: "/images/medtech/profile/page-11.jpg",
+      title: "Our Customers",
+      alt: "MedTech Company Profile 2026 — Our Customers",
+    },
+    {
+      src: "/images/medtech/profile/page-12.jpg",
+      title: "Our Infrastructure",
+      alt: "MedTech Company Profile 2026 — Our Infrastructure",
+    },
+    {
+      src: "/images/medtech/profile/page-13.jpg",
+      title: "Our Family",
+      alt: "MedTech Company Profile 2026 — Our Family",
+    },
+    {
+      src: "/images/medtech/profile/page-14.jpg",
+      title: "Our Organisation Structure",
+      alt: "MedTech Company Profile 2026 — Our Organisation Structure",
+    },
+    {
+      src: "/images/medtech/profile/page-15.jpg",
+      title: "Our Evolution in People & Revenue",
+      alt: "MedTech Company Profile 2026 — Our Evolution in People & Revenue",
+    },
+    {
+      src: "/images/medtech/profile/page-16.jpg",
+      title: "The Strength Behind Every Step",
+      alt: "MedTech Company Profile 2026 — The Strength Behind Every Step",
+    },
+    {
+      src: "/images/medtech/profile/page-17.jpg",
+      title: "Contact Us",
+      alt: "MedTech Company Profile 2026 — Contact Us",
+    },
+    {
+      src: "/images/medtech/profile/page-18.jpg",
+      title: "45 Years of Business Excellence",
+      alt: "MedTech Company Profile 2026 — 45 Years of Business Excellence",
+    },
   ] as (ArchiveMedia & { title: string })[],
   // row 2, under the images
   statement:
@@ -1527,13 +1636,48 @@ export const medtechCollateral = keepHyphenatedWords({
   ],
   // row 4 — carousel; width/height = the image's own pixel size, so each slide keeps its true ratio
   images: [
-    { src: "/images/medtech/collateral-1.avif", width: 2263, height: 2880, alt: "MedTech brand artwork on a large LED video wall" },
-    { src: "/images/medtech/collateral-2.avif", width: 2263, height: 2880, alt: "WHX Dubai ID card and lanyard" },
-    { src: "/images/medtech/collateral-3.avif", width: 2263, height: 2880, alt: "MedTech tote bag" },
-    { src: "/images/medtech/collateral-4.avif", width: 4000, height: 3000, alt: "WHX exhibition stand" },
-    { src: "/images/medtech/collateral-5.avif", width: 2400, height: 1800, alt: "MedTech tri-fold brochure spread" },
-    { src: "/images/medtech/collateral-6.avif", width: 1122, height: 1402, alt: "MedTech strategic sales training workshop stage screen" },
-    { src: "/images/medtech/collateral-7.avif", width: 2400, height: 1800, alt: "MedTech Corporation business cards" },
+    {
+      src: "/images/medtech/collateral-1.avif",
+      width: 2263,
+      height: 2880,
+      alt: "MedTech brand artwork on a large LED video wall",
+    },
+    {
+      src: "/images/medtech/collateral-2.avif",
+      width: 2263,
+      height: 2880,
+      alt: "WHX Dubai ID card and lanyard",
+    },
+    {
+      src: "/images/medtech/collateral-3.avif",
+      width: 2263,
+      height: 2880,
+      alt: "MedTech tote bag",
+    },
+    {
+      src: "/images/medtech/collateral-4.avif",
+      width: 4000,
+      height: 3000,
+      alt: "WHX exhibition stand",
+    },
+    {
+      src: "/images/medtech/collateral-5.avif",
+      width: 2400,
+      height: 1800,
+      alt: "MedTech tri-fold brochure spread",
+    },
+    {
+      src: "/images/medtech/collateral-6.avif",
+      width: 1122,
+      height: 1402,
+      alt: "MedTech strategic sales training workshop stage screen",
+    },
+    {
+      src: "/images/medtech/collateral-7.avif",
+      width: 2400,
+      height: 1800,
+      alt: "MedTech Corporation business cards",
+    },
   ] as (ArchiveMedia & { width: number; height: number })[],
   // row 5
   tags: [
@@ -1726,10 +1870,13 @@ export const archiveProjects: ArchiveProjectSummary[] = [
   {
     slug: "the-spanish-alchemist",
     title: "The Spanish Alchemist",
-    year: "2025",
+    year: "2024",
     country: "Spain",
     category: "Naming / Identity System / Packaging",
-    thumb: { src: "/images/tsa/hero.avif", alt: "The Spanish Alchemist" },
+    thumb: {
+      src: "/optimized/hero-579399d2d0a7.avif",
+      alt: "The Spanish Alchemist",
+    },
   },
   {
     slug: "exult-global",
@@ -1737,16 +1884,18 @@ export const archiveProjects: ArchiveProjectSummary[] = [
     year: "2023",
     country: "USA",
     category: "Branding / Website / SEO / Events",
-    thumb: { src: "/images/home/archive-exult.avif", alt: "Exult Global" },
+    thumb: {
+      src: "/optimized/archive-exult-67106e740ac0.avif",
+      alt: "Exult Global",
+    },
   },
   {
-    // TODO: add `src: "/images/medtech/hero.avif"` to thumb once the image is in
     slug: "medtech",
     title: "MedTech Corporation",
     year: "2024",
     country: "Qatar",
     category: "Branding / Website / Content Strategy / Events",
-    thumb: { alt: "MedTech Corporation" },
+    thumb: medtechHero.heroImage,
   },
 ];
 
@@ -1773,18 +1922,27 @@ export const footerContent = {
   cta: { label: "Tell us what you’re building", href: "/contact" },
   // TODO: add the real profile URLs
   socials: [
+    { ...studioInstagram, icon: FaInstagram },
     {
-      label: "Instagram",
-      href: "https://www.instagram.com/toruss.studio?srtk=Z3Z3YXhiZzluYXFm",
+      label: "Behance",
+      href: "https://www.behance.net/toruss",
+      icon: FaBehance,
     },
-    { label: "Behance", href: "https://www.behance.net/toruss" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/torusdxn/" },
-    { label: "Pinterest", href: "https://in.pinterest.com/studiotoruss/" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/torusdxn/",
+      icon: FaLinkedin,
+    },
+    {
+      label: "Pinterest",
+      href: "https://in.pinterest.com/studiotoruss/",
+      icon: FaPinterest,
+    },
   ],
   contact: [
-    { label: "+91 812 9675 834", href: "tel:+918129675834" },
-    { label: "info@toruss.studio", href: "mailto:info@toruss.studio" },
-    { label: "Palakkad, Kerala, India - 678001" },
+    studioPhone,
+    studioEmail,
+    { label: "Palakkad, Kerala, India - 678001", href: undefined },
   ],
   copyright: ["© 2026", "TORUSS STUDIO.", "ALL RIGHTS RESERVED."],
 };

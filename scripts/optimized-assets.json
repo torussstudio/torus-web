@@ -1,0 +1,402 @@
+[
+  {
+    "source": "/images/home/hero-studio.avif",
+    "output": "/optimized/hero-studio-5fde54d001a9.avif",
+    "before": 2159670,
+    "after": 553656,
+    "sourceHash": "fad42c46e28aef6edfc4ad2a8869ca062f9a9c49c38ab36199713062b704b9d9",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/insidestudio.avif",
+    "output": "/optimized/insidestudio-c16d1d50ef73.avif",
+    "before": 2611686,
+    "after": 794463,
+    "sourceHash": "7ca5b717eb13c66b8cc9bb330a36a801b8325b921528f41a902b1e2cf0914919",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-discussions.avif",
+    "output": "/optimized/space-discussions-a987f3457007.avif",
+    "before": 653878,
+    "after": 74121,
+    "sourceHash": "42741d86713675250f4505d703ffdec4d7d02c797fb6fd676e67b524a32819c2",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-in-betweens.avif",
+    "output": "/optimized/space-in-betweens-1feb44e00d95.avif",
+    "before": 1923728,
+    "after": 485849,
+    "sourceHash": "b27f18fa92056bd8120d5393d4e0636c4f5ee07007522dcce0a6e9d033e1bcb2",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-workplace.avif",
+    "output": "/optimized/space-workplace-a8e2f18a99e1.avif",
+    "before": 1873763,
+    "after": 520685,
+    "sourceHash": "eb4cd94ae901d0ef41de5c84cfe837650760ff81656704507ed309e3d9469b0c",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-collaborations.avif",
+    "output": "/optimized/space-collaborations-04a5e0c9a637.avif",
+    "before": 1831287,
+    "after": 451714,
+    "sourceHash": "33ba6d775a99d775ad946924542aa746e70595e4246367c6363e052f19346e24",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-explorations.avif",
+    "output": "/optimized/space-explorations-a5e3f1a7a08e.avif",
+    "before": 346450,
+    "after": 55917,
+    "sourceHash": "23b9f12a82c457626ca872a5ec61dc06e9b728ac3ff89239ed4ea36bf01fa7d2",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/space-inspirations.avif",
+    "output": "/optimized/space-inspirations-3e651a7f16ab.avif",
+    "before": 1716307,
+    "after": 355394,
+    "sourceHash": "94aa3164eb6709b149928d7ba8417d60f4ec5dec60cf0b1e9d28308c59f6ed01",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/card-editions.avif",
+    "output": "/optimized/card-editions-76ea86a5c73b.avif",
+    "before": 606504,
+    "after": 333527,
+    "sourceHash": "8042910956a8f1979dcf2bc9d1406a0e713a4759a84192d2e7ffb39bf5d38f47",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/card-cohort.avif",
+    "output": "/optimized/card-cohort-1d4b448ffd08.avif",
+    "before": 347872,
+    "after": 209411,
+    "sourceHash": "fc5d7c96aeb788ffe685ae36a7de283683708092cbbf23474f03e0bcef4d2a99",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/hero.avif",
+    "output": "/optimized/hero-579399d2d0a7.avif",
+    "before": 478825,
+    "after": 104619,
+    "sourceHash": "132257eddf7f39f0b653c51531ea5800170bc2d6006507a64ad51589b66f2914",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/home/archive-exult.avif",
+    "output": "/optimized/archive-exult-67106e740ac0.avif",
+    "before": 1201591,
+    "after": 379459,
+    "sourceHash": "bf8ef8395cc0fc02ee64f44338799f6f585bf3751b4f071bf0a210ed353f621f",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/hero.avif",
+    "output": "/optimized/hero-579399d2d0a7.avif",
+    "before": 478825,
+    "after": 104619,
+    "sourceHash": "132257eddf7f39f0b653c51531ea5800170bc2d6006507a64ad51589b66f2914",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/question-sketch.avif",
+    "output": "/optimized/question-sketch-0f76cc9ef5d5.avif",
+    "before": 997066,
+    "after": 296860,
+    "sourceHash": "d05ed2089d479cd5db048ef5f0a6bffa5d75397b8b1d818a7228e79d2f21b7c1",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/naming-alicante.avif",
+    "output": "/optimized/naming-alicante-8e80a8aa8630.avif",
+    "before": 632146,
+    "after": 229079,
+    "sourceHash": "0c3468c720c9b06b6cac68135d926afa7e060704dc76d823c382a79c7f631992",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/naming-philosophers-stone.avif",
+    "output": "/optimized/naming-philosophers-stone-86b8f1e12aa5.avif",
+    "before": 390717,
+    "after": 144562,
+    "sourceHash": "e7480904f9a685d5d60e07352397fdf77a731cf18cad1410abe5ecdf547d80ed",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/naming-alchemist.avif",
+    "output": "/optimized/naming-alchemist-21c91c1e3695.avif",
+    "before": 328526,
+    "after": 109531,
+    "sourceHash": "04bcfa3f3b39cefda3a8ab2e793fae0980b290b1efd78fd54ed38ab0a302111a",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/identity-swatches-tray.avif",
+    "output": "/optimized/identity-swatches-tray-d23729fb7098.avif",
+    "before": 346473,
+    "after": 91528,
+    "sourceHash": "98dc7280f2b2eff6adb2223d772754501e23206eae1ea0fbab159af56c0b562c",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/system-seal.avif",
+    "output": "/optimized/system-seal-5efd86d5cbaf.avif",
+    "before": 822108,
+    "after": 175870,
+    "sourceHash": "11d605ba1f84c2e0080313bb084cd8997e4a9effa9bc5594f56a52abe7f30153",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/system-full-logo.avif",
+    "output": "/optimized/system-full-logo-452fff91c9f2.avif",
+    "before": 596267,
+    "after": 142251,
+    "sourceHash": "c72e1e527f96cd309418c333979c676b596bdfb8c285e8742feac4229ea54a0a",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/system-signature.avif",
+    "output": "/optimized/system-signature-c23fdbcddcd1.avif",
+    "before": 862775,
+    "after": 192560,
+    "sourceHash": "281890ebd2a15bd1d9151ded67e61b9d8fca28287290d4ac295352173e3fbc2f",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/marks-signature.avif",
+    "output": "/optimized/marks-signature-b1895974261b.avif",
+    "before": 297954,
+    "after": 52443,
+    "sourceHash": "f9b9f433d5de163e2cad161089d9d2be58e3d739794bbb04909d308cab428f43",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/product-model.avif",
+    "output": "/optimized/product-model-1dbef79ab8c6.avif",
+    "before": 378479,
+    "after": 88447,
+    "sourceHash": "29b4e3018e8bb5b6a16962955606c9dd5e8deea3d130606f5ef98ca208a7577c",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/product-range.avif",
+    "output": "/optimized/product-range-c10b9289b3a4.avif",
+    "before": 495119,
+    "after": 55718,
+    "sourceHash": "a555c87e8bf80a83f5c7e15f463177a6416238dde3c40e97f80b87f1bccd7cac",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/packaging-cleanser.avif",
+    "output": "/optimized/packaging-cleanser-6ede71949ac3.avif",
+    "before": 292167,
+    "after": 75218,
+    "sourceHash": "0e8d7d1cb67118fe8cf101faa2539e30b740f84d0b83c7d455a38e87a86f8fb8",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/packaging-cream.avif",
+    "output": "/optimized/packaging-cream-be1dc1c887bb.avif",
+    "before": 351608,
+    "after": 97826,
+    "sourceHash": "9c57b03f13afb697359e1f5a12fe57f99f66b98b349a7634b2748e8324b87567",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/digital-social-ecommerce.avif",
+    "output": "/optimized/digital-social-ecommerce-7269ef719f96.avif",
+    "before": 314507,
+    "after": 96299,
+    "sourceHash": "d55e140d3b1eafe820b43a8566f47d433aac0ab7377e79e52bbcb9b3ca1abadd",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/outcome-models.avif",
+    "output": "/optimized/outcome-models-6ba906751a1c.avif",
+    "before": 417435,
+    "after": 100530,
+    "sourceHash": "eceb8af0c0090e246a6be5e412fdec7e9dece5827e9317dd3027b060c0eaa669",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/outcome-collage.avif",
+    "output": "/optimized/outcome-collage-80ccc9ec63c8.avif",
+    "before": 412276,
+    "after": 75383,
+    "sourceHash": "40b0e478741b08cb32414fbf7f9b81a7dd4d24c1304c309db7ca5d88618814ed",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/hero-pin.avif",
+    "output": "/optimized/hero-pin-cd35f2030601.avif",
+    "before": 2371116,
+    "after": 447796,
+    "sourceHash": "0e1d2e953003e5f6e00e14a74fd333cdf237024565f264e022d10e78dee855c6",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/challenge-brand-collage.avif",
+    "output": "/optimized/challenge-brand-collage-ab41bcc6623b.avif",
+    "before": 510388,
+    "after": 141782,
+    "sourceHash": "e806311c81ba58a989a61af2a31e634ed047d03d45df1dfba738013565e6d769",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/identity-sketch.avif",
+    "output": "/optimized/identity-sketch-cbe54316789b.avif",
+    "before": 2129586,
+    "after": 1200505,
+    "sourceHash": "96a2386f2aeb8930154407639a65db61bcab0c4c49a6ddafa908a09f43cd57e7",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/identity-wordmark.avif",
+    "output": "/optimized/identity-wordmark-684f07a37878.avif",
+    "before": 2063051,
+    "after": 663230,
+    "sourceHash": "dd3f50afb355fdaf28e4e931299d86293e0b9273ab059bcd7eef3269f175818e",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/identity-acrylic.avif",
+    "output": "/optimized/identity-acrylic-7741de684bec.avif",
+    "before": 561851,
+    "after": 97708,
+    "sourceHash": "d6637189307ba9d2df431582fa5e5783d276274090ae58b940d9a6c64c047071",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/videos/exult/exult-website-animation.mp4",
+    "output": "/optimized/exult-website-animation-4d816714296d.mp4",
+    "before": 34996993,
+    "after": 4775039,
+    "sourceHash": "c570e89b83fc2737d6ada9b08e0a3536f593ec866d0b71e80e736fcf9323418e",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/content-office-sign.avif",
+    "output": "/optimized/content-office-sign-9916fea17075.avif",
+    "before": 1489683,
+    "after": 428116,
+    "sourceHash": "3a17cb3beb172e0ca2796bb2bc96b14b9868ddcc60b31afe15d55d5a7706043d",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/content-social-card.avif",
+    "output": "/optimized/content-social-card-231e1e721f7c.avif",
+    "before": 1731444,
+    "after": 496404,
+    "sourceHash": "991a9a48aab83ccd808bf75cb42c6a16aacb3246c0746516dce9c4d70ac67bc6",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/content-laptop.avif",
+    "output": "/optimized/content-laptop-25443074ac6e.avif",
+    "before": 1497879,
+    "after": 426790,
+    "sourceHash": "be2f922c04125d5f2750d3ae3cc0de247cd1b859371eac329f6f812bafef94b5",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/marks-stage-logo.avif",
+    "output": "/optimized/marks-stage-logo-bcafd9dfcf87.avif",
+    "before": 1317309,
+    "after": 251398,
+    "sourceHash": "a332ed7433497f440488e1b3fa227c8647f4903a0f715913e2ccfefddbff1172",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/event-creatives.avif",
+    "output": "/optimized/event-creatives-3afb9aa66851.avif",
+    "before": 1666601,
+    "after": 447395,
+    "sourceHash": "b99058fe68aa3756faef4eadec3fe3b47131b4e700b8de0f5955eeb0dfd88dfb",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/event-entrance.avif",
+    "output": "/optimized/event-entrance-7f65c1dac8f3.avif",
+    "before": 1497803,
+    "after": 454263,
+    "sourceHash": "6239eac616043c380b96ee8c14d7f751e0bd48c237e9ca279d9ae4f410459a7e",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/email-stage.avif",
+    "output": "/optimized/email-stage-114827809a70.avif",
+    "before": 1269705,
+    "after": 448192,
+    "sourceHash": "8335726034e6aadc38e9caf5d33e09ce2095ad89bd639d73596a1f10e006be96",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/email-booth.avif",
+    "output": "/optimized/email-booth-87249ac1f471.avif",
+    "before": 2188492,
+    "after": 634115,
+    "sourceHash": "3261e9b5c69e6005725d18b2c429439a76be4e04bee215105a6b4feaadab1e3b",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/email-pavilion.avif",
+    "output": "/optimized/email-pavilion-73a6ea4aa8f8.avif",
+    "before": 1897136,
+    "after": 542300,
+    "sourceHash": "31ed67e0af986a22e767c2755d4f2c0c3fa4880c12e1ecfe000c4f0deb4acbe8",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/email-showcase.avif",
+    "output": "/optimized/email-showcase-fbb87e5ab2c6.avif",
+    "before": 1736851,
+    "after": 517064,
+    "sourceHash": "2f52a29e5cea93730dd2e7d467cd3c4afd0034472279b4ed6f5af0c7ff07811c",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/digital-icons.avif",
+    "output": "/optimized/digital-icons-96f7871f2468.avif",
+    "before": 348111,
+    "after": 91514,
+    "sourceHash": "1ee3046ed8a5e1daa9143ef6bc279a5546a9eb5153c5e84d00ba3d4e609b3e36",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/digital-powerbi.avif",
+    "output": "/optimized/digital-powerbi-d42d4ad4deba.avif",
+    "before": 1727437,
+    "after": 559906,
+    "sourceHash": "3d6de4c0e4fc3a99f5ef2532b2234911d3c2539ae45c16aa93f610b7f9ca2652",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/digital-touch.avif",
+    "output": "/optimized/digital-touch-5517ba82f583.avif",
+    "before": 1612746,
+    "after": 467166,
+    "sourceHash": "e50fd82861d3ff2a868447261252ae2320649fc140ca98a1d32b06dbbef58911",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/digital-copilot.avif",
+    "output": "/optimized/digital-copilot-4129c4734e6c.avif",
+    "before": 862675,
+    "after": 111597,
+    "sourceHash": "ff9af9048ad2cf7011736ee4b543d275600be20a7426bab3e56d752c069a46b9",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/exult/outcome-collage.avif",
+    "output": "/optimized/outcome-collage-cf41b584828a.avif",
+    "before": 305281,
+    "after": 41939,
+    "sourceHash": "cbde430c21c61c0ed86c5427d8a604ed1cedfaf0656c63d4daecb416e2ad94fe",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  }
+]

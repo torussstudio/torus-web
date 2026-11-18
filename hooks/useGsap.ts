@@ -4,7 +4,6 @@ import {
   DependencyList,
   RefObject,
   useLayoutEffect,
-  useRef,
 } from "react";
 
 import { gsap } from "@/lib/gsap";
@@ -21,22 +20,21 @@ type Scope = RefObject<HTMLElement | null>;
 export function useGsap(
   callback: (
     gsap: typeof import("gsap").gsap
-  ) => void,
+  ) => void | (() => void),
   scope?: Scope,
   deps: DependencyList = []
 ) {
-  const ctx = useRef<gsap.Context | null>(null);
-
   useLayoutEffect(() => {
-    ctx.current = gsap.context(() => {
-      // Refresh ScrollTrigger-inte measurements next paint-inu shesham
-      requestAnimationFrame(() => {
-        callback(gsap);
-      });
-    }, scope);
+    const ctx = gsap.context(() => {}, scope);
+    // Re-enter the context in the deferred callback: otherwise GSAP cannot
+    // collect its animations/ScrollTriggers for cleanup on navigation.
+    const frame = requestAnimationFrame(() => {
+      ctx.add(() => callback(gsap));
+    });
 
     return () => {
-      ctx.current?.revert();
+      cancelAnimationFrame(frame);
+      ctx.revert();
     };
   }, deps);
 }

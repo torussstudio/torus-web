@@ -11,6 +11,7 @@ export default function SmoothScroll() {
   const lenisRef = useRef<Lenis | undefined>(undefined);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     // Every page opens at the top (also on back / forward), instead of the
     // browser restoring an old position.
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";

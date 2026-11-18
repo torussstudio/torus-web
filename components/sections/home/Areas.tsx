@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { practices } from "@/lib/constants";
-import Media from "@/components/sections/archive/Media";
 import Lines from "@/components/sections/archive/Lines";
 import { h } from "./styles";
 
@@ -139,37 +138,10 @@ export default function AreasOfPractice() {
               >
                 <div className="overflow-hidden">
                   <div className={cn(cols, "pb-40 md:pb-56 xl:pt-44 xl:pb-112")}>
-                    {/* photo glides up and settles from a slight zoom */}
-                    <div
-                      className={cn(
-                        "col-start-2 row-start-1 w-full max-w-[238px] transition-[transform,opacity] duration-700 md:col-start-2 xl:max-w-none",
-                        EASE,
-                        open ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0",
-                      )}
-                    >
-                      <div
-                        className={cn(
-                          "origin-top-left transition-transform duration-1000",
-                          EASE,
-                          open ? "scale-100" : "scale-90",
-                        )}
-                      >
-                        <Media
-                          media={{
-                            src: practice.image,
-                            alt: practice.title.join(" "),
-                            tone: "dark",
-                          }}
-                          className="aspect-[238/150] h-auto xl:aspect-auto xl:h-150 xl:w-238"
-                          sizes="240px"
-                        />
-                      </div>
-                    </div>
-
                     {/* details follow a beat later */}
                     <p
                       className={cn(
-                        "col-span-2 col-start-2 row-start-2 mt-20 text-[length:clamp(18px,3vw,22px)] leading-[1.2] tracking-[0.05em] transition-[transform,opacity] duration-700 md:col-span-1 md:col-start-3 md:row-start-1 md:mt-0 xl:-mt-6 xl:text-[length:max(20px,calc(var(--spacing)*34))]",
+                        "col-span-2 col-start-2 row-start-1 text-[length:clamp(18px,3vw,22px)] leading-[1.2] tracking-[0.05em] transition-[transform,opacity] duration-700 md:col-span-1 md:col-start-3 xl:-mt-6 xl:text-[length:max(20px,calc(var(--spacing)*34))]",
                         EASE,
                         open ? "translate-y-0 opacity-100 delay-100" : "translate-y-32 opacity-0",
                       )}

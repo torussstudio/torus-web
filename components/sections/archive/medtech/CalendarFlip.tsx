@@ -11,6 +11,7 @@ import type { KeyboardEvent, PointerEvent } from "react";
 import Image from "next/image";
 import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 import type { ArchiveMedia } from "@/lib/constants";
+import { useNearbyImages } from "@/hooks/useNearbyImages";
 
 /**
  * MedTech 2027 calendar — one page at a time, turned upward over a top binding.
@@ -291,16 +292,7 @@ export default function CalendarFlip({
     indexRef.current = index;
   }, [index]);
 
-  /* load and decode every page up front */
-  useEffect(() => {
-    pages.forEach((p) => {
-      if (!p.src) return;
-      const im = new window.Image();
-      im.decoding = "async";
-      im.src = p.src;
-      im.decode?.().catch(() => {});
-    });
-  }, [pages]);
+  useNearbyImages(pageRef, pages, index);
 
   /* measure the page so strips and their image slices line up exactly */
   useEffect(() => {

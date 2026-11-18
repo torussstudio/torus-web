@@ -35,6 +35,8 @@ export default function AutoScrollRow({ children, className, speed = 50 }: Props
     let visible = false;
     let hovering = false;
     let userUntil = 0; // paused until this time after a manual scroll
+    let half = 0;
+    let scale = 1;
 
     // width of one set = where the copy starts, relative to the first item
     const setWidth = () => {
@@ -44,6 +46,8 @@ export default function AutoScrollRow({ children, className, speed = 50 }: Props
     };
 
     const tick = (now: number) => {
+      raf = 0;
+      if (!visible || document.hidden) return;
       raf = requestAnimationFrame(tick);
       const dt = last ? Math.min(now - last, 64) : 0;
       last = now;
@@ -53,11 +57,9 @@ export default function AutoScrollRow({ children, className, speed = 50 }: Props
         return;
       }
 
-      const half = setWidth();
       if (!half) return;
 
       // scale with the screen, but keep phones from crawling
-      const scale = Math.max(window.innerWidth / 1920, 0.6);
       pos += (speed * scale * dt) / 1000 || 0;
       if (pos >= half) pos -= half;
       row.scrollLeft = pos;
@@ -78,7 +80,28 @@ export default function AutoScrollRow({ children, className, speed = 50 }: Props
 
     const io = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
+      syncLoop();
     });
+    const syncLoop = () => {
+      if (visible && !document.hidden && !raf) {
+        last = 0;
+        pos = row.scrollLeft;
+        raf = requestAnimationFrame(tick);
+      } else if (!visible || document.hidden) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+    const measure = () => {
+      half = setWidth();
+      scale = Math.max(window.innerWidth / 1920, 0.6);
+    };
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(row);
+    if (row.firstElementChild) resizeObserver.observe(row.firstElementChild);
+    window.addEventListener("resize", measure);
+    document.addEventListener("visibilitychange", syncLoop);
+    measure();
     io.observe(row);
 
     row.addEventListener("pointerenter", onEnter);
@@ -88,11 +111,13 @@ export default function AutoScrollRow({ children, className, speed = 50 }: Props
     row.addEventListener("wheel", onWheel, { passive: true });
     row.addEventListener("focusin", onEnter);
     row.addEventListener("focusout", onLeave);
-    raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);
       io.disconnect();
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", measure);
+      document.removeEventListener("visibilitychange", syncLoop);
       row.removeEventListener("pointerenter", onEnter);
       row.removeEventListener("pointerleave", onLeave);
       row.removeEventListener("pointerdown", pauseForUser);

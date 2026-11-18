@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import type { CSSProperties, KeyboardEvent, MutableRefObject, PointerEvent } from "react";
+import type { CSSProperties, KeyboardEvent, PointerEvent } from "react";
+import { useNearbyImages } from "@/hooks/useNearbyImages";
 import Image from "next/image";
 import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
@@ -134,19 +135,19 @@ function Strip({
   pw,
   front,
   back,
-  refs,
+  register,
 }: {
   i: number;
   pw: number;
   front?: string;
   back?: string;
-  refs: MutableRefObject<HTMLDivElement[]>;
+  register: (index: number, element: HTMLDivElement) => void;
 }) {
   const sw = pw / N;
   return (
     <div
       ref={(el) => {
-        if (el) refs.current[i] = el;
+        if (el) register(i, el);
       }}
       style={{
         position: "absolute",
@@ -161,7 +162,7 @@ function Strip({
     >
       <Face src={front} pos={-i * sw} pw={pw} i={i} sw={sw} />
       <Face src={back} pos={(i + 1) * sw - pw} pw={pw} back i={i} sw={sw} />
-      {i < N - 1 && <Strip i={i + 1} pw={pw} front={front} back={back} refs={refs} />}
+      {i < N - 1 && <Strip i={i + 1} pw={pw} front={front} back={back} register={register} />}
     </div>
   );
 }
@@ -191,19 +192,16 @@ export default function ProfileFlipbook({ items }: { items: (ArchiveMedia & { ti
   const animRef = useRef<Anim | null>(null);
   const rafRef = useRef<number | null>(null);
   const press = useRef<{ x: number; dir: 1 | -1; sheet: number; pw: number; moved: boolean } | null>(null);
-  flippedRef.current = flipped;
-  sheetsRef.current = sheets;
+  const tickRef = useRef<(now: number) => void>(() => {});
+  const registerStrip = useCallback((index: number, element: HTMLDivElement) => {
+    stripRefs.current[index] = element;
+  }, []);
+  useLayoutEffect(() => {
+    flippedRef.current = flipped;
+    sheetsRef.current = sheets;
+  }, [flipped, sheets]);
 
-  /* load and decode every page up front so a turn never reveals one that is still arriving */
-  useEffect(() => {
-    items.forEach((it) => {
-      if (!it.src) return;
-      const im = new window.Image();
-      im.decoding = "async";
-      im.src = it.src;
-      im.decode?.().catch(() => {});
-    });
-  }, [items]);
+  useNearbyImages(bookRef, items, flipped * 2);
 
   /* measure a page so strips and their image slices line up exactly */
   useEffect(() => {
@@ -327,10 +325,12 @@ export default function ProfileFlipbook({ items }: { items: (ArchiveMedia & { ti
         }
         applyU(uRef.current);
       }
-      rafRef.current = requestAnimationFrame(tick);
+      rafRef.current = requestAnimationFrame((time) => tickRef.current(time));
     },
     [applyU, finish],
   );
+
+  useLayoutEffect(() => { tickRef.current = tick; }, [tick]);
 
   const run = useCallback(
     (a: Anim) => {
@@ -549,7 +549,7 @@ export default function ProfileFlipbook({ items }: { items: (ArchiveMedia & { ti
                 pw={pw}
                 front={pages[2 * turn.sheet]?.src}
                 back={pages[2 * turn.sheet + 1]?.src}
-                refs={stripRefs}
+                register={registerStrip}
               />
             </div>
           )}

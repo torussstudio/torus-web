@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { SOCIAL_LINKS, links } from "@/lib/constants";
+import { links } from "@/lib/constants";
+import ContactIcons from "./ContactIcons";
 import Lines from "@/components/sections/archive/Lines";
 import Media from "@/components/sections/archive/Media";
 import { LongArrow, TurnLink } from "./Icons";
@@ -59,31 +60,16 @@ export default function StudioHero() {
       </div>
 
       {/* IMAGE */}
-      <div data-fx="hero-media" className="px-24 pt-40 md:px-40 md:py-56 xl:p-0 xl:pt-59 xl:pb-84">
+      <div data-fx="hero-media" className="px-24 pt-40 pb-40 md:px-40 md:py-56 xl:p-0 xl:pt-59 xl:pb-84">
         <Media
-          media={{ src: "/images/home/hero-studio.avif", alt: "Inside the Toruss studio" }}
+          media={{ src: "/optimized/hero-studio-5fde54d001a9.avif", alt: "Inside the Toruss studio" }}
           className="aspect-[4/3] h-auto md:aspect-[742/822] xl:aspect-auto xl:h-822"
           sizes="(max-width: 767px) 100vw, 40vw"
           priority
         />
       </div>
 
-      {/* SOCIAL ICONS */}
-      <div className="flex gap-24 px-24 pt-24 pb-40 md:col-span-2 md:px-40 md:pt-0 md:pb-48 xl:col-span-1 xl:flex-col xl:justify-end xl:gap-32 xl:p-0 xl:pb-94 xl:pl-38">
-        {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            data-intro="item"
-            className="text-[#38362e]/60 transition-colors duration-200 hover:text-[#38362e]"
-          >
-            <Icon className="size-22 xl:size-28" />
-          </a>
-        ))}
-      </div>
+      <ContactIcons />
     </section>
   );
 }

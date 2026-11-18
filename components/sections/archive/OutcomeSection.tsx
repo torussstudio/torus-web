@@ -20,12 +20,14 @@ const columnPadding = ["xl:pl-115", "xl:pl-103", "xl:pl-90"];
 
 export default function OutcomeSection({
   data: d,
+  fullWidthMediaOnMobile = false,
   // gap above the photo (design px) — differs per project layout
   topPadding = "xl:pt-115",
   // text width of each column (design px) — tuned so lines break like the design
   columnWidths = ["xl:max-w-390", "xl:max-w-438", "xl:max-w-386"],
 }: {
   data: OutcomeData;
+  fullWidthMediaOnMobile?: boolean;
   topPadding?: string;
   columnWidths?: string[];
 }) {
@@ -34,7 +36,10 @@ export default function OutcomeSection({
       <div className={cn("grid grid-cols-1 items-center gap-32 border-b py-48 md:grid-cols-[1fr_1.15fr] md:gap-48 md:py-64 xl:grid-cols-[812fr_974fr] xl:gap-134 xl:pb-76", topPadding)}>
         <Media
           media={d.image}
-          className="mr-[15%] aspect-[812/1054] h-auto w-auto md:mr-0 md:w-full xl:mr-0 xl:aspect-auto xl:h-1054 xl:w-full"
+          className={cn(
+            "aspect-[812/1054] h-auto w-auto md:mr-0 md:w-full xl:aspect-auto xl:h-1054",
+            fullWidthMediaOnMobile ? "mr-0" : "mr-[15%]",
+          )}
           sizes="(max-width: 1023px) 85vw, 43vw"
         />
 

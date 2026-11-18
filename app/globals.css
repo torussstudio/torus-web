@@ -1,5 +1,3 @@
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @import "tailwindcss";
 
 .font-clashlight {
@@ -92,7 +90,7 @@ html.lenis body {
 }
 
 /* Home hero intro cover (HeroIntro.tsx): if its JavaScript never runs, hide
-   the cover after 6s so the page is never stuck behind it */
+   the cover after 2s so the page is never stuck behind it */
 @keyframes fx-intro-failsafe {
   to {
     visibility: hidden;
