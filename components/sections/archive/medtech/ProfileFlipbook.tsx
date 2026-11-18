@@ -51,7 +51,6 @@ function RestingPage({ media, side }: { media?: ArchiveMedia | null; side: "left
           alt={media.alt}
           fill
           sizes="(max-width: 767px) 50vw, 45vw"
-          unoptimized
           className="object-cover"
           draggable={false}
         />
@@ -201,7 +200,7 @@ export default function ProfileFlipbook({ items }: { items: (ArchiveMedia & { ti
     sheetsRef.current = sheets;
   }, [flipped, sheets]);
 
-  useNearbyImages(bookRef, items, flipped * 2);
+  useNearbyImages(bookRef, items, flipped * 2, 0.5);
 
   /* measure a page so strips and their image slices line up exactly */
   useEffect(() => {

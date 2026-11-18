@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, writeFile, stat } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -8,7 +9,15 @@ import { execFileSync } from "node:child_process";
 // derivatives so cache lifetimes can be long without serving stale edits.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifestPath = path.join(root, "scripts/optimized-assets.json");
+const responsiveManifestPath = path.join(root, "lib/responsive-images.json");
 const recipe = "avif-1920-q55-e4-h264-1080p30-crf23-v1";
+const responsiveWidths = [256, 480, 640, 960, 1280, 1920];
+const responsiveRecipe = "responsive-avif-q50-e4-v1";
+const responsiveDir = path.join(root, "public/responsive");
+const require = createRequire(import.meta.url);
+const sharp = createRequire(require.resolve("next/package.json"))("sharp");
+sharp.concurrency(1);
+sharp.cache(false);
 let previous = [];
 try { previous = JSON.parse(await readFile(manifestPath, "utf8")); }
 catch (error) { if (error.code !== "ENOENT") throw error; }
@@ -30,7 +39,17 @@ const sources = await Promise.all(files.map(async file => {
   return { file, text };
 }));
 const urls = new Set(sources.flatMap(({ text }) =>
-  [...text.matchAll(/["'`]((?:\/images\/|\/videos\/)[^"'`]+\.(?:avif|png|jpe?g|mp4))["'`]/g)].map(match => match[1])));
+  [...text.matchAll(/["'`]((?:\/images\/|\/videos\/)[^"'`]+\.(?:avif|png|jpe?g|webp|mp4))["'`]/g)].map(match => match[1])));
+// Calendar pages are selected from a generated array in lib/constants.ts, so
+// their full URLs are not present as string literals for the scan above.
+const calendarDir = path.join(root, "public/images/medtech/calendar");
+try {
+  for (const entry of await readdir(calendarDir, { withFileTypes: true })) {
+    if (entry.isFile() && /\.(?:avif|png|jpe?g|webp)$/i.test(entry.name)) {
+      urls.add(`/images/medtech/calendar/${entry.name}`);
+    }
+  }
+} catch (error) { if (error.code !== "ENOENT") throw error; }
 const outputDir = path.join(root, "public/optimized");
 await mkdir(outputDir, { recursive: true });
 const assets = [];
@@ -93,6 +112,76 @@ for (const { file } of sources) {
   if (updated !== await readFile(file, "utf8")) await writeFile(file, updated);
 }
 await writeFile(manifestPath, JSON.stringify(assets, null, 2) + "\n");
+
+// The Vercel Image Optimization quota is exhausted for this project. Publish
+// immutable responsive AVIF files ahead of time and have next/image point to
+// them directly instead of creating transformations on demand.
+await mkdir(responsiveDir, { recursive: true });
+const optimizedBySource = new Map(assets.map(asset => [asset.source, asset.output]));
+const responsiveImages = {};
+let previousResponsive = {};
+try { previousResponsive = JSON.parse(await readFile(responsiveManifestPath, "utf8")); }
+catch (error) { if (error.code !== "ENOENT") throw error; }
+for (const source of urls) {
+  if (/\.mp4$/i.test(source)) continue;
+  const output = optimizedBySource.get(source) ?? source;
+  const inputPath = path.join(root, "public", output.slice(1));
+  let input;
+  try { input = await readFile(inputPath); }
+  catch (error) {
+    if (error.code === "ENOENT") {
+      console.warn(`Missing image for responsive variants (unchanged): ${source}`);
+      continue;
+    }
+    throw error;
+  }
+
+  const contentHash = createHash("sha256").update(input).digest("hex").slice(0, 12);
+  const basename = path.basename(output, path.extname(output));
+  const existing = previousResponsive[output];
+  let cachedComplete = Boolean(existing);
+  for (const width of responsiveWidths) {
+    if (!cachedComplete) break;
+    const url = existing[width];
+    if (!url) { cachedComplete = false; break; }
+    if (url === output) continue;
+    if (!url.includes(`-${contentHash}-${width}.avif`)) { cachedComplete = false; break; }
+    try { await stat(path.join(root, "public", url.slice(1))); }
+    catch { cachedComplete = false; }
+  }
+  if (cachedComplete) {
+    responsiveImages[output] = existing;
+    continue;
+  }
+
+  const metadata = await sharp(input).metadata();
+  if (!metadata.width) continue;
+  const variants = {};
+
+  for (const width of responsiveWidths) {
+    if (width >= metadata.width) {
+      variants[width] = output;
+      continue;
+    }
+
+    const variant = `/responsive/${basename}-${contentHash}-${width}.avif`;
+    const variantPath = path.join(root, "public", variant.slice(1));
+    try { await stat(variantPath); }
+    catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      await sharp(input)
+        .rotate()
+        .resize({ width, withoutEnlargement: true })
+        .avif({ quality: 50, effort: 4 })
+        .toFile(variantPath);
+      console.log(`${source} -> ${width}px responsive AVIF`);
+    }
+    variants[width] = variant;
+  }
+  responsiveImages[output] = variants;
+}
+await writeFile(responsiveManifestPath, JSON.stringify(responsiveImages, null, 2) + "\n");
+
 const before = assets.reduce((sum, asset) => sum + asset.before, 0);
 const after = assets.reduce((sum, asset) => sum + asset.after, 0);
 console.log(JSON.stringify({ files: assets.length, before, after, reduction: `${(100 * (1 - after / before)).toFixed(1)}%` }));

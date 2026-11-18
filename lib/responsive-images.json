@@ -1,0 +1,994 @@
+{
+  "/images/TORUSS STUDIO LOGO PNG.png": {
+    "256": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-256.avif",
+    "480": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-480.avif",
+    "640": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-640.avif",
+    "960": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-960.avif",
+    "1280": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-1280.avif",
+    "1920": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-1920.avif"
+  },
+  "/images/NewLogo.png": {
+    "256": "/responsive/NewLogo-70b187de7f80-256.avif",
+    "480": "/responsive/NewLogo-70b187de7f80-480.avif",
+    "640": "/responsive/NewLogo-70b187de7f80-640.avif",
+    "960": "/responsive/NewLogo-70b187de7f80-960.avif",
+    "1280": "/images/NewLogo.png",
+    "1920": "/images/NewLogo.png"
+  },
+  "/images/medtech/profile/book-bg.jpg": {
+    "256": "/responsive/book-bg-51bb31104756-256.avif",
+    "480": "/responsive/book-bg-51bb31104756-480.avif",
+    "640": "/responsive/book-bg-51bb31104756-640.avif",
+    "960": "/responsive/book-bg-51bb31104756-960.avif",
+    "1280": "/responsive/book-bg-51bb31104756-1280.avif",
+    "1920": "/responsive/book-bg-51bb31104756-1920.avif"
+  },
+  "/optimized/hero-studio-5fde54d001a9.avif": {
+    "256": "/responsive/hero-studio-5fde54d001a9-5fde54d001a9-256.avif",
+    "480": "/responsive/hero-studio-5fde54d001a9-5fde54d001a9-480.avif",
+    "640": "/responsive/hero-studio-5fde54d001a9-5fde54d001a9-640.avif",
+    "960": "/responsive/hero-studio-5fde54d001a9-5fde54d001a9-960.avif",
+    "1280": "/responsive/hero-studio-5fde54d001a9-5fde54d001a9-1280.avif",
+    "1920": "/optimized/hero-studio-5fde54d001a9.avif"
+  },
+  "/optimized/insidestudio-c16d1d50ef73.avif": {
+    "256": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-256.avif",
+    "480": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-480.avif",
+    "640": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-640.avif",
+    "960": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-960.avif",
+    "1280": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-1280.avif",
+    "1920": "/optimized/insidestudio-c16d1d50ef73.avif"
+  },
+  "/optimized/space-discussions-a987f3457007.avif": {
+    "256": "/responsive/space-discussions-a987f3457007-a987f3457007-256.avif",
+    "480": "/responsive/space-discussions-a987f3457007-a987f3457007-480.avif",
+    "640": "/responsive/space-discussions-a987f3457007-a987f3457007-640.avif",
+    "960": "/responsive/space-discussions-a987f3457007-a987f3457007-960.avif",
+    "1280": "/responsive/space-discussions-a987f3457007-a987f3457007-1280.avif",
+    "1920": "/optimized/space-discussions-a987f3457007.avif"
+  },
+  "/optimized/space-in-betweens-1feb44e00d95.avif": {
+    "256": "/responsive/space-in-betweens-1feb44e00d95-1feb44e00d95-256.avif",
+    "480": "/responsive/space-in-betweens-1feb44e00d95-1feb44e00d95-480.avif",
+    "640": "/responsive/space-in-betweens-1feb44e00d95-1feb44e00d95-640.avif",
+    "960": "/responsive/space-in-betweens-1feb44e00d95-1feb44e00d95-960.avif",
+    "1280": "/responsive/space-in-betweens-1feb44e00d95-1feb44e00d95-1280.avif",
+    "1920": "/optimized/space-in-betweens-1feb44e00d95.avif"
+  },
+  "/optimized/space-workplace-a8e2f18a99e1.avif": {
+    "256": "/responsive/space-workplace-a8e2f18a99e1-a8e2f18a99e1-256.avif",
+    "480": "/responsive/space-workplace-a8e2f18a99e1-a8e2f18a99e1-480.avif",
+    "640": "/responsive/space-workplace-a8e2f18a99e1-a8e2f18a99e1-640.avif",
+    "960": "/responsive/space-workplace-a8e2f18a99e1-a8e2f18a99e1-960.avif",
+    "1280": "/responsive/space-workplace-a8e2f18a99e1-a8e2f18a99e1-1280.avif",
+    "1920": "/optimized/space-workplace-a8e2f18a99e1.avif"
+  },
+  "/optimized/space-collaborations-04a5e0c9a637.avif": {
+    "256": "/responsive/space-collaborations-04a5e0c9a637-04a5e0c9a637-256.avif",
+    "480": "/responsive/space-collaborations-04a5e0c9a637-04a5e0c9a637-480.avif",
+    "640": "/responsive/space-collaborations-04a5e0c9a637-04a5e0c9a637-640.avif",
+    "960": "/responsive/space-collaborations-04a5e0c9a637-04a5e0c9a637-960.avif",
+    "1280": "/responsive/space-collaborations-04a5e0c9a637-04a5e0c9a637-1280.avif",
+    "1920": "/optimized/space-collaborations-04a5e0c9a637.avif"
+  },
+  "/optimized/space-explorations-a5e3f1a7a08e.avif": {
+    "256": "/responsive/space-explorations-a5e3f1a7a08e-a5e3f1a7a08e-256.avif",
+    "480": "/responsive/space-explorations-a5e3f1a7a08e-a5e3f1a7a08e-480.avif",
+    "640": "/responsive/space-explorations-a5e3f1a7a08e-a5e3f1a7a08e-640.avif",
+    "960": "/responsive/space-explorations-a5e3f1a7a08e-a5e3f1a7a08e-960.avif",
+    "1280": "/responsive/space-explorations-a5e3f1a7a08e-a5e3f1a7a08e-1280.avif",
+    "1920": "/optimized/space-explorations-a5e3f1a7a08e.avif"
+  },
+  "/optimized/space-inspirations-3e651a7f16ab.avif": {
+    "256": "/responsive/space-inspirations-3e651a7f16ab-3e651a7f16ab-256.avif",
+    "480": "/responsive/space-inspirations-3e651a7f16ab-3e651a7f16ab-480.avif",
+    "640": "/responsive/space-inspirations-3e651a7f16ab-3e651a7f16ab-640.avif",
+    "960": "/responsive/space-inspirations-3e651a7f16ab-3e651a7f16ab-960.avif",
+    "1280": "/responsive/space-inspirations-3e651a7f16ab-3e651a7f16ab-1280.avif",
+    "1920": "/optimized/space-inspirations-3e651a7f16ab.avif"
+  },
+  "/images/home/card-creative.avif": {
+    "256": "/responsive/card-creative-94ec36906a39-256.avif",
+    "480": "/responsive/card-creative-94ec36906a39-480.avif",
+    "640": "/responsive/card-creative-94ec36906a39-640.avif",
+    "960": "/responsive/card-creative-94ec36906a39-960.avif",
+    "1280": "/responsive/card-creative-94ec36906a39-1280.avif",
+    "1920": "/images/home/card-creative.avif"
+  },
+  "/optimized/card-editions-76ea86a5c73b.avif": {
+    "256": "/responsive/card-editions-76ea86a5c73b-76ea86a5c73b-256.avif",
+    "480": "/responsive/card-editions-76ea86a5c73b-76ea86a5c73b-480.avif",
+    "640": "/responsive/card-editions-76ea86a5c73b-76ea86a5c73b-640.avif",
+    "960": "/responsive/card-editions-76ea86a5c73b-76ea86a5c73b-960.avif",
+    "1280": "/responsive/card-editions-76ea86a5c73b-76ea86a5c73b-1280.avif",
+    "1920": "/optimized/card-editions-76ea86a5c73b.avif"
+  },
+  "/optimized/card-cohort-1d4b448ffd08.avif": {
+    "256": "/responsive/card-cohort-1d4b448ffd08-1d4b448ffd08-256.avif",
+    "480": "/responsive/card-cohort-1d4b448ffd08-1d4b448ffd08-480.avif",
+    "640": "/responsive/card-cohort-1d4b448ffd08-1d4b448ffd08-640.avif",
+    "960": "/responsive/card-cohort-1d4b448ffd08-1d4b448ffd08-960.avif",
+    "1280": "/responsive/card-cohort-1d4b448ffd08-1d4b448ffd08-1280.avif",
+    "1920": "/optimized/card-cohort-1d4b448ffd08.avif"
+  },
+  "/optimized/hero-579399d2d0a7.avif": {
+    "256": "/responsive/hero-579399d2d0a7-579399d2d0a7-256.avif",
+    "480": "/responsive/hero-579399d2d0a7-579399d2d0a7-480.avif",
+    "640": "/responsive/hero-579399d2d0a7-579399d2d0a7-640.avif",
+    "960": "/responsive/hero-579399d2d0a7-579399d2d0a7-960.avif",
+    "1280": "/responsive/hero-579399d2d0a7-579399d2d0a7-1280.avif",
+    "1920": "/optimized/hero-579399d2d0a7.avif"
+  },
+  "/optimized/archive-exult-67106e740ac0.avif": {
+    "256": "/responsive/archive-exult-67106e740ac0-67106e740ac0-256.avif",
+    "480": "/responsive/archive-exult-67106e740ac0-67106e740ac0-480.avif",
+    "640": "/responsive/archive-exult-67106e740ac0-67106e740ac0-640.avif",
+    "960": "/responsive/archive-exult-67106e740ac0-67106e740ac0-960.avif",
+    "1280": "/responsive/archive-exult-67106e740ac0-67106e740ac0-1280.avif",
+    "1920": "/optimized/archive-exult-67106e740ac0.avif"
+  },
+  "/images/medtech/hero.avif": {
+    "256": "/responsive/hero-ce420ffab0e2-256.avif",
+    "480": "/responsive/hero-ce420ffab0e2-480.avif",
+    "640": "/responsive/hero-ce420ffab0e2-640.avif",
+    "960": "/responsive/hero-ce420ffab0e2-960.avif",
+    "1280": "/responsive/hero-ce420ffab0e2-1280.avif",
+    "1920": "/responsive/hero-ce420ffab0e2-1920.avif"
+  },
+  "/images/home/practice-branding-strategy.avif": {
+    "256": "/responsive/practice-branding-strategy-21e1de581fb3-256.avif",
+    "480": "/responsive/practice-branding-strategy-21e1de581fb3-480.avif",
+    "640": "/responsive/practice-branding-strategy-21e1de581fb3-640.avif",
+    "960": "/images/home/practice-branding-strategy.avif",
+    "1280": "/images/home/practice-branding-strategy.avif",
+    "1920": "/images/home/practice-branding-strategy.avif"
+  },
+  "/images/home/practice-web-digital.avif": {
+    "256": "/responsive/practice-web-digital-9f8325beb7c7-256.avif",
+    "480": "/responsive/practice-web-digital-9f8325beb7c7-480.avif",
+    "640": "/responsive/practice-web-digital-9f8325beb7c7-640.avif",
+    "960": "/images/home/practice-web-digital.avif",
+    "1280": "/images/home/practice-web-digital.avif",
+    "1920": "/images/home/practice-web-digital.avif"
+  },
+  "/images/home/practice-communication-growth.avif": {
+    "256": "/responsive/practice-communication-growth-8a31efb0f6fb-256.avif",
+    "480": "/responsive/practice-communication-growth-8a31efb0f6fb-480.avif",
+    "640": "/responsive/practice-communication-growth-8a31efb0f6fb-640.avif",
+    "960": "/images/home/practice-communication-growth.avif",
+    "1280": "/images/home/practice-communication-growth.avif",
+    "1920": "/images/home/practice-communication-growth.avif"
+  },
+  "/images/home/practice-art-editions.avif": {
+    "256": "/responsive/practice-art-editions-6a15a7a91d82-256.avif",
+    "480": "/responsive/practice-art-editions-6a15a7a91d82-480.avif",
+    "640": "/responsive/practice-art-editions-6a15a7a91d82-640.avif",
+    "960": "/images/home/practice-art-editions.avif",
+    "1280": "/images/home/practice-art-editions.avif",
+    "1920": "/images/home/practice-art-editions.avif"
+  },
+  "/images/home/practice-culture-collective.avif": {
+    "256": "/responsive/practice-culture-collective-c862533a1a8c-256.avif",
+    "480": "/responsive/practice-culture-collective-c862533a1a8c-480.avif",
+    "640": "/responsive/practice-culture-collective-c862533a1a8c-640.avif",
+    "960": "/images/home/practice-culture-collective.avif",
+    "1280": "/images/home/practice-culture-collective.avif",
+    "1920": "/images/home/practice-culture-collective.avif"
+  },
+  "/images/tsa/challenge-freshness-label.avif": {
+    "256": "/responsive/challenge-freshness-label-d65aaebe401f-256.avif",
+    "480": "/responsive/challenge-freshness-label-d65aaebe401f-480.avif",
+    "640": "/responsive/challenge-freshness-label-d65aaebe401f-640.avif",
+    "960": "/responsive/challenge-freshness-label-d65aaebe401f-960.avif",
+    "1280": "/responsive/challenge-freshness-label-d65aaebe401f-1280.avif",
+    "1920": "/responsive/challenge-freshness-label-d65aaebe401f-1920.avif"
+  },
+  "/optimized/question-sketch-0f76cc9ef5d5.avif": {
+    "256": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-256.avif",
+    "480": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-480.avif",
+    "640": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-640.avif",
+    "960": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-960.avif",
+    "1280": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-1280.avif",
+    "1920": "/optimized/question-sketch-0f76cc9ef5d5.avif"
+  },
+  "/optimized/naming-alicante-8e80a8aa8630.avif": {
+    "256": "/responsive/naming-alicante-8e80a8aa8630-8e80a8aa8630-256.avif",
+    "480": "/responsive/naming-alicante-8e80a8aa8630-8e80a8aa8630-480.avif",
+    "640": "/responsive/naming-alicante-8e80a8aa8630-8e80a8aa8630-640.avif",
+    "960": "/responsive/naming-alicante-8e80a8aa8630-8e80a8aa8630-960.avif",
+    "1280": "/responsive/naming-alicante-8e80a8aa8630-8e80a8aa8630-1280.avif",
+    "1920": "/optimized/naming-alicante-8e80a8aa8630.avif"
+  },
+  "/optimized/naming-philosophers-stone-86b8f1e12aa5.avif": {
+    "256": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-256.avif",
+    "480": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-480.avif",
+    "640": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-640.avif",
+    "960": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-960.avif",
+    "1280": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-1280.avif",
+    "1920": "/optimized/naming-philosophers-stone-86b8f1e12aa5.avif"
+  },
+  "/optimized/naming-alchemist-21c91c1e3695.avif": {
+    "256": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-256.avif",
+    "480": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-480.avif",
+    "640": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-640.avif",
+    "960": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-960.avif",
+    "1280": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-1280.avif",
+    "1920": "/optimized/naming-alchemist-21c91c1e3695.avif"
+  },
+  "/optimized/identity-swatches-tray-d23729fb7098.avif": {
+    "256": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-256.avif",
+    "480": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-480.avif",
+    "640": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-640.avif",
+    "960": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-960.avif",
+    "1280": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-1280.avif",
+    "1920": "/optimized/identity-swatches-tray-d23729fb7098.avif"
+  },
+  "/optimized/system-seal-5efd86d5cbaf.avif": {
+    "256": "/responsive/system-seal-5efd86d5cbaf-5efd86d5cbaf-256.avif",
+    "480": "/responsive/system-seal-5efd86d5cbaf-5efd86d5cbaf-480.avif",
+    "640": "/responsive/system-seal-5efd86d5cbaf-5efd86d5cbaf-640.avif",
+    "960": "/responsive/system-seal-5efd86d5cbaf-5efd86d5cbaf-960.avif",
+    "1280": "/responsive/system-seal-5efd86d5cbaf-5efd86d5cbaf-1280.avif",
+    "1920": "/optimized/system-seal-5efd86d5cbaf.avif"
+  },
+  "/optimized/system-full-logo-452fff91c9f2.avif": {
+    "256": "/responsive/system-full-logo-452fff91c9f2-452fff91c9f2-256.avif",
+    "480": "/responsive/system-full-logo-452fff91c9f2-452fff91c9f2-480.avif",
+    "640": "/responsive/system-full-logo-452fff91c9f2-452fff91c9f2-640.avif",
+    "960": "/responsive/system-full-logo-452fff91c9f2-452fff91c9f2-960.avif",
+    "1280": "/responsive/system-full-logo-452fff91c9f2-452fff91c9f2-1280.avif",
+    "1920": "/optimized/system-full-logo-452fff91c9f2.avif"
+  },
+  "/optimized/system-signature-c23fdbcddcd1.avif": {
+    "256": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-256.avif",
+    "480": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-480.avif",
+    "640": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-640.avif",
+    "960": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-960.avif",
+    "1280": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-1280.avif",
+    "1920": "/optimized/system-signature-c23fdbcddcd1.avif"
+  },
+  "/images/tsa/marks-seal.avif": {
+    "256": "/responsive/marks-seal-90edbb5eaf13-256.avif",
+    "480": "/responsive/marks-seal-90edbb5eaf13-480.avif",
+    "640": "/responsive/marks-seal-90edbb5eaf13-640.avif",
+    "960": "/responsive/marks-seal-90edbb5eaf13-960.avif",
+    "1280": "/responsive/marks-seal-90edbb5eaf13-1280.avif",
+    "1920": "/responsive/marks-seal-90edbb5eaf13-1920.avif"
+  },
+  "/optimized/marks-signature-b1895974261b.avif": {
+    "256": "/responsive/marks-signature-b1895974261b-b1895974261b-256.avif",
+    "480": "/responsive/marks-signature-b1895974261b-b1895974261b-480.avif",
+    "640": "/responsive/marks-signature-b1895974261b-b1895974261b-640.avif",
+    "960": "/responsive/marks-signature-b1895974261b-b1895974261b-960.avif",
+    "1280": "/responsive/marks-signature-b1895974261b-b1895974261b-1280.avif",
+    "1920": "/optimized/marks-signature-b1895974261b.avif"
+  },
+  "/images/tsa/proof-batch-label.avif": {
+    "256": "/responsive/proof-batch-label-3bc2ce7fd6dd-256.avif",
+    "480": "/responsive/proof-batch-label-3bc2ce7fd6dd-480.avif",
+    "640": "/responsive/proof-batch-label-3bc2ce7fd6dd-640.avif",
+    "960": "/responsive/proof-batch-label-3bc2ce7fd6dd-960.avif",
+    "1280": "/responsive/proof-batch-label-3bc2ce7fd6dd-1280.avif",
+    "1920": "/responsive/proof-batch-label-3bc2ce7fd6dd-1920.avif"
+  },
+  "/optimized/product-model-1dbef79ab8c6.avif": {
+    "256": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-256.avif",
+    "480": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-480.avif",
+    "640": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-640.avif",
+    "960": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-960.avif",
+    "1280": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-1280.avif",
+    "1920": "/optimized/product-model-1dbef79ab8c6.avif"
+  },
+  "/optimized/product-range-c10b9289b3a4.avif": {
+    "256": "/responsive/product-range-c10b9289b3a4-c10b9289b3a4-256.avif",
+    "480": "/responsive/product-range-c10b9289b3a4-c10b9289b3a4-480.avif",
+    "640": "/responsive/product-range-c10b9289b3a4-c10b9289b3a4-640.avif",
+    "960": "/responsive/product-range-c10b9289b3a4-c10b9289b3a4-960.avif",
+    "1280": "/responsive/product-range-c10b9289b3a4-c10b9289b3a4-1280.avif",
+    "1920": "/optimized/product-range-c10b9289b3a4.avif"
+  },
+  "/images/tsa/packaging-model.avif": {
+    "256": "/responsive/packaging-model-d5461b3bc1ad-256.avif",
+    "480": "/responsive/packaging-model-d5461b3bc1ad-480.avif",
+    "640": "/responsive/packaging-model-d5461b3bc1ad-640.avif",
+    "960": "/responsive/packaging-model-d5461b3bc1ad-960.avif",
+    "1280": "/responsive/packaging-model-d5461b3bc1ad-1280.avif",
+    "1920": "/responsive/packaging-model-d5461b3bc1ad-1920.avif"
+  },
+  "/optimized/packaging-cleanser-6ede71949ac3.avif": {
+    "256": "/responsive/packaging-cleanser-6ede71949ac3-6ede71949ac3-256.avif",
+    "480": "/responsive/packaging-cleanser-6ede71949ac3-6ede71949ac3-480.avif",
+    "640": "/responsive/packaging-cleanser-6ede71949ac3-6ede71949ac3-640.avif",
+    "960": "/responsive/packaging-cleanser-6ede71949ac3-6ede71949ac3-960.avif",
+    "1280": "/responsive/packaging-cleanser-6ede71949ac3-6ede71949ac3-1280.avif",
+    "1920": "/optimized/packaging-cleanser-6ede71949ac3.avif"
+  },
+  "/optimized/packaging-cream-be1dc1c887bb.avif": {
+    "256": "/responsive/packaging-cream-be1dc1c887bb-be1dc1c887bb-256.avif",
+    "480": "/responsive/packaging-cream-be1dc1c887bb-be1dc1c887bb-480.avif",
+    "640": "/responsive/packaging-cream-be1dc1c887bb-be1dc1c887bb-640.avif",
+    "960": "/responsive/packaging-cream-be1dc1c887bb-be1dc1c887bb-960.avif",
+    "1280": "/responsive/packaging-cream-be1dc1c887bb-be1dc1c887bb-1280.avif",
+    "1920": "/optimized/packaging-cream-be1dc1c887bb.avif"
+  },
+  "/images/tsa/sensory-team.avif": {
+    "256": "/responsive/sensory-team-37883a799c30-256.avif",
+    "480": "/responsive/sensory-team-37883a799c30-480.avif",
+    "640": "/responsive/sensory-team-37883a799c30-640.avif",
+    "960": "/responsive/sensory-team-37883a799c30-960.avif",
+    "1280": "/responsive/sensory-team-37883a799c30-1280.avif",
+    "1920": "/responsive/sensory-team-37883a799c30-1920.avif"
+  },
+  "/optimized/digital-social-ecommerce-7269ef719f96.avif": {
+    "256": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-256.avif",
+    "480": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-480.avif",
+    "640": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-640.avif",
+    "960": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-960.avif",
+    "1280": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-1280.avif",
+    "1920": "/optimized/digital-social-ecommerce-7269ef719f96.avif"
+  },
+  "/optimized/outcome-models-6ba906751a1c.avif": {
+    "256": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-256.avif",
+    "480": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-480.avif",
+    "640": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-640.avif",
+    "960": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-960.avif",
+    "1280": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-1280.avif",
+    "1920": "/optimized/outcome-models-6ba906751a1c.avif"
+  },
+  "/optimized/outcome-collage-80ccc9ec63c8.avif": {
+    "256": "/responsive/outcome-collage-80ccc9ec63c8-80ccc9ec63c8-256.avif",
+    "480": "/responsive/outcome-collage-80ccc9ec63c8-80ccc9ec63c8-480.avif",
+    "640": "/responsive/outcome-collage-80ccc9ec63c8-80ccc9ec63c8-640.avif",
+    "960": "/responsive/outcome-collage-80ccc9ec63c8-80ccc9ec63c8-960.avif",
+    "1280": "/responsive/outcome-collage-80ccc9ec63c8-80ccc9ec63c8-1280.avif",
+    "1920": "/optimized/outcome-collage-80ccc9ec63c8.avif"
+  },
+  "/optimized/hero-pin-cd35f2030601.avif": {
+    "256": "/responsive/hero-pin-cd35f2030601-cd35f2030601-256.avif",
+    "480": "/responsive/hero-pin-cd35f2030601-cd35f2030601-480.avif",
+    "640": "/responsive/hero-pin-cd35f2030601-cd35f2030601-640.avif",
+    "960": "/responsive/hero-pin-cd35f2030601-cd35f2030601-960.avif",
+    "1280": "/responsive/hero-pin-cd35f2030601-cd35f2030601-1280.avif",
+    "1920": "/optimized/hero-pin-cd35f2030601.avif"
+  },
+  "/optimized/challenge-brand-collage-ab41bcc6623b.avif": {
+    "256": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-256.avif",
+    "480": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-480.avif",
+    "640": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-640.avif",
+    "960": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-960.avif",
+    "1280": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-1280.avif",
+    "1920": "/optimized/challenge-brand-collage-ab41bcc6623b.avif"
+  },
+  "/optimized/identity-sketch-cbe54316789b.avif": {
+    "256": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-256.avif",
+    "480": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-480.avif",
+    "640": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-640.avif",
+    "960": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-960.avif",
+    "1280": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-1280.avif",
+    "1920": "/optimized/identity-sketch-cbe54316789b.avif"
+  },
+  "/optimized/identity-wordmark-684f07a37878.avif": {
+    "256": "/responsive/identity-wordmark-684f07a37878-684f07a37878-256.avif",
+    "480": "/responsive/identity-wordmark-684f07a37878-684f07a37878-480.avif",
+    "640": "/responsive/identity-wordmark-684f07a37878-684f07a37878-640.avif",
+    "960": "/responsive/identity-wordmark-684f07a37878-684f07a37878-960.avif",
+    "1280": "/responsive/identity-wordmark-684f07a37878-684f07a37878-1280.avif",
+    "1920": "/optimized/identity-wordmark-684f07a37878.avif"
+  },
+  "/optimized/identity-acrylic-7741de684bec.avif": {
+    "256": "/responsive/identity-acrylic-7741de684bec-7741de684bec-256.avif",
+    "480": "/responsive/identity-acrylic-7741de684bec-7741de684bec-480.avif",
+    "640": "/responsive/identity-acrylic-7741de684bec-7741de684bec-640.avif",
+    "960": "/responsive/identity-acrylic-7741de684bec-7741de684bec-960.avif",
+    "1280": "/responsive/identity-acrylic-7741de684bec-7741de684bec-1280.avif",
+    "1920": "/optimized/identity-acrylic-7741de684bec.avif"
+  },
+  "/optimized/content-office-sign-9916fea17075.avif": {
+    "256": "/responsive/content-office-sign-9916fea17075-9916fea17075-256.avif",
+    "480": "/responsive/content-office-sign-9916fea17075-9916fea17075-480.avif",
+    "640": "/responsive/content-office-sign-9916fea17075-9916fea17075-640.avif",
+    "960": "/responsive/content-office-sign-9916fea17075-9916fea17075-960.avif",
+    "1280": "/responsive/content-office-sign-9916fea17075-9916fea17075-1280.avif",
+    "1920": "/optimized/content-office-sign-9916fea17075.avif"
+  },
+  "/optimized/content-social-card-231e1e721f7c.avif": {
+    "256": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-256.avif",
+    "480": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-480.avif",
+    "640": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-640.avif",
+    "960": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-960.avif",
+    "1280": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-1280.avif",
+    "1920": "/optimized/content-social-card-231e1e721f7c.avif"
+  },
+  "/optimized/content-laptop-25443074ac6e.avif": {
+    "256": "/responsive/content-laptop-25443074ac6e-25443074ac6e-256.avif",
+    "480": "/responsive/content-laptop-25443074ac6e-25443074ac6e-480.avif",
+    "640": "/responsive/content-laptop-25443074ac6e-25443074ac6e-640.avif",
+    "960": "/responsive/content-laptop-25443074ac6e-25443074ac6e-960.avif",
+    "1280": "/responsive/content-laptop-25443074ac6e-25443074ac6e-1280.avif",
+    "1920": "/optimized/content-laptop-25443074ac6e.avif"
+  },
+  "/optimized/marks-stage-logo-bcafd9dfcf87.avif": {
+    "256": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-256.avif",
+    "480": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-480.avif",
+    "640": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-640.avif",
+    "960": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-960.avif",
+    "1280": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-1280.avif",
+    "1920": "/optimized/marks-stage-logo-bcafd9dfcf87.avif"
+  },
+  "/images/exult/comm-linkedin.avif": {
+    "256": "/responsive/comm-linkedin-8245c5f0b49c-256.avif",
+    "480": "/responsive/comm-linkedin-8245c5f0b49c-480.avif",
+    "640": "/responsive/comm-linkedin-8245c5f0b49c-640.avif",
+    "960": "/images/exult/comm-linkedin.avif",
+    "1280": "/images/exult/comm-linkedin.avif",
+    "1920": "/images/exult/comm-linkedin.avif"
+  },
+  "/images/exult/comm-instagram.avif": {
+    "256": "/responsive/comm-instagram-533d88fbf873-256.avif",
+    "480": "/responsive/comm-instagram-533d88fbf873-480.avif",
+    "640": "/responsive/comm-instagram-533d88fbf873-640.avif",
+    "960": "/images/exult/comm-instagram.avif",
+    "1280": "/images/exult/comm-instagram.avif",
+    "1920": "/images/exult/comm-instagram.avif"
+  },
+  "/images/exult/comm-medium.avif": {
+    "256": "/responsive/comm-medium-4a03a23aef66-256.avif",
+    "480": "/responsive/comm-medium-4a03a23aef66-480.avif",
+    "640": "/responsive/comm-medium-4a03a23aef66-640.avif",
+    "960": "/images/exult/comm-medium.avif",
+    "1280": "/images/exult/comm-medium.avif",
+    "1920": "/images/exult/comm-medium.avif"
+  },
+  "/images/exult/comm-podcasts.avif": {
+    "256": "/responsive/comm-podcasts-ea7526f601eb-256.avif",
+    "480": "/responsive/comm-podcasts-ea7526f601eb-480.avif",
+    "640": "/responsive/comm-podcasts-ea7526f601eb-640.avif",
+    "960": "/images/exult/comm-podcasts.avif",
+    "1280": "/images/exult/comm-podcasts.avif",
+    "1920": "/images/exult/comm-podcasts.avif"
+  },
+  "/optimized/event-creatives-3afb9aa66851.avif": {
+    "256": "/responsive/event-creatives-3afb9aa66851-3afb9aa66851-256.avif",
+    "480": "/responsive/event-creatives-3afb9aa66851-3afb9aa66851-480.avif",
+    "640": "/responsive/event-creatives-3afb9aa66851-3afb9aa66851-640.avif",
+    "960": "/responsive/event-creatives-3afb9aa66851-3afb9aa66851-960.avif",
+    "1280": "/responsive/event-creatives-3afb9aa66851-3afb9aa66851-1280.avif",
+    "1920": "/optimized/event-creatives-3afb9aa66851.avif"
+  },
+  "/optimized/event-entrance-7f65c1dac8f3.avif": {
+    "256": "/responsive/event-entrance-7f65c1dac8f3-7f65c1dac8f3-256.avif",
+    "480": "/responsive/event-entrance-7f65c1dac8f3-7f65c1dac8f3-480.avif",
+    "640": "/responsive/event-entrance-7f65c1dac8f3-7f65c1dac8f3-640.avif",
+    "960": "/responsive/event-entrance-7f65c1dac8f3-7f65c1dac8f3-960.avif",
+    "1280": "/responsive/event-entrance-7f65c1dac8f3-7f65c1dac8f3-1280.avif",
+    "1920": "/optimized/event-entrance-7f65c1dac8f3.avif"
+  },
+  "/optimized/email-stage-114827809a70.avif": {
+    "256": "/responsive/email-stage-114827809a70-114827809a70-256.avif",
+    "480": "/responsive/email-stage-114827809a70-114827809a70-480.avif",
+    "640": "/responsive/email-stage-114827809a70-114827809a70-640.avif",
+    "960": "/responsive/email-stage-114827809a70-114827809a70-960.avif",
+    "1280": "/responsive/email-stage-114827809a70-114827809a70-1280.avif",
+    "1920": "/optimized/email-stage-114827809a70.avif"
+  },
+  "/optimized/email-booth-87249ac1f471.avif": {
+    "256": "/responsive/email-booth-87249ac1f471-87249ac1f471-256.avif",
+    "480": "/responsive/email-booth-87249ac1f471-87249ac1f471-480.avif",
+    "640": "/responsive/email-booth-87249ac1f471-87249ac1f471-640.avif",
+    "960": "/responsive/email-booth-87249ac1f471-87249ac1f471-960.avif",
+    "1280": "/responsive/email-booth-87249ac1f471-87249ac1f471-1280.avif",
+    "1920": "/optimized/email-booth-87249ac1f471.avif"
+  },
+  "/optimized/email-pavilion-73a6ea4aa8f8.avif": {
+    "256": "/responsive/email-pavilion-73a6ea4aa8f8-73a6ea4aa8f8-256.avif",
+    "480": "/responsive/email-pavilion-73a6ea4aa8f8-73a6ea4aa8f8-480.avif",
+    "640": "/responsive/email-pavilion-73a6ea4aa8f8-73a6ea4aa8f8-640.avif",
+    "960": "/responsive/email-pavilion-73a6ea4aa8f8-73a6ea4aa8f8-960.avif",
+    "1280": "/responsive/email-pavilion-73a6ea4aa8f8-73a6ea4aa8f8-1280.avif",
+    "1920": "/optimized/email-pavilion-73a6ea4aa8f8.avif"
+  },
+  "/optimized/email-showcase-fbb87e5ab2c6.avif": {
+    "256": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-256.avif",
+    "480": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-480.avif",
+    "640": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-640.avif",
+    "960": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-960.avif",
+    "1280": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-1280.avif",
+    "1920": "/optimized/email-showcase-fbb87e5ab2c6.avif"
+  },
+  "/optimized/digital-icons-96f7871f2468.avif": {
+    "256": "/responsive/digital-icons-96f7871f2468-96f7871f2468-256.avif",
+    "480": "/responsive/digital-icons-96f7871f2468-96f7871f2468-480.avif",
+    "640": "/responsive/digital-icons-96f7871f2468-96f7871f2468-640.avif",
+    "960": "/responsive/digital-icons-96f7871f2468-96f7871f2468-960.avif",
+    "1280": "/responsive/digital-icons-96f7871f2468-96f7871f2468-1280.avif",
+    "1920": "/optimized/digital-icons-96f7871f2468.avif"
+  },
+  "/optimized/digital-powerbi-d42d4ad4deba.avif": {
+    "256": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-256.avif",
+    "480": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-480.avif",
+    "640": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-640.avif",
+    "960": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-960.avif",
+    "1280": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-1280.avif",
+    "1920": "/optimized/digital-powerbi-d42d4ad4deba.avif"
+  },
+  "/optimized/digital-touch-5517ba82f583.avif": {
+    "256": "/responsive/digital-touch-5517ba82f583-5517ba82f583-256.avif",
+    "480": "/responsive/digital-touch-5517ba82f583-5517ba82f583-480.avif",
+    "640": "/responsive/digital-touch-5517ba82f583-5517ba82f583-640.avif",
+    "960": "/responsive/digital-touch-5517ba82f583-5517ba82f583-960.avif",
+    "1280": "/responsive/digital-touch-5517ba82f583-5517ba82f583-1280.avif",
+    "1920": "/optimized/digital-touch-5517ba82f583.avif"
+  },
+  "/optimized/digital-copilot-4129c4734e6c.avif": {
+    "256": "/responsive/digital-copilot-4129c4734e6c-4129c4734e6c-256.avif",
+    "480": "/responsive/digital-copilot-4129c4734e6c-4129c4734e6c-480.avif",
+    "640": "/responsive/digital-copilot-4129c4734e6c-4129c4734e6c-640.avif",
+    "960": "/responsive/digital-copilot-4129c4734e6c-4129c4734e6c-960.avif",
+    "1280": "/responsive/digital-copilot-4129c4734e6c-4129c4734e6c-1280.avif",
+    "1920": "/optimized/digital-copilot-4129c4734e6c.avif"
+  },
+  "/optimized/outcome-collage-cf41b584828a.avif": {
+    "256": "/responsive/outcome-collage-cf41b584828a-cf41b584828a-256.avif",
+    "480": "/responsive/outcome-collage-cf41b584828a-cf41b584828a-480.avif",
+    "640": "/responsive/outcome-collage-cf41b584828a-cf41b584828a-640.avif",
+    "960": "/responsive/outcome-collage-cf41b584828a-cf41b584828a-960.avif",
+    "1280": "/responsive/outcome-collage-cf41b584828a-cf41b584828a-1280.avif",
+    "1920": "/optimized/outcome-collage-cf41b584828a.avif"
+  },
+  "/images/medtech/challenge.avif": {
+    "256": "/responsive/challenge-7f1520aee68c-256.avif",
+    "480": "/responsive/challenge-7f1520aee68c-480.avif",
+    "640": "/responsive/challenge-7f1520aee68c-640.avif",
+    "960": "/responsive/challenge-7f1520aee68c-960.avif",
+    "1280": "/responsive/challenge-7f1520aee68c-1280.avif",
+    "1920": "/responsive/challenge-7f1520aee68c-1920.avif"
+  },
+  "/images/medtech/process.avif": {
+    "256": "/responsive/process-dafdbb30837b-256.avif",
+    "480": "/responsive/process-dafdbb30837b-480.avif",
+    "640": "/responsive/process-dafdbb30837b-640.avif",
+    "960": "/responsive/process-dafdbb30837b-960.avif",
+    "1280": "/responsive/process-dafdbb30837b-1280.avif",
+    "1920": "/responsive/process-dafdbb30837b-1920.avif"
+  },
+  "/images/medtech/identity-poster.jpg": {
+    "256": "/responsive/identity-poster-7f915e77a5ec-256.avif",
+    "480": "/responsive/identity-poster-7f915e77a5ec-480.avif",
+    "640": "/responsive/identity-poster-7f915e77a5ec-640.avif",
+    "960": "/responsive/identity-poster-7f915e77a5ec-960.avif",
+    "1280": "/responsive/identity-poster-7f915e77a5ec-1280.avif",
+    "1920": "/images/medtech/identity-poster.jpg"
+  },
+  "/images/medtech/identity-sketch.avif": {
+    "256": "/responsive/identity-sketch-1adde9846396-256.avif",
+    "480": "/responsive/identity-sketch-1adde9846396-480.avif",
+    "640": "/responsive/identity-sketch-1adde9846396-640.avif",
+    "960": "/responsive/identity-sketch-1adde9846396-960.avif",
+    "1280": "/responsive/identity-sketch-1adde9846396-1280.avif",
+    "1920": "/images/medtech/identity-sketch.avif"
+  },
+  "/images/medtech/journey.avif": {
+    "256": "/responsive/journey-fbbf4f8e60f9-256.avif",
+    "480": "/responsive/journey-fbbf4f8e60f9-480.avif",
+    "640": "/responsive/journey-fbbf4f8e60f9-640.avif",
+    "960": "/responsive/journey-fbbf4f8e60f9-960.avif",
+    "1280": "/responsive/journey-fbbf4f8e60f9-1280.avif",
+    "1920": "/responsive/journey-fbbf4f8e60f9-1920.avif"
+  },
+  "/images/medtech/profile/page-01.jpg": {
+    "256": "/responsive/page-01-64186be476c9-256.avif",
+    "480": "/responsive/page-01-64186be476c9-480.avif",
+    "640": "/responsive/page-01-64186be476c9-640.avif",
+    "960": "/responsive/page-01-64186be476c9-960.avif",
+    "1280": "/responsive/page-01-64186be476c9-1280.avif",
+    "1920": "/images/medtech/profile/page-01.jpg"
+  },
+  "/images/medtech/profile/page-02.jpg": {
+    "256": "/responsive/page-02-43b9c4c6c762-256.avif",
+    "480": "/responsive/page-02-43b9c4c6c762-480.avif",
+    "640": "/responsive/page-02-43b9c4c6c762-640.avif",
+    "960": "/responsive/page-02-43b9c4c6c762-960.avif",
+    "1280": "/responsive/page-02-43b9c4c6c762-1280.avif",
+    "1920": "/images/medtech/profile/page-02.jpg"
+  },
+  "/images/medtech/profile/page-03.jpg": {
+    "256": "/responsive/page-03-12b51ea2fcde-256.avif",
+    "480": "/responsive/page-03-12b51ea2fcde-480.avif",
+    "640": "/responsive/page-03-12b51ea2fcde-640.avif",
+    "960": "/responsive/page-03-12b51ea2fcde-960.avif",
+    "1280": "/responsive/page-03-12b51ea2fcde-1280.avif",
+    "1920": "/images/medtech/profile/page-03.jpg"
+  },
+  "/images/medtech/profile/page-04.jpg": {
+    "256": "/responsive/page-04-4e183c3bb4d5-256.avif",
+    "480": "/responsive/page-04-4e183c3bb4d5-480.avif",
+    "640": "/responsive/page-04-4e183c3bb4d5-640.avif",
+    "960": "/responsive/page-04-4e183c3bb4d5-960.avif",
+    "1280": "/responsive/page-04-4e183c3bb4d5-1280.avif",
+    "1920": "/images/medtech/profile/page-04.jpg"
+  },
+  "/images/medtech/profile/page-05.jpg": {
+    "256": "/responsive/page-05-f8ac5a70bd7b-256.avif",
+    "480": "/responsive/page-05-f8ac5a70bd7b-480.avif",
+    "640": "/responsive/page-05-f8ac5a70bd7b-640.avif",
+    "960": "/responsive/page-05-f8ac5a70bd7b-960.avif",
+    "1280": "/responsive/page-05-f8ac5a70bd7b-1280.avif",
+    "1920": "/images/medtech/profile/page-05.jpg"
+  },
+  "/images/medtech/profile/page-06.jpg": {
+    "256": "/responsive/page-06-4191214f7cac-256.avif",
+    "480": "/responsive/page-06-4191214f7cac-480.avif",
+    "640": "/responsive/page-06-4191214f7cac-640.avif",
+    "960": "/responsive/page-06-4191214f7cac-960.avif",
+    "1280": "/responsive/page-06-4191214f7cac-1280.avif",
+    "1920": "/images/medtech/profile/page-06.jpg"
+  },
+  "/images/medtech/profile/page-07.jpg": {
+    "256": "/responsive/page-07-ad20a2403123-256.avif",
+    "480": "/responsive/page-07-ad20a2403123-480.avif",
+    "640": "/responsive/page-07-ad20a2403123-640.avif",
+    "960": "/responsive/page-07-ad20a2403123-960.avif",
+    "1280": "/responsive/page-07-ad20a2403123-1280.avif",
+    "1920": "/images/medtech/profile/page-07.jpg"
+  },
+  "/images/medtech/profile/page-08.jpg": {
+    "256": "/responsive/page-08-f5656f57077b-256.avif",
+    "480": "/responsive/page-08-f5656f57077b-480.avif",
+    "640": "/responsive/page-08-f5656f57077b-640.avif",
+    "960": "/responsive/page-08-f5656f57077b-960.avif",
+    "1280": "/responsive/page-08-f5656f57077b-1280.avif",
+    "1920": "/images/medtech/profile/page-08.jpg"
+  },
+  "/images/medtech/profile/page-09.jpg": {
+    "256": "/responsive/page-09-798389f5a350-256.avif",
+    "480": "/responsive/page-09-798389f5a350-480.avif",
+    "640": "/responsive/page-09-798389f5a350-640.avif",
+    "960": "/responsive/page-09-798389f5a350-960.avif",
+    "1280": "/responsive/page-09-798389f5a350-1280.avif",
+    "1920": "/images/medtech/profile/page-09.jpg"
+  },
+  "/images/medtech/profile/page-10.jpg": {
+    "256": "/responsive/page-10-8afc52ba2978-256.avif",
+    "480": "/responsive/page-10-8afc52ba2978-480.avif",
+    "640": "/responsive/page-10-8afc52ba2978-640.avif",
+    "960": "/responsive/page-10-8afc52ba2978-960.avif",
+    "1280": "/responsive/page-10-8afc52ba2978-1280.avif",
+    "1920": "/images/medtech/profile/page-10.jpg"
+  },
+  "/images/medtech/profile/page-11.jpg": {
+    "256": "/responsive/page-11-b914b1209003-256.avif",
+    "480": "/responsive/page-11-b914b1209003-480.avif",
+    "640": "/responsive/page-11-b914b1209003-640.avif",
+    "960": "/responsive/page-11-b914b1209003-960.avif",
+    "1280": "/responsive/page-11-b914b1209003-1280.avif",
+    "1920": "/images/medtech/profile/page-11.jpg"
+  },
+  "/images/medtech/profile/page-12.jpg": {
+    "256": "/responsive/page-12-42189a4ffb6e-256.avif",
+    "480": "/responsive/page-12-42189a4ffb6e-480.avif",
+    "640": "/responsive/page-12-42189a4ffb6e-640.avif",
+    "960": "/responsive/page-12-42189a4ffb6e-960.avif",
+    "1280": "/responsive/page-12-42189a4ffb6e-1280.avif",
+    "1920": "/images/medtech/profile/page-12.jpg"
+  },
+  "/images/medtech/profile/page-13.jpg": {
+    "256": "/responsive/page-13-55e4ae07ba93-256.avif",
+    "480": "/responsive/page-13-55e4ae07ba93-480.avif",
+    "640": "/responsive/page-13-55e4ae07ba93-640.avif",
+    "960": "/responsive/page-13-55e4ae07ba93-960.avif",
+    "1280": "/responsive/page-13-55e4ae07ba93-1280.avif",
+    "1920": "/images/medtech/profile/page-13.jpg"
+  },
+  "/images/medtech/profile/page-14.jpg": {
+    "256": "/responsive/page-14-a9f7867d52b7-256.avif",
+    "480": "/responsive/page-14-a9f7867d52b7-480.avif",
+    "640": "/responsive/page-14-a9f7867d52b7-640.avif",
+    "960": "/responsive/page-14-a9f7867d52b7-960.avif",
+    "1280": "/responsive/page-14-a9f7867d52b7-1280.avif",
+    "1920": "/images/medtech/profile/page-14.jpg"
+  },
+  "/images/medtech/profile/page-15.jpg": {
+    "256": "/responsive/page-15-404e60da2315-256.avif",
+    "480": "/responsive/page-15-404e60da2315-480.avif",
+    "640": "/responsive/page-15-404e60da2315-640.avif",
+    "960": "/responsive/page-15-404e60da2315-960.avif",
+    "1280": "/responsive/page-15-404e60da2315-1280.avif",
+    "1920": "/images/medtech/profile/page-15.jpg"
+  },
+  "/images/medtech/profile/page-16.jpg": {
+    "256": "/responsive/page-16-60354d6844af-256.avif",
+    "480": "/responsive/page-16-60354d6844af-480.avif",
+    "640": "/responsive/page-16-60354d6844af-640.avif",
+    "960": "/responsive/page-16-60354d6844af-960.avif",
+    "1280": "/responsive/page-16-60354d6844af-1280.avif",
+    "1920": "/images/medtech/profile/page-16.jpg"
+  },
+  "/images/medtech/profile/page-17.jpg": {
+    "256": "/responsive/page-17-7f601f11c4a2-256.avif",
+    "480": "/responsive/page-17-7f601f11c4a2-480.avif",
+    "640": "/responsive/page-17-7f601f11c4a2-640.avif",
+    "960": "/responsive/page-17-7f601f11c4a2-960.avif",
+    "1280": "/responsive/page-17-7f601f11c4a2-1280.avif",
+    "1920": "/images/medtech/profile/page-17.jpg"
+  },
+  "/images/medtech/profile/page-18.jpg": {
+    "256": "/responsive/page-18-c3b96037e40b-256.avif",
+    "480": "/responsive/page-18-c3b96037e40b-480.avif",
+    "640": "/responsive/page-18-c3b96037e40b-640.avif",
+    "960": "/responsive/page-18-c3b96037e40b-960.avif",
+    "1280": "/responsive/page-18-c3b96037e40b-1280.avif",
+    "1920": "/images/medtech/profile/page-18.jpg"
+  },
+  "/images/medtech/culture-roots.avif": {
+    "256": "/responsive/culture-roots-05c4fc680212-256.avif",
+    "480": "/responsive/culture-roots-05c4fc680212-480.avif",
+    "640": "/responsive/culture-roots-05c4fc680212-640.avif",
+    "960": "/responsive/culture-roots-05c4fc680212-960.avif",
+    "1280": "/responsive/culture-roots-05c4fc680212-1280.avif",
+    "1920": "/images/medtech/culture-roots.avif"
+  },
+  "/images/medtech/colour-palette.avif": {
+    "256": "/responsive/colour-palette-4887246a582b-256.avif",
+    "480": "/images/medtech/colour-palette.avif",
+    "640": "/images/medtech/colour-palette.avif",
+    "960": "/images/medtech/colour-palette.avif",
+    "1280": "/images/medtech/colour-palette.avif",
+    "1920": "/images/medtech/colour-palette.avif"
+  },
+  "/images/medtech/exploration-flower.avif": {
+    "256": "/responsive/exploration-flower-237cab6e9c13-256.avif",
+    "480": "/responsive/exploration-flower-237cab6e9c13-480.avif",
+    "640": "/responsive/exploration-flower-237cab6e9c13-640.avif",
+    "960": "/responsive/exploration-flower-237cab6e9c13-960.avif",
+    "1280": "/responsive/exploration-flower-237cab6e9c13-1280.avif",
+    "1920": "/responsive/exploration-flower-237cab6e9c13-1920.avif"
+  },
+  "/images/medtech/exploration-revenue.avif": {
+    "256": "/responsive/exploration-revenue-5764e04dcb02-256.avif",
+    "480": "/responsive/exploration-revenue-5764e04dcb02-480.avif",
+    "640": "/responsive/exploration-revenue-5764e04dcb02-640.avif",
+    "960": "/responsive/exploration-revenue-5764e04dcb02-960.avif",
+    "1280": "/responsive/exploration-revenue-5764e04dcb02-1280.avif",
+    "1920": "/responsive/exploration-revenue-5764e04dcb02-1920.avif"
+  },
+  "/images/medtech/story-poster.jpg": {
+    "256": "/responsive/story-poster-71a36850d90d-256.avif",
+    "480": "/responsive/story-poster-71a36850d90d-480.avif",
+    "640": "/responsive/story-poster-71a36850d90d-640.avif",
+    "960": "/responsive/story-poster-71a36850d90d-960.avif",
+    "1280": "/responsive/story-poster-71a36850d90d-1280.avif",
+    "1920": "/images/medtech/story-poster.jpg"
+  },
+  "/images/medtech/motion-character-sheet-detail.avif": {
+    "256": "/responsive/motion-character-sheet-detail-e7be15939b49-256.avif",
+    "480": "/responsive/motion-character-sheet-detail-e7be15939b49-480.avif",
+    "640": "/responsive/motion-character-sheet-detail-e7be15939b49-640.avif",
+    "960": "/responsive/motion-character-sheet-detail-e7be15939b49-960.avif",
+    "1280": "/responsive/motion-character-sheet-detail-e7be15939b49-1280.avif",
+    "1920": "/images/medtech/motion-character-sheet-detail.avif"
+  },
+  "/images/medtech/collateral-poster.jpg": {
+    "256": "/responsive/collateral-poster-a024e56766a7-256.avif",
+    "480": "/responsive/collateral-poster-a024e56766a7-480.avif",
+    "640": "/responsive/collateral-poster-a024e56766a7-640.avif",
+    "960": "/responsive/collateral-poster-a024e56766a7-960.avif",
+    "1280": "/responsive/collateral-poster-a024e56766a7-1280.avif",
+    "1920": "/images/medtech/collateral-poster.jpg"
+  },
+  "/images/medtech/collateral-1.avif": {
+    "256": "/responsive/collateral-1-e34156c047b2-256.avif",
+    "480": "/responsive/collateral-1-e34156c047b2-480.avif",
+    "640": "/responsive/collateral-1-e34156c047b2-640.avif",
+    "960": "/responsive/collateral-1-e34156c047b2-960.avif",
+    "1280": "/images/medtech/collateral-1.avif",
+    "1920": "/images/medtech/collateral-1.avif"
+  },
+  "/images/medtech/collateral-2.avif": {
+    "256": "/responsive/collateral-2-afa9fd3b13ff-256.avif",
+    "480": "/responsive/collateral-2-afa9fd3b13ff-480.avif",
+    "640": "/responsive/collateral-2-afa9fd3b13ff-640.avif",
+    "960": "/responsive/collateral-2-afa9fd3b13ff-960.avif",
+    "1280": "/images/medtech/collateral-2.avif",
+    "1920": "/images/medtech/collateral-2.avif"
+  },
+  "/images/medtech/collateral-3.avif": {
+    "256": "/responsive/collateral-3-7f73aec9bebf-256.avif",
+    "480": "/responsive/collateral-3-7f73aec9bebf-480.avif",
+    "640": "/responsive/collateral-3-7f73aec9bebf-640.avif",
+    "960": "/responsive/collateral-3-7f73aec9bebf-960.avif",
+    "1280": "/images/medtech/collateral-3.avif",
+    "1920": "/images/medtech/collateral-3.avif"
+  },
+  "/images/medtech/collateral-4.avif": {
+    "256": "/responsive/collateral-4-1ad85cef10ac-256.avif",
+    "480": "/responsive/collateral-4-1ad85cef10ac-480.avif",
+    "640": "/responsive/collateral-4-1ad85cef10ac-640.avif",
+    "960": "/responsive/collateral-4-1ad85cef10ac-960.avif",
+    "1280": "/responsive/collateral-4-1ad85cef10ac-1280.avif",
+    "1920": "/responsive/collateral-4-1ad85cef10ac-1920.avif"
+  },
+  "/images/medtech/collateral-5.avif": {
+    "256": "/responsive/collateral-5-07690889281b-256.avif",
+    "480": "/responsive/collateral-5-07690889281b-480.avif",
+    "640": "/responsive/collateral-5-07690889281b-640.avif",
+    "960": "/responsive/collateral-5-07690889281b-960.avif",
+    "1280": "/responsive/collateral-5-07690889281b-1280.avif",
+    "1920": "/responsive/collateral-5-07690889281b-1920.avif"
+  },
+  "/images/medtech/collateral-6.avif": {
+    "256": "/responsive/collateral-6-ebf7eb73cecb-256.avif",
+    "480": "/responsive/collateral-6-ebf7eb73cecb-480.avif",
+    "640": "/responsive/collateral-6-ebf7eb73cecb-640.avif",
+    "960": "/responsive/collateral-6-ebf7eb73cecb-960.avif",
+    "1280": "/images/medtech/collateral-6.avif",
+    "1920": "/images/medtech/collateral-6.avif"
+  },
+  "/images/medtech/collateral-7.avif": {
+    "256": "/responsive/collateral-7-c92c8cda1683-256.avif",
+    "480": "/responsive/collateral-7-c92c8cda1683-480.avif",
+    "640": "/responsive/collateral-7-c92c8cda1683-640.avif",
+    "960": "/responsive/collateral-7-c92c8cda1683-960.avif",
+    "1280": "/responsive/collateral-7-c92c8cda1683-1280.avif",
+    "1920": "/responsive/collateral-7-c92c8cda1683-1920.avif"
+  },
+  "/images/medtech/website-mockup.avif": {
+    "256": "/responsive/website-mockup-10eeea79df89-256.avif",
+    "480": "/responsive/website-mockup-10eeea79df89-480.avif",
+    "640": "/responsive/website-mockup-10eeea79df89-640.avif",
+    "960": "/responsive/website-mockup-10eeea79df89-960.avif",
+    "1280": "/responsive/website-mockup-10eeea79df89-1280.avif",
+    "1920": "/images/medtech/website-mockup.avif"
+  },
+  "/images/medtech/social-posts-v2.avif": {
+    "256": "/responsive/social-posts-v2-178994787444-256.avif",
+    "480": "/responsive/social-posts-v2-178994787444-480.avif",
+    "640": "/responsive/social-posts-v2-178994787444-640.avif",
+    "960": "/responsive/social-posts-v2-178994787444-960.avif",
+    "1280": "/responsive/social-posts-v2-178994787444-1280.avif",
+    "1920": "/images/medtech/social-posts-v2.avif"
+  },
+  "/images/medtech/event-booth.avif": {
+    "256": "/responsive/event-booth-63a3ae354486-256.avif",
+    "480": "/responsive/event-booth-63a3ae354486-480.avif",
+    "640": "/responsive/event-booth-63a3ae354486-640.avif",
+    "960": "/responsive/event-booth-63a3ae354486-960.avif",
+    "1280": "/responsive/event-booth-63a3ae354486-1280.avif",
+    "1920": "/images/medtech/event-booth.avif"
+  },
+  "/images/medtech/outcome.avif": {
+    "256": "/responsive/outcome-8ed30ec0daa9-256.avif",
+    "480": "/responsive/outcome-8ed30ec0daa9-480.avif",
+    "640": "/responsive/outcome-8ed30ec0daa9-640.avif",
+    "960": "/responsive/outcome-8ed30ec0daa9-960.avif",
+    "1280": "/images/medtech/outcome.avif",
+    "1920": "/images/medtech/outcome.avif"
+  },
+  "/images/medtech/logo-sketch-poster.jpg": {
+    "256": "/responsive/logo-sketch-poster-f1676a8aa022-256.avif",
+    "480": "/responsive/logo-sketch-poster-f1676a8aa022-480.avif",
+    "640": "/responsive/logo-sketch-poster-f1676a8aa022-640.avif",
+    "960": "/responsive/logo-sketch-poster-f1676a8aa022-960.avif",
+    "1280": "/responsive/logo-sketch-poster-f1676a8aa022-1280.avif",
+    "1920": "/images/medtech/logo-sketch-poster.jpg"
+  },
+  "/images/home/phone.webp": {
+    "256": "/responsive/phone-15bd7e7006c8-256.avif",
+    "480": "/responsive/phone-15bd7e7006c8-480.avif",
+    "640": "/responsive/phone-15bd7e7006c8-640.avif",
+    "960": "/responsive/phone-15bd7e7006c8-960.avif",
+    "1280": "/responsive/phone-15bd7e7006c8-1280.avif",
+    "1920": "/responsive/phone-15bd7e7006c8-1920.avif"
+  },
+  "/images/medtech/calendar/page-01.webp": {
+    "256": "/responsive/page-01-6a1a8430a7c1-256.avif",
+    "480": "/responsive/page-01-6a1a8430a7c1-480.avif",
+    "640": "/responsive/page-01-6a1a8430a7c1-640.avif",
+    "960": "/responsive/page-01-6a1a8430a7c1-960.avif",
+    "1280": "/responsive/page-01-6a1a8430a7c1-1280.avif",
+    "1920": "/images/medtech/calendar/page-01.webp"
+  },
+  "/images/medtech/calendar/page-02.webp": {
+    "256": "/responsive/page-02-2a6c3502deff-256.avif",
+    "480": "/responsive/page-02-2a6c3502deff-480.avif",
+    "640": "/responsive/page-02-2a6c3502deff-640.avif",
+    "960": "/responsive/page-02-2a6c3502deff-960.avif",
+    "1280": "/responsive/page-02-2a6c3502deff-1280.avif",
+    "1920": "/images/medtech/calendar/page-02.webp"
+  },
+  "/images/medtech/calendar/page-03.webp": {
+    "256": "/responsive/page-03-486216ac231b-256.avif",
+    "480": "/responsive/page-03-486216ac231b-480.avif",
+    "640": "/responsive/page-03-486216ac231b-640.avif",
+    "960": "/responsive/page-03-486216ac231b-960.avif",
+    "1280": "/responsive/page-03-486216ac231b-1280.avif",
+    "1920": "/images/medtech/calendar/page-03.webp"
+  },
+  "/images/medtech/calendar/page-04.webp": {
+    "256": "/responsive/page-04-76c1b3381e99-256.avif",
+    "480": "/responsive/page-04-76c1b3381e99-480.avif",
+    "640": "/responsive/page-04-76c1b3381e99-640.avif",
+    "960": "/responsive/page-04-76c1b3381e99-960.avif",
+    "1280": "/responsive/page-04-76c1b3381e99-1280.avif",
+    "1920": "/images/medtech/calendar/page-04.webp"
+  },
+  "/images/medtech/calendar/page-05.webp": {
+    "256": "/responsive/page-05-a76a745ac8f1-256.avif",
+    "480": "/responsive/page-05-a76a745ac8f1-480.avif",
+    "640": "/responsive/page-05-a76a745ac8f1-640.avif",
+    "960": "/responsive/page-05-a76a745ac8f1-960.avif",
+    "1280": "/responsive/page-05-a76a745ac8f1-1280.avif",
+    "1920": "/images/medtech/calendar/page-05.webp"
+  },
+  "/images/medtech/calendar/page-06.webp": {
+    "256": "/responsive/page-06-6eb2ee705764-256.avif",
+    "480": "/responsive/page-06-6eb2ee705764-480.avif",
+    "640": "/responsive/page-06-6eb2ee705764-640.avif",
+    "960": "/responsive/page-06-6eb2ee705764-960.avif",
+    "1280": "/responsive/page-06-6eb2ee705764-1280.avif",
+    "1920": "/images/medtech/calendar/page-06.webp"
+  },
+  "/images/medtech/calendar/page-07.webp": {
+    "256": "/responsive/page-07-20a48b30f45a-256.avif",
+    "480": "/responsive/page-07-20a48b30f45a-480.avif",
+    "640": "/responsive/page-07-20a48b30f45a-640.avif",
+    "960": "/responsive/page-07-20a48b30f45a-960.avif",
+    "1280": "/responsive/page-07-20a48b30f45a-1280.avif",
+    "1920": "/images/medtech/calendar/page-07.webp"
+  },
+  "/images/medtech/calendar/page-08.webp": {
+    "256": "/responsive/page-08-5b23534b42a2-256.avif",
+    "480": "/responsive/page-08-5b23534b42a2-480.avif",
+    "640": "/responsive/page-08-5b23534b42a2-640.avif",
+    "960": "/responsive/page-08-5b23534b42a2-960.avif",
+    "1280": "/responsive/page-08-5b23534b42a2-1280.avif",
+    "1920": "/images/medtech/calendar/page-08.webp"
+  },
+  "/images/medtech/calendar/page-09.webp": {
+    "256": "/responsive/page-09-60a0e45a84d7-256.avif",
+    "480": "/responsive/page-09-60a0e45a84d7-480.avif",
+    "640": "/responsive/page-09-60a0e45a84d7-640.avif",
+    "960": "/responsive/page-09-60a0e45a84d7-960.avif",
+    "1280": "/responsive/page-09-60a0e45a84d7-1280.avif",
+    "1920": "/images/medtech/calendar/page-09.webp"
+  },
+  "/images/medtech/calendar/page-10.webp": {
+    "256": "/responsive/page-10-663e3253426a-256.avif",
+    "480": "/responsive/page-10-663e3253426a-480.avif",
+    "640": "/responsive/page-10-663e3253426a-640.avif",
+    "960": "/responsive/page-10-663e3253426a-960.avif",
+    "1280": "/responsive/page-10-663e3253426a-1280.avif",
+    "1920": "/images/medtech/calendar/page-10.webp"
+  },
+  "/images/medtech/calendar/page-11.webp": {
+    "256": "/responsive/page-11-89ff379354d3-256.avif",
+    "480": "/responsive/page-11-89ff379354d3-480.avif",
+    "640": "/responsive/page-11-89ff379354d3-640.avif",
+    "960": "/responsive/page-11-89ff379354d3-960.avif",
+    "1280": "/responsive/page-11-89ff379354d3-1280.avif",
+    "1920": "/images/medtech/calendar/page-11.webp"
+  },
+  "/images/medtech/calendar/page-12.webp": {
+    "256": "/responsive/page-12-af970f21c18d-256.avif",
+    "480": "/responsive/page-12-af970f21c18d-480.avif",
+    "640": "/responsive/page-12-af970f21c18d-640.avif",
+    "960": "/responsive/page-12-af970f21c18d-960.avif",
+    "1280": "/responsive/page-12-af970f21c18d-1280.avif",
+    "1920": "/images/medtech/calendar/page-12.webp"
+  },
+  "/images/medtech/calendar/page-13.webp": {
+    "256": "/responsive/page-13-7443f81994e8-256.avif",
+    "480": "/responsive/page-13-7443f81994e8-480.avif",
+    "640": "/responsive/page-13-7443f81994e8-640.avif",
+    "960": "/responsive/page-13-7443f81994e8-960.avif",
+    "1280": "/responsive/page-13-7443f81994e8-1280.avif",
+    "1920": "/images/medtech/calendar/page-13.webp"
+  },
+  "/images/medtech/calendar/page-14.webp": {
+    "256": "/responsive/page-14-94510a8a04df-256.avif",
+    "480": "/responsive/page-14-94510a8a04df-480.avif",
+    "640": "/responsive/page-14-94510a8a04df-640.avif",
+    "960": "/responsive/page-14-94510a8a04df-960.avif",
+    "1280": "/responsive/page-14-94510a8a04df-1280.avif",
+    "1920": "/images/medtech/calendar/page-14.webp"
+  }
+}

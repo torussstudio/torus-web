@@ -210,8 +210,8 @@ export default function HeroIntro() {
       if (header) tl.to(header, { yPercent: 0, duration: 0.8, ease: "expo.out" }, "-=0.2");
       if (split) tl.to(split.lines, { yPercent: 0, duration: 1, ease: "expo.out", stagger: 0.09 }, "<");
       tl.to(items, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.06 }, "<0.25");
-      // Keep the branded entrance, but cap its interaction-blocking duration.
-      tl.duration(desktop ? 1.6 : 1.2);
+      // Let the entrance breathe while keeping the cover from lingering too long.
+      tl.duration(desktop ? 3.6 : 3.2);
     });
 
     return () => {

@@ -96,14 +96,6 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/tsa/hero.avif",
-    "output": "/optimized/hero-579399d2d0a7.avif",
-    "before": 478825,
-    "after": 104619,
-    "sourceHash": "132257eddf7f39f0b653c51531ea5800170bc2d6006507a64ad51589b66f2914",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/images/tsa/question-sketch.avif",
     "output": "/optimized/question-sketch-0f76cc9ef5d5.avif",
     "before": 997066,

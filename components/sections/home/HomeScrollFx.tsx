@@ -319,9 +319,8 @@ export default function HomeScrollFx({ children }: { children: ReactNode }) {
       }
 
       /* ── 6. AREAS OF PRACTICE – rows rise and slide in ──
-           Plays once per row (not scrubbed): the rows open / close on hover,
-           and a scrubbed entrance would keep re-measuring while the heights
-           change and leave gaps between rows mid-animation. */
+           Plays once per row (not scrubbed): rows expand on hover, and
+           scrubbing would re-measure them mid-animation. */
       q<HTMLElement>("[data-fx='areas'] > li").forEach((li, i) => {
         const title = li.querySelector("[data-fx='area-title']");
         const tl = gsap.timeline({

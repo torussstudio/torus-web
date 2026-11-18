@@ -175,7 +175,7 @@ export const cards = [
     ],
     icon: "■",
     desc: "Cohort brings people together through workshops, conversations, exhibitions, cultural initiatives, and collaborative projects.",
-    image: "/optimized/card-cohort-1d4b448ffd08.avif",
+    image: "/optimized/card-cohort-art-workshop.avif",
     items: [
       "Workshops & Learning",
       "Exhibitions",
@@ -1089,7 +1089,7 @@ export const exultMarks = keepHyphenatedWords({
   },
   seal: {
     image: {
-      video: "/videos/exult/logo-motion.mp4",
+      video: "/videos/exult/streamlined-1x1.mp4",
       alt: "The seal",
       tone: "dark",
     } as ArchiveMedia,

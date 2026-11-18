@@ -82,9 +82,12 @@ export default function Footer({
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-8 py-20 text-center font-clashlight text-[16px] tracking-[0.1em] text-[#898a8a] uppercase transition-colors xl:tracking-[0.135em] duration-200 hover:text-[#38362e] md:py-28 md:text-[20px] lg:block xl:py-0 xl:text-[length:max(18px,calc(var(--spacing)*35.2))]"
+                      className="flex items-center justify-center gap-8 py-20 text-center font-clashlight text-[16px] tracking-[0.1em] text-[#898a8a] uppercase transition-colors xl:tracking-[0.135em] duration-200 hover:text-[#38362e] md:gap-12 md:py-28 md:text-[20px] xl:gap-16 xl:py-0 xl:text-[length:max(18px,calc(var(--spacing)*35.2))]"
                     >
-                      <s.icon aria-hidden="true" className="size-14 shrink-0 lg:hidden" />
+                      <s.icon
+                        aria-hidden="true"
+                        className="size-14 shrink-0 md:size-18 lg:size-24 xl:size-[max(24px,calc(var(--spacing)*34))]"
+                      />
                       {s.label}
                     </a>
                   </li>

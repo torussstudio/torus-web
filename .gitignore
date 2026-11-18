@@ -16,10 +16,14 @@
 # next.js
 /.next/
 /.next-perf/
+/.next-codex-*/
 /out/
 
 # production
 /build
+
+# generated responsive image variants
+/public/responsive/
 
 # misc
 .DS_Store

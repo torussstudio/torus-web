@@ -581,7 +581,6 @@ export default function CalendarFlip({
                     alt={base.alt}
                     fill
                     sizes="(max-width: 767px) 100vw, 1120px"
-                    unoptimized
                     className="object-cover"
                     draggable={false}
                   />

@@ -50,7 +50,6 @@ export default function ProcessSection() {
                 alt={d.palette.alt}
                 width={d.palette.width}
                 height={d.palette.height}
-                unoptimized
                 className="mt-24 h-auto w-full max-w-[420px] xl:mt-45 xl:max-w-none"
               />
             </div>
