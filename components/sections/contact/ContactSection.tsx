@@ -101,9 +101,10 @@ export default function ContactSection() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={cn(t.body, "uppercase transition-opacity duration-200 hover:opacity-60")}
+                    className={cn(t.body, "inline-flex items-center gap-12 uppercase transition-opacity duration-200 hover:opacity-60 xl:gap-16")}
                   >
-                    {s.label}
+                    <s.icon aria-hidden="true" className="size-[1em] shrink-0" />
+                    <span>{s.label}</span>
                   </a>
                 </li>
               ))}
