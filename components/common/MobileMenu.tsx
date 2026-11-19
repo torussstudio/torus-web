@@ -88,8 +88,8 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   <>
                     <button type="button" aria-expanded={archiveOpen} aria-controls="mobile-archive-links"
                       onClick={() => setArchiveOpen((value) => !value)}
-                      className="flex cursor-pointer items-start text-left text-[clamp(52px,17vw,96px)] leading-[1.05] tracking-[-0.055em] uppercase">
-                      {link.label}<span className="mt-2 ml-1.5 text-[10px] leading-none tracking-normal text-[#3da32e]">{String(index + 1).padStart(2, "0")}</span>
+                      className="flex cursor-pointer items-start text-left text-[clamp(44px,14vw,80px)] leading-[1.05] tracking-[-0.055em] uppercase">
+                      {link.label}<span className="mt-2.5 ml-1.5 text-[clamp(13px,3.6vw,16px)] leading-none tracking-normal text-[#3da32e]">{String(index + 1).padStart(2, "0")}</span>
                     </button>
                     <div id="mobile-archive-links" inert={!archiveOpen}
                       className={`grid transition-[grid-template-rows,opacity] duration-300 motion-reduce:transition-none ${archiveOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
@@ -103,19 +103,19 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
                   </>
                 ) : (
                   <Link href={link.href} onClick={onClose}
-                    className="flex w-fit items-start text-[clamp(52px,17vw,96px)] leading-[1.05] tracking-[-0.055em] uppercase">
-                    {link.label}<span className="mt-2 ml-1.5 text-[10px] leading-none tracking-normal text-[#3da32e]">{String(index + 1).padStart(2, "0")}</span>
+                    className="flex w-fit items-start text-[clamp(44px,14vw,80px)] leading-[1.05] tracking-[-0.055em] uppercase">
+                    {link.label}<span className="mt-2.5 ml-1.5 text-[clamp(13px,3.6vw,16px)] leading-none tracking-normal text-[#3da32e]">{String(index + 1).padStart(2, "0")}</span>
                   </Link>
                 )}
               </li>
             ))}
           </ul>
         </nav>
-        <div data-menu-reveal className="mt-auto pt-16 text-[14px] leading-relaxed">
+        <div data-menu-reveal className="mt-auto pt-16 text-[clamp(15px,4.2vw,18px)] leading-relaxed">
           <p className="mb-2 text-[#3da32e]">Let’s talk</p>
-          <a href="mailto:info@toruss.studio" className="inline-block py-2 text-[18px]">info@toruss.studio</a>
-          <div className="mt-1 flex flex-wrap gap-x-5 gap-y-1">
-            {footerContent.socials.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="py-2">{social.label}</a>)}
+          <a href="mailto:info@toruss.studio" className="inline-block py-2 text-[clamp(20px,6vw,24px)]">info@toruss.studio</a>
+          <div className="mt-1 flex w-full justify-between">
+            {footerContent.socials.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="py-2 text-[clamp(14px,4.2vw,17px)]">{social.label}</a>)}
           </div>
         </div>
       </div>
