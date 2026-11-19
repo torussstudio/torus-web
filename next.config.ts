@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
   turbopack: { root: __dirname },
   outputFileTracingRoot: __dirname,
   allowedDevOrigins: ["192.168.29.146", "localhost", "127.0.0.1"],
+  async redirects() {
+    return [
+      // Old project URL, kept so shared links keep working.
+      { source: "/archive/the-spanish-alchemist", destination: "/archive/tsa", permanent: true },
+    ];
+  },
   async headers() {
     const imageCacheHeaders = [
       { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

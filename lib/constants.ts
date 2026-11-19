@@ -196,7 +196,7 @@ export const works = [
     country: "SPAIN",
     title: "The Spanish Alchemist",
     image: "/optimized/hero-579399d2d0a7.avif",
-    href: "/archive/the-spanish-alchemist",
+    href: "/archive/tsa",
     desc: "Building a skincare brand around freshness, efficacy, and a different way of thinking about shelf life.",
     descLines: [
       "Building a skincare brand around freshness,",
@@ -1868,7 +1868,7 @@ export type ArchiveProjectSummary = {
 
 export const archiveProjects: ArchiveProjectSummary[] = [
   {
-    slug: "the-spanish-alchemist",
+    slug: "tsa",
     title: "The Spanish Alchemist",
     year: "2024",
     country: "Spain",

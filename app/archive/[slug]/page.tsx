@@ -13,7 +13,7 @@ import { archiveProjects } from "@/lib/constants";
 
 // slug -> page body. Add a line here when a new project page is built.
 const projectPages: Record<string, ComponentType<{ index: string }>> = {
-  "the-spanish-alchemist": TsaProject,
+  tsa: TsaProject,
   "exult-global": ExultProject,
   medtech: MedtechProject,
 };
