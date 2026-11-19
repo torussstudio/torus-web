@@ -666,7 +666,7 @@ export const mobileAspects = [
 // ARCHIVE PAGE — The Spanish Alchemist case study
 // ---------------------------------------------------------
 // Text + images for /archive. To swap a placeholder for a
-// real photo, set `src` (e.g. "/images/tsa-hero.jpg"). When
+// real photo, set `src` to a path under /images/. When
 // `src` is empty the page shows a labelled placeholder.
 // =========================================================
 

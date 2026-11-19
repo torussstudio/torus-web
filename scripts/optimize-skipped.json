@@ -1,0 +1,32 @@
+[
+  {
+    "source": "/videos/exult/logo-motion.mp4",
+    "sourceHash": "b6a64083e0a69e2e295e067c85b874e776544bfa11fc5efaf0b80978300bc28e",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/videos/exult/logo-rotation.mp4",
+    "sourceHash": "2ad408268b8e359e5ff7722eccd58014e6efd0656b11a876dfb08bb7c19fd53f",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/videos/medtech/story.mp4",
+    "sourceHash": "ad0ff157208db28d12b2ae5dac63772002d142cef173036e20ad7a93e293aaf5",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/videos/medtech/collateral.mp4",
+    "sourceHash": "a088e87a15b89e2338f16d5dd891c8b4d075e001db6b5b62f21e0ce818cc6aab",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/medtech/collateral-3.avif",
+    "sourceHash": "7f73aec9bebf131056ce38d48fb161aac2b774be590a71a4d484c50e186cbe0d",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/videos/medtech/Medtech-Logo-Sketch.mp4",
+    "sourceHash": "dac054c7b4e73767f91989fbb2e6f3352f079e0a87409f552fe1366605713725",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  }
+]

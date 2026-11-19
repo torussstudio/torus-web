@@ -53,6 +53,13 @@ try {
 const outputDir = path.join(root, "public/optimized");
 await mkdir(outputDir, { recursive: true });
 const assets = [];
+// Sources whose encoded output was not smaller than the original. Remember
+// them so every dev/build run does not re-encode them just to discard it.
+const skippedPath = path.join(root, "scripts/optimize-skipped.json");
+let previousSkipped = [];
+try { previousSkipped = JSON.parse(await readFile(skippedPath, "utf8")); }
+catch (error) { if (error.code !== "ENOENT") throw error; }
+const skipped = [];
 for (const source of urls) {
   const input = path.join(root, "public", source.slice(1));
   let before;
@@ -73,6 +80,11 @@ for (const source of urls) {
       assets.push(cached);
       continue;
     } catch (error) { if (error.code !== "ENOENT") throw error; }
+  }
+  const skip = { source, sourceHash, recipe };
+  if (previousSkipped.some(entry => entry.source === source && entry.sourceHash === sourceHash && entry.recipe === recipe)) {
+    skipped.push(skip);
+    continue;
   }
   let data;
   if (video) {
@@ -104,7 +116,7 @@ for (const source of urls) {
       continue;
     }
   }
-  if (data.length >= before) continue;
+  if (data.length >= before) { skipped.push(skip); continue; }
   const hash = createHash("sha256").update(data).digest("hex").slice(0, 12);
   const output = `/optimized/${name}-${hash}.${video ? "mp4" : "avif"}`;
   await writeFile(path.join(root, "public", output.slice(1)), data);
@@ -118,6 +130,7 @@ for (const { file } of sources) {
   if (updated !== await readFile(file, "utf8")) await writeFile(file, updated);
 }
 await writeFile(manifestPath, JSON.stringify(assets, null, 2) + "\n");
+await writeFile(skippedPath, JSON.stringify(skipped, null, 2) + "\n");
 
 // The Vercel Image Optimization quota is exhausted for this project. Publish
 // immutable responsive AVIF files ahead of time and have next/image point to

@@ -39,6 +39,94 @@
     "1280": "/responsive/insidestudio-c16d1d50ef73-c16d1d50ef73-1280.avif",
     "1920": "/optimized/insidestudio-c16d1d50ef73.avif"
   },
+  "/images/creative.avif": {
+    "256": "/responsive/creative-389754c06bbb-256.avif",
+    "480": "/responsive/creative-389754c06bbb-480.avif",
+    "640": "/responsive/creative-389754c06bbb-640.avif",
+    "960": "/responsive/creative-389754c06bbb-960.avif",
+    "1280": "/responsive/creative-389754c06bbb-1280.avif",
+    "1920": "/responsive/creative-389754c06bbb-1920.avif"
+  },
+  "/images/communication.avif": {
+    "256": "/responsive/communication-6d676654192d-256.avif",
+    "480": "/responsive/communication-6d676654192d-480.avif",
+    "640": "/responsive/communication-6d676654192d-640.avif",
+    "960": "/responsive/communication-6d676654192d-960.avif",
+    "1280": "/responsive/communication-6d676654192d-1280.avif",
+    "1920": "/responsive/communication-6d676654192d-1920.avif"
+  },
+  "/images/artwork1.avif": {
+    "256": "/responsive/artwork1-f7e75d5be8de-256.avif",
+    "480": "/responsive/artwork1-f7e75d5be8de-480.avif",
+    "640": "/responsive/artwork1-f7e75d5be8de-640.avif",
+    "960": "/responsive/artwork1-f7e75d5be8de-960.avif",
+    "1280": "/responsive/artwork1-f7e75d5be8de-1280.avif",
+    "1920": "/responsive/artwork1-f7e75d5be8de-1920.avif"
+  },
+  "/images/strategy.avif": {
+    "256": "/responsive/strategy-b217ee2f17f0-256.avif",
+    "480": "/responsive/strategy-b217ee2f17f0-480.avif",
+    "640": "/responsive/strategy-b217ee2f17f0-640.avif",
+    "960": "/responsive/strategy-b217ee2f17f0-960.avif",
+    "1280": "/responsive/strategy-b217ee2f17f0-1280.avif",
+    "1920": "/responsive/strategy-b217ee2f17f0-1920.avif"
+  },
+  "/images/digital.avif": {
+    "256": "/responsive/digital-6b4a4e030488-256.avif",
+    "480": "/responsive/digital-6b4a4e030488-480.avif",
+    "640": "/responsive/digital-6b4a4e030488-640.avif",
+    "960": "/responsive/digital-6b4a4e030488-960.avif",
+    "1280": "/responsive/digital-6b4a4e030488-1280.avif",
+    "1920": "/responsive/digital-6b4a4e030488-1920.avif"
+  },
+  "/images/curiosity.avif": {
+    "256": "/responsive/curiosity-30cffe22b9e8-256.avif",
+    "480": "/responsive/curiosity-30cffe22b9e8-480.avif",
+    "640": "/responsive/curiosity-30cffe22b9e8-640.avif",
+    "960": "/responsive/curiosity-30cffe22b9e8-960.avif",
+    "1280": "/responsive/curiosity-30cffe22b9e8-1280.avif",
+    "1920": "/responsive/curiosity-30cffe22b9e8-1920.avif"
+  },
+  "/images/studio.avif": {
+    "256": "/responsive/studio-669fca885be9-256.avif",
+    "480": "/responsive/studio-669fca885be9-480.avif",
+    "640": "/responsive/studio-669fca885be9-640.avif",
+    "960": "/responsive/studio-669fca885be9-960.avif",
+    "1280": "/responsive/studio-669fca885be9-1280.avif",
+    "1920": "/responsive/studio-669fca885be9-1920.avif"
+  },
+  "/images/objects.avif": {
+    "256": "/responsive/objects-a39ba4a0292b-256.avif",
+    "480": "/responsive/objects-a39ba4a0292b-480.avif",
+    "640": "/responsive/objects-a39ba4a0292b-640.avif",
+    "960": "/responsive/objects-a39ba4a0292b-960.avif",
+    "1280": "/responsive/objects-a39ba4a0292b-1280.avif",
+    "1920": "/responsive/objects-a39ba4a0292b-1920.avif"
+  },
+  "/images/heroimage.avif": {
+    "256": "/responsive/heroimage-406ae71de17f-256.avif",
+    "480": "/responsive/heroimage-406ae71de17f-480.avif",
+    "640": "/responsive/heroimage-406ae71de17f-640.avif",
+    "960": "/responsive/heroimage-406ae71de17f-960.avif",
+    "1280": "/responsive/heroimage-406ae71de17f-1280.avif",
+    "1920": "/responsive/heroimage-406ae71de17f-1920.avif"
+  },
+  "/images/footer.avif": {
+    "256": "/responsive/footer-7e005af5443e-256.avif",
+    "480": "/responsive/footer-7e005af5443e-480.avif",
+    "640": "/responsive/footer-7e005af5443e-640.avif",
+    "960": "/responsive/footer-7e005af5443e-960.avif",
+    "1280": "/responsive/footer-7e005af5443e-1280.avif",
+    "1920": "/responsive/footer-7e005af5443e-1920.avif"
+  },
+  "/images/cohart.avif": {
+    "256": "/responsive/cohart-daea848fab2f-256.avif",
+    "480": "/responsive/cohart-daea848fab2f-480.avif",
+    "640": "/responsive/cohart-daea848fab2f-640.avif",
+    "960": "/responsive/cohart-daea848fab2f-960.avif",
+    "1280": "/responsive/cohart-daea848fab2f-1280.avif",
+    "1920": "/responsive/cohart-daea848fab2f-1920.avif"
+  },
   "/optimized/space-discussions-a987f3457007.avif": {
     "256": "/responsive/space-discussions-a987f3457007-a987f3457007-256.avif",
     "480": "/responsive/space-discussions-a987f3457007-a987f3457007-480.avif",
@@ -166,6 +254,86 @@
     "960": "/images/home/practice-culture-collective.avif",
     "1280": "/images/home/practice-culture-collective.avif",
     "1920": "/images/home/practice-culture-collective.avif"
+  },
+  "/images/editions.avif": {
+    "256": "/responsive/editions-b0d067b24990-256.avif",
+    "480": "/responsive/editions-b0d067b24990-480.avif",
+    "640": "/responsive/editions-b0d067b24990-640.avif",
+    "960": "/responsive/editions-b0d067b24990-960.avif",
+    "1280": "/responsive/editions-b0d067b24990-1280.avif",
+    "1920": "/responsive/editions-b0d067b24990-1920.avif"
+  },
+  "/images/spanish-alchemist-main.jpg": {
+    "256": "/responsive/spanish-alchemist-main-1824ce216f26-256.avif",
+    "480": "/responsive/spanish-alchemist-main-1824ce216f26-480.avif",
+    "640": "/images/spanish-alchemist-main.jpg",
+    "960": "/images/spanish-alchemist-main.jpg",
+    "1280": "/images/spanish-alchemist-main.jpg",
+    "1920": "/images/spanish-alchemist-main.jpg"
+  },
+  "/images/spanish-alchemist-thumb.jpg": {
+    "256": "/images/spanish-alchemist-thumb.jpg",
+    "480": "/images/spanish-alchemist-thumb.jpg",
+    "640": "/images/spanish-alchemist-thumb.jpg",
+    "960": "/images/spanish-alchemist-thumb.jpg",
+    "1280": "/images/spanish-alchemist-thumb.jpg",
+    "1920": "/images/spanish-alchemist-thumb.jpg"
+  },
+  "/images/skincare-hero.jpg": {
+    "256": "/responsive/skincare-hero-113e9590ebfb-256.avif",
+    "480": "/responsive/skincare-hero-113e9590ebfb-480.avif",
+    "640": "/responsive/skincare-hero-113e9590ebfb-640.avif",
+    "960": "/images/skincare-hero.jpg",
+    "1280": "/images/skincare-hero.jpg",
+    "1920": "/images/skincare-hero.jpg"
+  },
+  "/images/collage-1.jpg": {
+    "256": "/images/collage-1.jpg",
+    "480": "/images/collage-1.jpg",
+    "640": "/images/collage-1.jpg",
+    "960": "/images/collage-1.jpg",
+    "1280": "/images/collage-1.jpg",
+    "1920": "/images/collage-1.jpg"
+  },
+  "/images/collage-2.jpg": {
+    "256": "/images/collage-2.jpg",
+    "480": "/images/collage-2.jpg",
+    "640": "/images/collage-2.jpg",
+    "960": "/images/collage-2.jpg",
+    "1280": "/images/collage-2.jpg",
+    "1920": "/images/collage-2.jpg"
+  },
+  "/images/collage-3.jpg": {
+    "256": "/images/collage-3.jpg",
+    "480": "/images/collage-3.jpg",
+    "640": "/images/collage-3.jpg",
+    "960": "/images/collage-3.jpg",
+    "1280": "/images/collage-3.jpg",
+    "1920": "/images/collage-3.jpg"
+  },
+  "/images/collage-4.jpg": {
+    "256": "/images/collage-4.jpg",
+    "480": "/images/collage-4.jpg",
+    "640": "/images/collage-4.jpg",
+    "960": "/images/collage-4.jpg",
+    "1280": "/images/collage-4.jpg",
+    "1920": "/images/collage-4.jpg"
+  },
+  "/images/collage-5.jpg": {
+    "256": "/images/collage-5.jpg",
+    "480": "/images/collage-5.jpg",
+    "640": "/images/collage-5.jpg",
+    "960": "/images/collage-5.jpg",
+    "1280": "/images/collage-5.jpg",
+    "1920": "/images/collage-5.jpg"
+  },
+  "/images/collage-6.jpg": {
+    "256": "/responsive/collage-6-23700a64ffa7-256.avif",
+    "480": "/images/collage-6.jpg",
+    "640": "/images/collage-6.jpg",
+    "960": "/images/collage-6.jpg",
+    "1280": "/images/collage-6.jpg",
+    "1920": "/images/collage-6.jpg"
   },
   "/images/tsa/challenge-freshness-label.avif": {
     "256": "/responsive/challenge-freshness-label-d65aaebe401f-256.avif",

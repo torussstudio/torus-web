@@ -22,8 +22,6 @@
 # production
 /build
 
-# generated responsive image variants
-/public/responsive/
 
 # misc
 .DS_Store
