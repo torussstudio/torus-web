@@ -304,30 +304,6 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/exult/event-entrance.avif",
-    "output": "/optimized/event-entrance-7f65c1dac8f3.avif",
-    "before": 1497803,
-    "after": 454263,
-    "sourceHash": "6239eac616043c380b96ee8c14d7f751e0bd48c237e9ca279d9ae4f410459a7e",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
-    "source": "/images/exult/email-stage.avif",
-    "output": "/optimized/email-stage-114827809a70.avif",
-    "before": 1269705,
-    "after": 448192,
-    "sourceHash": "8335726034e6aadc38e9caf5d33e09ce2095ad89bd639d73596a1f10e006be96",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
-    "source": "/images/exult/email-booth.avif",
-    "output": "/optimized/email-booth-87249ac1f471.avif",
-    "before": 2188492,
-    "after": 634115,
-    "sourceHash": "3261e9b5c69e6005725d18b2c429439a76be4e04bee215105a6b4feaadab1e3b",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/images/exult/email-pavilion.avif",
     "output": "/optimized/email-pavilion-73a6ea4aa8f8.avif",
     "before": 1897136,
