@@ -19,7 +19,7 @@ export default function Footer({
   showContactBox?: boolean;
 }) {
   return (
-    <footer className="overflow-x-clip bg-[#f9f8f2] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]">
+    <footer className="overflow-x-clip bg-[#e9e9e7] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]">
       <div className={t.inner}>
         {/* ===== CONTACT BOX ===== */}
         {showContactBox && (

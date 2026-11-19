@@ -424,7 +424,7 @@ export default function HomeScrollFx({ children }: { children: ReactNode }) {
               Object.assign(block.style, {
                 position: "absolute",
                 inset: "0.06em -0.08em 0.02em",
-                backgroundColor: "#f9f8f2", // page background (ArchiveReveal)
+                backgroundColor: "#e9e9e7", // page background (ArchiveReveal)
                 pointerEvents: "none",
               });
               line.appendChild(block);
