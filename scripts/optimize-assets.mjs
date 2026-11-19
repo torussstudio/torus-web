@@ -141,7 +141,17 @@ const responsiveImages = {};
 let previousResponsive = {};
 try { previousResponsive = JSON.parse(await readFile(responsiveManifestPath, "utf8")); }
 catch (error) { if (error.code !== "ENOENT") throw error; }
-for (const source of urls) {
+// Some components reference files placed in /optimized/ by hand (not outputs
+// of the encoder above). They still need responsive variants, otherwise the
+// loader returns the bare src and next/image warns about a missing width.
+const encodedOutputs = new Set(assets.map(asset => asset.output));
+const responsiveSources = new Set(urls);
+for (const { text } of sources) {
+  for (const match of text.matchAll(/["'`](\/optimized\/[^"'`]+\.(?:avif|png|jpe?g|webp))["'`]/g)) {
+    if (!encodedOutputs.has(match[1])) responsiveSources.add(match[1]);
+  }
+}
+for (const source of responsiveSources) {
   if (/\.mp4$/i.test(source)) continue;
   const output = optimizedBySource.get(source) ?? source;
   const inputPath = path.join(root, "public", output.slice(1));

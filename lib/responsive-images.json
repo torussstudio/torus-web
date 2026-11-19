@@ -1126,5 +1126,37 @@
     "960": "/responsive/page-14-94510a8a04df-960.avif",
     "1280": "/responsive/page-14-94510a8a04df-1280.avif",
     "1920": "/images/medtech/calendar/page-14.webp"
+  },
+  "/optimized/card-cohort-art-workshop.avif": {
+    "256": "/responsive/card-cohort-art-workshop-c74815660318-256.avif",
+    "480": "/responsive/card-cohort-art-workshop-c74815660318-480.avif",
+    "640": "/responsive/card-cohort-art-workshop-c74815660318-640.avif",
+    "960": "/responsive/card-cohort-art-workshop-c74815660318-960.avif",
+    "1280": "/responsive/card-cohort-art-workshop-c74815660318-1280.avif",
+    "1920": "/responsive/card-cohort-art-workshop-c74815660318-1920.avif"
+  },
+  "/optimized/event-booth-407.avif": {
+    "256": "/responsive/event-booth-407-b2a0e8da230c-256.avif",
+    "480": "/responsive/event-booth-407-b2a0e8da230c-480.avif",
+    "640": "/responsive/event-booth-407-b2a0e8da230c-640.avif",
+    "960": "/responsive/event-booth-407-b2a0e8da230c-960.avif",
+    "1280": "/optimized/event-booth-407.avif",
+    "1920": "/optimized/event-booth-407.avif"
+  },
+  "/optimized/email-stage-ai-unified.avif": {
+    "256": "/responsive/email-stage-ai-unified-5a52a9d41084-256.avif",
+    "480": "/responsive/email-stage-ai-unified-5a52a9d41084-480.avif",
+    "640": "/responsive/email-stage-ai-unified-5a52a9d41084-640.avif",
+    "960": "/responsive/email-stage-ai-unified-5a52a9d41084-960.avif",
+    "1280": "/responsive/email-stage-ai-unified-5a52a9d41084-1280.avif",
+    "1920": "/optimized/email-stage-ai-unified.avif"
+  },
+  "/optimized/email-booth-connected-analytics.avif": {
+    "256": "/responsive/email-booth-connected-analytics-de7f3e40aa5e-256.avif",
+    "480": "/responsive/email-booth-connected-analytics-de7f3e40aa5e-480.avif",
+    "640": "/responsive/email-booth-connected-analytics-de7f3e40aa5e-640.avif",
+    "960": "/responsive/email-booth-connected-analytics-de7f3e40aa5e-960.avif",
+    "1280": "/optimized/email-booth-connected-analytics.avif",
+    "1920": "/optimized/email-booth-connected-analytics.avif"
   }
 }
