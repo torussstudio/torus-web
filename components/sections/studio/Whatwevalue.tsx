@@ -221,7 +221,7 @@ export default function WhatWeValue() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#EAE7E2]"
+      className="relative w-full overflow-hidden bg-[var(--page-paper)]"
     >
       <div className="relative max-w-[1728px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-3 sm:pt-4 lg:pt-6 pb-10 sm:pb-14 lg:pb-20">
         {/* ============ TOP DIVIDER ============ */}

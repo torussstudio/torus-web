@@ -12,7 +12,7 @@ import ContactIcons from "@/components/sections/home/ContactIcons";
 
 export default function Home() {
   return (
-    <main data-home-page className="pb-[calc(60px+max(12px,env(safe-area-inset-bottom)))] lg:pb-0">
+    <main data-home-page className="[--page-paper:#f9f5ec] bg-[var(--page-paper)] pb-[calc(60px+max(12px,env(safe-area-inset-bottom)))] lg:pb-0">
       <Navbar />
 
       <ArchiveReveal>

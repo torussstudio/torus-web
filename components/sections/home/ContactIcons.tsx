@@ -21,7 +21,7 @@ export default function ContactIcons({ fixed = false }: { fixed?: boolean }) {
           data-intro={fixed ? undefined : "item"}
           className={cn(
             "text-[#38362e]/70 transition-colors hover:text-[#38362e] focus-visible:outline-2 focus-visible:outline-offset-2",
-            fixed && "inline-flex h-11 w-[52px] items-center justify-center rounded-full border border-[#38362e]/15 bg-[#e9e9e7]/35 backdrop-blur-[3px]",
+            fixed && "inline-flex h-11 w-[52px] items-center justify-center rounded-full border border-[#38362e]/15 bg-[var(--page-paper)]/35 backdrop-blur-[3px]",
           )}
         >
           <Icon aria-hidden="true" className={fixed ? "size-5" : "size-22 xl:size-28"} />

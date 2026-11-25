@@ -34,10 +34,27 @@ export default function DigitalSection() {
 
       <div className="border-b p-16 md:p-24 xl:px-50 xl:pt-47 xl:pb-40">
         <Media
-          media={d.wide}
+          media={d.additionalImage}
           className="aspect-[1820/1052] h-auto xl:aspect-auto xl:h-1052"
           sizes="(max-width: 1023px) 100vw, 95vw"
         />
+      </div>
+
+      <div className="relative grid grid-cols-1 divide-y border-b p-16 after:absolute after:inset-y-0 after:left-1/2 after:hidden after:w-px after:bg-[#38362e]/45 after:content-[''] md:grid-cols-2 md:divide-y-0 md:p-24 md:after:block xl:px-50 xl:pt-47 xl:pb-40">
+        <div className="flex justify-center py-16 md:px-12 md:py-0 xl:px-25">
+          <Media
+            media={d.wide}
+            className="aspect-[9/16] h-auto w-full max-w-[540px]"
+            sizes="(max-width: 639px) 90vw, 540px"
+          />
+        </div>
+        <div className="flex justify-center py-16 md:px-12 md:py-0 xl:px-25">
+          <Media
+            media={d.sideImage}
+            className="aspect-[9/16] h-auto w-full max-w-[540px]"
+            sizes="(max-width: 639px) 90vw, 540px"
+          />
+        </div>
       </div>
     </section>
   );

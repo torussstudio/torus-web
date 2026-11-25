@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { works } from "@/lib/constants";
 import Media from "@/components/sections/archive/Media";
@@ -19,11 +20,12 @@ export default function ArchiveSection() {
   return (
     <section className={h.inner}>
       {/* HEADER */}
-      <div className="grid gap-16 border-b px-24 pt-48 pb-48 md:grid-cols-2 md:px-40 md:pt-72 md:pb-56 xl:grid-cols-[1111fr_809fr] xl:gap-0 xl:px-0 xl:pt-55 xl:pb-60">
-        <h2 className={cn(h.h2, "xl:pl-153")}>
+      {/* same columns as the project rows, so the intro lines up with the text column below */}
+      <div className="grid grid-cols-1 items-center gap-16 border-b py-48 md:grid-cols-[1fr_1fr] md:gap-0 md:py-64 xl:grid-cols-[922fr_998fr] xl:py-60">
+        <h2 className={cn(h.h2, "px-24 text-center md:px-40")}>
           Selected Archive
         </h2>
-        <p className={cn(h.body, "md:pt-8 xl:pt-4 xl:pr-40 xl:pl-153")}>
+        <p className={cn(h.body, "px-24 text-left md:px-40 xl:pr-60 xl:pl-76")}>
           <Lines lines={intro} />
         </p>
       </div>
@@ -35,12 +37,14 @@ export default function ArchiveSection() {
           className="grid grid-cols-1 border-b md:grid-cols-[1fr_1fr] xl:min-h-637 xl:grid-cols-[922fr_998fr]"
         >
           <div className="px-24 pt-32 md:border-r md:px-40 md:py-48 xl:px-0 xl:pt-73 xl:pb-74 xl:pl-152">
-            <Media
-              media={{ src: work.image, alt: work.title }}
-              reveal={false}
-              className="aspect-[692/490] h-auto xl:aspect-auto xl:h-490 xl:w-692"
-              sizes="(max-width: 767px) 100vw, 40vw"
-            />
+            <Link href={work.href} aria-label={work.title} className="block w-fit max-w-full">
+              <Media
+                media={{ src: work.image, alt: work.title }}
+                reveal={false}
+                className="aspect-[692/490] h-auto xl:aspect-auto xl:h-490 xl:w-692"
+                sizes="(max-width: 767px) 100vw, 40vw"
+              />
+            </Link>
           </div>
 
           <div className="flex flex-col px-24 pt-28 pb-40 md:px-40 md:py-48 xl:px-0 xl:pt-75 xl:pr-60 xl:pb-75 xl:pl-76">
@@ -53,8 +57,10 @@ export default function ArchiveSection() {
             <h3
               className="mt-16 font-trial text-[length:clamp(28px,5vw,40px)] leading-[1.2] tracking-normal xl:mt-34 xl:-ml-6 xl:text-[length:max(28px,calc(var(--spacing)*55))]"
             >
-              {/* keep "[ Title ]" brackets attached to the words */}
-              {work.title.replace("[ ", "[\u00a0").replace(" ]", "\u00a0]")}
+              <Link href={work.href} className="transition-opacity duration-300 hover:opacity-70">
+                {/* keep "[ Title ]" brackets attached to the words */}
+                {work.title.replace("[ ", "[\u00a0").replace(" ]", "\u00a0]")}
+              </Link>
             </h3>
 
             <p
@@ -70,7 +76,7 @@ export default function ArchiveSection() {
             </p>
 
             <div className="mt-32 xl:mt-auto">
-              <TurnLink href={work.href} tone="ink">
+              <TurnLink href={work.href} tone="green">
                 View project
               </TurnLink>
             </div>

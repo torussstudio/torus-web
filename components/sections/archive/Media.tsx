@@ -9,6 +9,8 @@ type Props = {
   sizes?: string;
   priority?: boolean;
   reveal?: boolean;
+  fit?: "cover" | "contain";
+  position?: "center" | "top";
 };
 
 /**
@@ -24,6 +26,8 @@ export default function Media({
   sizes = "100vw",
   priority = false,
   reveal = true,
+  fit = "cover",
+  position = "center",
 }: Props) {
   const dark = media.tone === "dark";
 
@@ -50,7 +54,10 @@ export default function Media({
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover"
+          className={cn(
+            fit === "contain" ? "object-contain" : "object-cover",
+            position === "top" && "object-top",
+          )}
         />
       ) : (
         <span

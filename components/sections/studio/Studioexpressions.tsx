@@ -123,7 +123,7 @@ export default function StudioExpressions() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#EAE7E2]"
+      className="relative w-full overflow-hidden bg-[var(--page-paper)]"
     >
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-20 sm:pt-24 lg:pt-20 pb-24 sm:pb-28 lg:pb-20">
         {/* ============ HEADING ============ */}

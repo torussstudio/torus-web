@@ -46,7 +46,7 @@ export default function StudioHero() {
   }, [startIndex]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#EAE7E2]">
+    <section className="relative w-full overflow-hidden bg-[var(--page-paper)]">
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 sm:py-10 lg:py-16">
         {/* ============ TOP GRID: label + heading + socials ============ */}
         <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-y-8">

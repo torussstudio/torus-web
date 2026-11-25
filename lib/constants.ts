@@ -703,8 +703,8 @@ export const tsaChallenge = {
   leadIn: "The challenge was more interesting:",
   highlight: "how to make people believe in the idea of freshly made skincare.",
   image: {
-    src: "/images/tsa/challenge-freshness-label.avif",
-    alt: "Freshness label on the red TSA bottle",
+    src: "/optimized/Cinematic ruby TSA bottle close-up (1)-b46232661cd6.avif",
+    alt: "Cinematic close-up of the ruby TSA bottle and freshness seal",
   } as ArchiveMedia,
   left: "Freshness is already a familiar idea in skincare. It is often used loosely to suggest something natural. But the brand’s idea of fresh was connected to the time closest to manufacturing, when the formulation is newly prepared, and the product is closer to its peak performance.",
   right: [
@@ -737,8 +737,8 @@ export const tsaNaming = {
       alt: "Projection installation",
     },
     {
-      src: "/optimized/naming-alchemist-21c91c1e3695.avif",
-      alt: "Field exploration",
+      src: "/optimized/naming-alchemist-engraving-52a9c13fa8c3.avif",
+      alt: "Engraving of an alchemist working in a laboratory",
     },
   ] as ArchiveMedia[],
 };
@@ -795,11 +795,7 @@ export const tsaSystem = {
   note: "Instead of creating a purely corporate skincare logo, we developed a handcrafted signature-style mark. It gave the brand the feeling of a real presence behind the product: the Alchemist, someone involved in the making, testing, and care behind each formulation. This thinking extended into the packaging language as well.",
   signature: {
     caption: "The seal",
-    image: {
-      src: "/images/tsa/marks-seal.avif",
-      alt: "Signature mark",
-      tone: "dark",
-    } as ArchiveMedia,
+    video: "/videos/tsa/outro-web-1-compressed.mp4",
   },
   seal: {
     caption: "The signature mark",
@@ -826,11 +822,44 @@ export const tsaProof = {
     "Lines like “Made Fresh Just For You” became a simple expression of this world.",
   summary:
     "Together, these details made the brand’s freshness process more visible to the customer. The freshness, timing, and care behind each product were made visible through a language of dates, codes, and labels. The narrative, proof points, and visual language helped make the fresh manufacturing concept clearly felt.",
-  image: {
-    src: "/images/tsa/proof-batch-label.avif",
-    alt: "Freshness label detail",
-    tone: "dark",
-  } as ArchiveMedia,
+  images: [
+    {
+      src: "/optimized/IMG_0183-70fdb16ea73c.avif",
+      alt: "TSA bottle moving through filling equipment",
+      width: 4160,
+      height: 6240,
+    },
+    {
+      src: "/optimized/Asset 2-3cf669776d35.avif",
+      alt: "TSA freshness packaging and product range",
+      width: 10579,
+      height: 5219,
+    },
+    {
+      src: "/optimized/Asset 3-dbe99b839b0c.avif",
+      alt: "TSA red product label close-up",
+      width: 9922,
+      height: 5224,
+    },
+    {
+      src: "/optimized/IMG_0214-d801d0275b71.avif",
+      alt: "TSA products being handled in the laboratory",
+      width: 6240,
+      height: 4160,
+    },
+    {
+      src: "/optimized/Asset 4-a0c01a92d56c.avif",
+      alt: "TSA product close-up with a 30 day freshness seal",
+      width: 6530,
+      height: 5224,
+    },
+    {
+      src: "/optimized/Asset 5-6d7aaf855e18.avif",
+      alt: "TSA freshness card",
+      width: 6964,
+      height: 5223,
+    },
+  ] as (ArchiveMedia & { width: number; height: number })[],
 };
 
 export const tsaProduct = {
@@ -887,6 +916,14 @@ export const tsaSensory = {
     src: "/images/tsa/sensory-team.avif",
     alt: "People gathered in a warm interior",
   } as ArchiveMedia,
+  images: [
+    { src: "/optimized/DSCF2603-ef2beecbfd1a.avif", alt: "TSA product packaging", width: 3632, height: 4541 },
+    { src: "/optimized/DSCF2671-326d6ff58b4b.avif", alt: "TSA product and freshness details", width: 4160, height: 6240 },
+    { src: "/optimized/DSCF2721-cd994f8ed376.avif", alt: "TSA product close-up", width: 6240, height: 4160 },
+    { src: "/optimized/DSCF2653-e0d334dd9cd2.avif", alt: "TSA products in the lab", width: 4124, height: 6186 },
+    { src: "/optimized/DSCF2606-8547cb4e0a37.avif", alt: "TSA product label and packaging", width: 3860, height: 4825 },
+    { src: "/optimized/DSCF2674-45429a4e1af5.avif", alt: "TSA product preparation", width: 6240, height: 4160 },
+  ] as (ArchiveMedia & { width: number; height: number })[],
 };
 
 export const tsaDigital = {
@@ -897,8 +934,16 @@ export const tsaDigital = {
     "On social media, freshness was also communicated and shown through culture, lifestyle, science, and everyday freshness cues: flowers, bread, apples, sea, sunlight, skin, laboratory details, and the atmosphere of Alicante. This gave the brand more room to speak. TSA could talk about skincare but also about time, preparation, freshness, routine, and care without sounding repetitive.",
   ],
   wide: {
-    src: "/optimized/digital-social-ecommerce-7269ef719f96.avif",
-    alt: "Campaign portrait",
+    video: "/videos/tsa/tsa-social-animation-720x1280.mp4",
+    alt: "TSA social media animation reel",
+  } as ArchiveMedia,
+  additionalImage: {
+    src: "/optimized/3in1-20-5fea5e33e3f7.avif",
+    alt: "TSA social media campaign and digital content grid",
+  } as ArchiveMedia,
+  sideImage: {
+    src: "/optimized/Asset 6-4529ad415b87.avif",
+    alt: "TSA website shown on a mobile phone",
   } as ArchiveMedia,
   trio: [
     { alt: "Packaging dieline 1" },

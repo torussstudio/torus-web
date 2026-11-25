@@ -124,10 +124,10 @@ export default function Navbar() {
         text-[14px]
         lg:text-[15px]
         xl:gap-[calc(var(--nu)*13)]
-        xl:tracking-[0.045em]
+        xl:tracking-[0.07em]
         xl:text-[length:max(15px,calc(var(--nu)*24))]
       `,
-      active ? "font-clash" : "font-clashlight hover:bg-[#f1efe8] hover:text-[#6b6b6b]"
+      active ? "font-clash" : "font-clash hover:bg-[#f1efe8] hover:text-[#6b6b6b]"
     );
 
   const activeSquare = (active: boolean) => (
@@ -152,7 +152,7 @@ export default function Navbar() {
       {/* FIXED HEADER - logo always visible, nav slides behind it */}
       <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full [--nu:1px] xl:[--nu:min(1.3333px,calc(100vw/1920))]">
         {/* LOGO */}
-        <div className="relative z-50 flex items-center justify-between border-b border-black/35 bg-[#e9e9e7] px-5 py-2 sm:px-7 sm:py-3 md:py-2 lg:justify-center lg:px-4 lg:py-4 xl:h-[calc(var(--nu)*81)] xl:py-0">
+        <div className="relative z-50 flex items-center justify-between border-b border-black/35 bg-[var(--page-paper)] px-5 py-2 sm:px-7 sm:py-3 md:py-2 lg:justify-center lg:px-4 lg:py-4 xl:h-[calc(var(--nu)*81)] xl:py-0">
           <Link href="/" className="block">
             <Image
               src="/images/NewLogo.png"
@@ -191,7 +191,7 @@ export default function Navbar() {
         {/* DESKTOP NAV - sits right below logo, hides behind logo on scroll down, shows on scroll up */}
         <nav
           className={cn(
-            "relative z-40 hidden border-b border-black/35 bg-[#e9e9e7] transition-transform duration-300 ease-in-out lg:block",
+            "relative z-40 hidden border-b border-black/35 bg-[var(--page-paper)] transition-transform duration-300 ease-in-out lg:block",
             hideNav ? "-translate-y-full" : "translate-y-0"
           )}
         >
@@ -245,7 +245,7 @@ export default function Navbar() {
                             border
                             border-t-0
                             border-black/35
-                            bg-[#e9e9e7]
+                            bg-[var(--page-paper)]
                             transition-all
                             duration-300
                             ease-out
@@ -274,15 +274,15 @@ export default function Navbar() {
                                       py-3.5
                                       whitespace-nowrap
                                       uppercase
-                                      tracking-[0.16em]
-                                      font-clashlight
+                                      tracking-[0.18em]
+                                      font-clash
                                       text-[14px]
                                       xl:text-[15px]
                                       transition-colors
                                       duration-200
                                       hover:bg-[#eeebe3]
                                     `,
-                                    current ? "text-[#38362e]" : "text-[#38362e]/80"
+                                    "text-black"
                                   )}
                                 >
                                   <span
@@ -292,7 +292,7 @@ export default function Navbar() {
                                     )}
                                   />
                                   <span>{project.label}</span>
-                                  <span className="ml-auto pl-6 text-[11px] tracking-[0.2em] text-[#8f8b86]">
+                                  <span className="ml-auto pl-6 text-[11px] font-semibold tracking-[0.2em] text-black">
                                     {String(index + 1).padStart(2, "0")}
                                   </span>
                                 </Link>

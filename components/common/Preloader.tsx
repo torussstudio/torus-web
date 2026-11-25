@@ -353,7 +353,7 @@ const CHARS  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const TARGET = "TORUSS";
 
 // Site palette — keep this in sync with the rest of the app
-const BG      = "#e7e5e1"; // site bg
+const BG      = "#f9f5ec"; // site bg
 const INK     = "#181818"; // site text
 const ACCENT  = "#80c46c"; // site link/number accent
 

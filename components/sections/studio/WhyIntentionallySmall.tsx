@@ -88,7 +88,7 @@ export default function WhyIntentionallySmall() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#EAE7E2]"
+      className="relative w-full overflow-hidden bg-[var(--page-paper)]"
     >
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 sm:py-10 lg:py-16">
         {/* ============ HEADING ============ */}

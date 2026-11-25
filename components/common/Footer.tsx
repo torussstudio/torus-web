@@ -19,14 +19,14 @@ export default function Footer({
   showContactBox?: boolean;
 }) {
   return (
-    <footer className="overflow-x-clip bg-[#e9e9e7] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]">
+    <footer className="overflow-x-clip bg-[var(--page-paper)] font-clash text-[#38362e] [--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))]">
       <div className={t.inner}>
         {/* ===== CONTACT BOX ===== */}
         {showContactBox && (
           <div className="grid grid-cols-1 border-y md:grid-cols-[64px_1fr] xl:grid-cols-[152fr_1768fr]">
             {/* vertical label */}
             <div className="hidden items-center justify-center border-r md:flex">
-              <span className="rotate-180 font-clashlight text-[28px] tracking-[0.1em] whitespace-nowrap text-[#898a8a] uppercase [writing-mode:vertical-rl] xl:text-[length:max(28px,calc(var(--spacing)*46.8))]">
+              <span className="rotate-180 font-clashlight text-[22px] tracking-[0.1em] whitespace-nowrap text-[#898a8a] uppercase [writing-mode:vertical-rl] xl:text-[length:max(22px,calc(var(--spacing)*38))]">
                 {f.sideLabel}
               </span>
             </div>
@@ -82,11 +82,11 @@ export default function Footer({
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-8 py-20 text-center font-clashlight text-[16px] tracking-[0.1em] text-[#898a8a] uppercase transition-colors xl:tracking-[0.135em] duration-200 hover:text-[#38362e] md:gap-12 md:py-28 md:text-[20px] xl:gap-16 xl:py-0 xl:text-[length:max(18px,calc(var(--spacing)*35.2))]"
+                      className="flex items-center justify-center gap-8 py-20 text-center font-clashlight text-[12px] tracking-[0.1em] text-[#898a8a] uppercase transition-colors xl:tracking-[0.135em] duration-200 hover:text-[#38362e] md:gap-8 md:py-28 md:text-[14px] xl:gap-10 xl:py-0 xl:text-[length:max(14px,calc(var(--spacing)*20))]"
                     >
                       <s.icon
                         aria-hidden="true"
-                        className="size-14 shrink-0 md:size-18 lg:size-24 xl:size-[max(24px,calc(var(--spacing)*34))]"
+                        className="size-10 shrink-0 md:size-12 lg:size-14 xl:size-[max(14px,calc(var(--spacing)*19))]"
                       />
                       {s.label}
                     </a>
@@ -113,7 +113,7 @@ export default function Footer({
             ))}
           </ul>
 
-          <p className="font-clashlight text-[14px] leading-[1.6] tracking-[0.1em] text-[#898a8a] uppercase md:text-right xl:w-503 xl:pt-101 xl:text-left xl:text-[length:max(14px,calc(var(--spacing)*28))] xl:leading-[1.786]">
+          <p className="font-clashlight text-[14px] leading-[1.6] tracking-[0.1em] text-[#898a8a] uppercase md:text-right xl:w-503 xl:pt-101 xl:text-left xl:text-[length:max(13px,calc(var(--spacing)*22))] xl:leading-[1.786]">
             {f.copyright.map((line, i) => (
               <span key={i} className="block">
                 {line}

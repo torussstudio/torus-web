@@ -175,7 +175,7 @@ export default function StudioArchives() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#EAE7E2]"
+      className="relative w-full overflow-hidden bg-[var(--page-paper)]"
     >
       <div className="relative max-w-[1728px] mx-auto px-4 sm:px-8 md:px-12 lg:px-12 xl:px-16 pt-0 sm:pt-1 lg:pt-2 pb-8 sm:pb-14 lg:pb-20">
         {/* ============ ROW 1 ============ */}

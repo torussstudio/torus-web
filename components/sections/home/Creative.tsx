@@ -23,7 +23,7 @@ export default function CreativeGrid() {
             className="grid scroll-mt-120 border md:max-lg:last:col-span-2 lg:row-span-6 lg:grid-rows-subgrid"
           >
             {/* HEADER */}
-            <div className="flex h-56 items-stretch border-b bg-[#eae6dc] xl:h-72">
+            <div className="flex h-56 items-stretch border-b bg-[var(--page-paper)] xl:h-72">
               <h3 className="flex flex-1 items-center pl-20 font-trial text-[22px] tracking-normal xl:pl-35 xl:text-[length:max(20px,calc(var(--spacing)*32))]">
                 {card.category}
               </h3>
@@ -43,7 +43,7 @@ export default function CreativeGrid() {
             <div data-fx="parallax" className="border-b px-20 py-24 xl:px-34 xl:py-40">
               <div
                 data-reveal="media"
-                className="relative aspect-[468/258] w-full overflow-hidden bg-[#eae6dc]"
+                className="relative aspect-[468/258] w-full overflow-hidden bg-[var(--page-paper)]"
               >
                 <Image
                   src={card.image}

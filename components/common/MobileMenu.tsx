@@ -76,7 +76,7 @@ export default function MobileMenu({ open, onClose }: { open: boolean; onClose: 
       onClose={() => setArchiveOpen(false)}
       onCancel={(event) => { event.preventDefault(); onClose(); }}
       data-lenis-prevent
-      className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain border-0 bg-[#e9e9e7] p-0 font-clash text-[#171717] backdrop:bg-black/15 lg:hidden">
+      className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain border-0 bg-[var(--page-paper)] p-0 font-clash text-[#171717] backdrop:bg-black/15 lg:hidden">
       <div className="relative flex min-h-full flex-col px-5 pt-[56px] pb-[max(24px,env(safe-area-inset-bottom))] sm:px-7">
         <button type="button" onClick={onClose} aria-label="Close menu"
           className="absolute top-3 right-3 flex min-h-11 min-w-11 cursor-pointer items-center justify-center text-[12px] sm:right-5">Close</button>

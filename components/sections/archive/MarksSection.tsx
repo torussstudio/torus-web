@@ -5,7 +5,8 @@ import { t } from "./styles";
 
 type Mark = {
   caption?: string;
-  image: ArchiveMedia;
+  image?: ArchiveMedia;
+  video?: string;
 };
 
 // Small square + centred caption under the signature / seal blocks
@@ -25,11 +26,25 @@ export default function MarksSection({
   return (
     <div className="grid grid-cols-1 border-b md:grid-cols-[1.6fr_1fr] xl:grid-cols-[1171fr_749fr]">
       <div className="p-24 md:p-32 xl:pt-49 xl:pr-0 xl:pb-42 xl:pl-50">
-        <Media
-          media={d.signature.image}
-          className="aspect-[1070/878] h-auto xl:aspect-auto xl:h-878 xl:w-1070"
-          sizes="(max-width: 1023px) 100vw, 56vw"
-        />
+        {d.signature.video ? (
+          <video
+            className="block aspect-[1070/878] h-auto w-full object-cover xl:aspect-auto xl:h-878 xl:w-1070"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="The Spanish Alchemist seal animation"
+          >
+            <source src={d.signature.video} type="video/mp4" />
+          </video>
+        ) : d.signature.image ? (
+          <Media
+            media={d.signature.image}
+            className="aspect-[1070/878] h-auto xl:aspect-auto xl:h-878 xl:w-1070"
+            sizes="(max-width: 1023px) 100vw, 56vw"
+          />
+        ) : null}
 
         {d.signature.caption && (
           <p className={cn(caption, "xl:w-1070")}>

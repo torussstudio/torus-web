@@ -335,13 +335,13 @@
     "1280": "/images/collage-6.jpg",
     "1920": "/images/collage-6.jpg"
   },
-  "/images/tsa/challenge-freshness-label.avif": {
-    "256": "/responsive/challenge-freshness-label-d65aaebe401f-256.avif",
-    "480": "/responsive/challenge-freshness-label-d65aaebe401f-480.avif",
-    "640": "/responsive/challenge-freshness-label-d65aaebe401f-640.avif",
-    "960": "/responsive/challenge-freshness-label-d65aaebe401f-960.avif",
-    "1280": "/responsive/challenge-freshness-label-d65aaebe401f-1280.avif",
-    "1920": "/responsive/challenge-freshness-label-d65aaebe401f-1920.avif"
+  "/optimized/Cinematic ruby TSA bottle close-up (1)-b46232661cd6.avif": {
+    "256": "/responsive/Cinematic ruby TSA bottle close-up (1)-b46232661cd6-b46232661cd6-256.avif",
+    "480": "/responsive/Cinematic ruby TSA bottle close-up (1)-b46232661cd6-b46232661cd6-480.avif",
+    "640": "/responsive/Cinematic ruby TSA bottle close-up (1)-b46232661cd6-b46232661cd6-640.avif",
+    "960": "/responsive/Cinematic ruby TSA bottle close-up (1)-b46232661cd6-b46232661cd6-960.avif",
+    "1280": "/responsive/Cinematic ruby TSA bottle close-up (1)-b46232661cd6-b46232661cd6-1280.avif",
+    "1920": "/optimized/Cinematic ruby TSA bottle close-up (1)-b46232661cd6.avif"
   },
   "/optimized/question-sketch-0f76cc9ef5d5.avif": {
     "256": "/responsive/question-sketch-0f76cc9ef5d5-0f76cc9ef5d5-256.avif",
@@ -367,13 +367,13 @@
     "1280": "/responsive/naming-philosophers-stone-86b8f1e12aa5-86b8f1e12aa5-1280.avif",
     "1920": "/optimized/naming-philosophers-stone-86b8f1e12aa5.avif"
   },
-  "/optimized/naming-alchemist-21c91c1e3695.avif": {
-    "256": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-256.avif",
-    "480": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-480.avif",
-    "640": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-640.avif",
-    "960": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-960.avif",
-    "1280": "/responsive/naming-alchemist-21c91c1e3695-21c91c1e3695-1280.avif",
-    "1920": "/optimized/naming-alchemist-21c91c1e3695.avif"
+  "/optimized/naming-alchemist-engraving-52a9c13fa8c3.avif": {
+    "256": "/responsive/naming-alchemist-engraving-52a9c13fa8c3-52a9c13fa8c3-256.avif",
+    "480": "/responsive/naming-alchemist-engraving-52a9c13fa8c3-52a9c13fa8c3-480.avif",
+    "640": "/responsive/naming-alchemist-engraving-52a9c13fa8c3-52a9c13fa8c3-640.avif",
+    "960": "/responsive/naming-alchemist-engraving-52a9c13fa8c3-52a9c13fa8c3-960.avif",
+    "1280": "/responsive/naming-alchemist-engraving-52a9c13fa8c3-52a9c13fa8c3-1280.avif",
+    "1920": "/optimized/naming-alchemist-engraving-52a9c13fa8c3.avif"
   },
   "/optimized/identity-swatches-tray-d23729fb7098.avif": {
     "256": "/responsive/identity-swatches-tray-d23729fb7098-d23729fb7098-256.avif",
@@ -407,14 +407,6 @@
     "1280": "/responsive/system-signature-c23fdbcddcd1-c23fdbcddcd1-1280.avif",
     "1920": "/optimized/system-signature-c23fdbcddcd1.avif"
   },
-  "/images/tsa/marks-seal.avif": {
-    "256": "/responsive/marks-seal-90edbb5eaf13-256.avif",
-    "480": "/responsive/marks-seal-90edbb5eaf13-480.avif",
-    "640": "/responsive/marks-seal-90edbb5eaf13-640.avif",
-    "960": "/responsive/marks-seal-90edbb5eaf13-960.avif",
-    "1280": "/responsive/marks-seal-90edbb5eaf13-1280.avif",
-    "1920": "/responsive/marks-seal-90edbb5eaf13-1920.avif"
-  },
   "/optimized/marks-signature-b1895974261b.avif": {
     "256": "/responsive/marks-signature-b1895974261b-b1895974261b-256.avif",
     "480": "/responsive/marks-signature-b1895974261b-b1895974261b-480.avif",
@@ -423,13 +415,53 @@
     "1280": "/responsive/marks-signature-b1895974261b-b1895974261b-1280.avif",
     "1920": "/optimized/marks-signature-b1895974261b.avif"
   },
-  "/images/tsa/proof-batch-label.avif": {
-    "256": "/responsive/proof-batch-label-3bc2ce7fd6dd-256.avif",
-    "480": "/responsive/proof-batch-label-3bc2ce7fd6dd-480.avif",
-    "640": "/responsive/proof-batch-label-3bc2ce7fd6dd-640.avif",
-    "960": "/responsive/proof-batch-label-3bc2ce7fd6dd-960.avif",
-    "1280": "/responsive/proof-batch-label-3bc2ce7fd6dd-1280.avif",
-    "1920": "/responsive/proof-batch-label-3bc2ce7fd6dd-1920.avif"
+  "/optimized/IMG_0183-70fdb16ea73c.avif": {
+    "256": "/responsive/IMG_0183-70fdb16ea73c-70fdb16ea73c-256.avif",
+    "480": "/responsive/IMG_0183-70fdb16ea73c-70fdb16ea73c-480.avif",
+    "640": "/responsive/IMG_0183-70fdb16ea73c-70fdb16ea73c-640.avif",
+    "960": "/responsive/IMG_0183-70fdb16ea73c-70fdb16ea73c-960.avif",
+    "1280": "/responsive/IMG_0183-70fdb16ea73c-70fdb16ea73c-1280.avif",
+    "1920": "/optimized/IMG_0183-70fdb16ea73c.avif"
+  },
+  "/optimized/Asset 2-3cf669776d35.avif": {
+    "256": "/responsive/Asset 2-3cf669776d35-3cf669776d35-256.avif",
+    "480": "/responsive/Asset 2-3cf669776d35-3cf669776d35-480.avif",
+    "640": "/responsive/Asset 2-3cf669776d35-3cf669776d35-640.avif",
+    "960": "/responsive/Asset 2-3cf669776d35-3cf669776d35-960.avif",
+    "1280": "/responsive/Asset 2-3cf669776d35-3cf669776d35-1280.avif",
+    "1920": "/optimized/Asset 2-3cf669776d35.avif"
+  },
+  "/optimized/Asset 3-dbe99b839b0c.avif": {
+    "256": "/responsive/Asset 3-dbe99b839b0c-dbe99b839b0c-256.avif",
+    "480": "/responsive/Asset 3-dbe99b839b0c-dbe99b839b0c-480.avif",
+    "640": "/responsive/Asset 3-dbe99b839b0c-dbe99b839b0c-640.avif",
+    "960": "/responsive/Asset 3-dbe99b839b0c-dbe99b839b0c-960.avif",
+    "1280": "/responsive/Asset 3-dbe99b839b0c-dbe99b839b0c-1280.avif",
+    "1920": "/optimized/Asset 3-dbe99b839b0c.avif"
+  },
+  "/optimized/IMG_0214-d801d0275b71.avif": {
+    "256": "/responsive/IMG_0214-d801d0275b71-d801d0275b71-256.avif",
+    "480": "/responsive/IMG_0214-d801d0275b71-d801d0275b71-480.avif",
+    "640": "/responsive/IMG_0214-d801d0275b71-d801d0275b71-640.avif",
+    "960": "/responsive/IMG_0214-d801d0275b71-d801d0275b71-960.avif",
+    "1280": "/responsive/IMG_0214-d801d0275b71-d801d0275b71-1280.avif",
+    "1920": "/optimized/IMG_0214-d801d0275b71.avif"
+  },
+  "/optimized/Asset 4-a0c01a92d56c.avif": {
+    "256": "/responsive/Asset 4-a0c01a92d56c-a0c01a92d56c-256.avif",
+    "480": "/responsive/Asset 4-a0c01a92d56c-a0c01a92d56c-480.avif",
+    "640": "/responsive/Asset 4-a0c01a92d56c-a0c01a92d56c-640.avif",
+    "960": "/responsive/Asset 4-a0c01a92d56c-a0c01a92d56c-960.avif",
+    "1280": "/responsive/Asset 4-a0c01a92d56c-a0c01a92d56c-1280.avif",
+    "1920": "/optimized/Asset 4-a0c01a92d56c.avif"
+  },
+  "/optimized/Asset 5-6d7aaf855e18.avif": {
+    "256": "/responsive/Asset 5-6d7aaf855e18-6d7aaf855e18-256.avif",
+    "480": "/responsive/Asset 5-6d7aaf855e18-6d7aaf855e18-480.avif",
+    "640": "/responsive/Asset 5-6d7aaf855e18-6d7aaf855e18-640.avif",
+    "960": "/responsive/Asset 5-6d7aaf855e18-6d7aaf855e18-960.avif",
+    "1280": "/responsive/Asset 5-6d7aaf855e18-6d7aaf855e18-1280.avif",
+    "1920": "/optimized/Asset 5-6d7aaf855e18.avif"
   },
   "/optimized/product-model-1dbef79ab8c6.avif": {
     "256": "/responsive/product-model-1dbef79ab8c6-1dbef79ab8c6-256.avif",
@@ -479,13 +511,69 @@
     "1280": "/responsive/sensory-team-37883a799c30-1280.avif",
     "1920": "/responsive/sensory-team-37883a799c30-1920.avif"
   },
-  "/optimized/digital-social-ecommerce-7269ef719f96.avif": {
-    "256": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-256.avif",
-    "480": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-480.avif",
-    "640": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-640.avif",
-    "960": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-960.avif",
-    "1280": "/responsive/digital-social-ecommerce-7269ef719f96-7269ef719f96-1280.avif",
-    "1920": "/optimized/digital-social-ecommerce-7269ef719f96.avif"
+  "/optimized/DSCF2603-ef2beecbfd1a.avif": {
+    "256": "/responsive/DSCF2603-ef2beecbfd1a-ef2beecbfd1a-256.avif",
+    "480": "/responsive/DSCF2603-ef2beecbfd1a-ef2beecbfd1a-480.avif",
+    "640": "/responsive/DSCF2603-ef2beecbfd1a-ef2beecbfd1a-640.avif",
+    "960": "/responsive/DSCF2603-ef2beecbfd1a-ef2beecbfd1a-960.avif",
+    "1280": "/responsive/DSCF2603-ef2beecbfd1a-ef2beecbfd1a-1280.avif",
+    "1920": "/optimized/DSCF2603-ef2beecbfd1a.avif"
+  },
+  "/optimized/DSCF2671-326d6ff58b4b.avif": {
+    "256": "/responsive/DSCF2671-326d6ff58b4b-326d6ff58b4b-256.avif",
+    "480": "/responsive/DSCF2671-326d6ff58b4b-326d6ff58b4b-480.avif",
+    "640": "/responsive/DSCF2671-326d6ff58b4b-326d6ff58b4b-640.avif",
+    "960": "/responsive/DSCF2671-326d6ff58b4b-326d6ff58b4b-960.avif",
+    "1280": "/responsive/DSCF2671-326d6ff58b4b-326d6ff58b4b-1280.avif",
+    "1920": "/optimized/DSCF2671-326d6ff58b4b.avif"
+  },
+  "/optimized/DSCF2721-cd994f8ed376.avif": {
+    "256": "/responsive/DSCF2721-cd994f8ed376-cd994f8ed376-256.avif",
+    "480": "/responsive/DSCF2721-cd994f8ed376-cd994f8ed376-480.avif",
+    "640": "/responsive/DSCF2721-cd994f8ed376-cd994f8ed376-640.avif",
+    "960": "/responsive/DSCF2721-cd994f8ed376-cd994f8ed376-960.avif",
+    "1280": "/responsive/DSCF2721-cd994f8ed376-cd994f8ed376-1280.avif",
+    "1920": "/optimized/DSCF2721-cd994f8ed376.avif"
+  },
+  "/optimized/DSCF2653-e0d334dd9cd2.avif": {
+    "256": "/responsive/DSCF2653-e0d334dd9cd2-e0d334dd9cd2-256.avif",
+    "480": "/responsive/DSCF2653-e0d334dd9cd2-e0d334dd9cd2-480.avif",
+    "640": "/responsive/DSCF2653-e0d334dd9cd2-e0d334dd9cd2-640.avif",
+    "960": "/responsive/DSCF2653-e0d334dd9cd2-e0d334dd9cd2-960.avif",
+    "1280": "/responsive/DSCF2653-e0d334dd9cd2-e0d334dd9cd2-1280.avif",
+    "1920": "/optimized/DSCF2653-e0d334dd9cd2.avif"
+  },
+  "/optimized/DSCF2606-8547cb4e0a37.avif": {
+    "256": "/responsive/DSCF2606-8547cb4e0a37-8547cb4e0a37-256.avif",
+    "480": "/responsive/DSCF2606-8547cb4e0a37-8547cb4e0a37-480.avif",
+    "640": "/responsive/DSCF2606-8547cb4e0a37-8547cb4e0a37-640.avif",
+    "960": "/responsive/DSCF2606-8547cb4e0a37-8547cb4e0a37-960.avif",
+    "1280": "/responsive/DSCF2606-8547cb4e0a37-8547cb4e0a37-1280.avif",
+    "1920": "/optimized/DSCF2606-8547cb4e0a37.avif"
+  },
+  "/optimized/DSCF2674-45429a4e1af5.avif": {
+    "256": "/responsive/DSCF2674-45429a4e1af5-45429a4e1af5-256.avif",
+    "480": "/responsive/DSCF2674-45429a4e1af5-45429a4e1af5-480.avif",
+    "640": "/responsive/DSCF2674-45429a4e1af5-45429a4e1af5-640.avif",
+    "960": "/responsive/DSCF2674-45429a4e1af5-45429a4e1af5-960.avif",
+    "1280": "/responsive/DSCF2674-45429a4e1af5-45429a4e1af5-1280.avif",
+    "1920": "/optimized/DSCF2674-45429a4e1af5.avif"
+  },
+  "/optimized/3in1-20-5fea5e33e3f7.avif": {
+    "256": "/responsive/3in1-20-5fea5e33e3f7-5fea5e33e3f7-256.avif",
+    "480": "/responsive/3in1-20-5fea5e33e3f7-5fea5e33e3f7-480.avif",
+    "640": "/responsive/3in1-20-5fea5e33e3f7-5fea5e33e3f7-640.avif",
+    "960": "/responsive/3in1-20-5fea5e33e3f7-5fea5e33e3f7-960.avif",
+    "1280": "/responsive/3in1-20-5fea5e33e3f7-5fea5e33e3f7-1280.avif",
+    "1920": "/optimized/3in1-20-5fea5e33e3f7.avif"
+  },
+  "/optimized/Asset 6-4529ad415b87.avif": {
+    "256": "/responsive/Asset 6-4529ad415b87-4529ad415b87-256.avif",
+    "480": "/responsive/Asset 6-4529ad415b87-4529ad415b87-480.avif",
+    "640": "/responsive/Asset 6-4529ad415b87-4529ad415b87-640.avif",
+    "960": "/responsive/Asset 6-4529ad415b87-4529ad415b87-960.avif",
+    "1280": "/responsive/Asset 6-4529ad415b87-4529ad415b87-1280.avif",
+    "1920": "/optimized/Asset 6-4529ad415b87.avif"
   },
   "/optimized/outcome-models-6ba906751a1c.avif": {
     "256": "/responsive/outcome-models-6ba906751a1c-6ba906751a1c-256.avif",

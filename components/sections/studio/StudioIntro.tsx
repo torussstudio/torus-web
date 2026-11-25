@@ -87,7 +87,7 @@ export default function StudioIntro() {
   );
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-[#EAE7E2]">
+    <section ref={sectionRef} className="relative w-full bg-[var(--page-paper)]">
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-4 sm:pt-6 lg:pt-8 pb-10 sm:pb-14 lg:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           {/* LEFT — gallery image */}

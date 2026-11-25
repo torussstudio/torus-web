@@ -23,7 +23,7 @@ import { dropHiddenBreaks } from "@/lib/utils";
  */
 
 const INK = "#38362e";
-const PAPER = "#e9e9e7";
+const PAPER = "#f9f5ec";
 
 export default function HeroIntro() {
   const coverRef = useRef<HTMLDivElement>(null);

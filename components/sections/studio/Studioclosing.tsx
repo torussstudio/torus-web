@@ -97,7 +97,7 @@ export default function StudioClosing() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#EAE7E2]"
+      className="relative w-full overflow-hidden bg-[var(--page-paper)]"
     >
       <div className="relative max-w-[1728px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-2 sm:pt-3 lg:pt-4 pb-10 sm:pb-14 lg:pb-20">
         {/* ============ TOP ============ */}

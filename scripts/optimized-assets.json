@@ -88,6 +88,14 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
+    "source": "/images/tsa/Cinematic ruby TSA bottle close-up (1).jpg",
+    "output": "/optimized/Cinematic ruby TSA bottle close-up (1)-b46232661cd6.avif",
+    "before": 1594745,
+    "after": 98906,
+    "sourceHash": "b71c6b0a7e4f694a89a582339b59a81ef45be345bf45177e44354c0dd3e66fba",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
     "source": "/images/tsa/question-sketch.avif",
     "output": "/optimized/question-sketch-0f76cc9ef5d5.avif",
     "before": 997066,
@@ -112,11 +120,11 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/tsa/naming-alchemist.avif",
-    "output": "/optimized/naming-alchemist-21c91c1e3695.avif",
-    "before": 328526,
-    "after": 109531,
-    "sourceHash": "04bcfa3f3b39cefda3a8ab2e793fae0980b290b1efd78fd54ed38ab0a302111a",
+    "source": "/images/tsa/naming-alchemist-engraving.avif",
+    "output": "/optimized/naming-alchemist-engraving-52a9c13fa8c3.avif",
+    "before": 774028,
+    "after": 709751,
+    "sourceHash": "e5e42ed1fe8789c6e5f2e8105e1dfa79cc640dd9440ff8ab9974f7ce2b51576f",
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
@@ -160,6 +168,54 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
+    "source": "/images/tsa/IMG_0183.jpg",
+    "output": "/optimized/IMG_0183-70fdb16ea73c.avif",
+    "before": 18096810,
+    "after": 90932,
+    "sourceHash": "8e9e2d5622af7e23132a534ea8f36c6f597c40d29f29c03184a34c89526ad299",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/Asset 2.png",
+    "output": "/optimized/Asset 2-3cf669776d35.avif",
+    "before": 3433420,
+    "after": 56854,
+    "sourceHash": "313424b7e45361200bc6dd6c017efa3d672d576269eeacc2a5e1e64334fe12e4",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/Asset 3.png",
+    "output": "/optimized/Asset 3-dbe99b839b0c.avif",
+    "before": 3871884,
+    "after": 191574,
+    "sourceHash": "a2dec0d413fb5d36de9fefe4b346484d089393a4ab22697a046829b72a9f8f24",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/IMG_0214.jpg",
+    "output": "/optimized/IMG_0214-d801d0275b71.avif",
+    "before": 16178182,
+    "after": 39366,
+    "sourceHash": "ae51f080c846e266dde6f5a4b096ee6e6679c82f537aaa58fe7599ec3ca443c5",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/Asset 4.png",
+    "output": "/optimized/Asset 4-a0c01a92d56c.avif",
+    "before": 13255823,
+    "after": 124799,
+    "sourceHash": "6d6d50f3a71462ec18746b2d7ce48cc90e5516e8812a14e290f43176b5c9fe07",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/Asset 5.png",
+    "output": "/optimized/Asset 5-6d7aaf855e18.avif",
+    "before": 4557782,
+    "after": 101618,
+    "sourceHash": "4f2a9ced1e9de61b2020f0746721557e850a89e22c9fea3aa258cf9251168c68",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
     "source": "/images/tsa/product-model.avif",
     "output": "/optimized/product-model-1dbef79ab8c6.avif",
     "before": 378479,
@@ -192,11 +248,67 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/tsa/digital-social-ecommerce.avif",
-    "output": "/optimized/digital-social-ecommerce-7269ef719f96.avif",
-    "before": 314507,
-    "after": 96299,
-    "sourceHash": "d55e140d3b1eafe820b43a8566f47d433aac0ab7377e79e52bbcb9b3ca1abadd",
+    "source": "/images/tsa/DSCF2603.jpg",
+    "output": "/optimized/DSCF2603-ef2beecbfd1a.avif",
+    "before": 17710969,
+    "after": 216051,
+    "sourceHash": "cb2ece6bcd89b587b1a61a7328dc30ca8aa86ac0f8ee3211c62a5eab8a602ec7",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/DSCF2671.jpg",
+    "output": "/optimized/DSCF2671-326d6ff58b4b.avif",
+    "before": 15940399,
+    "after": 38459,
+    "sourceHash": "a0451333c97524bb54b4301521356825d4e2db597d6591eba1b7ce9471ada9e6",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/DSCF2721.jpg",
+    "output": "/optimized/DSCF2721-cd994f8ed376.avif",
+    "before": 19247342,
+    "after": 34125,
+    "sourceHash": "ba6cda71207ec6feb61d1d9b899622b3485b3ff3f79e2ae4a77cf3a74328c0be",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/DSCF2653.jpg",
+    "output": "/optimized/DSCF2653-e0d334dd9cd2.avif",
+    "before": 25851643,
+    "after": 158004,
+    "sourceHash": "2188620f7aaa9e6dcba134cb0eb1d752d2f2cb6a9a9410ac000bf1f6d3b47a5e",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/DSCF2606.jpg",
+    "output": "/optimized/DSCF2606-8547cb4e0a37.avif",
+    "before": 19275651,
+    "after": 231865,
+    "sourceHash": "13a21caefc8f88b18a10373363f6444792e18bdc5a3bf1e774d032d51507eee6",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/DSCF2674.jpg",
+    "output": "/optimized/DSCF2674-45429a4e1af5.avif",
+    "before": 15083766,
+    "after": 32514,
+    "sourceHash": "c1c8516792d2679edefad40484d36f1b5001d14c644d43a1e1dc97f48d502039",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/3in1-20.jpg",
+    "output": "/optimized/3in1-20-5fea5e33e3f7.avif",
+    "before": 9747318,
+    "after": 57024,
+    "sourceHash": "4183f470b562b962cee25fb60d590c76df832176656210ec520b7f34db04df60",
+    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
+  },
+  {
+    "source": "/images/tsa/Asset 6.png",
+    "output": "/optimized/Asset 6-4529ad415b87.avif",
+    "before": 1375278,
+    "after": 57952,
+    "sourceHash": "da5056a2d97c1b454f68cc77f56d24509afdc8b484784d059663114b71614cb3",
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {

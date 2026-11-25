@@ -37,7 +37,7 @@ export default function ScrollToTop({ getLenis }: { getLenis: () => Lenis | unde
       onClick={toTop}
       className={cn(
         // same 1px spacing unit the archive pages and footer use, so the sizes below mean px
-        "[--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))] fixed right-16 bottom-16 z-40 inline-flex size-44 cursor-pointer items-center justify-center border border-[#38362e]/25 bg-[#e9e9e7]/90 text-[#38362e] backdrop-blur-sm transition-[opacity,translate,border-color] duration-300 ease-out hover:border-[#38362e] md:right-24 md:bottom-24 xl:right-40 xl:bottom-40 xl:size-[max(44px,calc(var(--spacing)*56))]",
+        "[--spacing:1px] xl:[--spacing:min(1.3333px,calc(100vw/1920))] fixed right-16 bottom-16 z-40 inline-flex size-44 cursor-pointer items-center justify-center border border-[#38362e]/25 bg-[var(--page-paper)]/90 text-[#38362e] backdrop-blur-sm transition-[opacity,translate,border-color] duration-300 ease-out hover:border-[#38362e] md:right-24 md:bottom-24 xl:right-40 xl:bottom-40 xl:size-[max(44px,calc(var(--spacing)*56))]",
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-8 opacity-0",
       )}
     >
