@@ -54,11 +54,13 @@ export default function MarksSection({
       </div>
 
       <div className="border-t p-24 md:border-t-0 md:border-l md:p-32 xl:border-t-0 xl:border-l xl:pt-49 xl:pr-0 xl:pb-42 xl:pl-53">
-        <Media
-          media={d.seal.image}
-          className="aspect-square h-auto xl:aspect-auto xl:h-648 xl:w-646"
-          sizes="(max-width: 1023px) 100vw, 34vw"
-        />
+        {d.seal.image && (
+          <Media
+            media={d.seal.image}
+            className="aspect-square h-auto xl:aspect-auto xl:h-648 xl:w-646"
+            sizes="(max-width: 1023px) 100vw, 34vw"
+          />
+        )}
 
         {d.seal.caption && (
           <p className={cn(caption, "xl:w-646")}>
