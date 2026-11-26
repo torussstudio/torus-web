@@ -17,12 +17,31 @@ const caption = cn(
   "xl:before:size-[max(7px,calc(var(--spacing)*11))]",
 );
 
-/** Signature mark (large) + seal (small) row, used by TSA and Exult */
+/** Signature mark (large) + seal (small) row, used by TSA and Exult.
+ *  Without a signature, the seal fills the whole row (Exult). */
 export default function MarksSection({
   data: d,
 }: {
-  data: { signature: Mark; seal: Mark };
+  data: { signature?: Mark; seal: Mark };
 }) {
+  if (!d.signature) {
+    return (
+      <div className="border-b p-24 md:p-32 xl:px-50 xl:pt-49 xl:pb-42">
+        {d.seal.image && (
+          <Media
+            media={d.seal.image}
+            // the square video sits whole in the centre (cropping + stretching it to the
+            // full width made it blurry); the box takes the video's own navy so it reads as one panel
+            fit="contain"
+            className="aspect-square h-auto bg-[#001222] md:aspect-[2/1] xl:aspect-auto xl:h-740"
+            sizes="100vw"
+          />
+        )}
+        {d.seal.caption && <p className={caption}>{d.seal.caption}</p>}
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 border-b md:grid-cols-[1.6fr_1fr] xl:grid-cols-[1171fr_749fr]">
       <div className="p-24 md:p-32 xl:pt-49 xl:pr-0 xl:pb-42 xl:pl-50">

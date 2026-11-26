@@ -1,11 +1,11 @@
 {
-  "/images/TORUSS STUDIO LOGO PNG.png": {
-    "256": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-256.avif",
-    "480": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-480.avif",
-    "640": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-640.avif",
-    "960": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-960.avif",
-    "1280": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-1280.avif",
-    "1920": "/responsive/TORUSS STUDIO LOGO PNG-326c767f5002-1920.avif"
+  "/images/toruss-studio-wordmark.png": {
+    "256": "/responsive/toruss-studio-wordmark-326c767f5002-256.avif",
+    "480": "/responsive/toruss-studio-wordmark-326c767f5002-480.avif",
+    "640": "/responsive/toruss-studio-wordmark-326c767f5002-640.avif",
+    "960": "/responsive/toruss-studio-wordmark-326c767f5002-960.avif",
+    "1280": "/responsive/toruss-studio-wordmark-326c767f5002-1280.avif",
+    "1920": "/responsive/toruss-studio-wordmark-326c767f5002-1920.avif"
   },
   "/images/NewLogo.png": {
     "256": "/responsive/NewLogo-70b187de7f80-256.avif",
@@ -599,14 +599,6 @@
     "1280": "/responsive/hero-pin-cd35f2030601-cd35f2030601-1280.avif",
     "1920": "/optimized/hero-pin-cd35f2030601.avif"
   },
-  "/optimized/challenge-brand-collage-ab41bcc6623b.avif": {
-    "256": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-256.avif",
-    "480": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-480.avif",
-    "640": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-640.avif",
-    "960": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-960.avif",
-    "1280": "/responsive/challenge-brand-collage-ab41bcc6623b-ab41bcc6623b-1280.avif",
-    "1920": "/optimized/challenge-brand-collage-ab41bcc6623b.avif"
-  },
   "/optimized/identity-sketch-cbe54316789b.avif": {
     "256": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-256.avif",
     "480": "/responsive/identity-sketch-cbe54316789b-cbe54316789b-480.avif",
@@ -623,30 +615,6 @@
     "1280": "/responsive/identity-wordmark-684f07a37878-684f07a37878-1280.avif",
     "1920": "/optimized/identity-wordmark-684f07a37878.avif"
   },
-  "/optimized/identity-acrylic-7741de684bec.avif": {
-    "256": "/responsive/identity-acrylic-7741de684bec-7741de684bec-256.avif",
-    "480": "/responsive/identity-acrylic-7741de684bec-7741de684bec-480.avif",
-    "640": "/responsive/identity-acrylic-7741de684bec-7741de684bec-640.avif",
-    "960": "/responsive/identity-acrylic-7741de684bec-7741de684bec-960.avif",
-    "1280": "/responsive/identity-acrylic-7741de684bec-7741de684bec-1280.avif",
-    "1920": "/optimized/identity-acrylic-7741de684bec.avif"
-  },
-  "/optimized/content-office-sign-9916fea17075.avif": {
-    "256": "/responsive/content-office-sign-9916fea17075-9916fea17075-256.avif",
-    "480": "/responsive/content-office-sign-9916fea17075-9916fea17075-480.avif",
-    "640": "/responsive/content-office-sign-9916fea17075-9916fea17075-640.avif",
-    "960": "/responsive/content-office-sign-9916fea17075-9916fea17075-960.avif",
-    "1280": "/responsive/content-office-sign-9916fea17075-9916fea17075-1280.avif",
-    "1920": "/optimized/content-office-sign-9916fea17075.avif"
-  },
-  "/optimized/content-social-card-231e1e721f7c.avif": {
-    "256": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-256.avif",
-    "480": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-480.avif",
-    "640": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-640.avif",
-    "960": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-960.avif",
-    "1280": "/responsive/content-social-card-231e1e721f7c-231e1e721f7c-1280.avif",
-    "1920": "/optimized/content-social-card-231e1e721f7c.avif"
-  },
   "/optimized/content-laptop-25443074ac6e.avif": {
     "256": "/responsive/content-laptop-25443074ac6e-25443074ac6e-256.avif",
     "480": "/responsive/content-laptop-25443074ac6e-25443074ac6e-480.avif",
@@ -654,14 +622,6 @@
     "960": "/responsive/content-laptop-25443074ac6e-25443074ac6e-960.avif",
     "1280": "/responsive/content-laptop-25443074ac6e-25443074ac6e-1280.avif",
     "1920": "/optimized/content-laptop-25443074ac6e.avif"
-  },
-  "/optimized/marks-stage-logo-bcafd9dfcf87.avif": {
-    "256": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-256.avif",
-    "480": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-480.avif",
-    "640": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-640.avif",
-    "960": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-960.avif",
-    "1280": "/responsive/marks-stage-logo-bcafd9dfcf87-bcafd9dfcf87-1280.avif",
-    "1920": "/optimized/marks-stage-logo-bcafd9dfcf87.avif"
   },
   "/images/exult/comm-linkedin.avif": {
     "256": "/responsive/comm-linkedin-8245c5f0b49c-256.avif",
@@ -718,14 +678,6 @@
     "960": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-960.avif",
     "1280": "/responsive/email-showcase-fbb87e5ab2c6-fbb87e5ab2c6-1280.avif",
     "1920": "/optimized/email-showcase-fbb87e5ab2c6.avif"
-  },
-  "/optimized/digital-icons-96f7871f2468.avif": {
-    "256": "/responsive/digital-icons-96f7871f2468-96f7871f2468-256.avif",
-    "480": "/responsive/digital-icons-96f7871f2468-96f7871f2468-480.avif",
-    "640": "/responsive/digital-icons-96f7871f2468-96f7871f2468-640.avif",
-    "960": "/responsive/digital-icons-96f7871f2468-96f7871f2468-960.avif",
-    "1280": "/responsive/digital-icons-96f7871f2468-96f7871f2468-1280.avif",
-    "1920": "/optimized/digital-icons-96f7871f2468.avif"
   },
   "/optimized/digital-powerbi-d42d4ad4deba.avif": {
     "256": "/responsive/digital-powerbi-d42d4ad4deba-d42d4ad4deba-256.avif",
@@ -1223,6 +1175,38 @@
     "1280": "/responsive/card-cohort-art-workshop-c74815660318-1280.avif",
     "1920": "/responsive/card-cohort-art-workshop-c74815660318-1920.avif"
   },
+  "/optimized/exult-challenge-collage.avif": {
+    "256": "/responsive/exult-challenge-collage-3f1977b66dfb-256.avif",
+    "480": "/responsive/exult-challenge-collage-3f1977b66dfb-480.avif",
+    "640": "/responsive/exult-challenge-collage-3f1977b66dfb-640.avif",
+    "960": "/responsive/exult-challenge-collage-3f1977b66dfb-960.avif",
+    "1280": "/responsive/exult-challenge-collage-3f1977b66dfb-1280.avif",
+    "1920": "/optimized/exult-challenge-collage.avif"
+  },
+  "/optimized/identity-app-icon.avif": {
+    "256": "/responsive/identity-app-icon-b1034e2316bd-256.avif",
+    "480": "/responsive/identity-app-icon-b1034e2316bd-480.avif",
+    "640": "/responsive/identity-app-icon-b1034e2316bd-640.avif",
+    "960": "/responsive/identity-app-icon-b1034e2316bd-960.avif",
+    "1280": "/optimized/identity-app-icon.avif",
+    "1920": "/optimized/identity-app-icon.avif"
+  },
+  "/optimized/content-social-posts-portrait.avif": {
+    "256": "/responsive/content-social-posts-portrait-d9a531c93b8f-256.avif",
+    "480": "/responsive/content-social-posts-portrait-d9a531c93b8f-480.avif",
+    "640": "/responsive/content-social-posts-portrait-d9a531c93b8f-640.avif",
+    "960": "/responsive/content-social-posts-portrait-d9a531c93b8f-960.avif",
+    "1280": "/optimized/content-social-posts-portrait.avif",
+    "1920": "/optimized/content-social-posts-portrait.avif"
+  },
+  "/optimized/content-business-card.avif": {
+    "256": "/responsive/content-business-card-b89e8c833ff3-256.avif",
+    "480": "/responsive/content-business-card-b89e8c833ff3-480.avif",
+    "640": "/responsive/content-business-card-b89e8c833ff3-640.avif",
+    "960": "/responsive/content-business-card-b89e8c833ff3-960.avif",
+    "1280": "/optimized/content-business-card.avif",
+    "1920": "/optimized/content-business-card.avif"
+  },
   "/optimized/event-booth-407.avif": {
     "256": "/responsive/event-booth-407-b2a0e8da230c-256.avif",
     "480": "/responsive/event-booth-407-b2a0e8da230c-480.avif",
@@ -1246,5 +1230,13 @@
     "960": "/responsive/email-booth-connected-analytics-de7f3e40aa5e-960.avif",
     "1280": "/optimized/email-booth-connected-analytics.avif",
     "1920": "/optimized/email-booth-connected-analytics.avif"
+  },
+  "/optimized/digital-website-screens.avif": {
+    "256": "/responsive/digital-website-screens-7d576a015a91-256.avif",
+    "480": "/responsive/digital-website-screens-7d576a015a91-480.avif",
+    "640": "/responsive/digital-website-screens-7d576a015a91-640.avif",
+    "960": "/responsive/digital-website-screens-7d576a015a91-960.avif",
+    "1280": "/responsive/digital-website-screens-7d576a015a91-1280.avif",
+    "1920": "/optimized/digital-website-screens.avif"
   }
 }

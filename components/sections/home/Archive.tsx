@@ -37,7 +37,10 @@ export default function ArchiveSection() {
           className="grid grid-cols-1 border-b md:grid-cols-[1fr_1fr] xl:min-h-637 xl:grid-cols-[922fr_998fr]"
         >
           <div className="px-24 pt-32 md:border-r md:px-40 md:py-48 xl:px-0 xl:pt-73 xl:pb-74 xl:pl-152">
-            <Link href={work.href} aria-label={work.title} className="block w-fit max-w-full">
+            {/* full width below xl: w-fit collapsed it to 0px there (the image has no
+                intrinsic width), so the photo was invisible on phone / tablet */}
+            <Link href={work.href} aria-label={work.title} className="block w-full xl:w-fit">
+
               <Media
                 media={{ src: work.image, alt: work.title }}
                 reveal={false}

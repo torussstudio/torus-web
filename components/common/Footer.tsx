@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HiArrowTurnDownRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
@@ -124,13 +123,12 @@ export default function Footer({
 
         {/* ===== WORDMARK ===== */}
         <div className="px-24 pt-48 pb-32 md:px-40 md:pt-64 md:pb-40 xl:px-0 xl:pt-85 xl:pb-60 xl:pl-152">
-          <Image
-            src="/images/TORUSS STUDIO LOGO PNG.png"
-            alt="Toruss Studio"
-            width={3669}
-            height={222}
-            sizes="(max-width: 1279px) 100vw, 85vw"
-            className="h-auto w-full xl:w-1633"
+          {/* the PNG is a single grey on transparent, so it's used as a mask
+              and filled with the wordmark colour (change bg-[...] to recolour) */}
+          <div
+            role="img"
+            aria-label="Toruss Studio"
+            className="aspect-[3669/222] w-full bg-[#e3d6ba] [mask-image:url('/images/toruss-studio-wordmark.png')] [mask-repeat:no-repeat] [mask-size:100%_100%] xl:w-1633"
           />
         </div>
       </div>

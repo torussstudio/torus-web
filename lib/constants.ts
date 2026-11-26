@@ -1029,7 +1029,7 @@ export const exultChallenge = keepHyphenatedWords({
     "The company was developing RPA, SaaS, and low-code/no-code solutions to help businesses automate workflows, build dashboards, and improve efficiency across departments. Sales, accounts, operations, projects, reporting; the solutions could be shaped module by module, depending on what each team needed.",
   ],
   image: {
-    src: "/optimized/challenge-brand-collage-ab41bcc6623b.avif",
+    src: "/optimized/exult-challenge-collage.avif",
     alt: "Exult Global — challenge visual",
     tone: "dark",
   } as ArchiveMedia,
@@ -1069,8 +1069,8 @@ export const exultIdentity = keepHyphenatedWords({
       alt: "Identity exploration",
     },
     {
-      src: "/optimized/identity-acrylic-7741de684bec.avif",
-      alt: "Identity in context",
+      src: "/optimized/identity-app-icon.avif",
+      alt: "Exult app icon on a phone home screen",
     },
   ] as ArchiveMedia[],
   left: "The logo combined a wordmark with an icon designed around the brand’s core ideas. The geometric X became a direct reference to Exult, while also suggesting multiplier, a symbol for improving productivity and amplifying efficiency. The icon also carried the feel of a dial, representing fine-tuning, optimisation, and process control. At another level, it suggested a bridge, reflecting Exult’s role in helping businesses move from where they are to where they want to be.",
@@ -1107,12 +1107,12 @@ export const exultContent = keepHyphenatedWords({
   points: ["Keyword Research", "Blog Planning", "SEO", "Structured Content"],
   images: [
     {
-      src: "/optimized/content-office-sign-9916fea17075.avif",
-      alt: "Content planning",
+      src: "/optimized/content-social-posts-portrait.avif",
+      alt: "Exult Global social media posts",
     },
     {
-      src: "/optimized/content-social-card-231e1e721f7c.avif",
-      alt: "Blog sketching",
+      src: "/optimized/content-business-card.avif",
+      alt: "Exult Global business card",
     },
     {
       src: "/optimized/content-laptop-25443074ac6e.avif",
@@ -1125,13 +1125,6 @@ export const exultContent = keepHyphenatedWords({
 });
 
 export const exultMarks = keepHyphenatedWords({
-  signature: {
-    image: {
-      src: "/optimized/marks-stage-logo-bcafd9dfcf87.avif",
-      alt: "Signature mark",
-      tone: "dark",
-    } as ArchiveMedia,
-  },
   seal: {
     image: {
       video: "/videos/exult/streamlined-1x1.mp4",
@@ -1267,8 +1260,8 @@ export const exultDigital = keepHyphenatedWords({
     "Pitch presentations, client conversations, product demos, and dashboard experiences.",
   body: "We designed pitch decks that helped Exult Global explain its solutions with more clarity and confidence. These decks were used for presentations, sales conversations, and explanatory purposes, turning complex offerings into structured, persuasive stories.",
   wide: {
-    src: "/optimized/digital-icons-96f7871f2468.avif",
-    alt: "Pitch deck designs",
+    src: "/optimized/digital-website-screens.avif",
+    alt: "Exult Global website pages on a laptop and browser windows",
     tone: "dark",
   } as ArchiveMedia,
   left: "Explainer videos served a similar purpose. We identified relevant topics, developed scripts, produced the videos, and published them across digital platforms. They addressed real pain points faced by the target audience and showed how Exult Global’s solutions could solve them. Some were also used in pitch presentations and event displays.",

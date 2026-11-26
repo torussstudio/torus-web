@@ -14,6 +14,11 @@ const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 const ROW_TRANSITION_MS = 900;
 const HOVER_QUERY = "(hover: hover) and (pointer: fine) and (min-width: 1280px)";
 
+/** Current time in ms. Kept outside the component: it's only called from event
+ *  handlers / timers, but the React Compiler lint can't tell that and flags
+ *  `performance.now()` written inside the component body as an impure render call. */
+const now = () => performance.now();
+
 function ToggleIcon({ open }: { open: boolean }) {
   return (
     <svg
@@ -65,13 +70,13 @@ export default function AreasOfPractice() {
   const pendingId = useRef<string | null>(null);
   const lockedUntil = useRef(0);
   const activate = (id: string | null) => {
-    lockedUntil.current = performance.now() + ROW_TRANSITION_MS;
+    lockedUntil.current = now() + ROW_TRANSITION_MS;
     setActiveId(id);
   };
 
   const hoverOpen = (id: string) => {
     if (!hoverMode || id === activeId || id === pendingId.current) return;
-    if (performance.now() < lockedUntil.current) return;
+    if (now() < lockedUntil.current) return;
     clearTimeout(hoverTimer.current);
     pendingId.current = id;
     hoverTimer.current = setTimeout(() => {
@@ -148,7 +153,9 @@ export default function AreasOfPractice() {
                 // no margin animation: it moved every divider below by a fractional px each frame
                 "relative grid grid-rows-[auto_0fr] border-b border-[#38362e]/50 transition-[grid-template-rows,background-color] duration-900 [backface-visibility:hidden]",
                 EASE,
-                open && "grid-rows-[auto_1fr] bg-[var(--page-paper)]",
+                // hover opens the row on desktop, so the open colour is the hover colour.
+                // no separate :hover bg: rows sliding under a still cursor flashed it (jitter)
+                open && "grid-rows-[auto_1fr] bg-[#efe6d2]",
               )}
             >
               <button
@@ -165,11 +172,12 @@ export default function AreasOfPractice() {
                 }}
                 className={cn(
                   cols,
-                  "w-full cursor-pointer text-left transition-[padding] duration-900",
+                  // same alignment in both states so the index/title don't snap when a row opens
+                  "w-full cursor-pointer items-baseline text-left transition-[padding] duration-900",
                   EASE,
                   open
-                    ? "items-start pt-48 pb-24 md:pt-56 md:pb-24 xl:pt-72 xl:pb-24"
-                    : "items-center py-32 md:py-40 xl:py-48",
+                    ? "pt-48 pb-24 md:pt-56 md:pb-24 xl:pt-72 xl:pb-24"
+                    : "py-32 md:py-40 xl:py-48",
                 )}
               >
                 <span className={cn(h.body, "col-start-1 row-start-1 whitespace-nowrap")}>
@@ -182,7 +190,9 @@ export default function AreasOfPractice() {
                   }}
                   data-fx="area-title"
                   className={cn(
-                    "col-start-2 row-start-1 min-w-0 tracking-[-0.025em]",
+                    // font-size grows with the row instead of snapping
+                    "col-start-2 row-start-1 min-w-0 tracking-[-0.025em] transition-[font-size,line-height] duration-900",
+                    EASE,
                     open
                       ? "text-[length:clamp(30px,4vw,54px)] leading-[1.08]"
                       : "text-[length:clamp(22px,2.2vw,32px)] leading-[1.2]",
@@ -193,7 +203,7 @@ export default function AreasOfPractice() {
 
                 <span
                   className={cn(
-                    "col-start-3 row-start-1 justify-self-end md:col-start-4",
+                    "col-start-3 row-start-1 self-start justify-self-end md:col-start-4",
                   )}
                 >
                   <ToggleIcon open={open} />

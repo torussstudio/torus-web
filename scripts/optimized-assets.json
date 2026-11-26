@@ -336,14 +336,6 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/exult/challenge-brand-collage.avif",
-    "output": "/optimized/challenge-brand-collage-ab41bcc6623b.avif",
-    "before": 510388,
-    "after": 141782,
-    "sourceHash": "e806311c81ba58a989a61af2a31e634ed047d03d45df1dfba738013565e6d769",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/images/exult/identity-sketch.avif",
     "output": "/optimized/identity-sketch-cbe54316789b.avif",
     "before": 2129586,
@@ -360,14 +352,6 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/exult/identity-acrylic.avif",
-    "output": "/optimized/identity-acrylic-7741de684bec.avif",
-    "before": 561851,
-    "after": 97708,
-    "sourceHash": "d6637189307ba9d2df431582fa5e5783d276274090ae58b940d9a6c64c047071",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/videos/exult/exult-website-animation.mp4",
     "output": "/optimized/exult-website-animation-4d816714296d.mp4",
     "before": 34996993,
@@ -376,35 +360,11 @@
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
-    "source": "/images/exult/content-office-sign.avif",
-    "output": "/optimized/content-office-sign-9916fea17075.avif",
-    "before": 1489683,
-    "after": 428116,
-    "sourceHash": "3a17cb3beb172e0ca2796bb2bc96b14b9868ddcc60b31afe15d55d5a7706043d",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
-    "source": "/images/exult/content-social-card.avif",
-    "output": "/optimized/content-social-card-231e1e721f7c.avif",
-    "before": 1731444,
-    "after": 496404,
-    "sourceHash": "991a9a48aab83ccd808bf75cb42c6a16aacb3246c0746516dce9c4d70ac67bc6",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
     "source": "/images/exult/content-laptop.avif",
     "output": "/optimized/content-laptop-25443074ac6e.avif",
     "before": 1497879,
     "after": 426790,
     "sourceHash": "be2f922c04125d5f2750d3ae3cc0de247cd1b859371eac329f6f812bafef94b5",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
-    "source": "/images/exult/marks-stage-logo.avif",
-    "output": "/optimized/marks-stage-logo-bcafd9dfcf87.avif",
-    "before": 1317309,
-    "after": 251398,
-    "sourceHash": "a332ed7433497f440488e1b3fa227c8647f4903a0f715913e2ccfefddbff1172",
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {
@@ -429,14 +389,6 @@
     "before": 1736851,
     "after": 517064,
     "sourceHash": "2f52a29e5cea93730dd2e7d467cd3c4afd0034472279b4ed6f5af0c7ff07811c",
-    "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
-  },
-  {
-    "source": "/images/exult/digital-icons.avif",
-    "output": "/optimized/digital-icons-96f7871f2468.avif",
-    "before": 348111,
-    "after": 91514,
-    "sourceHash": "1ee3046ed8a5e1daa9143ef6bc279a5546a9eb5153c5e84d00ba3d4e609b3e36",
     "recipe": "avif-1920-q55-e4-h264-1080p30-crf23-v1"
   },
   {

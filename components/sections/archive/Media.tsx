@@ -45,7 +45,13 @@ export default function Media({
           src={media.video}
           poster={media.src}
           label={media.alt}
-          className="absolute inset-0 h-full w-full scale-[1.015] bg-[#fdfaf8] object-cover"
+          className={
+            fit === "contain"
+              ? // shown whole at its own size (no upscaling, so it stays sharp), centred on a
+                // box that matches its background; soft side edges hide where the frame ends
+                "absolute inset-y-0 left-1/2 aspect-square h-full w-auto max-w-full -translate-x-1/2 object-cover [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+              : "absolute inset-0 h-full w-full scale-[1.015] bg-[#fdfaf8] object-cover"
+          }
         />
       ) : media.src ? (
         <Image

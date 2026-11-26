@@ -45,12 +45,57 @@ body {
   box-sizing: border-box;
 }
 
+/* Page scrollbar: a slim ink pill floating on the paper, darkening on hover/drag.
+   (Carousels hide their own scrollbars with [scrollbar-width:none].) */
+html {
+  scroll-behavior: smooth;
+  /* reserve the bar's space so the page doesn't shift when the mobile menu locks scroll */
+  scrollbar-gutter: stable;
+}
+
+/* Chrome, Edge, Safari. Chrome ignores these if scrollbar-color/width are set,
+   so the standard properties below are scoped to Firefox only. */
 ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--page-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  /* transparent border + padding-box clip = a 4px pill floating in the 10px gutter */
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: rgb(56 54 46 / 0.35) padding-box;
+  min-height: 48px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-width: 2px;
+  background-color: rgb(56 54 46 / 0.6);
+}
+
+::-webkit-scrollbar-thumb:active {
+  border-width: 2px;
+  background-color: #38362e;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--page-paper);
+}
+
+::-webkit-scrollbar-button {
   display: none;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Firefox only (no thumb shape control, so just a thin bar in the same colours) */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(56 54 46 / 0.35) var(--page-paper);
+  }
 }
 
 /* LENIS */

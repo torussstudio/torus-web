@@ -165,26 +165,32 @@ export default function Navbar() {
           </Link>
           <button
             type="button"
-            aria-label="Toggle Menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((prev) => !prev)}
             className="relative -mr-2 flex size-11 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden"
           >
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute h-px w-7 bg-[#2a2a2a] transition-transform duration-300",
-                menuOpen ? "rotate-45" : "-translate-y-1"
-              )}
-            />
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute h-px w-7 bg-[#2a2a2a] transition-transform duration-300",
-                menuOpen ? "-rotate-45" : "translate-y-1"
-              )}
-            />
+            {/* Two lines morph into an X in two steps: outer span slides the line
+                to the centre, inner span rotates it. Opening: slide, then rotate;
+                closing: un-rotate, then slide apart (the delays swap). */}
+            {[-1, 1].map((dir) => (
+              <span
+                key={dir}
+                aria-hidden="true"
+                className={cn(
+                  "absolute transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none",
+                  menuOpen ? "translate-y-0 delay-0" : cn(dir < 0 ? "-translate-y-[4px]" : "translate-y-[4px]", "delay-200"),
+                )}
+              >
+                <span
+                  className={cn(
+                    "block h-px w-7 bg-[#2a2a2a] transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none",
+                    menuOpen ? cn(dir < 0 ? "rotate-45" : "-rotate-45", "delay-200") : "rotate-0 delay-0",
+                  )}
+                />
+              </span>
+            ))}
           </button>
         </div>
 
